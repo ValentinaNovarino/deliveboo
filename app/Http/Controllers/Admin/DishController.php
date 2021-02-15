@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dish;
+use App\Category;
 
 class DishController extends Controller
 {
@@ -25,8 +26,11 @@ class DishController extends Controller
      */
     public function create()
     {
-
-        return view('admin.dishes.create');
+        $categories = Category::all();
+        $data = [
+            'categories' => $categories,
+        ];
+        return view('admin.dishes.create', $data);
     }
 
     /**

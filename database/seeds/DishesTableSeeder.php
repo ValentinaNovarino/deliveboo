@@ -38,6 +38,6 @@ class DishesTableSeeder extends Seeder
         $newDish->slug = $slug;
 
         $newDish->save();
-    }
+        }
     }
 }
