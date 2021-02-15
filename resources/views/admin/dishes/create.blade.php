@@ -18,16 +18,18 @@
                 @csrf
                 <div class="form-group">
                     <label for="dishName">Dishes name</label>
-                    <input type="text" id="dishName" class="form-control" placeholder="Enter dish name" name="name">
+                    <input type="text" id="dishName" class="form-control" placeholder="Enter dish name" name="name" value="{{ old('name') }}">
+                    @error('name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     <small class="form-text text-muted">Lorem ipsum dolor sit amet.</small>
                 </div>
                 <div class="form-group">
-                    <label for="dishIngredients">Dish Ingredients</label>
-                    <input type="text" id="dishIngredients" class="form-control" placeholder="Enter Ingredients">
-                </div>
-                <div class="form-group">
                   <label for="dishDescription">Dish Description</label>
-                  <textarea class="form-control" id="dishDescription" rows="3" cols="8" placeholder="Enter Description"></textarea>
+                  <textarea class="form-control" id="dishDescription" rows="3" cols="8" placeholder="Enter Ingredients And Description" name="description"></textarea>
+                  @error('description')
+                      <div class="alert alert-danger">{{ $message }}</div>
+                  @enderror
                 </div>
                 <div class="form-group">
                     <p>Select tags</p>
@@ -40,28 +42,16 @@
                             </label>
                         </div>
                     @endforeach
-                    @error('tags')
+                    @error('')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                {{-- <div class="form-group">
-                    <label for="">Select Dish Categories</label>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input">
-                        <label class="form-check-label" for="">Check me out</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input">
-                        <label class="form-check-label" for="">Check me out</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input">
-                        <label class="form-check-label" for="">Check me out</label>
-                    </div>
-                </div> --}}
                 <div class="form-group">
                     <label for="dishPrice">Dish Price</label>
-                    <input type="number" id="dishPrice" min="1" step="0.01" placeholder="€"/>
+                    <input type="number" id="dishPrice" min="1" step="0.01" placeholder="€" name="price" value="{{ old('price') }}"/>
+                    @error('price')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label>Visible ?</label>

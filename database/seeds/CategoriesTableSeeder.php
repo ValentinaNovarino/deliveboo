@@ -37,5 +37,5 @@ class CategoriesTableSeeder extends Seeder
 
         $newCategory->save();
     }
-    }
+};
 }

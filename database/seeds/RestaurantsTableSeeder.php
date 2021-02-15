@@ -37,5 +37,5 @@ class RestaurantsTableSeeder extends Seeder
 
         $newRestaurant->save();
         }
-    }
+    };
 }
