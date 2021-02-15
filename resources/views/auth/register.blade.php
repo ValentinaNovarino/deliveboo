@@ -75,6 +75,51 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="restaurant-name" class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="restaurant-name" type="text" class="form-control @error('restaurant-name') is-invalid @enderror" name="restaurant-name" required autocomplete="restaurant-name">
+
+                                @error('restaurant-name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="restaurant-address" class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="restaurant-address" type="text" class="form-control @error('restaurant-address') is-invalid @enderror" name="restaurant-address" required autocomplete="restaurant-address">
+
+                                @error('restaurant-address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <p>Inserisci una o più tipologie del ristorante</p>
+                            @foreach ($categories as $category)
+                                <div class="form-check">
+                                    <input name="categories[]" class="form-check-input" type="checkbox" value="{{ $category->id }} {{ in_array($category->id, old('categories', [])) ? 'checked=checked' : '' }}">
+                                    <label class="form-check-label">
+                                        {{ $category->name }}
+                                    </label>
+                                </div>
+                            @endforeach
+                            @error('categories')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
