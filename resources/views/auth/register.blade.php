@@ -103,7 +103,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <p>Inserisci una o più tipologie del ristorante</p>
                             @foreach ($categories as $category)
                                 <div class="form-check">
@@ -118,7 +118,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
+                        </div> --}}
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
