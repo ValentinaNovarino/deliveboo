@@ -4,11 +4,21 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col 12">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+            @endif
             <h1>crea un nuovo piatto</h1>
-            <form>
+            <form method="POST" action="{{ route('admin.dishes.store') }}">
+                @csrf
                 <div class="form-group">
                     <label for="dishName">Dishes name</label>
-                    <input type="text" id="dishName" class="form-control" placeholder="Enter dish name">
+                    <input type="text" id="dishName" class="form-control" placeholder="Enter dish name" name="name">
                     <small class="form-text text-muted">Lorem ipsum dolor sit amet.</small>
                 </div>
                 <div class="form-group">
@@ -20,6 +30,21 @@
                   <textarea class="form-control" id="dishDescription" rows="3" cols="8" placeholder="Enter Description"></textarea>
                 </div>
                 <div class="form-group">
+                    <p>Select tags</p>
+                    @foreach ($categories as $category)
+                        <div class="form-check">
+                            <input name="categories[]" id="categoriesCheck" class="form-check-input" type="checkbox" value="{{ $category->id }}"
+                            {{ in_array($category->id, old('categories', [])) ? 'checked=checked' : '' }}>
+                            <label class="form-check-label" for="categoriesCheck">
+                                {{ $category->name }}
+                            </label>
+                        </div>
+                    @endforeach
+                    @error('tags')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                {{-- <div class="form-group">
                     <label for="">Select Dish Categories</label>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input">
@@ -33,10 +58,21 @@
                         <input type="checkbox" class="form-check-input">
                         <label class="form-check-label" for="">Check me out</label>
                     </div>
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <label for="dishPrice">Dish Price</label>
-                    <input type="number" id="dishPrice" min="1" step="0.01" />
+                    <input type="number" id="dishPrice" min="1" step="0.01" placeholder="€"/>
+                </div>
+                <div class="form-group">
+                    <label>Visible ?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="visibleYes" value="1">
+                        <label class="form-check-label" for="visibleYes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="visibleNo" value="2">
+                        <label class="form-check-label" for="visibleNo">No</label>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
