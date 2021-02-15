@@ -14,41 +14,33 @@
                 </div>
             @endif
             <h1>crea un nuovo piatto</h1>
-            <form method="POST" action="{{ route('admin.dishes.store') }}">
+            <form method="POST" action="{{ route('admin.dishes.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="dishName">Dishes name</label>
-                    <input type="text" id="dishName" class="form-control" placeholder="Enter dish name" name="name" value="{{ old('name') }}">
+                    <input type="text" id="dishName" class="form-control" placeholder="Enter dish name" name="name" value="{{ old('name') }}" required>
                     @error('name')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <small class="form-text text-muted">Lorem ipsum dolor sit amet.</small>
                 </div>
                 <div class="form-group">
+                    <label for="dishImage">Enter Dish image</label>
+                    <input id="dishImage" type="file" name="image" class="form-control-file @error('image') is-invalid @enderror">
+                    @error('image')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
                   <label for="dishDescription">Dish Description</label>
-                  <textarea class="form-control" id="dishDescription" rows="3" cols="8" placeholder="Enter Ingredients And Description" name="description"></textarea>
+                  <textarea class="form-control" id="dishDescription" rows="3" cols="8" placeholder="Enter Ingredients And Description" name="description" required>{{ old('description') }}</textarea>
                   @error('description')
                       <div class="alert alert-danger">{{ $message }}</div>
                   @enderror
                 </div>
                 <div class="form-group">
-                    <p>Select tags</p>
-                    @foreach ($categories as $category)
-                        <div class="form-check">
-                            <input name="categories[]" id="categoriesCheck" class="form-check-input" type="checkbox" value="{{ $category->id }}"
-                            {{ in_array($category->id, old('categories', [])) ? 'checked=checked' : '' }}>
-                            <label class="form-check-label" for="categoriesCheck">
-                                {{ $category->name }}
-                            </label>
-                        </div>
-                    @endforeach
-                    @error('')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="form-group">
                     <label for="dishPrice">Dish Price</label>
-                    <input type="number" id="dishPrice" min="1" step="0.01" placeholder="€" name="price" value="{{ old('price') }}"/>
+                    <input type="number" id="dishPrice" min="1" step="0.01" placeholder="€" name="price" value="{{ old('price') }}" required>
                     @error('price')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -56,11 +48,11 @@
                 <div class="form-group">
                     <label>Visible ?</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="visibleYes" value="1">
+                        <input class="form-check-input" type="radio" name="visible" id="visibleYes" value="1" required>
                         <label class="form-check-label" for="visibleYes">Yes</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="visibleNo" value="2">
+                        <input class="form-check-input" type="radio" name="visible" id="visibleNo" value="0" required>
                         <label class="form-check-label" for="visibleNo">No</label>
                     </div>
                 </div>

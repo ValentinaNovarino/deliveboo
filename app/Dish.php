@@ -13,4 +13,6 @@ class Dish extends Model
     public function menu_sections(){
         return $this->belongsTo('App\MenuSection');
     }
+
+    protected $fillable = ['name', 'slug', 'price', 'description', 'visible', 'cover' ];
 }
