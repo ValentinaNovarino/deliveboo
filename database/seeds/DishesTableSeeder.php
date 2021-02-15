@@ -39,5 +39,5 @@ class DishesTableSeeder extends Seeder
 
         $newDish->save();
         }
-    }
+    };
 }
