@@ -1,0 +1,29 @@
+.header-top {
+  position: relative;
+  height: 350px;
+  background-color: $colorPrimary;
+  clip-path: polygon(0 0, 207% 0, 0 18vw, 0 18vw);
+}
+
+
+.header-bottom {
+  margin-top: -9vw;
+  background-color: $colorSecondary;
+  height: 300px;
+
+}
+
+.logo img{
+    width: 170px;
+}
+
+.titleHeader h1{
+    color: #440063;
+    padding-top: 118px;
+    font-size: 52px;
+    font-weight: bold;
+}
+
+.search-header{
+    margin-top:180px;
+}
