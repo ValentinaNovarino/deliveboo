@@ -28,4 +28,7 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     // Route::get('/dishes', 'DishController@index')->name('dish.index');
     // Route::get('/dishes', 'DishController@index')->name('dish.index');
 
+    Route::resource('statistics', 'StatisticController');
+
+
 });
