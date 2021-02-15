@@ -12,30 +12,30 @@ class RestaurantsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
-    {
-        for ($i=0; $i < 20 ; $i++) {
-        $newRestaurant = new Restaurant();
-        $newRestaurant->name = $faker->sentence(2);
-        $newRestaurant->city = $faker->word();
-        $newRestaurant->address = $faker->sentence(3);
+     public function run(Faker $faker)
+     {
+         for ($i=0; $i < 20 ; $i++) {
+         $newRestaurant = new Restaurant();
+         $newRestaurant->name = $faker->sentence(2);
+         $newRestaurant->city = $faker->word();
+         $newRestaurant->address = $faker->sentence(3);
 
-        $slug = Str::slug($newRestaurant->name, '-');
+         $slug = Str::slug($newRestaurant->name, '-');
 
-        $slugEditable = $slug;
+         $slugEditable = $slug;
 
-        $currentSlug = Restaurant::where('slug', $slug)->first();
+         $currentSlug = Restaurant::where('slug', $slug)->first();
 
-        $counter = 1;
-        while($currentSlug) {
-            $slug = $slugEditable . '-' . $counter;
-            $counter++;
-            $currentSlug = Restaurant::where('slug', $slug)->first();
-        }
+         $counter = 1;
+         while($currentSlug) {
+             $slug = $slugEditable . '-' . $counter;
+             $counter++;
+             $currentSlug = Restaurant::where('slug', $slug)->first();
+         }
 
-        $newRestaurant->slug = $slug;
+         $newRestaurant->slug = $slug;
 
         $newRestaurant->save();
         }
-    };
+    }
 }
