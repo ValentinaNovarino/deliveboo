@@ -10952,6 +10952,10 @@ a.text-dark:focus {
   text-transform: capitalize;
 }
 
+.wrap {
+  background-color: #00ccbc;
+}
+
 .header-top {
   position: relative;
   height: 350px;

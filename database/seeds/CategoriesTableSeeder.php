@@ -13,9 +13,14 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< Updated upstream
         $categoriesData = config('categories');
 
         for ($i=0; $i < count($categoriesData) ; $i++) {
+=======
+        $categoriesData = config('categories.php');
+        for ($i=0; $i < $categoriesData; $i++) {
+>>>>>>> Stashed changes
 
             $newCategory = new Category();
 
