@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('admin.content')
-<div class="container">
+<div class="container border-form p-5">
     <div class="row justify-content-center">
         <div class="col 12">
             @if ($errors->any())
@@ -19,7 +19,7 @@
                 @method('PUT')
                 <div class="form-group">
                     <label for="dishName">Dishes name</label>
-                    <input type="text" id="dishName" class="form-control" placeholder="Enter dish name" name="name" value="{{ old('name', $dish->name) }}" required maxlength="100">
+                    <input type="text" id="dishName" class="form-control-deliveroo" placeholder="Enter dish name" name="name" value="{{ old('name', $dish->name) }}" required maxlength="100">
                     @error('name')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -34,14 +34,14 @@
                 </div>
                 <div class="form-group">
                   <label for="dishDescription">Dish Description</label>
-                  <textarea class="form-control" id="dishDescription" rows="3" cols="8" placeholder="Enter Ingredients And Description" name="description" required>{{ old('description', $dish->description) }}</textarea>
+                  <textarea class="form-control-deliveroo" id="dishDescription" rows="3" cols="8" placeholder="Enter Ingredients And Description" name="description" required>{{ old('description', $dish->description) }}</textarea>
                   @error('description')
                       <div class="alert alert-danger">{{ $message }}</div>
                   @enderror
                 </div>
                 <div class="form-group">
                     <label for="dishPrice">Dish Price</label>
-                    <input type="number" id="dishPrice" min="1" step="0.01" placeholder="€" name="price" value="{{ old('price', $dish->price) }}" required>
+                    <input type="number" id="dishPrice" class="form-control-deliveroo" min="1" step="0.01" placeholder="€" name="price" value="{{ old('price', $dish->price) }}" required>
                     @error('price')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -60,7 +60,7 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-deliveroo">Submit</button>
             </form>
         </div>
     </div>

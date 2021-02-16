@@ -10975,6 +10975,17 @@ a.text-dark:focus {
   border: 1px solid #00ccbc;
 }
 
+.btn-deliveroo {
+  background-color: #00ccbc;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.btn-deliveroo:hover {
+  opacity: 0.8;
+  transition: 0.5s;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
@@ -11186,6 +11197,10 @@ footer .nav-icon .copyright span {
 .container-xl nav {
   background: linear-gradient(96deg, #d0eb99 63%, #00ccbc 100%);
 }
+.border-form {
+  border: 10px solid #00ccbc;
+  border-radius: 5px;
+}
 
 .sidebar-nav {
   height: 100%;
@@ -11224,5 +11239,19 @@ footer .nav-icon .copyright span {
 
 .header-card-restaurants h1 {
   color: #440063;
+}
+
+
+.form-control-deliveroo {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid #00ccbc;
+}
+
+.form-control-deliveroo:focus {
+  border-radius: 5px;
+  box-shadow: 0 0 5px #00ccbc;
 }
 
