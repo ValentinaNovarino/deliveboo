@@ -11197,6 +11197,10 @@ footer .nav-icon .copyright span {
 .container-xl nav {
   background: linear-gradient(96deg, #d0eb99 63%, #00ccbc 100%);
 }
+.jumbo-first {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
 
 .sidebar-nav {
   height: 100%;
@@ -11253,5 +11257,76 @@ footer .nav-icon .copyright span {
 .form-control-deliveroo:focus {
   border-radius: 5px;
   box-shadow: 0 0 5px #00ccbc;
+}
+
+
+.jumbo-first h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.img-small {
+  width: 100%;
+  height: 170px;
+}
+
+.img-large {
+  width: 100%;
+  height: 170px;
+}
+
+.menu-image-large,
+.menu-image-small {
+  padding-top: 20px;
+}
+
+.menu-image-large p,
+.menu-image-small p {
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+.menu-image-large a,
+.menu-image-small a {
+  color: #00a396;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cibi-preferiti {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  background-color: #ffeae4;
+}
+
+.cibi-preferiti h1 {
+  font-weight: bold;
+  font-size: 50px;
+  padding-bottom: 20px;
+}
+
+.cibi-preferiti h2 {
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.cibi-preferiti p {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.cerca-tipo h1 {
+  font-weight: bold;
+  font-size: 50px;
+  padding-bottom: 30px;
+  padding-top: 40px;
+}
+
+.cerca-tipo span {
+  font-size: 40px;
+  font-weight: bold;
+  padding-right: 30px;
 }
 
