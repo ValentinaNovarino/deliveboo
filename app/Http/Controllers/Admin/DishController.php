@@ -107,9 +107,14 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        return view('admin.dishes.edit');
+        $dish = Dish::where('slug', $slug)->first();
+        // dd($dish);
+        $data = [
+            'dish' => $dish
+        ];
+        return view('admin.dishes.edit', $data);
     }
 
     /**
