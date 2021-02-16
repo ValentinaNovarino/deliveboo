@@ -10952,6 +10952,10 @@ a.text-dark:focus {
   text-transform: capitalize;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .header-top {
   position: relative;
   height: 350px;
@@ -11044,5 +11048,45 @@ a.text-dark:focus {
   margin-left: 30px;
   padding-top: 20px;
   width: 70%;
+}
+
+.container-fluid nav,
+.container-sm nav,
+.container-md nav,
+.container-lg nav,
+.container-xl nav {
+  border-right: 1px solid #440063;
+  background: linear-gradient(96deg, #d0eb99 63%, #00ccbc 100%);
+}
+
+.sidebar-nav {
+  height: 100%;
+}
+
+.logo {
+  height: 40px;
+}
+
+.sidebar-nav .link {
+  height: calc(100% - 40px);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-nav .link a.nav-link {
+  color: #440063;
+  font-family: "Nunito", sans-serif;
+  font-size: 23px;
+  padding-top: 16px;
+}
+
+.sidebar-nav .link a.logout {
+  color: #d0eb99;
+  background-color: #440063;
+  border-radius: 5px;
+  padding-bottom: 16px;
+  text-align: center;
 }
 
