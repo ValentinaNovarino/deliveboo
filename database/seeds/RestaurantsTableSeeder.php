@@ -35,9 +35,7 @@ class RestaurantsTableSeeder extends Seeder
 
          $newRestaurant->slug = $slug;
 
-         $newRestaurant->save();
-         }
-     }
-
-
+        $newRestaurant->save();
+        }
+    }
 }

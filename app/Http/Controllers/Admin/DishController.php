@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dish;
-use App\Category;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +17,11 @@ class DishController extends Controller
      */
     public function index()
     {
-        return view('admin.dishes.index');
+        $dishes = Dish::all();
+        $data = [
+            'dishes' => $dishes,
+        ];
+        return view('admin.dishes.index', $data);
     }
 
     /**
@@ -28,6 +31,7 @@ class DishController extends Controller
      */
     public function create()
     {
+
         return view('admin.dishes.create');
     }
 
@@ -85,9 +89,16 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $dish = Dish::where('slug', $slug)->first();
+        // dd($dish);
+        if (!$slug) {
+            abort(404);
+        }
+        $data = ['dish' => $dish];
+        // dd($data);
+        return view('admin.dishes.show', $data);
     }
 
     /**
