@@ -21,19 +21,24 @@
     text-transform: uppercase;
 }
 
-.btn.btn-info {
-    background-color: $colorPrimary;
-    color: $colorCurrent;
-    border: 1px solid $colorPrimary;
-}
-
-
 .btn-deliveroo{
     background-color: $colorPrimary;
-    color: #fff;
+    color: $colorCurrent;
     padding: 10px 20px;
 
     &:hover{
+        color: $colorSecondary;
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+}
+
+.secondary-btn-deliveroo {
+    background-color: $colorSecondary;
+    color: $colorTitleHaeder;
+
+    &:hover{
+        color: $colorPrimary;
         opacity: 0.8;
         transition: 0.5s;
     }
