@@ -18,7 +18,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @if (count($restaurants) > 1)
+                        <h3>seleziona il tuo ristorante</h3>
+                        <select class="" name="">
+                            <option value="">seleziona ristorante</option>
+                            @foreach ($restaurants as $restaurant)
+                                <option value="{{$restaurant->id}}">{{ $restaurant->name }}</option>
+                            @endforeach
+                        </select>
+                    @endif
                     @foreach ($dishes as $dish)
+                        @foreach ($dish as $item)
+                            <p>{{ $item->name }}</p>
+                        @endforeach
+                    @endforeach
+                    {{-- {{ dd($dishes) }} --}}
+                    {{-- @foreach ($dishes as $dish)
                         <tr>
                             <td>{{ $dish->id }}</td>
                             <td>{{ $dish->name }}</td>
@@ -38,7 +53,7 @@
                                 </form>
                             </td>
                         </tr>
-                    @endforeach
+                    @endforeach --}}
                 </tbody>
             </table>
         </div>
