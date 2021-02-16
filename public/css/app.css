@@ -10965,18 +10965,10 @@ a.text-dark:focus {
   border: none;
 }
 
-.header-top {
-  position: relative;
-  height: 350px;
-  background-color: #00ccbc;
-  -webkit-clip-path: polygon(0 0, 207% 0, 0 18vw, 0 18vw);
-          clip-path: polygon(0 0, 207% 0, 0 18vw, 0 18vw);
-}
-
-.header-bottom {
-  margin-top: -9vw;
-  background-color: #d0eb99;
-  height: 374px;
+.wrap {
+  background: #00ccbc;
+  background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
+  width: 100%;
 }
 
 .logo img {

@@ -1,25 +1,8 @@
-// .wrap{
-//     // background: rgb(0,204,188);
-//     background-image: linear-gradient(177deg, rgba(0,204,188,1) 49%, rgba(208,235,153,1) 49%);
-//
-// }
-
 .wrap{
-    background-color: $colorPrimary
-}
+    background: rgb(0,204,188);
+    background-image: linear-gradient(177deg, rgba(0,204,188,1) 49%, rgba(208,235,153,1) 49%);
 
-.header-top {
-   position: relative;
-   height: 350px;
-   background-color: $colorPrimary;
-   clip-path: polygon(0 0, 207% 0, 0 18vw, 0 18vw);
-}
-
-
-.header-bottom {
-    margin-top: -9vw;
-    background-color: $colorSecondary;
-    height:374px;
+    width: 100%;
 
 }
 
