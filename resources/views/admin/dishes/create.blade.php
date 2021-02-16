@@ -55,6 +55,9 @@
                         <input class="form-check-input" type="radio" name="visible" id="visibleNo" value="0" required>
                         <label class="form-check-label" for="visibleNo">No</label>
                     </div>
+                    @error('visible')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
