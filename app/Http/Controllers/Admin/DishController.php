@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dish;
+use App\Restaurant;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class DishController extends Controller
 {
@@ -15,11 +17,22 @@ class DishController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Dish $dish)
     {
-        $dishes = Dish::all();
+        // dd($dish->restaurants());
+        $userRestaurant = Restaurant::where('user_id', Auth::user()->id)->get();
+        $arrayRid = [];
+        for ($i=0; $i < count($userRestaurant) ; $i++) {
+            $rid = $userRestaurant[$i]->id;
+            $newDisches = Dish::where('restaurant_id', $rid)->get();
+            $arrayRid[] = $newDisches;
+        }
+        // dd($arrayRid);
+
+        // $dishes = Dish::all();
         $data = [
-            'dishes' => $dishes,
+            'dishes' => $arrayRid,
+            'restaurants' => $userRestaurant
         ];
         return view('admin.dishes.index', $data);
     }
