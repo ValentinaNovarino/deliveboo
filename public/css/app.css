@@ -10969,6 +10969,12 @@ a.text-dark:focus {
   text-transform: uppercase;
 }
 
+.btn.btn-info {
+  background-color: #00ccbc;
+  color: white;
+  border: 1px solid #00ccbc;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
@@ -11178,7 +11184,6 @@ footer .nav-icon .copyright span {
 .container-md nav,
 .container-lg nav,
 .container-xl nav {
-  border-right: 1px solid #440063;
   background: linear-gradient(96deg, #d0eb99 63%, #00ccbc 100%);
 }
 
@@ -11187,11 +11192,15 @@ footer .nav-icon .copyright span {
 }
 
 .logo {
-  height: 40px;
+  height: 60px;
+}
+
+.logo img {
+  width: 100%;
 }
 
 .sidebar-nav .link {
-  height: calc(100% - 40px);
+  height: calc(100% - 60px);
   padding-top: 10px;
   display: flex;
   flex-direction: column;
@@ -11209,7 +11218,11 @@ footer .nav-icon .copyright span {
   color: #d0eb99;
   background-color: #440063;
   border-radius: 5px;
-  padding-bottom: 16px;
+  padding: 8px;
   text-align: center;
+}
+
+.header-card-restaurants h1 {
+  color: #440063;
 }
 
