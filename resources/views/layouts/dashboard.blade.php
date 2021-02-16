@@ -24,9 +24,6 @@
 </head>
 <body>
     <div class="container-dashboard d-flex flex-column vh-100">
-        {{-- <nav class="navbar navbar-expand-md navbar-dark bg-dark flex-md-nowrap p-0">
-            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">DeliveBoo</a>
-        </nav> --}}
         <div class="container-fluid h-100">
             <div class="row h-100">
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar py-4 border-right">

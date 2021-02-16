@@ -20,3 +20,9 @@
 .uppercase {
     text-transform: uppercase;
 }
+
+.btn.btn-info {
+    background-color: $colorPrimary;
+    color: $colorCurrent;
+    border: 1px solid $colorPrimary;
+}
