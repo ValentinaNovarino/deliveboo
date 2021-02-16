@@ -62,10 +62,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="iva" class="col-md-4 col-form-label text-md-right">{{ __('Iva') }}</label>
+                            <label for="iva" class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva') }}</label>
 
                             <div class="col-md-6">
-                                <input id="iva" type="iva" class="form-control @error('iva') is-invalid @enderror" name="iva" required autocomplete="new-iva">
+                                <input id="iva" type="text" maxlength="11" class="form-control @error('iva') is-invalid @enderror" name="iva" required autocomplete="new-iva">
 
                                 @error('iva')
                                     <span class="invalid-feedback" role="alert">

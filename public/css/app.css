@@ -11059,3 +11059,121 @@ a.text-dark:focus {
   width: 70%;
 }
 
+footer {
+  background-color: #2E3333;
+  margin-top: 20px;
+  padding: 20px 60px;
+}
+
+footer .box-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer .box-container .box-footer {
+  width: 250px;
+  height: auto;
+  background-color: #434848;
+  padding: 20px;
+  margin: 10px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+footer .box-container .box-footer h5 {
+  font-weight: bold;
+}
+
+footer .box-container .box-footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+footer .box-container .box-footer ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer .box-container .box-footer ul li a:hover {
+  color: #00a396;
+}
+
+footer .box-container .app-store,
+footer .box-container .google-store {
+  display: block;
+  background-color: black;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+}
+
+footer .box-container .app-store:hover a,
+footer .box-container .google-store:hover a {
+  color: #00a396;
+  cursor: pointer;
+}
+
+footer .box-container .app-store a,
+footer .box-container .google-store a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+}
+
+footer .box-container .app-store a #icon-apple,
+footer .box-container .app-store a #icon-google,
+footer .box-container .google-store a #icon-apple,
+footer .box-container .google-store a #icon-google {
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+footer .nav-icon {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .nav-icon .box-icon span {
+  margin-right: 10px;
+}
+
+footer .nav-icon .box-icon span #icon-fb {
+  font-size: 25px;
+  color: #fff;
+}
+
+footer .nav-icon .box-icon span #icon-fb:hover {
+  color: #3b5998;
+  cursor: pointer;
+}
+
+footer .nav-icon .box-icon span #icon-tw {
+  font-size: 25px;
+  color: #fff;
+}
+
+footer .nav-icon .box-icon span #icon-tw:hover {
+  color: #199ec1;
+  cursor: pointer;
+}
+
+footer .nav-icon .box-icon span #icon-ig {
+  font-size: 25px;
+  color: #fff;
+}
+
+footer .nav-icon .box-icon span #icon-ig:hover {
+  color: #de77c1;
+  cursor: pointer;
+}
+
+footer .nav-icon .copyright span {
+  font-size: 16px;
+  color: #6C8585;
+}
+

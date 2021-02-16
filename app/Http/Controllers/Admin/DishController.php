@@ -93,7 +93,7 @@ class DishController extends Controller
     {
         $dish = Dish::where('slug', $slug)->first();
         // dd($dish);
-        if (!$slug) {
+        if (!$dish) {
             abort(404);
         }
         $data = ['dish' => $dish];
@@ -107,9 +107,17 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        return view('admin.dishes.edit');
+        $dish = Dish::where('slug', $slug)->first();
+        // dd($dish);
+        if (!$dish) {
+            abort(404);
+        }
+        $data = [
+            'dish' => $dish
+        ];
+        return view('admin.dishes.edit', $data);
     }
 
     /**
@@ -119,9 +127,46 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        $dish = Dish::where('slug', $slug)->first();
+        // dd($dish);
+
+        $request->validate([
+            'name' => 'required|max:100',
+            'description' => 'required',
+            'visible' => 'required|boolean',
+            'price' => 'required|numeric|gt:0',
+            'image' => 'nullable|image|max:512'
+        ]);
+        $data = $request->all();
+
+        if(array_key_exists('image', $data)) {
+            $coverPath = Storage::put('dishesCover', $data['image']);
+            $data['cover'] = $coverPath;
+        }
+
+        if ($data['name'] != $dish->name) {
+
+            $slug = Str::slug($data['name'], '-');
+
+            $slugEditable = $slug;
+
+            $currentSlug = Dish::where('slug', $slug)->first();
+
+            $counter = 1;
+            while($currentSlug) {
+                $slug = $slugEditable . '-' . $counter;
+                $counter++;
+                $currentSlug = Dish::where('slug', $slug)->first();
+            }
+
+            $data['slug'] = $slug;
+        }
+
+        $dish->update($data);
+
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
@@ -130,8 +175,11 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        $dish = Dish::where('slug', $slug)->first();
+
+        $dish->delete();
+        return redirect()->route('admin.dishes.index');
     }
 }
