@@ -109,7 +109,7 @@ class DishController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.dishes.edit');
     }
 
     /**
