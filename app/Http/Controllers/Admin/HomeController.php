@@ -8,10 +8,15 @@ use App\Restaurant;
 
 class HomeController extends Controller
 {
-    public function index($id) {
-        $data = [
-            'restaurants' => Restaurant::where('user_id', $id)->get()
-        ];
-        return view('admin.home', $data);
+    public function index() {
+
+        return view('admin.home');
     }
+
+    // public function showRestaurant($id) {
+    //     $data = [
+    //         'restaurants' => Restaurant::where('user_id', $id)->get()
+    //     ];
+    //     return view('admin.home', $data);
+    // }
 }

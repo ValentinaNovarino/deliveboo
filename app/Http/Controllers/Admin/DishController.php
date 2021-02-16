@@ -45,9 +45,9 @@ class DishController extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'name' => 'required | max:100 |',
+            'name' => 'required|max:100',
             'description' => 'required',
-            'visible' => 'required',
+            'visible' => 'required|boolean',
             'price' => 'required|numeric|gt:0',
             'image' => 'nullable|image|max:512'
         ]);
@@ -109,7 +109,7 @@ class DishController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.dishes.edit');
     }
 
     /**

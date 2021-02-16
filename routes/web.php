@@ -23,10 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
 
-    Route::get('/{id}', 'HomeController@index')->name('index');
+    Route::get('/', 'HomeController@index')->name('index');
+    // Route::get('/{id}', 'HomeController@index')->name('index');
     Route::resource('dishes', 'DishController');
-    // Route::get('/dishes', 'DishController@index')->name('dish.index');
-    // Route::get('/dishes', 'DishController@index')->name('dish.index');
 
     Route::resource('statistics', 'StatisticController');
 
