@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Category;
+use Illuminate\Support\Str;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -12,13 +13,13 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $categoriesData = config('categories.php');
+        $categoriesData = config('categories');
 
-        for ($i=0; $i < $categoriesData ; $i++) {
+        for ($i=0; $i < count($categoriesData) ; $i++) {
 
             $newCategory = new Category();
 
-            $newCategory->name = $categoriesData[$i]->name;
+            $newCategory->name = $categoriesData[$i]['name'];
 
             $slug = Str::slug($newCategory->name, '-');
 
@@ -31,11 +32,12 @@ class CategoriesTableSeeder extends Seeder
                 $slug = $slugEditable . '-' . $counter;
                 $counter++;
                 $currentSlug = Category::where('slug', $slug)->first();
-            }
+             }
 
             $newCategory->slug = $slug;
 
             $newCategory->save();
         }
+
     }
 }
