@@ -10965,6 +10965,10 @@ a.text-dark:focus {
   border: none;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
@@ -11167,5 +11171,45 @@ footer .nav-icon .box-icon span #icon-ig:hover {
 footer .nav-icon .copyright span {
   font-size: 16px;
   color: #6C8585;
+}
+
+.container-fluid nav,
+.container-sm nav,
+.container-md nav,
+.container-lg nav,
+.container-xl nav {
+  border-right: 1px solid #440063;
+  background: linear-gradient(96deg, #d0eb99 63%, #00ccbc 100%);
+}
+
+.sidebar-nav {
+  height: 100%;
+}
+
+.logo {
+  height: 40px;
+}
+
+.sidebar-nav .link {
+  height: calc(100% - 40px);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-nav .link a.nav-link {
+  color: #440063;
+  font-family: "Nunito", sans-serif;
+  font-size: 23px;
+  padding-top: 16px;
+}
+
+.sidebar-nav .link a.logout {
+  color: #d0eb99;
+  background-color: #440063;
+  border-radius: 5px;
+  padding-bottom: 16px;
+  text-align: center;
 }
 
