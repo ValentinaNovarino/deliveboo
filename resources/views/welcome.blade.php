@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-XS-12">
+                <div class="col-xs-12">
                     <div class="titleHeader">
                         <h1>I piatti che ami, a domicilio.</h1>
                     </div>
@@ -37,18 +37,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="search-header">
-                        <input  type="search" name="" value="">
+                    <div class="div-search">
+                        <div class="search-header">
+                            <p>Scegli la tipologia di ristorante che preferisci</p>
+                                <input class="search-home"  type="search" name="" value="" placeholder="Inserisci..">
+                                <button class="capitalize btn btn-primary" type="button" name="button">cerca</button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-5">
                     <div class="image-header">
-                        <img src="{{'../img/campaign.png'}}" alt="">
+                        <img src="{{'../img/campaignrit.png'}}" alt="">
+                        <div class="riquadro-blu-header">
+                            <div class="riquadro-blu-header-inside">
+                                <h1>#aCasaTuaConDeliveroo</h1>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
         </div>
-
     </div>
 </div>
+
+@endsection
