@@ -16,3 +16,15 @@
         border: none;
     }
 }
+
+
+.btn-deliveroo{
+    background-color: $colorPrimary;
+    color: #fff;
+    padding: 10px 20px;
+
+    &:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+}

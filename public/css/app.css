@@ -10965,6 +10965,17 @@ a.text-dark:focus {
   border: none;
 }
 
+.btn-deliveroo {
+  background-color: #00ccbc;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.btn-deliveroo:hover {
+  opacity: 0.8;
+  transition: 0.5s;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
@@ -11167,5 +11178,23 @@ footer .nav-icon .box-icon span #icon-ig:hover {
 footer .nav-icon .copyright span {
   font-size: 16px;
   color: #6C8585;
+}
+
+.border-form {
+  border: 10px solid #00ccbc;
+  border-radius: 5px;
+}
+
+.form-control-deliveroo {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid #00ccbc;
+}
+
+.form-control-deliveroo:focus {
+  border-radius: 5px;
+  box-shadow: 0 0 5px #00ccbc;
 }
 
