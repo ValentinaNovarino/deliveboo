@@ -18,7 +18,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="dishName">Dishes name</label>
-                    <input type="text" id="dishName" class="form-control" placeholder="Enter dish name" name="name" value="{{ old('name') }}" required>
+                    <input type="text" id="dishName" class="form-control" placeholder="Enter dish name" name="name" value="{{ old('name') }}" required maxlength="100">
                     @error('name')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
