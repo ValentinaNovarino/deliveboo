@@ -5,3 +5,14 @@
 .capitalize{
     text-transform: capitalize;
 }
+
+.card-restaurants{
+    margin: 10px 0;
+    .card-body{
+        width: 33%;
+    }
+    .list-group{
+        width: 33%;
+        border: none;
+    }
+}

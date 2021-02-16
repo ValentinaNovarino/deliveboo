@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Dish;
+use App\Restaurant;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
-class DishController extends Controller
+class RestaurantController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +18,10 @@ class DishController extends Controller
      */
     public function index()
     {
-        $dishes = Dish::all();
         $data = [
-            'dishes' => $dishes,
+            'restaurants' => Restaurant::where('user_id', Auth::user()->id)->get()
         ];
-        return view('admin.dishes.index', $data);
+        return view('admin.home', $data);
     }
 
     /**
@@ -31,8 +31,7 @@ class DishController extends Controller
      */
     public function create()
     {
-
-        return view('admin.dishes.create');
+        return view('admin.restaurants.create');
     }
 
     /**
@@ -43,44 +42,27 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $request->validate([
             'name' => 'required|max:100',
-            'description' => 'required',
-            'visible' => 'required|boolean',
-            'price' => 'required|numeric|gt:0',
-            'image' => 'nullable|image|max:512'
+            'city' => 'required|max:100',
+            'address' => 'required|max:100',
         ]);
         $data = $request->all();
-        $newDish = new Dish();
-
-        // verifico se è stata caricata un'immagine
-        if(array_key_exists('image', $data)) {
-            // salvo l'immagine e recupero la path
-            // il primo parametro del put è una sottocartella che crea quando si fa upload del file
-            $coverPath = Storage::put('dishesCover', $data['image']);
-            $data['cover'] = $coverPath;
-        }
-
-        $newDish->fill($data);
-
-        $slug = Str::slug($newDish->name, '-');
-
+        $newRestaurant = new Restaurant();
+        $newRestaurant->fill($data);
+        $newRestaurant->user_id = Auth::user()->id;
+        $slug = Str::slug($newRestaurant->name, '-');
         $slugEditable = $slug;
-
-        $currentSlug = Dish::where('slug', $slug)->first();
-
+        $currentSlug = Restaurant::where('slug', $slug)->first();
         $counter = 1;
         while($currentSlug) {
             $slug = $slugEditable . '-' . $counter;
             $counter++;
-            $currentSlug = Dish::where('slug', $slug)->first();
+            $currentSlug = Restaurant::where('slug', $slug)->first();
         }
-
-        $newDish->slug = $slug;
-
-        $newDish->save();
-        return redirect()->route('admin.home');
+        $newRestaurant->slug = $slug;
+        $newRestaurant->save();
+        return redirect()->route('admin.restaurants.index');
     }
 
     /**
@@ -89,16 +71,9 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $dish = Dish::where('slug', $slug)->first();
-        // dd($dish);
-        if (!$slug) {
-            abort(404);
-        }
-        $data = ['dish' => $dish];
-        // dd($data);
-        return view('admin.dishes.show', $data);
+        //
     }
 
     /**
@@ -109,7 +84,7 @@ class DishController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.dishes.edit');
+        //
     }
 
     /**

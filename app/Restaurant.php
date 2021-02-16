@@ -21,4 +21,5 @@ class Restaurant extends Model
     public function categories() {
         return $this->belongsToMany('App\Category');
     }
+    protected $fillable = ['name', 'slug', 'city', 'address'];
 }

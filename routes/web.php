@@ -25,8 +25,6 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
     Route::get('/', 'HomeController@showRestaurant')->name('index');
     Route::resource('dishes', 'DishController');
-    
+    Route::resource('restaurants', 'RestaurantController');
     Route::resource('statistics', 'StatisticController');
-
-
 });

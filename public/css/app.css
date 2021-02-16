@@ -10952,6 +10952,19 @@ a.text-dark:focus {
   text-transform: capitalize;
 }
 
+.card-restaurants {
+  margin: 10px 0;
+}
+
+.card-restaurants .card-body {
+  width: 33%;
+}
+
+.card-restaurants .list-group {
+  width: 33%;
+  border: none;
+}
+
 .header-top {
   position: relative;
   height: 350px;
