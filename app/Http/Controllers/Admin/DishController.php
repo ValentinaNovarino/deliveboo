@@ -175,8 +175,11 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        $dish = Dish::where('slug', $slug)->first();
+
+        $dish->delete();
+        return redirect()->route('admin.dishes.index');
     }
 }

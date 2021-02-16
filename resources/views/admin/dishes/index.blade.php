@@ -27,15 +27,15 @@
                                 <a href="{{ route('admin.dishes.show', ['dish'=> $dish->slug ]) }}">
                                     <button class="btn btn-primary">Show</button>
                                 </a>
-                                <button class="btn btn-danger" type="submit">Delete</button>
                                 <a href="{{ route('admin.dishes.edit', ['dish'=>$dish->slug ]) }}">
                                     <button class="btn btn-info">Modify</button>
                                 </a>
-                                {{-- <form class="d-inline"
-                                action="{{ route('admin.post.destroy', ['post'=>$post->id]) }}" method="POST">
+                                <form class="d-inline"
+                                action="{{ route('admin.dishes.destroy', ['dish'=>$dish->slug]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                </form> --}}
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
