@@ -1,3 +1,12 @@
 .header-card-restaurants h1 {
     color: $colorTitleHaeder;
 }
+
+.card {
+    border: 10px solid $colorPrimary;
+
+    a {
+        padding: 5px;
+        border-radius: 5px;
+    }
+}

@@ -7,7 +7,7 @@
             <div class="header-card-restaurants d-flex justify-content-between">
                 <h1>Tutti i tuoi ristoranti</h1>
                 <a href="{{ route('admin.restaurants.create') }}">
-                    <button type="button" class="btn btn-info">Aggiungi nuovo ristorante</button>
+                    <button type="button" class="btn btn-deliveroo">Aggiungi nuovo ristorante</button>
                 </a>
             </div>
         </div>
@@ -26,7 +26,7 @@
                             <li class="list-group-item">Categoria Ristorante</li>
                         </ul>
                         <div class="card-body">
-                            <a href="#" class="card-link">Menu ristorante</a>
+                            <a href="#" class="card-link secondary-btn-deliveroo">Menu ristorante</a>
                         </div>
                     </div>
                 @endforeach

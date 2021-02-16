@@ -12,6 +12,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    {{-- FONTAWESOME --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -36,13 +39,14 @@
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link active" href="{{route('admin.index')}}">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                            {{-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> --}}
+                                            <i class="fas fa-house-user"></i>
                                             Dashboard
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('admin.dishes.index')}}">
-                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56.999 56.999" style="enable-background:new 0 0 56.999 56.999;" xml:space="preserve" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            {{-- <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56.999 56.999" style="enable-background:new 0 0 56.999 56.999;" xml:space="preserve" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <g>
                                                     <path d="M56.784,40.046C56.452,39.4,55.795,39,55.069,39h-1.095c-0.464-12.195-9.362-22.26-21.017-24.52
                                                     C32.974,14.319,33,14.159,33,14c0-2.757-2.243-5-5-5s-5,2.243-5,5c0,0.159,0.025,0.32,0.043,0.48
@@ -62,13 +66,15 @@
                                                     <path d="M17.15,20.899C11.946,23.982,8.158,29.56,7.016,35.82c-0.099,0.544,0.261,1.064,0.805,1.163
                                                     C7.881,36.995,7.941,37,8.001,37c0.474,0,0.895-0.338,0.983-0.82c1.039-5.698,4.473-10.768,9.186-13.56
                                                     c0.475-0.281,0.632-0.895,0.351-1.37C18.238,20.775,17.626,20.618,17.15,20.899z"/>
-                                                </svg>
+                                                </svg> --}}
+                                                <i class="fas fa-utensils"></i>
                                             Dishes
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route("admin.statistics.index")}}">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+                                          {{-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> --}}
+                                          <i class="fas fa-chart-bar"></i>
                                           Statistics
                                         </a>
                                     </li>
@@ -91,7 +97,7 @@
                         </div>
                     </div>
                 </nav>
-                <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4 py-4">
+                <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4 py-4 background-container">
                     @yield('admin.content')
                 </main>
             </div>
