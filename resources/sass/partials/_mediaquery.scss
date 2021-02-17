@@ -17,6 +17,36 @@
     .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
         display: inline-block;
     }
+
+    .cibi-preferiti {
+        padding-top:$spacingTopJumbo;
+        padding-bottom:$spacingBottomJumbo;
+        background-color: #ffeae4;
+
+        img{
+            width: 200px;
+            margin-right:5px;
+        }
+
+
+        h1{
+            font-weight: bold;
+            font-size: 40px;
+            padding-bottom: 10px;
+        }
+
+        h2{
+            font-size: 18px;
+            font-weight: bold;
+            padding-top:10px;
+
+        }
+
+        p{
+            font-size: 13px;
+            padding-bottom:20px;
+        }
+
 }
 
 
@@ -30,6 +60,10 @@
         font-size: 12px;
         padding: 7px 5px;
     }
+
+
+}
+
 
     .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
         padding: 5px;
