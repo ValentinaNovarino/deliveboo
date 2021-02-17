@@ -9,11 +9,26 @@
     font-weight: bold;
     font-size: 20px;
     }
+
+    .btn.show-btn-deliveroo, .btn.modify-btn-deliveroo, .btn.btn-danger.danger-deliveroo {
+        display: none;
+    }
+
+    .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
+        display: inline-block;
+    }
 }
 
 
 @media screen and (max-width: 992px) {
+    .btn-deliveroo {
+        font-size: 12px;
+        padding: 7px 5px;
+    }
 
+    .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
+        padding: 5px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -24,11 +39,19 @@
     font-size: 20px;
     }
 
-    
     .image-header {
         width: 300px;
         overflow: hidden;
     }
+
+    .btn-deliveroo {
+        display: none;
+    }
+
+    .btn.add.btn-deliveroo {
+        display: inline-block;
+    }
+
 }
 
 @media screen and (max-width: 400px) {
