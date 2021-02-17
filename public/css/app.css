@@ -10949,7 +10949,7 @@ body {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
 }
 
 .capitalize {
@@ -11355,6 +11355,11 @@ footer .nav-icon .copyright span {
   padding-top: 30px;
   padding-bottom: 40px;
   background-color: #ffeae4;
+}
+
+.cibi-preferiti img {
+  width: 353px;
+  margin-right: 5px;
 }
 
 .cibi-preferiti h1 {

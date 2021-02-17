@@ -40,10 +40,16 @@ height: 170px;
 }
 
 
-.cibi-preferiti{
+.cibi-preferiti {
     padding-top:$spacingTopJumbo;
     padding-bottom:$spacingBottomJumbo;
     background-color: #ffeae4;
+
+    img{
+        width: 353px;
+        margin-right:5px;
+    }
+
 
     h1{
         font-weight: bold;
