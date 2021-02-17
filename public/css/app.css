@@ -11212,11 +11212,11 @@ footer .nav-icon .copyright span {
   height: 100%;
 }
 
-.logo {
+.dashboard-logo {
   height: 60px;
 }
 
-.logo img {
+.dashboard-logo img {
   width: 100%;
 }
 
@@ -11248,10 +11248,6 @@ footer .nav-icon .copyright span {
   color: #440063;
 }
 
-.jumbo-first {
-  padding-top: 30px;
-  padding-bottom: 40px;
-}
 .card {
   border: 10px solid #00ccbc;
 }
@@ -11261,24 +11257,10 @@ footer .nav-icon .copyright span {
   border-radius: 5px;
 }
 
-.border-form {
-  border: 10px solid #00ccbc;
-  border-radius: 5px;
+.jumbo-first {
+  padding-top: 30px;
+  padding-bottom: 40px;
 }
-
-.form-control-deliveroo {
-  display: block;
-  width: 100%;
-  padding: 5px 10px;
-  outline: none;
-  border: 1px solid #00ccbc;
-}
-
-.form-control-deliveroo:focus {
-  border-radius: 5px;
-  box-shadow: 0 0 5px #00ccbc;
-}
-
 
 .jumbo-first h1 {
   font-weight: bold;

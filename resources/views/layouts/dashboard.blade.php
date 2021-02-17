@@ -36,7 +36,7 @@
             <div class="row h-100">
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar py-4 border-right">
                     <div class="sidebar-nav">
-                        <div class="logo">
+                        <div class="dashboard-logo">
                             <img src="https://logodownload.org/wp-content/uploads/2019/09/deliveroo-logo-2.png" alt="">
                         </div>
                         <div class="sidebar-nav link">
