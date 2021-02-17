@@ -19,24 +19,23 @@ class DishController extends Controller
      */
     public function index(Dish $dish)
     {
-        if () {
-            // code...
-        }
         $userRestaurant = Restaurant::where('user_id', Auth::user()->id)->first();
-        $newDisches = Dish::where('restaurant_id', $userRestaurant->id)->get();
-        // dd($newDisches);
+        if ($userRestaurant) {
+            $newDishes = Dish::where('restaurant_id', $userRestaurant->id)->orderBy('name', 'ASC')->get();
+            $data = [
+                'dishes' => $newDishes,
+            ];
+            return view('admin.dishes.index', $data);
+        }
+        // dd($newDishes);
 
         // $arrayRid = [];
         // for ($i=0; $i < count($userRestaurant) ; $i++) {
         //     $rid = $userRestaurant[$i]->id;
-        //     $newDisches = Dish::where('restaurant_id', $rid)->get();
-        //     $arrayRid[] = $newDisches;
+        //     $newDishes = Dish::where('restaurant_id', $rid)->get();
+        //     $arrayRid[] = $newDishes;
         // }
-
-        $data = [
-            'dishes' => $newDisches,
-        ];
-        return view('admin.dishes.index', $data);
+        return view('admin.restaurants.create');
     }
 
     /**
