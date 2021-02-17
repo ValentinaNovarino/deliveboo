@@ -44,10 +44,10 @@
                         <h1>I piatti che ami, a domicilio.</h1>
                     </div>
                     <div class="div-search">
-                        <div class="search-header">
+                        {{-- <div class="search-header"> --}}
                             <span>Entra e scegli il tuo ristorante</span>
                             <button class="capitalize btn btn-primary" type="button" name="button">cerca</button>
-                        </div>
+                        {{-- </div> --}}
                     </div>
                 </div>
                 <div class="col-md-1 col-xs-12">
