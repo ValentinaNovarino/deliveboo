@@ -11645,3 +11645,26 @@ th {
   height: 50px;
 }
 
+.main-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.main-container #sidebar-wrapper {
+  border: 1px solid gray;
+  padding: 10px 15px;
+}
+
+.main-container .card-restaurant {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 2px solid #00ccbc;
+  border-radius: 0.25rem;
+}
+
