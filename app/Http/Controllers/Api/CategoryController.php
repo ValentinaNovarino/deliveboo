@@ -4,20 +4,21 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Restaurant;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Auth;
+use App\Category;
 
-class DishController extends Controller
+class CategoryController extends Controller
 {
     public function index() {
 
-
-    $data = Dish::all();
+    $categories = Category::all();
+    $prova = Category::with('restaurants')->get();
+    $data = [
+        'categories' => $categories,
+        'prova' => $prova
+    ];
     return response()->json([
         'succes' => true,
         'response' => $data,
     ]);
 }
-
 }

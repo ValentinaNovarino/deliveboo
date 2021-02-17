@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-8 col-xs-12">
                     <div class="logo">
-                        <img class="logo-header"src="{{'../img/logo-bianco.jpg'}}" alt="">
+                        <img class="logo-header" src="{{'../img/logo-bianco.jpg'}}" alt="logo deliveroo">
                     </div>
                 </div>
                 <div class="col-md-2 col-xs-12">
