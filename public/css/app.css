@@ -11031,7 +11031,6 @@ body {
   position: absolute;
   overflow-y: hidden;
   bottom: 0;
-  width: 92%;
   padding: 0 32px;
   margin-left: -32px;
 }
@@ -11335,6 +11334,39 @@ footer .nav-icon .copyright span {
   font-size: 40px;
   font-weight: bold;
   padding-right: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .image-header {
+    width: 300px;
+    overflow: hidden;
+  }
+
+  .riquadro-blu-header-inside h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .riquadro-blu-header-inside h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .image-header {
+    width: 300px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .image-header {
+    width: 200px;
+    overflow: hidden;
+  }
 }
 
 .border-form {
