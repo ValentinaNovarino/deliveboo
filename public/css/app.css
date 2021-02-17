@@ -10996,6 +10996,32 @@ body {
   transition: 0.5s;
 }
 
+.show-btn-deliveroo {
+  background-color: #d0eb99;
+  color: white;
+}
+
+.show-btn-deliveroo:hover {
+  background-color: #9aba59;
+  color: white;
+  transition: 0.15s;
+}
+
+.modify-btn-deliveroo {
+  background-color: #00ccbc;
+  color: white;
+}
+
+.modify-btn-deliveroo:hover {
+  background-color: #02ada0;
+  color: white;
+  transition: 0.15s;
+}
+
+.danger-deliveroo:hover {
+  background-color: #c3342f;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
@@ -11249,6 +11275,7 @@ footer .nav-icon .copyright span {
 
 .header-card-restaurants h1 {
   color: #440063;
+  margin-bottom: 40px;
 }
 
 .card {
@@ -11347,6 +11374,31 @@ footer .nav-icon .copyright span {
     font-weight: bold;
     font-size: 20px;
   }
+
+  .btn.show-btn-deliveroo,
+  .btn.modify-btn-deliveroo,
+  .btn.btn-danger.danger-deliveroo {
+    display: none;
+  }
+
+  .btn.show.show-btn-deliveroo,
+  .btn.modify.modify-btn-deliveroo,
+  .btn.danger.danger-deliveroo {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .btn-deliveroo {
+    font-size: 12px;
+    padding: 7px 5px;
+  }
+
+  .btn.show.show-btn-deliveroo,
+  .btn.modify.modify-btn-deliveroo,
+  .btn.danger.danger-deliveroo {
+    padding: 5px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -11360,6 +11412,14 @@ footer .nav-icon .copyright span {
     width: 300px;
     overflow: hidden;
   }
+
+  .btn-deliveroo {
+    display: none;
+  }
+
+  .btn.add.btn-deliveroo {
+    display: inline-block;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -11367,6 +11427,39 @@ footer .nav-icon .copyright span {
     width: 200px;
     overflow: hidden;
   }
+}
+
+.add-dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.add-dish h1 {
+  color: #440063;
+}
+
+th {
+  width: calc(100% / 4);
+}
+
+.add.btn-deliveroo {
+  padding: 5px 7px;
+  font-size: 14px;
+  display: none;
+}
+
+.show.show-btn-deliveroo {
+  display: none;
+}
+
+.modify.modify-btn-deliveroo {
+  display: none;
+}
+
+.danger.danger-deliveroo {
+  display: none;
 }
 
 .border-form {

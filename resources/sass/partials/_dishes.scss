@@ -1,0 +1,32 @@
+.add-dish {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+    h1 {
+        color: $colorTitleHaeder;
+    }
+}
+
+th {
+    width: calc(100% / 4);
+}
+
+.add.btn-deliveroo {
+    padding: 5px 7px;
+    font-size: 14px;
+    display: none;
+}
+
+.show.show-btn-deliveroo {
+    display: none;
+}
+
+.modify.modify-btn-deliveroo {
+    display: none;
+}
+
+.danger.danger-deliveroo {
+    display: none;
+}
