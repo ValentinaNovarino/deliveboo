@@ -28,3 +28,27 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     Route::resource('restaurants', 'RestaurantController');
     Route::resource('statistics', 'StatisticController');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//rotte frontend
+Route::get('/restaurants', 'RestaurantController@index')->name('guest.restaurants');

@@ -18,5 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('dishes', 'Api\DishController@dishes');
-Route::post('restaurants', 'Api\DishController@restaurants');
+Route::post('dishes', 'Api\DishController@index');
+Route::post('restaurants', 'Api\RestaurantController@index');
+Route::post('categories', 'Api\CategoryController@index');
