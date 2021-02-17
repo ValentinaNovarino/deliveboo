@@ -49,3 +49,29 @@ $fontprimary: 'Stratos Web';
         transition: 0.5s;
     }
 }
+
+.show-btn-deliveroo {
+    background-color: $colorSecondary;
+    color: $colorCurrent;
+
+    &:hover {
+        background-color: #9aba59;
+        color: $colorCurrent;
+        transition: .15s;
+    }
+}
+
+.modify-btn-deliveroo {
+    background-color: $colorPrimary;
+    color: $colorCurrent;
+
+    &:hover {
+        background-color: #02ada0;
+        color: $colorCurrent;
+        transition: .15s;
+    }
+}
+
+.danger-deliveroo:hover {
+    background-color: #c3342f
+}
