@@ -68,25 +68,25 @@
     .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
         padding: 5px;
     }
+
+    .content-dropcart >  {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 862px) {
 
+    .section-dropcart{
+        padding-top: 10px;
+    }
+
     .dropdown-menu.show{
         padding:10px;
         width: 250px !important;
-        left: 20px !important;
+        left: -150px !important;
         box-shadow:0px 5px 30px black;
     }
 
-    .dropdown-menu.show:before{
-        content: " ";
-        position:absolute;
-        top:-20px;
-        right: 220px;
-        border:10px solid transparent;
-        border-bottom-color:#fff;
-    }
 }
 
 @media screen and (max-width: 600px) {
@@ -112,6 +112,19 @@
 
     .btn.add.btn-deliveroo {
         display: inline-block;
+    }
+
+    .btn-deliveroo{
+        display: block;
+    }
+    .dropdown-menu.show{
+        padding:10px;
+        width: 250px !important;
+        left: -90px !important;
+        box-shadow:0px 5px 30px black;
+    }
+    .section-dropcart.dropdown-menu.btn-deliveroo{
+        display: block;
     }
 
 
