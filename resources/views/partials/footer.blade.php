@@ -65,14 +65,14 @@
             <div class="box-footer">
                 <h5>Porta Deliveroo con te</h5>
                 <div class="app-store">
-                    <a href="#"><i id="icon-apple" class="fab fa-apple"></i> App store</a>
+                    <a href="https://apps.apple.com/it/app/deliveroo-piatti-a-domicilio/id1001501844"><i id="icon-apple" class="fab fa-apple"></i> App store</a>
 
                 </div>
                 <div class="google-store">
-                    <a href="#"><i id="icon-google" class="fab fa-google-play"></i> Google Play</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.deliveroo.orderapp&hl=it&gl=US"><i id="icon-google" class="fab fa-google-play"></i> Google Play</a>
 
                 </div>
-                
+
             </div>
 
         </div>

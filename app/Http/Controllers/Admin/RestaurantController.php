@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Restaurant;
+use App\Category;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -16,10 +17,12 @@ class RestaurantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Category $category)
     {
+        $newRestaurant = Restaurant::where('user_id', Auth::user()->id)->first();
         $data = [
-            'restaurants' => Restaurant::where('user_id', Auth::user()->id)->get()
+            'restaurant' => $newRestaurant,
+            'categories' => Category::with('restaurants')->get()
         ];
         return view('admin.home', $data);
     }
@@ -31,7 +34,10 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurants.create');
+        $data = [
+            'categories' => Category::All()
+        ];
+        return view('admin.restaurants.create', $data);
     }
 
     /**
@@ -46,6 +52,7 @@ class RestaurantController extends Controller
             'name' => 'required|max:100',
             'city' => 'required|max:100',
             'address' => 'required|max:100',
+            'categories' => 'required|exists:categories,id'
         ]);
         $data = $request->all();
         $newRestaurant = new Restaurant();
@@ -62,7 +69,10 @@ class RestaurantController extends Controller
         }
         $newRestaurant->slug = $slug;
         $newRestaurant->save();
-        return redirect()->route('admin.restaurants.index');
+        if(array_key_exists('categories', $data)) {
+            $newRestaurant->categories()->sync($data['categories']);
+        }
+        return redirect()->route('admin.restaurants.index', $data['categories']);
     }
 
     /**

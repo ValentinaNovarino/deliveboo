@@ -5,7 +5,7 @@ body{
 $fontprimary: 'Stratos Web';
 
 .container{
-    max-width: 1400px;
+    max-width: 1200px;
 }
 
 .capitalize{
@@ -28,6 +28,7 @@ $fontprimary: 'Stratos Web';
 }
 
 .btn-deliveroo{
+    border: none;
     background-color: $colorPrimary;
     color: $colorCurrent;
     padding: 10px 20px;
@@ -48,4 +49,30 @@ $fontprimary: 'Stratos Web';
         opacity: 0.8;
         transition: 0.5s;
     }
+}
+
+.show-btn-deliveroo {
+    background-color: $colorSecondary;
+    color: $colorCurrent;
+
+    &:hover {
+        background-color: #9aba59;
+        color: $colorCurrent;
+        transition: .15s;
+    }
+}
+
+.modify-btn-deliveroo {
+    background-color: $colorPrimary;
+    color: $colorCurrent;
+
+    &:hover {
+        background-color: #02ada0;
+        color: $colorCurrent;
+        transition: .15s;
+    }
+}
+
+.danger-deliveroo:hover {
+    background-color: #c3342f
 }

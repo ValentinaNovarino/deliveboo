@@ -10949,7 +10949,7 @@ body {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
 }
 
 .capitalize {
@@ -10974,6 +10974,7 @@ body {
 }
 
 .btn-deliveroo {
+  border: none;
   background-color: #00ccbc;
   color: white;
   padding: 10px 20px;
@@ -10996,29 +10997,68 @@ body {
   transition: 0.5s;
 }
 
+.show-btn-deliveroo {
+  background-color: #d0eb99;
+  color: white;
+}
+
+.show-btn-deliveroo:hover {
+  background-color: #9aba59;
+  color: white;
+  transition: 0.15s;
+}
+
+.modify-btn-deliveroo {
+  background-color: #00ccbc;
+  color: white;
+}
+
+.modify-btn-deliveroo:hover {
+  background-color: #02ada0;
+  color: white;
+  transition: 0.15s;
+}
+
+.danger-deliveroo:hover {
+  background-color: #c3342f;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
   width: 100%;
 }
 
+.navbar-color-primary {
+  background-color: #00ccbc;
+  height: 50px;
+}
+
 .logo img {
-  width: 170px;
+  width: 150px;
+}
+
+.header-bottom {
+  padding-top: 101px;
 }
 
 .titleHeader h1 {
   color: #440063;
-  padding-top: 118px;
-  font-size: 52px;
+  font-size: 40px;
   font-weight: bold;
+  padding-top: 44px;
+  padding-bottom: 46px;
 }
 
 .search-header {
-  margin-top: 180px;
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-header {
-  width: 400px;
+  width: 320px;
   overflow: hidden;
 }
 
@@ -11032,40 +11072,41 @@ body {
   overflow-y: hidden;
   bottom: 0;
   padding: 0 32px;
-  margin-left: -32px;
+  margin-left: -70px;
 }
 
 .riquadro-blu-header-inside {
   background-color: #007e8a;
   transform: rotate(3deg);
   transform-origin: left;
-  padding: 36px;
+  padding: 28px 53px;
 }
 
 .riquadro-blu-header-inside h1 {
   color: white;
   font-weight: bold;
+  font-size: 28px;
 }
 
 .div-search {
   background-color: white;
-  height: 45%;
+  height: 36%;
   border-radius: 5px;
 }
 
-.div-search p {
+.div-search span {
   color: #2e3333;
   font-size: 19px;
-  padding-top: 30px;
-  padding-left: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .div-search button {
-  width: 18%;
-  padding: 12px 0;
-  margin-bottom: 26px;
-  font-size: 17px;
-  font-weight: bold;
+  width: 35%;
+  padding: 10px 10px;
+  margin-top: 15px;
+  font-size: 20px;
   background-color: #00ccbc;
 }
 
@@ -11077,8 +11118,8 @@ body {
   border: none;
   border: 1px solid #80808029;
   margin-left: 30px;
-  padding-top: 20px;
-  width: 70%;
+  padding-top: 18px;
+  width: 50%;
 }
 
 footer {
@@ -11089,6 +11130,7 @@ footer {
 
 footer .box-container {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -11249,6 +11291,7 @@ footer .nav-icon .copyright span {
 
 .header-card-restaurants h1 {
   color: #440063;
+  margin-bottom: 40px;
 }
 
 .card {
@@ -11336,7 +11379,7 @@ footer .nav-icon .copyright span {
   padding-right: 30px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1100px) {
   .image-header {
     width: 300px;
     overflow: hidden;
@@ -11346,6 +11389,57 @@ footer .nav-icon .copyright span {
     color: white;
     font-weight: bold;
     font-size: 20px;
+  }
+
+  .btn.show-btn-deliveroo,
+  .btn.modify-btn-deliveroo,
+  .btn.btn-danger.danger-deliveroo {
+    display: none;
+  }
+
+  .btn.show.show-btn-deliveroo,
+  .btn.modify.modify-btn-deliveroo,
+  .btn.danger.danger-deliveroo {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .btn-deliveroo {
+    font-size: 12px;
+    padding: 7px 5px;
+  }
+
+  .btn.show.show-btn-deliveroo,
+  .btn.modify.modify-btn-deliveroo,
+  .btn.danger.danger-deliveroo {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 862px) {
+  .dropdown-menu.show {
+    padding: 10px;
+    width: 250px !important;
+    left: 20px !important;
+    box-shadow: 0px 5px 30px black;
+  }
+
+  .dropdown-menu.show:before {
+    content: " ";
+    position: absolute;
+    top: -20px;
+    right: 220px;
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .div-search button {
+    width: 13%;
+    font-size: 11px;
+    background-color: #00ccbc;
   }
 }
 
@@ -11356,9 +11450,23 @@ footer .nav-icon .copyright span {
     font-size: 20px;
   }
 
+  .div-search button {
+    width: 13%;
+    font-size: 11px;
+    background-color: #00ccbc;
+  }
+
   .image-header {
     width: 300px;
     overflow: hidden;
+  }
+
+  .btn-deliveroo {
+    display: none;
+  }
+
+  .btn.add.btn-deliveroo {
+    display: inline-block;
   }
 }
 
@@ -11367,6 +11475,45 @@ footer .nav-icon .copyright span {
     width: 200px;
     overflow: hidden;
   }
+
+  .div-search button {
+    width: 13%;
+    font-size: 11px;
+    background-color: #00ccbc;
+  }
+}
+
+.add-dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.add-dish h1 {
+  color: #440063;
+}
+
+th {
+  width: calc(100% / 4);
+}
+
+.add.btn-deliveroo {
+  padding: 5px 7px;
+  font-size: 14px;
+  display: none;
+}
+
+.show.show-btn-deliveroo {
+  display: none;
+}
+
+.modify.modify-btn-deliveroo {
+  display: none;
+}
+
+.danger.danger-deliveroo {
+  display: none;
 }
 
 .border-form {
@@ -11385,5 +11532,74 @@ footer .nav-icon .copyright span {
 .form-control-deliveroo:focus {
   border-radius: 5px;
   box-shadow: 0 0 5px #00ccbc;
+}
+
+.dropdown-menu {
+  padding: 20px;
+  width: 300px !important;
+  left: -110px !important;
+  box-shadow: 0px 5px 30px black;
+}
+
+.total-header-section {
+  padding: 5px 5px;
+}
+
+.cart-detail {
+  padding: 15px 0px;
+}
+
+.cart-detail-img img {
+  width: 100%;
+  height: 100%;
+  padding-left: 15px;
+}
+
+.cart-detail-product p {
+  margin: 0px;
+  color: #000;
+  font-weight: 500;
+}
+
+.cart-detail .price {
+  font-size: 12px;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.cart-detail .count {
+  color: #C2C2DC;
+}
+
+.checkout {
+  padding-top: 15px;
+}
+
+.checkout {
+  border-radius: 50px;
+  height: 50px;
+}
+
+.dropdown-menu:before {
+  content: " ";
+  position: absolute;
+  top: -20px;
+  right: 50px;
+  border: 10px solid transparent;
+  border-bottom-color: #fff;
+}
+
+.thumbnail {
+  position: relative;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+.thumbnail img {
+  width: 100%;
+}
+
+.thumbnail .caption {
+  margin: 7px;
 }
 
