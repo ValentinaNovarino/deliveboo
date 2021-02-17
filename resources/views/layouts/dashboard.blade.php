@@ -37,7 +37,7 @@
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar py-4 border-right">
                     <div class="sidebar-nav">
                         <div class="dashboard-logo">
-                            <a href="{{ route('admin.index') }}">
+                            <a href="{{ route('uiHome') }}">
                                 <img src="https://logodownload.org/wp-content/uploads/2019/09/deliveroo-logo-2.png" alt="logo deliveroo">
                             </a>
                         </div>
