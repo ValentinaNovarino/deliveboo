@@ -24,10 +24,17 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light navbar-color-primary">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
+<<<<<<< HEAD
+                    {{-- {{ config('app.name', 'Laravel') }} --}}
+                    <div class="logo">
+                        <img class="logo-header"src="{{'../img/logo-bianco.jpg'}}" alt="">
+                    </div>
+=======
                     Deliveroo
+>>>>>>> main
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

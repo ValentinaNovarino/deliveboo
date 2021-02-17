@@ -10974,7 +10974,6 @@ body {
 }
 
 .btn-deliveroo {
-  border: none;
   background-color: #00ccbc;
   color: white;
   padding: 10px 20px;
@@ -11023,29 +11022,51 @@ body {
   background-color: #c3342f;
 }
 
+.header-card-restaurants h1 {
+  margin: 0 !important;
+  line-height: normal;
+}
+
+.no-restaurant h1 {
+  color: #440063;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
   width: 100%;
 }
 
+.navbar-color-primary {
+  background-color: #00ccbc;
+  height: 50px;
+}
+
 .logo img {
-  width: 170px;
+  width: 150px;
+}
+
+.header-bottom {
+  padding-top: 101px;
 }
 
 .titleHeader h1 {
   color: #440063;
-  padding-top: 118px;
-  font-size: 52px;
+  font-size: 40px;
   font-weight: bold;
+  padding-top: 44px;
+  padding-bottom: 46px;
 }
 
 .search-header {
-  margin-top: 180px;
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-header {
-  width: 400px;
+  width: 320px;
   overflow: hidden;
 }
 
@@ -11059,40 +11080,41 @@ body {
   overflow-y: hidden;
   bottom: 0;
   padding: 0 32px;
-  margin-left: -32px;
+  margin-left: -70px;
 }
 
 .riquadro-blu-header-inside {
   background-color: #007e8a;
   transform: rotate(3deg);
   transform-origin: left;
-  padding: 36px;
+  padding: 28px 53px;
 }
 
 .riquadro-blu-header-inside h1 {
   color: white;
   font-weight: bold;
+  font-size: 28px;
 }
 
 .div-search {
   background-color: white;
-  height: 45%;
+  height: 36%;
   border-radius: 5px;
 }
 
-.div-search p {
+.div-search span {
   color: #2e3333;
   font-size: 19px;
-  padding-top: 30px;
-  padding-left: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .div-search button {
-  width: 18%;
-  padding: 12px 0;
-  margin-bottom: 26px;
-  font-size: 17px;
-  font-weight: bold;
+  width: 35%;
+  padding: 10px 10px;
+  margin-top: 15px;
+  font-size: 20px;
   background-color: #00ccbc;
 }
 
@@ -11104,8 +11126,8 @@ body {
   border: none;
   border: 1px solid #80808029;
   margin-left: 30px;
-  padding-top: 20px;
-  width: 70%;
+  padding-top: 18px;
+  width: 50%;
 }
 
 footer {
@@ -11365,7 +11387,7 @@ footer .nav-icon .copyright span {
   padding-right: 30px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1100px) {
   .image-header {
     width: 300px;
     overflow: hidden;
@@ -11391,6 +11413,12 @@ footer .nav-icon .copyright span {
 }
 
 @media screen and (max-width: 992px) {
+  .div-search button {
+    width: 13%;
+    font-size: 11px;
+    background-color: #00ccbc;
+  }
+
   .btn-deliveroo {
     font-size: 12px;
     padding: 7px 5px;
@@ -11428,6 +11456,12 @@ footer .nav-icon .copyright span {
     font-size: 20px;
   }
 
+  .div-search button {
+    width: 13%;
+    font-size: 11px;
+    background-color: #00ccbc;
+  }
+
   .image-header {
     width: 300px;
     overflow: hidden;
@@ -11446,6 +11480,12 @@ footer .nav-icon .copyright span {
   .image-header {
     width: 200px;
     overflow: hidden;
+  }
+
+  .div-search button {
+    width: 13%;
+    font-size: 11px;
+    background-color: #00ccbc;
   }
 }
 
