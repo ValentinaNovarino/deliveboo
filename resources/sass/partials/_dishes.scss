@@ -1,0 +1,13 @@
+.add-dish {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    h1 {
+        color: $colorTitleHaeder;
+    }
+}
+
+th {
+    width: calc(100% / 4);
+}
