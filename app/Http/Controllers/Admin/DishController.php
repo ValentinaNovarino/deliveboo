@@ -19,6 +19,9 @@ class DishController extends Controller
      */
     public function index(Dish $dish)
     {
+        if () {
+            // code...
+        }
         $userRestaurant = Restaurant::where('user_id', Auth::user()->id)->first();
         $newDisches = Dish::where('restaurant_id', $userRestaurant->id)->get();
         // dd($newDisches);
