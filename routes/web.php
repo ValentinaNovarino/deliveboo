@@ -13,14 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//ROTTE FRONTEND
 Route::get('/', function () {
     return view('welcome');
 })->name('uiHome');
 
 Auth::routes();
 
+Route::get('/restaurants', 'RestaurantController@index')->name('guest.restaurants');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
+//ROTTE BACKEND
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
 
     Route::get('/', 'HomeController@showRestaurant')->name('index');
@@ -28,27 +32,3 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     Route::resource('restaurants', 'RestaurantController');
     Route::resource('statistics', 'StatisticController');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//rotte frontend
-Route::get('/restaurants', 'RestaurantController@index')->name('guest.restaurants');

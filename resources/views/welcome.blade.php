@@ -118,7 +118,7 @@
                     <div class="div-search">
                         {{-- <div class="search-header"> --}}
                             <span>Entra e scegli il tuo ristorante</span>
-                            <button class="capitalize btn btn-primary" type="button" name="button">cerca</button>
+                            <a href="{{ route('guest.restaurants') }}"><button class="capitalize btn btn-primary" type="button" name="button">cerca</button></a>
                         {{-- </div> --}}
                     </div>
                 </div>
