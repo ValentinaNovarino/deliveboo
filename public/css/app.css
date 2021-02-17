@@ -10949,7 +10949,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 .capitalize {
@@ -10974,7 +10974,6 @@ body {
 }
 
 .btn-deliveroo {
-  border: none;
   background-color: #00ccbc;
   color: white;
   padding: 10px 20px;
@@ -11021,6 +11020,15 @@ body {
 
 .danger-deliveroo:hover {
   background-color: #c3342f;
+}
+
+.header-card-restaurants h1 {
+  margin: 0 !important;
+  line-height: normal;
+}
+
+.no-restaurant h1 {
+  color: #440063;
 }
 
 .wrap {
@@ -11405,6 +11413,12 @@ footer .nav-icon .copyright span {
 }
 
 @media screen and (max-width: 992px) {
+  .div-search button {
+    width: 13%;
+    font-size: 11px;
+    background-color: #00ccbc;
+  }
+
   .btn-deliveroo {
     font-size: 12px;
     padding: 7px 5px;
@@ -11432,14 +11446,6 @@ footer .nav-icon .copyright span {
     right: 220px;
     border: 10px solid transparent;
     border-bottom-color: #fff;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .div-search button {
-    width: 13%;
-    font-size: 11px;
-    background-color: #00ccbc;
   }
 }
 

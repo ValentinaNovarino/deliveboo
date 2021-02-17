@@ -5,7 +5,7 @@ body{
 $fontprimary: 'Stratos Web';
 
 .container{
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .capitalize{
@@ -28,7 +28,6 @@ $fontprimary: 'Stratos Web';
 }
 
 .btn-deliveroo{
-    border: none;
     background-color: $colorPrimary;
     color: $colorCurrent;
     padding: 10px 20px;
@@ -75,4 +74,17 @@ $fontprimary: 'Stratos Web';
 
 .danger-deliveroo:hover {
     background-color: #c3342f
+}
+
+.header-card-restaurants{
+    h1{
+        margin: 0 !important;
+        line-height: normal;
+    }
+}
+
+.no-restaurant{
+    h1{
+        color: #440063;
+    }
 }
