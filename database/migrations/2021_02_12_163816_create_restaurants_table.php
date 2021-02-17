@@ -19,6 +19,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('slug')->unique();
             $table->string('city');
             $table->string('address');
+            $table->string('cover')->nullable();
             $table->timestamps();
 
         });

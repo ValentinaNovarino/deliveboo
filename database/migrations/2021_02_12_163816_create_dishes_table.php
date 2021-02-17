@@ -20,7 +20,7 @@ class CreateDishesTable extends Migration
             $table->decimal('price', 6,2);
             $table->text('description');
             $table->boolean('visible')->default(true);
-            $table->string('cover');
+            $table->string('cover')->nullable();
             $table->timestamps();
 
         });
