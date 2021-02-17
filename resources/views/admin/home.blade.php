@@ -23,7 +23,9 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">{{$restaurant->city}}</li>
                             <li class="list-group-item">{{$restaurant->address}}</li>
-                            <li class="list-group-item">Categoria Ristorante</li>
+                            @foreach ($categories as $category)
+                                <li class="list-group-item">{{$category->name}}</li>
+                            @endforeach
                         </ul>
                         <div class="card-body">
                             <a href="#" class="card-link secondary-btn-deliveroo">Menu ristorante</a>
