@@ -31,6 +31,27 @@
     }
 }
 
+@media screen and (max-width: 862px) {
+
+    .dropdown-menu.show{
+        padding:10px;
+        width: 250px !important;
+        left: 20px !important;
+        box-shadow:0px 5px 30px black;
+    }
+
+    .dropdown-menu.show:before{
+        content: " ";
+        position:absolute;
+        top:-20px;
+        right: 220px;
+        border:10px solid transparent;
+        border-bottom-color:#fff;
+    }
+
+
+}
+
 @media screen and (max-width: 600px) {
 
     .riquadro-blu-header-inside h1 {
@@ -38,6 +59,7 @@
     font-weight: bold;
     font-size: 20px;
     }
+
 
     .image-header {
         width: 300px;
@@ -52,6 +74,7 @@
         display: inline-block;
     }
 
+
 }
 
 @media screen and (max-width: 400px) {
@@ -59,4 +82,6 @@
         width:200px;
         overflow: hidden;
     }
+
+
 }
