@@ -19,20 +19,19 @@ class DishController extends Controller
      */
     public function index(Dish $dish)
     {
-        // dd($dish->restaurants());
-        $userRestaurant = Restaurant::where('user_id', Auth::user()->id)->get();
-        $arrayRid = [];
-        for ($i=0; $i < count($userRestaurant) ; $i++) {
-            $rid = $userRestaurant[$i]->id;
-            $newDisches = Dish::where('restaurant_id', $rid)->get();
-            $arrayRid[] = $newDisches;
-        }
-        // dd($arrayRid);
+        $userRestaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        $newDisches = Dish::where('restaurant_id', $userRestaurant->id)->get();
+        // dd($newDisches);
 
-        // $dishes = Dish::all();
+        // $arrayRid = [];
+        // for ($i=0; $i < count($userRestaurant) ; $i++) {
+        //     $rid = $userRestaurant[$i]->id;
+        //     $newDisches = Dish::where('restaurant_id', $rid)->get();
+        //     $arrayRid[] = $newDisches;
+        // }
+
         $data = [
-            'dishes' => $arrayRid,
-            'restaurants' => $userRestaurant
+            'dishes' => $newDisches,
         ];
         return view('admin.dishes.index', $data);
     }
@@ -75,6 +74,8 @@ class DishController extends Controller
             $data['cover'] = $coverPath;
         }
 
+        $userRestaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        $newDish->restaurant_id = $userRestaurant->id;
         $newDish->fill($data);
 
         $slug = Str::slug($newDish->name, '-');
@@ -93,7 +94,7 @@ class DishController extends Controller
         $newDish->slug = $slug;
 
         $newDish->save();
-        return redirect()->route('admin.home');
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
