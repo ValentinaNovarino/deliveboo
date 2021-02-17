@@ -1,3 +1,7 @@
+.background-container {
+    background-color: $adminBgColor;
+}
+
 .container-fluid nav {
     background: linear-gradient(96deg, rgba(208,235,153,1) 63%, rgba(0,204,188,1) 100%);
 }
@@ -6,7 +10,7 @@
     height: 100%;
 }
 
-.logo {
+.dashboard-logo {
     height: 60px;
 
     img {
@@ -34,5 +38,6 @@
         border-radius: 5px;
         padding: 8px;
         text-align: center;
+        font-size: 18px;
     }
 }

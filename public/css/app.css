@@ -10969,19 +10969,25 @@ a.text-dark:focus {
   text-transform: uppercase;
 }
 
-.btn.btn-info {
-  background-color: #00ccbc;
-  color: white;
-  border: 1px solid #00ccbc;
-}
-
 .btn-deliveroo {
   background-color: #00ccbc;
-  color: #fff;
+  color: white;
   padding: 10px 20px;
 }
 
 .btn-deliveroo:hover {
+  color: #d0eb99;
+  opacity: 0.8;
+  transition: 0.5s;
+}
+
+.secondary-btn-deliveroo {
+  background-color: #d0eb99;
+  color: #440063;
+}
+
+.secondary-btn-deliveroo:hover {
+  color: #00ccbc;
   opacity: 0.8;
   transition: 0.5s;
 }
@@ -11190,6 +11196,10 @@ footer .nav-icon .copyright span {
   color: #6C8585;
 }
 
+.background-container {
+  background-color: #fff;
+}
+
 .container-fluid nav,
 .container-sm nav,
 .container-md nav,
@@ -11202,11 +11212,11 @@ footer .nav-icon .copyright span {
   height: 100%;
 }
 
-.logo {
+.dashboard-logo {
   height: 60px;
 }
 
-.logo img {
+.dashboard-logo img {
   width: 100%;
 }
 
@@ -11231,10 +11241,20 @@ footer .nav-icon .copyright span {
   border-radius: 5px;
   padding: 8px;
   text-align: center;
+  font-size: 18px;
 }
 
 .header-card-restaurants h1 {
   color: #440063;
+}
+
+.card {
+  border: 10px solid #00ccbc;
+}
+
+.card a {
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .jumbo-first {
