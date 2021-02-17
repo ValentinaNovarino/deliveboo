@@ -15,23 +15,21 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card-container">
-                @foreach ($restaurants as $restaurant)
-                    <div class="card card-restaurants w-100 flex-row">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$restaurant->name}}</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">{{$restaurant->city}}</li>
-                            <li class="list-group-item">{{$restaurant->address}}</li>
-                            @foreach ($categories as $category)
-                                <li class="list-group-item">{{$category->name}}</li>
-                            @endforeach
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link secondary-btn-deliveroo">Menu ristorante</a>
-                        </div>
+                <div class="card card-restaurants w-100 flex-row">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$restaurant->name}}</h5>
                     </div>
-                @endforeach
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{$restaurant->city}}</li>
+                        <li class="list-group-item">{{$restaurant->address}}</li>
+                        @foreach ($categories as $category)
+                            <li class="list-group-item">{{$category->name}}</li>
+                        @endforeach
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link secondary-btn-deliveroo">Menu ristorante</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

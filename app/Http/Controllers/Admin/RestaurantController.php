@@ -20,10 +20,9 @@ class RestaurantController extends Controller
     public function index(Category $category)
     {
         $newRestaurant = Restaurant::where('user_id', Auth::user()->id)->first();
-        $allCategory = Category::with('restaurants')->get();
         $data = [
-            'restaurants' => $newRestaurant,
-            'categories' => Restaurant::join('category_restaurant', 'restaurants.id', '=', $newRestaurant->id)->get()
+            'restaurant' => $newRestaurant,
+            'categories' => Category::with('restaurants')->get()
         ];
         return view('admin.home', $data);
     }

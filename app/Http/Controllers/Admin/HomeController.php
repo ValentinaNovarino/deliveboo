@@ -16,11 +16,10 @@ class HomeController extends Controller
     }
 
     public function showRestaurant() {
-        $newRestaurant = new Restaurant;
-        $currentRestaurant = Restaurant::where('user_id', Auth::user()->id)->get();
+        $newRestaurant = Restaurant::where('user_id', Auth::user()->id)->first();
         $data = [
-            'restaurants' => $currentRestaurant,
-            'categories' => $newRestaurant->categories()
+            'restaurant' => $newRestaurant,
+            'categories' => Category::with('restaurants')->get()
         ];
         return view('admin.home', $data);
     }
