@@ -141,9 +141,9 @@
                                 <div class="col">
                                     <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length">
                                         <h2>Categoria: @{{check.name}}</h2>
-                                        <p>@{{check}}</p>
                                         <div v-for="item in check.restaurants" class="card-restaurant">
-                                            <h4>nome del ristorante : <a :href="link">@{{item.name}}</a></h4>
+                                            <h4>nome del ristorante : <a href="#">@{{item.name}}</a>
+                                            </h4>
                                         </div>
                                     </div>
                                     <div v-else class="card-restaurant">
@@ -154,7 +154,6 @@
                         </div>
                     </div>
                 </div>
-                <p>@{{restaurants}}</p>
             </main>
         </div>
 
@@ -162,6 +161,7 @@
         @include('partials.footer')
 
         <script type="text/javascript">
+
             var app = new Vue ({
                 el: '#root',
                 data: {
@@ -172,9 +172,9 @@
                     visible: false,
                     visibleCategory: false,
                     restaurants: [],
+                    restaurantSlugs: [],
                     categories: [],
                     checked: [],
-                    link: "{{url('/')}}",
 
                 },
                 methods: {
@@ -193,6 +193,8 @@
                             this.restaurants = element.data.response;
                             for (var i = 0; i < element.data.response.length; i++) {
                                 console.log(element.data.response[i].id);
+                                console.log(element.data.response[i].slug);
+                                this.restaurantSlugs.push(element.data.response[i].slug);
                                 this.changedValue = element.data.response[i].id;
                                 if (this.selectedValue == this.changedValue) {
                                     this.visible = true;

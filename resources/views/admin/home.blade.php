@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="header-card-restaurants d-flex justify-content-between align-items-center">
-                <h1>Tutti i tuoi ristoranti</h1>
+                <h1>Ristoranti</h1>
                 @if (is_null($restaurant))
                     <a href="{{ route('admin.restaurants.create') }}">
                         <button type="button" class="btn btn-deliveroo">Aggiungi nuovo ristorante</button>
