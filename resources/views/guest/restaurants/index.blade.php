@@ -153,6 +153,7 @@
                         </div>
                     </div>
                 </div>
+                <p>@{{restaurants}}</p>
             </main>
         </div>
 
