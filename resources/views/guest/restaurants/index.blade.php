@@ -24,6 +24,8 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
         {{-- AXIOS --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+        {{-- vue router --}}
+        <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
     </head>
     <body>
         <div id="root">
@@ -143,7 +145,9 @@
                                         <h2>Categoria: @{{check.name}}</h2>
                                         <p>@{{check}}</p>
                                         <div v-for="item in check.restaurants" class="card-restaurant">
-                                            <h4>nome del ristorante : <a :href="link">@{{item.name}}</a></h4>
+                                            <h4>nome del ristorante :
+                                                <a href="">@{{item.name}}</a>
+                                            </h4>
                                         </div>
                                     </div>
                                     <div v-else class="card-restaurant">
@@ -154,7 +158,27 @@
                         </div>
                     </div>
                 </div>
-                <p>@{{restaurants}}</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h3>seleziona un ristorante</h3>
+                            <select @change="onChange(this.value)" v-model="selectedValue">
+                                <option value="">seleziona ristorante</option>
+                                @foreach ($restaurants as $restaurant)
+                                    <option value="{{$restaurant->id}}">{{ $restaurant->name }}</option>
+                                @endforeach
+                            </select>
+                            <div v-for="restaurant in restaurants" v-if="visible && restaurant.id == selectedValue" class="card-restaurant">
+                                {{-- <p>@{{ restaurant.id }}</p> --}}
+                                <h4>nome del ristorante : <a href="#">@{{ restaurant.name }}</a></h4>
+                                <h4>@{{ restaurant.slug }}</h4>
+                            </div>
+                        </div>
+                        <ul>
+                            <li><router-link :to="{ name: 'restaurants', params: { restaurantSlug: 123 }}">qui</router-link></li>
+                        </ul>
+                    </div>
+                </div>
             </main>
         </div>
 
@@ -162,6 +186,16 @@
         @include('partials.footer')
 
         <script type="text/javascript">
+        Vue.use(VueRouter);
+
+        const router = new VueRouter({
+          routes: [
+            {
+              path: '/restaurants/:restaurantSlug',
+              name: 'restaurants',
+            }
+          ]
+      });
             var app = new Vue ({
                 el: '#root',
                 data: {
@@ -172,9 +206,9 @@
                     visible: false,
                     visibleCategory: false,
                     restaurants: [],
+                    restaurantSlugs: [],
                     categories: [],
                     checked: [],
-                    link: "{{url('/')}}",
 
                 },
                 methods: {
@@ -193,6 +227,8 @@
                             this.restaurants = element.data.response;
                             for (var i = 0; i < element.data.response.length; i++) {
                                 console.log(element.data.response[i].id);
+                                console.log(element.data.response[i].slug);
+                                this.restaurantSlugs.push(element.data.response[i].slug);
                                 this.changedValue = element.data.response[i].id;
                                 if (this.selectedValue == this.changedValue) {
                                     this.visible = true;
