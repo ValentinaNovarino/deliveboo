@@ -22,10 +22,6 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card-container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card-container">
-                @foreach ($restaurants as $restaurant)
                     <div class="card card-restaurants w-100 flex-row">
                         <div class="card-body">
                             <h5 class="card-title restaurant-info">{{$restaurant->name}}</h5>

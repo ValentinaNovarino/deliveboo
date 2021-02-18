@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dish;
 use App\Restaurant;
+use App\Category;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -19,23 +20,22 @@ class DishController extends Controller
      */
     public function index(Dish $dish)
     {
+        $categories = Category::all();
         $userRestaurant = Restaurant::where('user_id', Auth::user()->id)->first();
         if ($userRestaurant) {
             $newDishes = Dish::where('restaurant_id', $userRestaurant->id)->orderBy('name', 'ASC')->get();
             $data = [
                 'dishes' => $newDishes,
+                'categories' => $categories
             ];
             return view('admin.dishes.index', $data);
         }
-        // dd($newDishes);
 
-        // $arrayRid = [];
-        // for ($i=0; $i < count($userRestaurant) ; $i++) {
-        //     $rid = $userRestaurant[$i]->id;
-        //     $newDishes = Dish::where('restaurant_id', $rid)->get();
-        //     $arrayRid[] = $newDishes;
-        // }
-        return view('admin.restaurants.create');
+        $data = [
+            'categories' => $categories
+        ];
+
+        return view('admin.restaurants.create', $data);
     }
 
     /**
