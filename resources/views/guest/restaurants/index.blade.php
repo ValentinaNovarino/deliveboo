@@ -59,8 +59,6 @@
                     </div>
                 </div>
             </div>
-            {{-- fine navbar --}}
-            {{-- inizio main --}}
             <main>
                 {{-- POPUP CART  --}}
                 <div class="section-dropcart p-2">
@@ -133,55 +131,21 @@
                 {{-- FINE POPUP CART --}}
 
                 <div class="main-container">
-                    {{-- side menu --}}
                     <div class="bg-light" id="sidebar-wrapper">
-                        <h3>seleziona un ristorante</h3>
-                        <select @change="onChange(this.value)" v-model="selectedValue">
-                            <option value="">seleziona ristorante</option>
-                            @foreach ($restaurants as $restaurant)
-                                <option value="{{$restaurant->id}}">{{ $restaurant->name }}</option>
-                            @endforeach
-                        </select>
-
                         <h3>seleziona una categoria</h3>
-                        <select @change="onChangeCategory(this.value)" v-model="selectedCategoryValue">
-                            <option value="">seleziona categoria</option>
-                            @foreach ($categories as $category)
-                                <option value="{{$category->id}}">{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    {{-- fine side menu --}}
-                    {{-- inizio card-restaurant-container --}}
-                    <div class="card-restaurant-container">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <div v-for="restaurant in restaurants" v-if="visible && restaurant.id == selectedValue" class="card-restaurant">
-                                        {{-- <p>@{{ restaurant.id }}</p> --}}
-                                        <h4>nome del ristorante : <a href="#">@{{ restaurant.name }}</a></h4>
-                                        <h4>@{{ restaurant.slug }}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <div v-for="category in categories" v-if="visibleCategory && category.id == selectedCategoryValue" class="card-restaurant">
-                                        {{-- <p>@{{ category.id }}</p> --}}
-                                        <h4>categoria : @{{ category.name }}</h4>
-                                        <div v-if="!category.restaurants.length" class="card-restaurant">
-                                            <h5>Non ci sono ristoranti in questa categoria</h5>
-                                        </div>
-                                        <div v-for="item in category.restaurants" class="card-restaurant">
-                                            <h4>nome del ristorante : <a href="#">@{{item.name}}</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="form-check" v-for="category in categories">
+                            <input  class="form-check-input" type="checkbox" v-model="checked" :value="category.id">
+                            <label class="form-check-label">@{{category.name}}</label>
                         </div>
                     </div>
+                    {{-- <div v-for="category in categories">
+                        <div class="" v-for="item in category.restaurants">
+                            <p>@{{item.pivot.category_id}}</p>
+                            <div v-if="checked == true && category.id == item.pivot.category_id">
+                                <p>@{{ item.name }}</p>
+                            </div>
+                        </div>
+                    </div> --}}
                 </div>
             </main>
         </div>
@@ -201,6 +165,8 @@
                 visibleCategory: false,
                 restaurants: [],
                 categories: [],
+                checked: [],
+                valore: '',
 
             },
             methods: {
@@ -226,34 +192,30 @@
                         }
                     })
                 },
-                onChangeCategory(value) {
-                    this.visibleCategory = false;
-                    this.categories = [];
-                    this.restaurants = [];
-
-                    console.log(this.selectedCategoryValue);
-
-                    axios.post('/api/categories')
-                    .then((element) => {
-                        // console.log(element.data.response);
-                        // console.log(element.data.response.categoriesRestaurants);
-                        // console.log(element.data.response.categoriesRestaurants[0].restaurants[0].name);
-                        this.categories = element.data.response.categoriesRestaurants;
-                        for (var i = 0; i < element.data.response.categoriesRestaurants.length; i++) {
-                            console.log(element.data.response.categoriesRestaurants[i]);
-                            // console.log(element.data.response.categoriesRestaurants[i].restaurants);
-
-                            // console.log(element.data.response.categoriesRestaurants[i].id);
-                            this.changedCategoryValue = element.data.response.categoriesRestaurants[i].id;
-                            if (this.selectedCategoryValue == this.changedCategoryValue) {
-                                this.visibleCategory = true;
-                            }
-                        }
-                    })
-                },
+                // onClick(){
+                //     this.checked = !this.checked;
+                //     console.log(this.checked);
+                // },
+                // onChangeCategory(value) {
+                //     this.visibleCategory = false;
+                //     this.categories = [];
+                //     this.restaurants = [];
+                //
+                //     console.log(this.selectedCategoryValue);
+                //
+                //     axios.post('/api/categories')
+                //     .then((element) => {
+                //         this.categories = element.data.response.categoriesRestaurants;
+                //
+                //     })
+                // },
             },
             mounted() {
+                    axios.post('/api/categories')
+                    .then((element) => {
+                        this.categories = element.data.response.categoriesRestaurants;
 
+                    })
             }
         })
 
