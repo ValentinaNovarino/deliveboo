@@ -11672,7 +11672,7 @@ td {
 
 .section-dropcart {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-start;
   padding: 0 20px;
 }
