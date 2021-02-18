@@ -81,33 +81,52 @@
         <div class="row justify-content-between">
             <div class="col-md-5 col-xs-12">
                 <div class="menu-image-small">
-                    <img class="img-small" src="{{'../img/confort.jpg'}}" alt="">
-                    <p>I grandi classici che scaldano il cuore, perfetti in ogni momento.</p>
-                    <a href="#">Scopri Comfort food</a>
+                    <a href="#">
+                        <img class="img-small" src="{{'../img/confort.jpg'}}" alt="">
+                        <p>I grandi classici che scaldano il cuore, perfetti in ogni momento.</p>
+                        <a href="#">Scopri Comfort food</a>
+                        <div class="centered">
+                                <h2>Comfort food</h2>
+                        </div>
+                    </a>
                 </div>
-
             </div>
             <div class="col-md-7 col-xs-12">
                 <div class="menu-image-large">
-                    <img class="img-large"src="{{'../img/dolci_e_dessert.jpg'}}" alt="">
-                    <p>Dolci piaceri per rendere la giornata ancora più gustosa</p>
-                    <a href="#">Scopri Dolci e Dessert</a>
+                    <a href="#">
+                        <img class="img-large"src="{{'../img/dolci_e_dessert.jpg'}}" alt="">
+                            <p>Dolci piaceri per rendere la giornata ancora più gustosa</p>
+                            <a href="#">Scopri Dolci e Dessert</a>
+                        <div class="centered">
+                            <h2>Dolci e dessert</h2>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="row justify-content-between">
             <div class="col-md-7 col-xs-12">
                 <div class="menu-image-large">
-                    <img class="img-large" src="{{'../img/condividere.jpg'}}" alt="">
-                    <p>Serve una scusa per stare insieme? Ordina dai ristoranti che trasformeranno la tua serata in una vera festa.</p>
-                    <a href="#">Scopri Perfetti da condividere</a>
+                    <a href="#">
+                        <img class="img-large" src="{{'../img/condividere.jpg'}}" alt="">
+                        <p>Serve una scusa per stare insieme? Ordina dai ristoranti che trasformeranno la tua serata in una vera festa.</p>
+                        <a href="#">Scopri Perfetti da condividere</a>
+                    <div class="centered">
+                        <h2>Perfetti da condividere</h2>
+                    </div>
+                    </a>
                 </div>
             </div>
             <div class="col-md-5 col-xs-12">
                 <div class="menu-image-small">
-                    <img class="img-small" src="{{'../img/esclusiva.jpg'}}" alt="">
-                    <p>I più famosi, i più buoni, i preferiti. Quelli che trovi solo su Deliveroo.</p>
-                    <a href="#">Scopri Esclusiva Deliveroo</a>
+                    <a href="#">
+                        <img class="img-small" src="{{'../img/esclusiva.jpg'}}" alt="">
+                        <p>I più famosi, i più buoni, i preferiti. Quelli che trovi solo su Deliveroo.</p>
+                        <a href="#">Scopri Esclusiva Deliveroo</a>
+                    <div class="centered">
+                        <h2>Esclusiva Deliveroo</h2>
+                    </div>
+                    </a>
                 </div>
             </div>
         </div>

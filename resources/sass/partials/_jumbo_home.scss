@@ -24,7 +24,10 @@ height: 170px;
 
 .menu-image-large, .menu-image-small{
 
-    padding-top:20px;
+    // padding-top:20px;
+    position: relative;
+    // text-align: center;
+    color: white;
 
     p{
         font-size:20px;
@@ -37,6 +40,20 @@ height: 170px;
         text-decoration: none;
         cursor: pointer;
     }
+
+    .centered {
+         position: absolute;
+         top:35%;
+         left: 50%;
+         transform: translate(-50%, -35%);
+
+         h2{
+             font-weight: 600;
+             font-size: 27px;
+             text-align: center;
+         }
+     }
+
 }
 
 
