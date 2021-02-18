@@ -24,6 +24,10 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
         {{-- AXIOS --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+
+        {{-- MULTI_SELECT2 --}}
+        {{-- <script src="bundle.min.js"></script> --}}
+        <script src="https://unpkg.com/vue-simple-multi-select@latest"></script>
     </head>
     <body>
         <div id="root">
@@ -47,10 +51,13 @@
                                         <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
                                     </li>
                                 </ul>
-                                <form class="form-inline my-2 my-lg-0">
-                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-success my-2 my-sm-0" type="">Search</button>
-                                </form>
+                                <lable>Choose a category!</lable>
+                                <vue-multi-select
+	                                v-model="value"
+	                                :options="filterCategory"
+                                ></vue-multi-select>
+                                {{-- <p>@{{category}}</p> --}}
+
                             </div>
                         </nav>
                     </div>
@@ -139,9 +146,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length">
+                                    <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length || category == check.name">
                                         <h2>Categoria: @{{check.name}}</h2>
-                                        <p>@{{check}}</p>
                                         <div v-for="item in check.restaurants" class="card-restaurant">
                                             <h4>nome del ristorante : <a :href="link">@{{item.name}}</a></h4>
                                         </div>
@@ -175,7 +181,8 @@
                     categories: [],
                     checked: [],
                     link: "{{url('/')}}",
-
+                    value: null,
+                    filterCategory: []
                 },
                 methods: {
                     onChange(value) {
@@ -205,6 +212,11 @@
                         axios.post('/api/categories')
                         .then((element) => {
                             this.categories = element.data.response.categoriesRestaurants;
+                            for (var i = 0; i < element.data.response.categoriesRestaurants.length; i++) {
+
+                                // console.log(element.data.response.categoriesRestaurants[i].name);
+                                this.filterCategory.push(element.data.response.categoriesRestaurants[i].name);
+                            }
 
                         })
                 }
