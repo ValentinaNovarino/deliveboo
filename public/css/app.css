@@ -11749,10 +11749,15 @@ td {
   background-color: red;
 }
 
+.nav-bar-container {
+  border-bottom: 1px solid grey;
+}
+
 .main-container {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  padding: 50px 0;
 }
 
 .main-container #sidebar-wrapper {
@@ -11760,7 +11765,11 @@ td {
   padding: 10px 15px;
 }
 
-.main-container .card-restaurant {
+.main-container .card-restaurant-container {
+  height: 80vh;
+}
+
+.main-container .card-restaurant-container .card-restaurant {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -11770,5 +11779,23 @@ td {
   background-clip: border-box;
   border: 2px solid #00ccbc;
   border-radius: 0.25rem;
+}
+
+.logo-guest-restaurant {
+  width: 200px;
+}
+
+.logo-guest-restaurant img {
+  display: block;
+  width: 100%;
+}
+
+.back-to-dishes-arrow {
+  margin-top: 40px;
+}
+
+.back-to-dishes-arrow i {
+  font-size: 40px;
+  color: #00ccbc;
 }
 

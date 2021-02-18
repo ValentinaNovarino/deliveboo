@@ -1,21 +1,38 @@
+.nav-bar-container {
+    border-bottom: 1px solid grey;
+}
+
 .main-container {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    padding: 50px 0;
 
     #sidebar-wrapper {
         border: 1px solid gray;
         padding: 10px 15px;
     }
-    .card-restaurant{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        border: 2px solid #00ccbc;
-        border-radius: 0.25rem;
+    .card-restaurant-container {
+        height: 80vh;
+        .card-restaurant{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 2px solid #00ccbc;
+            border-radius: 0.25rem;
+        }
+    }
+}
+
+.logo-guest-restaurant {
+    width: 200px;
+
+    img {
+        display: block;
+        width: 100%;
     }
 }

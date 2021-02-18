@@ -11,6 +11,12 @@
                 <p>Visible: {{ $dish->visible == 1 ? 'Yes' : 'No' }}</p>
                 <p>Price {{ $dish->price }}€</p>
             </div>
+            <div class="back-to-dishes-arrow d-block">
+                <a href="{{ route('admin.dishes.index') }}" class="d-block">
+                    <i class="fas fa-arrow-left"></i>
+                    All Dishes
+                </a>
+            </div>
         </div>
     </div>
 </div>
