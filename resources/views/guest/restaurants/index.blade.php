@@ -141,10 +141,8 @@
                                 <div class="col">
                                     <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length">
                                         <h2>Categoria: @{{check.name}}</h2>
-                                        <p>@{{check}}</p>
                                         <div v-for="item in check.restaurants" class="card-restaurant">
-                                            <h4>nome del ristorante :
-                                                <a href="">@{{item.name}}</a>
+                                            <h4>nome del ristorante : <a href="#">@{{item.name}}</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -154,27 +152,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <h3>seleziona un ristorante</h3>
-                            <select @change="onChange(this.value)" v-model="selectedValue">
-                                <option value="">seleziona ristorante</option>
-                                @foreach ($restaurants as $restaurant)
-                                    <option value="{{$restaurant->id}}">{{ $restaurant->name }}</option>
-                                @endforeach
-                            </select>
-                            <div v-for="restaurant in restaurants" v-if="visible && restaurant.id == selectedValue" class="card-restaurant">
-                                {{-- <p>@{{ restaurant.id }}</p> --}}
-                                <h4>nome del ristorante : <a href="#">@{{ restaurant.name }}</a></h4>
-                                <h4>@{{ restaurant.slug }}</h4>
-                            </div>
-                        </div>
-                        <ul>
-                            <li><router-link :to="{ name: 'restaurants', params: { restaurantSlug: 123 }}">qui</router-link></li>
-                        </ul>
                     </div>
                 </div>
             </main>
