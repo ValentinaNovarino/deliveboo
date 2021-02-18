@@ -17,6 +17,7 @@
     .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
         display: inline-block;
     }
+
 }
 
 
@@ -29,6 +30,7 @@
     .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
         padding: 5px;
     }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -52,11 +54,59 @@
         display: inline-block;
     }
 
+    .header-card-restaurants h1, .add-dish h1 {
+        font-size: 30px;
+    }
+
+    table td {
+        font-size: 16px;
+    }
+
+    table th {
+        font-size: 18px;
+    }
+
+    h5.card-title.restaurant-info {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    li.list-group-item.restaurant-info {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    a.card-link.restaurant-menu.secondary-btn-deliveroo {
+        display: none;
+    }
+
+    .card a.card-link.menu.secondary-btn-deliveroo {
+        display: block;
+        font-size: 14px;
+    }
+
 }
 
 @media screen and (max-width: 400px) {
     .image-header {
         width:200px;
         overflow: hidden;
+    }
+
+    .header-card-restaurants h1, .add-dish h1 {
+        font-size: 23px;
+    }
+
+    .add.btn-deliveroo {
+        padding: 5px 7px;
+        font-size: 12px;
+    }
+
+    table td {
+        font-size: 14px;
+    }
+
+    table th {
+        font-size: 16px;
     }
 }

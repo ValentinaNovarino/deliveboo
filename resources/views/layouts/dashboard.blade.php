@@ -35,7 +35,7 @@
     <div class="container-dashboard d-flex flex-column vh-100">
         <div class="container-fluid h-100">
             <div class="row h-100">
-                <nav class="col-md-2 d-none d-md-block bg-light sidebar py-4 border-right">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar py-4 border-right position-fixed vh-100">
                     <div class="sidebar-nav">
                         <div class="dashboard-logo">
                             <a href="{{ route('uiHome') }}">
@@ -50,18 +50,21 @@
                                             <i class="fas fa-house-user"></i>
                                             Dashboard
                                         </a>
+                                        {{-- <a href="{{route('admin.index')}}"><i class="icon-link fas fa-house-user"></i></a> --}}
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('admin.dishes.index')}}">
                                                 <i class="fas fa-utensils"></i>
                                             Dishes
                                         </a>
+                                        {{-- <a href="{{route('admin.dishes.index')}}"><i class="icon-link fas fa-utensils"></i></i></a> --}}
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route("admin.statistics.index")}}">
                                           <i class="fas fa-chart-bar"></i>
                                           Statistics
                                         </a>
+                                        {{-- <a href="{{ route("admin.statistics.index")}}"><i class="icon-link fas fa-chart-bar"></i></i></a> --}}
                                     </li>
                                 </ul>
                             </div>

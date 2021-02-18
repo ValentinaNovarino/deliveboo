@@ -11022,6 +11022,12 @@ body {
   background-color: #c3342f;
 }
 
+.add.btn-deliveroo {
+  padding: 5px 7px;
+  font-size: 14px;
+  display: none;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
@@ -11273,18 +11279,41 @@ footer .nav-icon .copyright span {
   font-size: 18px;
 }
 
+.header-card-restaurants {
+  margin-bottom: 40px;
+}
+
 .header-card-restaurants h1 {
   color: #440063;
-  margin-bottom: 40px;
 }
 
 .card {
   border: 10px solid #00ccbc;
 }
 
-.card a {
+.card .card-body {
+  padding: 20px 10px;
+}
+
+.card .card-body a {
   padding: 5px;
   border-radius: 5px;
+}
+
+.card a.card-link.menu.secondary-btn-deliveroo {
+  display: none;
+}
+
+h5.card-title {
+  font-size: 22px;
+}
+
+li.list-group-item.restaurant-info {
+  font-size: 18px;
+}
+
+.card-body a {
+  font-size: 16px;
 }
 
 .jumbo-first {
@@ -11420,12 +11449,62 @@ footer .nav-icon .copyright span {
   .btn.add.btn-deliveroo {
     display: inline-block;
   }
+
+  .header-card-restaurants h1,
+  .add-dish h1 {
+    font-size: 30px;
+  }
+
+  table td {
+    font-size: 16px;
+  }
+
+  table th {
+    font-size: 18px;
+  }
+
+  h5.card-title.restaurant-info {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  li.list-group-item.restaurant-info {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  a.card-link.restaurant-menu.secondary-btn-deliveroo {
+    display: none;
+  }
+
+  .card a.card-link.menu.secondary-btn-deliveroo {
+    display: block;
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .image-header {
     width: 200px;
     overflow: hidden;
+  }
+
+  .header-card-restaurants h1,
+  .add-dish h1 {
+    font-size: 23px;
+  }
+
+  .add.btn-deliveroo {
+    padding: 5px 7px;
+    font-size: 12px;
+  }
+
+  table td {
+    font-size: 14px;
+  }
+
+  table th {
+    font-size: 16px;
   }
 }
 
@@ -11442,12 +11521,11 @@ footer .nav-icon .copyright span {
 
 th {
   width: calc(100% / 4);
+  font-size: 20px;
 }
 
-.add.btn-deliveroo {
-  padding: 5px 7px;
-  font-size: 14px;
-  display: none;
+td {
+  font-size: 18px;
 }
 
 .show.show-btn-deliveroo {
