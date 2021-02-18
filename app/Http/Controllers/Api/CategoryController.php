@@ -10,11 +10,11 @@ class CategoryController extends Controller
 {
     public function index() {
 
-    $categories = Category::all();
-    $prova = Category::with('restaurants')->get();
+    // $categories = Category::all();
+    $categoriesRestaurants = Category::with('restaurants')->get();
     $data = [
-        'categories' => $categories,
-        'prova' => $prova
+        // 'categories' => $categories,
+        'categoriesRestaurants' => $categoriesRestaurants
     ];
     return response()->json([
         'succes' => true,
