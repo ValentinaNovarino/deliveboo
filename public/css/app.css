@@ -11599,13 +11599,6 @@ th {
   padding: 0 20px;
 }
 
-.dropdown-menu {
-  padding: 20px;
-  width: 300px !important;
-  left: -110px !important;
-  box-shadow: 0px 5px 30px black;
-}
-
 .total-header-section {
   padding: 5px 5px;
 }
@@ -11643,6 +11636,39 @@ th {
 .checkout {
   border-radius: 50px;
   height: 50px;
+}
+
+#open {
+  border: 3px solid transparent;
+  border-radius: 10px;
+  color: #00ccbc;
+  background-color: white;
+}
+
+#pop {
+  border: 3px solid #007E8A;
+  border-radius: 10px;
+  padding: 20px;
+  color: #00ccbc;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 300px;
+  height: auto;
+  transition: all 0.5s;
+  transform: scale(0);
+  margin-top: 5px;
+}
+
+#cross {
+  border: 3px solid transparent;
+  border-radius: 10px;
+  color: #00ccbc;
+  background-color: white;
+  font-size: 20px;
+}
+
+#cross:hover {
+  color: white;
+  background-color: red;
 }
 
 .main-container {
