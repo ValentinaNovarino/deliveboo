@@ -22,6 +22,8 @@ Auth::routes();
 
 Route::get('/restaurants', 'RestaurantController@index')->name('guest.restaurants');
 
+// Route::get('/restaurants/{slug}', 'RestaurantController@show')->name('restaurants.show');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 //ROTTE BACKEND
