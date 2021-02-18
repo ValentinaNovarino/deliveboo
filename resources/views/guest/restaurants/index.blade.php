@@ -141,8 +141,9 @@
                                 <div class="col">
                                     <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length">
                                         <h2>Categoria: @{{check.name}}</h2>
+                                        <p>@{{check}}</p>
                                         <div v-for="item in check.restaurants" class="card-restaurant">
-                                            <h4>nome del ristorante : <a href="#">@{{item.name}}</a></h4>
+                                            <h4>nome del ristorante : <a :href="link">@{{item.name}}</a></h4>
                                         </div>
                                     </div>
                                     <div v-else class="card-restaurant">
@@ -160,72 +161,55 @@
         @include('partials.footer')
 
         <script type="text/javascript">
-        var app = new Vue ({
-            el: '#root',
-            data: {
-                selectedValue: '',
-                selectedCategoryValue: '',
-                changedValue: '',
-                changedCategoryValue: '',
-                visible: false,
-                visibleCategory: false,
-                restaurants: [],
-                categories: [],
-                checked: [],
-                valore: '',
+            var app = new Vue ({
+                el: '#root',
+                data: {
+                    selectedValue: '',
+                    selectedCategoryValue: '',
+                    changedValue: '',
+                    changedCategoryValue: '',
+                    visible: false,
+                    visibleCategory: false,
+                    restaurants: [],
+                    categories: [],
+                    checked: [],
+                    link: "{{url('/')}}",
 
-            },
-            methods: {
-                onChange(value) {
-                    this.visible = false;
-                    this.restaurants = [];
-                    this.categories = [];
-
-                    console.log(this.selectedValue);
-
-                    axios.post('/api/restaurants')
-                    .then((element) => {
-                        // this.dishes = response.data.dishes;
-                        console.log(element.data.response);
-                        // console.log(element.data);
-                        this.restaurants = element.data.response;
-                        for (var i = 0; i < element.data.response.length; i++) {
-                            console.log(element.data.response[i].id);
-                            this.changedValue = element.data.response[i].id;
-                            if (this.selectedValue == this.changedValue) {
-                                this.visible = true;
-                            }
-                        }
-                    })
                 },
-                // onClick(){
-                //     this.checked = !this.checked;
-                //     console.log(this.checked);
-                // },
-                // onChangeCategory(value) {
-                //     this.visibleCategory = false;
-                //     this.categories = [];
-                //     this.restaurants = [];
-                //
-                //     console.log(this.selectedCategoryValue);
-                //
-                //     axios.post('/api/categories')
-                //     .then((element) => {
-                //         this.categories = element.data.response.categoriesRestaurants;
-                //
-                //     })
-                // },
-            },
-            mounted() {
-                    axios.post('/api/categories')
-                    .then((element) => {
-                        this.categories = element.data.response.categoriesRestaurants;
+                methods: {
+                    onChange(value) {
+                        this.visible = false;
+                        this.restaurants = [];
+                        this.categories = [];
 
-                    })
-            }
-        })
+                        console.log(this.selectedValue);
 
-        //function for opening the popup
+                        axios.post('/api/restaurants')
+                        .then((element) => {
+                            // this.dishes = response.data.dishes;
+                            console.log(element.data.response);
+                            // console.log(element.data);
+                            this.restaurants = element.data.response;
+                            for (var i = 0; i < element.data.response.length; i++) {
+                                console.log(element.data.response[i].id);
+                                this.changedValue = element.data.response[i].id;
+                                if (this.selectedValue == this.changedValue) {
+                                    this.visible = true;
+                                }
+                            }
+                        })
+                    },
+                },
+                mounted() {
+                        axios.post('/api/categories')
+                        .then((element) => {
+                            this.categories = element.data.response.categoriesRestaurants;
+
+                        })
+                }
+            })
+
+            //function for opening the popup
             function popup(){
                 var mes=document.getElementById('pop');
                 mes.style.transform="scale(1)";
@@ -240,6 +224,6 @@
                 mes.style.transitionTimingFunction="cubic-bezier(0,0,0,-1.47)";
             }
 
-    </script>
+        </script>
     </body>
 </html>
