@@ -79,9 +79,21 @@
 
         <div class="nav-icon">
             <div class="box-icon">
-                <span><i id="icon-fb" class="fab fa-facebook"></i></span>
-                <span><i id="icon-tw" class="fab fa-twitter"></i></span>
-                <span><i id="icon-ig" class="fab fa-instagram"></i></span>
+                <span>
+                    <a href="https://it-it.facebook.com/Deliveroo/">
+                        <i id="icon-fb" class="fab fa-facebook"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="https://twitter.com/deliveroo_italy?lang=it">
+                        <i id="icon-tw" class="fab fa-twitter"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="https://www.instagram.com/deliveroo/?hl=it">
+                        <i id="icon-ig" class="fab fa-instagram"></i>
+                    </a>
+                </span>
             </div>
             <div class="copyright">
                 <span>&copy; 2021 Deliveboo</span>
