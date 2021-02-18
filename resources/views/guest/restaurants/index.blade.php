@@ -51,9 +51,6 @@
                                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                                     <button class="btn btn-outline-success my-2 my-sm-0" type="">Search</button>
                                 </form>
-
-
-
                             </div>
                         </nav>
                     </div>
@@ -134,18 +131,27 @@
                     <div class="bg-light" id="sidebar-wrapper">
                         <h3>seleziona una categoria</h3>
                         <div class="form-check" v-for="category in categories">
-                            <input  class="form-check-input" type="checkbox" v-model="checked" :value="category.id">
+                            <input  class="form-check-input" type="checkbox" v-model="checked" :value="category">
                             <label class="form-check-label">@{{category.name}}</label>
                         </div>
                     </div>
-                    {{-- <div v-for="category in categories">
-                        <div class="" v-for="item in category.restaurants">
-                            <p>@{{item.pivot.category_id}}</p>
-                            <div v-if="checked == true && category.id == item.pivot.category_id">
-                                <p>@{{ item.name }}</p>
+                    <div class="card-restaurant-container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length">
+                                        <h2>Categoria: @{{check.name}}</h2>
+                                        <div v-for="item in check.restaurants" class="card-restaurant">
+                                            <h4>nome del ristorante : <a href="#">@{{item.name}}</a></h4>
+                                        </div>
+                                    </div>
+                                    <div v-else class="card-restaurant">
+                                        <h4>Non ci sono ristoranti per questa categoria</h4>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </main>
         </div>
