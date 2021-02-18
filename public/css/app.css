@@ -11366,7 +11366,8 @@ li.list-group-item.restaurant-info {
 
 .menu-image-large,
 .menu-image-small {
-  padding-top: 20px;
+  position: relative;
+  color: white;
 }
 
 .menu-image-large p,
@@ -11381,6 +11382,21 @@ li.list-group-item.restaurant-info {
   font-size: 18px;
   text-decoration: none;
   cursor: pointer;
+}
+
+.menu-image-large .centered,
+.menu-image-small .centered {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+}
+
+.menu-image-large .centered h2,
+.menu-image-small .centered h2 {
+  font-weight: 600;
+  font-size: 27px;
+  text-align: center;
 }
 
 .cibi-preferiti {
