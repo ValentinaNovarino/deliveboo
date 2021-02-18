@@ -8,6 +8,7 @@
 
 .card {
     border: 10px solid $colorPrimary;
+    flex-direction: row;
 
     .card-body {
         padding: 20px 10px;
