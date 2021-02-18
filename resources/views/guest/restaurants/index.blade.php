@@ -96,6 +96,9 @@
                                     <div v-for="category in categories" v-if="visibleCategory && category.id == selectedCategoryValue" class="card-restaurant">
                                         {{-- <p>@{{ category.id }}</p> --}}
                                         <h4>categoria : @{{ category.name }}</h4>
+                                        <div v-if="!category.restaurants.length" class="card-restaurant">
+                                            <h5>Non ci sono ristoranti in questa categoria</h5>
+                                        </div>
                                         <div v-for="item in category.restaurants" class="card-restaurant">
                                             <h4>nome del ristorante : <a href="#">@{{item.name}}</a></h4>
                                         </div>
@@ -158,15 +161,15 @@
                     axios.post('/api/categories')
                     .then((element) => {
                         // console.log(element.data.response);
-                        // console.log(element.data.response.prova);
-                        // console.log(element.data.response.prova[0].restaurants[0].name);
-                        this.categories = element.data.response.prova;
-                        for (var i = 0; i < element.data.response.prova.length; i++) {
-                            console.log(element.data.response.prova[i]);
-                            // console.log(element.data.response.prova[i].restaurants);
+                        // console.log(element.data.response.categoriesRestaurants);
+                        // console.log(element.data.response.categoriesRestaurants[0].restaurants[0].name);
+                        this.categories = element.data.response.categoriesRestaurants;
+                        for (var i = 0; i < element.data.response.categoriesRestaurants.length; i++) {
+                            console.log(element.data.response.categoriesRestaurants[i]);
+                            // console.log(element.data.response.categoriesRestaurants[i].restaurants);
 
-                            // console.log(element.data.response.prova[i].id);
-                            this.changedCategoryValue = element.data.response.prova[i].id;
+                            // console.log(element.data.response.categoriesRestaurants[i].id);
+                            this.changedCategoryValue = element.data.response.categoriesRestaurants[i].id;
                             if (this.selectedCategoryValue == this.changedCategoryValue) {
                                 this.visibleCategory = true;
                             }
