@@ -146,7 +146,7 @@
                                         </div>
                                     </div>
                                     <div v-else class="card-restaurant">
-                                        <h4>Non ci sono ristoranti per questa categoria</h4>
+                                        <h4>Non ci sono ristoranti per la categoria @{{check.name}}</h4>
                                     </div>
                                 </div>
                             </div>
