@@ -9,6 +9,17 @@
     }
 }
 
+@media screen and (max-width: 1110px) {
+    a.card-link.restaurant-menu.secondary-btn-deliveroo {
+        display: none;
+    }
+
+    .card a.card-link.menu.secondary-btn-deliveroo {
+        display: block;
+        font-size: 14px;
+    }
+}
+
 @media screen and (max-width: 1100px) {
 
     .image-header {
@@ -116,9 +127,9 @@
         display: inline-block;
     }
 
-    .btn-deliveroo{
-        display: block;
-    }
+    // .btn-deliveroo{
+    //     display: block;
+    // }
 
     .dropdown-menu.show{
         padding:10px;
@@ -131,7 +142,7 @@
         display: block;
     }
 
-    .header-card-restaurants h1, .add-dish h1 {
+    .header-card-restaurants h1, .add-dish h1, .card h1 {
         font-size: 30px;
     }
 
@@ -153,15 +164,25 @@
         text-align: center;
     }
 
-    a.card-link.restaurant-menu.secondary-btn-deliveroo {
-        display: none;
+    .btn.all-dishes.btn-deliveroo {
+        display: inline-block;
     }
 
-    .card a.card-link.menu.secondary-btn-deliveroo {
-        display: block;
-        font-size: 14px;
+    .card p.dish-info {
+        font-size: 16px;
     }
 
+}
+
+@media screen and (max-width: 420px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+
+        // .card-body {
+        //     width: 100%;
+        // }
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -176,7 +197,7 @@
     background-color: #00ccbc;
     }
 
-    .header-card-restaurants h1, .add-dish h1 {
+    .header-card-restaurants h1, .add-dish h1, .card h1 {
         font-size: 23px;
     }
 

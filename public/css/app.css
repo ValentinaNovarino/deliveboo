@@ -10978,6 +10978,7 @@ body {
   background-color: #00ccbc;
   color: white;
   padding: 10px 20px;
+  font-size: 16px;
 }
 
 .btn-deliveroo:hover {
@@ -11314,6 +11315,7 @@ footer .nav-icon .copyright span {
 
 .card {
   border: 10px solid #00ccbc;
+  flex-direction: row;
 }
 
 .card .card-body {
@@ -11436,6 +11438,17 @@ li.list-group-item.restaurant-info {
   }
 }
 
+@media screen and (max-width: 1110px) {
+  a.card-link.restaurant-menu.secondary-btn-deliveroo {
+    display: none;
+  }
+
+  .card a.card-link.menu.secondary-btn-deliveroo {
+    display: block;
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 1100px) {
   .image-header {
     width: 300px;
@@ -11539,10 +11552,6 @@ li.list-group-item.restaurant-info {
     display: inline-block;
   }
 
-  .btn-deliveroo {
-    display: block;
-  }
-
   .dropdown-menu.show {
     padding: 10px;
     width: 250px !important;
@@ -11555,7 +11564,8 @@ li.list-group-item.restaurant-info {
   }
 
   .header-card-restaurants h1,
-  .add-dish h1 {
+  .add-dish h1,
+  .card h1 {
     font-size: 30px;
   }
 
@@ -11577,13 +11587,19 @@ li.list-group-item.restaurant-info {
     text-align: center;
   }
 
-  a.card-link.restaurant-menu.secondary-btn-deliveroo {
-    display: none;
+  .btn.all-dishes.btn-deliveroo {
+    display: inline-block;
   }
 
-  .card a.card-link.menu.secondary-btn-deliveroo {
-    display: block;
-    font-size: 14px;
+  .card p.dish-info {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -11600,7 +11616,8 @@ li.list-group-item.restaurant-info {
   }
 
   .header-card-restaurants h1,
-  .add-dish h1 {
+  .add-dish h1,
+  .card h1 {
     font-size: 23px;
   }
 
@@ -11648,6 +11665,26 @@ td {
 
 .danger.danger-deliveroo {
   display: none;
+}
+
+.card {
+  padding: 20px;
+}
+
+.card h1 {
+  color: #440063;
+}
+
+.card p {
+  font-size: 18px;
+}
+
+.back-to-dishes-arrow {
+  margin-top: 40px;
+}
+
+.back-to-dishes-arrow button i {
+  padding-right: 5px;
 }
 
 .border-form {
@@ -11786,14 +11823,5 @@ td {
 .logo-guest-restaurant img {
   display: block;
   width: 100%;
-}
-
-.back-to-dishes-arrow {
-  margin-top: 40px;
-}
-
-.back-to-dishes-arrow i {
-  font-size: 40px;
-  color: #00ccbc;
 }
 

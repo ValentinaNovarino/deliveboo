@@ -1,0 +1,20 @@
+.card {
+    padding: 20px;
+
+    h1 {
+        color: $colorTitleHaeder;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+.back-to-dishes-arrow {
+    margin-top: $spacingBottomJumbo;
+
+    button i {
+        padding-right: 5px;
+    }
+
+}
