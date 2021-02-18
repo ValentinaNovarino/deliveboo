@@ -11422,7 +11422,7 @@ li.list-group-item.restaurant-info {
   padding-right: 30px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1220px) {
   .btn.show-btn-deliveroo,
   .btn.modify-btn-deliveroo,
   .btn.btn-danger.danger-deliveroo {
