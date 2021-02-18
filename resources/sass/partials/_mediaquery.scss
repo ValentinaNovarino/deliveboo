@@ -1,4 +1,16 @@
+@media screen and (max-width: 1200px) {
+
+    .btn.show-btn-deliveroo, .btn.modify-btn-deliveroo, .btn.btn-danger.danger-deliveroo {
+        display: none;
+    }
+
+    .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
+        display: inline-block;
+    }
+}
+
 @media screen and (max-width: 1100px) {
+
     .image-header {
         width: 300px;
         overflow: hidden;
@@ -10,14 +22,6 @@
     font-size: 20px;
     }
 
-    .btn.show-btn-deliveroo, .btn.modify-btn-deliveroo, .btn.btn-danger.danger-deliveroo {
-        display: none;
-    }
-
-    .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
-        display: inline-block;
-    }
-
     .cibi-preferiti {
         padding-top:$spacingTopJumbo;
         padding-bottom:$spacingBottomJumbo;
@@ -27,7 +31,6 @@
             width: 200px;
             margin-right:5px;
         }
-
 
         h1{
             font-weight: bold;
@@ -46,25 +49,22 @@
             font-size: 13px;
             padding-bottom:20px;
         }
-
-
+    }
 }
 
 
 @media screen and (max-width: 992px) {
+
     .div-search button {
     width: 13%;
     font-size: 11px;
     background-color: #00ccbc;
     }
+
     .btn-deliveroo {
         font-size: 12px;
         padding: 7px 5px;
     }
-
-
-}
-
 
     .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
         padding: 5px;
@@ -73,7 +73,6 @@
     .content-dropcart >  {
         text-align: center;
     }
-
 }
 
 @media screen and (max-width: 862px) {
@@ -88,7 +87,6 @@
         left: -150px !important;
         box-shadow:0px 5px 30px black;
     }
-
 }
 
 @media screen and (max-width: 600px) {
@@ -98,17 +96,19 @@
     font-weight: bold;
     font-size: 20px;
     }
+
     .div-search button {
     width: 13%;
     font-size: 11px;
     background-color: #00ccbc;
     }
+
     .image-header {
         width: 300px;
         overflow: hidden;
     }
 
-    .btn-deliveroo {
+    .btn.btn-deliveroo {
         display: none;
     }
 
@@ -119,16 +119,17 @@
     .btn-deliveroo{
         display: block;
     }
+
     .dropdown-menu.show{
         padding:10px;
         width: 250px !important;
         left: -90px !important;
         box-shadow:0px 5px 30px black;
     }
+
     .section-dropcart.dropdown-menu.btn-deliveroo{
         display: block;
     }
-
 
     .header-card-restaurants h1, .add-dish h1 {
         font-size: 30px;
@@ -168,6 +169,7 @@
         width:200px;
         overflow: hidden;
     }
+
     .div-search button {
     width: 13%;
     font-size: 11px;
