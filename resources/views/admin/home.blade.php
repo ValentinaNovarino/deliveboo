@@ -9,12 +9,9 @@
                 @if (is_null($restaurant))
                     <a href="{{ route('admin.restaurants.create') }}">
                         <button type="button" class="btn btn-deliveroo">Aggiungi nuovo ristorante</button>
+                        <button type="button" class="btn add btn-deliveroo"><i class="fas fa-plus"></i></button>
                     </a>
                 @endif
-                <a href="{{ route('admin.restaurants.create') }}">
-                    <button type="button" class="btn btn-deliveroo">Aggiungi nuovo ristorante</button>
-                    <button type="button" class="btn add btn-deliveroo"><i class="fas fa-plus"></i></button>
-                </a>
             </div>
         </div>
     </div>
