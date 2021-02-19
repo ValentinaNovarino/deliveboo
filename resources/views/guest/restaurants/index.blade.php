@@ -25,8 +25,7 @@
         {{-- AXIOS --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
 
-        {{-- MULTI_SELECT2 --}}
-        {{-- <script src="bundle.min.js"></script> --}}
+        {{-- VUE-MULTIselect --}}
         <script src="https://unpkg.com/vue-simple-multi-select@latest"></script>
     </head>
     <body>
