@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 use App\Restaurant;
+use Illuminate\Support\Str;
 
 class RestaurantsTableSeeder extends Seeder
 {
@@ -12,30 +11,36 @@ class RestaurantsTableSeeder extends Seeder
      *
      * @return void
      */
-     public function run(Faker $faker)
-     {
-         for ($i=0; $i < 20 ; $i++) {
-         $newRestaurant = new Restaurant();
-         $newRestaurant->name = $faker->sentence(2);
-         $newRestaurant->city = $faker->word();
-         $newRestaurant->address = $faker->sentence(3);
+    public function run()
+    {
+        $restaurantsData = config('restaurants');
 
-         $slug = Str::slug($newRestaurant->name, '-');
+        for ($i=0; $i < count($restaurantsData) ; $i++) {
 
-         $slugEditable = $slug;
+            $newRestaurant = new Restaurant();
 
-         $currentSlug = Restaurant::where('slug', $slug)->first();
+            $newRestaurant->name = $restaurantsData[$i]['name'];
+            $newRestaurant->city = $restaurantsData[$i]['city'];
+            $newRestaurant->address = $restaurantsData[$i]['address'];
+            $newRestaurant->cover = $restaurantsData[$i]['cover'];
 
-         $counter = 1;
-         while($currentSlug) {
-             $slug = $slugEditable . '-' . $counter;
-             $counter++;
-             $currentSlug = Restaurant::where('slug', $slug)->first();
-         }
+            $slug = Str::slug($newRestaurant->name, '-');
 
-         $newRestaurant->slug = $slug;
+            $slugEditable = $slug;
 
-        $newRestaurant->save();
+            $currentSlug = Restaurant::where('slug', $slug)->first();
+
+            $counter = 1;
+            while($currentSlug) {
+                $slug = $slugEditable . '-' . $counter;
+                $counter++;
+                $currentSlug = Restaurant::where('slug', $slug)->first();
+             }
+
+            $newRestaurant->slug = $slug;
+
+            $newRestaurant->save();
         }
+
     }
 }
