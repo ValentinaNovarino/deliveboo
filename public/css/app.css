@@ -11851,3 +11851,17 @@ td {
   width: 100%;
 }
 
+#all-restaurants {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#all-restaurants .box-restaurant {
+  width: 250px;
+  height: 250px;
+  border: 2px solid #00ccbc;
+  margin: 5px;
+}
+

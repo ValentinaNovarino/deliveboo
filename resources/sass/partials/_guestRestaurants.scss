@@ -14,7 +14,7 @@
     }
     .card-restaurant-container {
         height: 80vh;
-        
+
         .card-restaurant{
             position: relative;
             display: flex;
@@ -35,5 +35,21 @@
     img {
         display: block;
         width: 100%;
+    }
+}
+
+// stile stampa dei ristoranti
+
+#all-restaurants{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .box-restaurant{
+        width: 250px;
+        height: 250px;
+        border: 2px solid $colorPrimary;
+        margin: 5px;
     }
 }

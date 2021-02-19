@@ -161,6 +161,22 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- test sezione stampa di tutti i ristoranti --}}
+                <section id="all-restaurants">
+                    @foreach ($restaurants as $restaurant)
+                        <div class="box-restaurant">
+                            <h2>
+                                {{ $restaurant->name }}
+                            </h2>
+                            <p> {{ $restaurant->slug }}</p>
+                            <a class="" href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
+                                See restaurant page
+                            </a>
+                        </div>
+                    @endforeach
+                </section>
+                {{-- Fine sezione stampa dei ristoranti--}}
             </main>
         </div>
 

@@ -72,7 +72,12 @@
     {{-- FINE POPUP CART --}}
 
     <main>
-        <h1>Pagina singolo ristorante</h1>
+        <h1 class="text-center m-5">Pagina singolo ristorante</h1>
+
+        <h2>{{ $restaurant->name}}</h2>
+
+        <p>Città: {{ $restaurant->city}}</p>
+        <p>Indirizzo: {{ $restaurant->address}}</p>
 
 
     </main>
