@@ -11062,7 +11062,7 @@ body {
   color: #440063;
   font-size: 40px;
   font-weight: bold;
-  padding-top: 44px;
+  padding-top: 35px;
   padding-bottom: 46px;
 }
 
@@ -11451,7 +11451,7 @@ li.list-group-item.restaurant-info {
 
 @media screen and (max-width: 1100px) {
   .image-header {
-    width: 300px;
+    width: 250px;
     overflow: hidden;
   }
 
@@ -11468,7 +11468,7 @@ li.list-group-item.restaurant-info {
   }
 
   .cibi-preferiti img {
-    width: 200px;
+    width: 220px;
     margin-right: 5px;
   }
 
@@ -11485,16 +11485,57 @@ li.list-group-item.restaurant-info {
   }
 
   .cibi-preferiti p {
-    font-size: 13px;
+    font-size: 15px;
     padding-bottom: 20px;
+  }
+
+  .cerca-tipo span {
+    font-size: 35px;
+  }
+
+  .titleHeader h1 {
+    font-size: 35px;
   }
 }
 
 @media screen and (max-width: 992px) {
   .div-search button {
-    width: 13%;
-    font-size: 11px;
-    background-color: #00ccbc;
+    width: 30%;
+    font-size: 10px;
+  }
+
+  .div-search span {
+    font-size: 16px;
+  }
+
+  .titleHeader h1 {
+    font-size: 30px;
+  }
+
+  .image-header {
+    width: 250px;
+  }
+
+  .cibi-preferiti img {
+    width: 200px;
+    margin-right: 5px;
+  }
+
+  .cibi-preferiti h1 {
+    font-weight: bold;
+    font-size: 38px;
+    padding-bottom: 10px;
+  }
+
+  .cibi-preferiti h2 {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+  }
+
+  .cibi-preferiti p {
+    font-size: 13px;
+    padding-bottom: 20px;
   }
 
   .btn-deliveroo {
@@ -11511,11 +11552,32 @@ li.list-group-item.restaurant-info {
   .content-dropcart > {
     text-align: center;
   }
+
+  .cerca-tipo span {
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 862px) {
+  .div-search button {
+    width: 25%;
+    font-size: 10px;
+  }
+
+  .div-search span {
+    font-size: 14px;
+  }
+
+  .image-header {
+    width: 250px;
+  }
+
   .section-dropcart {
     padding-top: 10px;
+  }
+
+  .titleHeader h1 {
+    font-size: 25px;
   }
 
   .dropdown-menu.show {
@@ -11523,9 +11585,32 @@ li.list-group-item.restaurant-info {
     width: 250px !important;
     box-shadow: 0px 5px 30px black;
   }
+
+  .cerca-tipo span {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .div-search button {
+    width: 22%;
+    font-size: 10px;
+  }
+
+  .div-search span {
+    font-size: 14px;
+  }
+
+  .image-header {
+    width: 250px;
+  }
 }
 
 @media screen and (max-width: 600px) {
+  .titleHeader h1 {
+    font-size: 20px;
+  }
+
   .riquadro-blu-header-inside h1 {
     color: white;
     font-weight: bold;
@@ -11533,13 +11618,16 @@ li.list-group-item.restaurant-info {
   }
 
   .div-search button {
-    width: 13%;
-    font-size: 11px;
-    background-color: #00ccbc;
+    width: 20%;
+    font-size: 10px;
+  }
+
+  .div-search span {
+    font-size: 12px;
   }
 
   .image-header {
-    width: 300px;
+    width: 200px;
     overflow: hidden;
   }
 
@@ -11596,25 +11684,57 @@ li.list-group-item.restaurant-info {
   .card p.dish-info {
     font-size: 16px;
   }
+
+  .cerca-tipo span {
+    font-size: 25px;
+  }
 }
 
 @media screen and (max-width: 420px) {
+  .titleHeader h1 {
+    font-size: 18px;
+  }
+
+  .div-search button {
+    width: 18%;
+    font-size: 10px;
+  }
+
+  .div-search span {
+    font-size: 12px;
+  }
+
   .card {
     flex-direction: column;
     align-items: center;
   }
+
+  .cerca-tipo span {
+    font-size: 20px;
+  }
+
+  .image-header {
+    width: 200px;
+  }
 }
 
 @media screen and (max-width: 400px) {
+  .titleHeader h1 {
+    font-size: 15px;
+  }
+
   .image-header {
     width: 200px;
     overflow: hidden;
   }
 
   .div-search button {
-    width: 13%;
-    font-size: 11px;
-    background-color: #00ccbc;
+    width: 15%;
+    font-size: 8px;
+  }
+
+  .div-search span {
+    font-size: 10px;
   }
 
   .header-card-restaurants h1,
@@ -11634,6 +11754,10 @@ li.list-group-item.restaurant-info {
 
   table th {
     font-size: 16px;
+  }
+
+  .cerca-tipo span {
+    font-size: 18px;
   }
 }
 

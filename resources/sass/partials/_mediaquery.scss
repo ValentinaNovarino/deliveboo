@@ -23,7 +23,7 @@
 @media screen and (max-width: 1100px) {
 
     .image-header {
-        width: 300px;
+        width: 250px;
         overflow: hidden;
     }
 
@@ -39,7 +39,7 @@
         background-color: #ffeae4;
 
         img{
-            width: 200px;
+            width: 220px;
             margin-right:5px;
         }
 
@@ -57,19 +57,70 @@
         }
 
         p{
-            font-size: 13px;
+            font-size: 15px;
             padding-bottom:20px;
         }
     }
+
+    .cerca-tipo{
+        span{
+            font-size: 35px;
+        }
+    }
+
+    .titleHeader h1 {
+        font-size: 35px;
+    }
+
+
 }
+
 
 
 @media screen and (max-width: 992px) {
 
-    .div-search button {
-    width: 13%;
-    font-size: 11px;
-    background-color: #00ccbc;
+    .div-search {
+
+    button {
+    width: 30%;
+    font-size: 10px;
+    }
+    span{
+        font-size: 16px;
+        }
+    }
+
+    .titleHeader h1 {
+        font-size: 30px;
+    }
+
+    .image-header {
+    width: 250px;
+}
+    .cibi-preferiti {
+
+        img{
+            width: 200px;
+            margin-right:5px;
+        }
+
+        h1{
+            font-weight: bold;
+            font-size: 38px;
+            padding-bottom: 10px;
+        }
+
+        h2{
+            font-size: 16px;
+            font-weight: bold;
+            padding-top:10px;
+
+        }
+
+        p{
+            font-size: 13px;
+            padding-bottom:20px;
+        }
     }
 
     .btn-deliveroo {
@@ -84,12 +135,38 @@
     .content-dropcart >  {
         text-align: center;
     }
+
+
+    .cerca-tipo{
+        span{
+            font-size: 30px;
+        }
+    }
 }
 
 @media screen and (max-width: 862px) {
 
+    .div-search {
+        button {
+            width: 25%;
+            font-size: 10px;
+        }
+    span{
+        font-size: 14px;
+        }
+    }
+
+    .image-header {
+    width: 250px;
+
+    }
+
     .section-dropcart{
         padding-top: 10px;
+    }
+
+    .titleHeader h1 {
+        font-size: 25px;
     }
 
     .dropdown-menu.show{
@@ -98,9 +175,37 @@
         // left: -150px !important;
         box-shadow:0px 5px 30px black;
     }
+
+    .cerca-tipo{
+        span{
+            font-size: 28px;
+        }
+    }
 }
 
+@media screen and (max-width: 772px) {
+    .div-search {
+        button {
+            width: 22%;
+            font-size: 10px;
+        }
+        span{
+        font-size: 14px;
+        }
+    }
+
+        .image-header {
+        width: 250px;
+    }
+
+}
+
+
 @media screen and (max-width: 600px) {
+
+    .titleHeader h1 {
+        font-size: 20px;
+    }
 
     .riquadro-blu-header-inside h1 {
     color: white;
@@ -108,14 +213,18 @@
     font-size: 20px;
     }
 
-    .div-search button {
-    width: 13%;
-    font-size: 11px;
-    background-color: #00ccbc;
+    .div-search {
+        button {
+            width: 20%;
+            font-size: 10px;
+        }
+        span{
+        font-size: 12px;
+        }
     }
 
     .image-header {
-        width: 300px;
+        width: 200px;
         overflow: hidden;
     }
 
@@ -176,9 +285,30 @@
         font-size: 16px;
     }
 
+    .cerca-tipo{
+        span{
+            font-size: 25px;
+        }
+    }
+
 }
 
 @media screen and (max-width: 420px) {
+
+    .titleHeader h1 {
+        font-size: 18px;
+    }
+
+    .div-search {
+        button {
+            width: 18%;
+            font-size: 10px;
+            }
+        span{
+        font-size: 12px;
+        }
+    }
+
     .card {
         flex-direction: column;
         align-items: center;
@@ -187,18 +317,38 @@
         //     width: 100%;
         // }
     }
+
+    .cerca-tipo{
+        span{
+            font-size: 20px;
+        }
+    }
+
+    .image-header {
+    width: 200px;
+
+    }
 }
 
 @media screen and (max-width: 400px) {
+
+    .titleHeader h1 {
+        font-size: 15px;
+    }
+
     .image-header {
         width:200px;
         overflow: hidden;
     }
 
-    .div-search button {
-    width: 13%;
-    font-size: 11px;
-    background-color: #00ccbc;
+    .div-search {
+        button {
+        width: 15%;
+        font-size: 8px;
+        }
+        span{
+            font-size: 10px;
+            }
     }
 
     .header-card-restaurants h1, .add-dish h1, .card h1 {
@@ -216,5 +366,11 @@
 
     table th {
         font-size: 16px;
+    }
+
+    .cerca-tipo{
+        span{
+            font-size: 18px;
+        }
     }
 }
