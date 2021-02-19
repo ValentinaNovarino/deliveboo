@@ -70,7 +70,7 @@
                     <div class="bg-light" id="sidebar-wrapper">
                         <h3>seleziona una categoria</h3>
                         <div class="form-check" v-for="category in categories">
-                            <input  @click="checkSuperContainer(category)" class="form-check-input" type="checkbox" v-model="checked" :value="category">
+                            <input @click="apiCategories()" class="form-check-input" type="checkbox" v-model="checked" :value="category">
                             <label class="form-check-label">@{{category.name}}</label>
                         </div>
                     </div>
@@ -167,11 +167,10 @@
                     restaurantSlugs: [],
                     categories: [],
                     checked: [],
-                    link: "{{url('/')}}",
                     value: '',
                     filterCategory: [],
-                    superContainer: [],
                     prova: true,
+                    container: [],
                 },
                 methods: {
                     onChange(value) {
@@ -198,8 +197,29 @@
                             }
                         })
                     },
-                    checkSuperContainer(element) {
-                        this.superContainer.push(element)
+                    apiCategories(value) {
+                        this.visible = false;
+                        // this.restaurants = [];
+                        // this.categories = [];
+
+                        console.log(this.selectedValue);
+
+                        axios.post('/api/categories')
+                        .then((element) => {
+                            // this.dishes = response.data.dishes;
+                            console.log(element.data.response.categoriesRestaurants);
+                            // console.log(element.data);
+                            // this.restaurants = element.data.response;
+                            // for (var i = 0; i < element.data.response.length; i++) {
+                            //     console.log(element.data.response[i].id);
+                            //     console.log(element.data.response[i].slug);
+                            //     this.restaurantSlugs.push(element.data.response[i].slug);
+                            //     this.changedValue = element.data.response[i].id;
+                            //     if (this.selectedValue == this.changedValue) {
+                            //         this.visible = true;
+                            //     }
+                            // }
+                        })
                     },
                 },
                 mounted() {
