@@ -56,7 +56,6 @@
 	                                v-model="value"
 	                                :options="filterCategory"
                                 ></vue-multi-select>
-                                {{-- <p>@{{category}}</p> --}}
 
                             </div>
                         </nav>
@@ -146,7 +145,21 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length || category == check.name">
+                                    <div v-for="category in categories" class="card-restaurant" v-if="value.includes(category.name)">
+                                        <h2>Categoria: @{{category.name}}</h2>
+                                        <div v-for="item in category.restaurants" class="card-restaurant">
+                                            <h4>Nome del ristorante: <a href="#">@{{item.name}}</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-restaurant-container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length">
                                         <h2>Categoria: @{{check.name}}</h2>
                                         <div v-for="item in check.restaurants" class="card-restaurant">
                                             <h4>nome del ristorante : <a href="#">@{{item.name}}</a>
@@ -199,7 +212,7 @@
                     categories: [],
                     checked: [],
                     link: "{{url('/')}}",
-                    value: null,
+                    value: '',
                     filterCategory: []
                 },
                 methods: {
@@ -234,8 +247,11 @@
                             this.categories = element.data.response.categoriesRestaurants;
                             for (var i = 0; i < element.data.response.categoriesRestaurants.length; i++) {
 
-                                // console.log(element.data.response.categoriesRestaurants[i].name);
                                 this.filterCategory.push(element.data.response.categoriesRestaurants[i].name);
+                                // console.log(element.data.response.categoriesRestaurants[i].restaurants);
+                                // if (element.data.response.categoriesRestaurants[i].restaurants.length) {
+                                //     this.filterCategory.push(element.data.response.categoriesRestaurants[i].name);
+                                // }
                             }
 
                         })
