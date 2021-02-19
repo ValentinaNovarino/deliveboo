@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Restaurant;
 use App\Category;
+use App\Dish;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
@@ -27,7 +28,9 @@ class RestaurantController extends Controller
        if(!$restaurant) {
            abort(404);
        }
-       $data = ['restaurant' => $restaurant];
+       $data = [
+           'restaurant' => $restaurant,
+        ];
        return view('guest.restaurants.show', $data);
    }
 }
