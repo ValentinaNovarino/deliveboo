@@ -4,7 +4,7 @@
 <div class="container border-form p-5">
     <div class="row justify-content-center">
         <div class="col 12">
-            @if ($errors->any())
+            {{-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                     @foreach ($errors->all() as $error)
@@ -12,9 +12,9 @@
                     @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif --}}
             <h1>Inserisci i dati del tuo Ristorante</h1>
-            <form method="POST" action="{{ route('admin.restaurants.store') }}" enctype="multipart/form-data">
+            <form name="myRestaurantForm" method="POST" action="{{ route('admin.restaurants.store') }}" enctype="multipart/form-data" onsubmit="return validateRestaurantForm()">
                 @csrf
                 <div class="form-group">
                     <label for="restaurantName">Nome</label>
@@ -57,4 +57,36 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function validateRestaurantForm() {
+        var name = document.forms["myRestaurantForm"]["name"].value;
+        var city = document.forms["myRestaurantForm"]["city"].value;
+        var address = document.forms["myRestaurantForm"]["address"].value;
+        var checked = document.forms["myRestaurantForm"]["categories[]"].checked;
+
+        // controllo sul nome del ristorante
+        if (name == "" || name.length > 100 || name == "undefined") {
+            alert ("Non hai inseto il nome del tuo ristorante o la lunghezza supera i 100 caratteri");
+            return false;
+        };
+
+        // controllo sulla citta
+        if (city == "" || city.length > 100 || city == "undefined") {
+            alert ("Non hai inseto il nome della città o la lunghezza supera i 100 caratteri");
+            return false;
+        };
+
+        // controllo sull'indirizzo del ristorante
+        if (address == "" || address.length > 100 || address == "undefined" ) {
+            alert ("Non hai inseto l'indirizzo del tuo ristorante o la lunghezza supera i 100 caratteri");
+            return false;
+        };
+
+        // controllo sulle checkbox delle categorie
+        if (!checked) {
+            alert("Nessuna CheckBox spuntata. Spuntane almeno una");
+            return false;
+        };
+    }
+</script>
 @endsection
