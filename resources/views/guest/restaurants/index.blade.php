@@ -135,10 +135,13 @@
                 <section id="all-restaurants">
                     @foreach ($restaurants as $restaurant)
                         <div class="box-restaurant">
+                            <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="">
                             <h2>
                                 {{ $restaurant->name }}
                             </h2>
                             <p> {{ $restaurant->slug }}</p>
+                            <p> {{ $restaurant->city }}</p>
+                            <p> {{ $restaurant->address}}</p>
                             <a class="" href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
                                 See restaurant page
                             </a>
