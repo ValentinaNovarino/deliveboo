@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form name="myRegistrationForm" method="POST" action="{{ route('register') }}" onsubmit="return validateForm()">
+                    <form name="myRegistrationForm" method="POST" action="{{ route('register') }}" onsubmit="return validateRegForm()">
                         @csrf
 
                         <div class="form-group row">
@@ -89,7 +89,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    function validateForm() {
+    function validateRegForm() {
 
         var name = document.forms["myRegistrationForm"]["name"].value;
         var email = document.forms["myRegistrationForm"]["email"].value;
