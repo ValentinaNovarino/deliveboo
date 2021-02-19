@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form name="myRegistrationForm" method="POST" action="{{ route('register') }}" onsubmit="return validateForm()">
                         @csrf
 
                         <div class="form-group row">
@@ -29,7 +29,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control-deliveroo @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="text" class="form-control-deliveroo @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -88,4 +88,46 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function validateForm() {
+
+        var name = document.forms["myRegistrationForm"]["name"].value;
+        var email = document.forms["myRegistrationForm"]["email"].value;
+        var password = document.forms["myRegistrationForm"]["password"].value;
+        var confirmPassword = document.forms["myRegistrationForm"]["password_confirmation"].value;
+        var vatNumber = document.forms["myRegistrationForm"]["iva"].value;
+
+        // controllo sul nome
+        if (name == "" || name == "undefined") {
+            alert("Non hai inserito il tuo nome");
+            return false;
+        };
+
+        // controllo sull'email
+        var validEmail = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
+        if (!validEmail.test(email) || (email == "") || email == "undefined") {
+            alert("Devi inserire un indirizzo email corretto");
+            return false;
+        };
+
+        // controllo sulla password
+        if (password.length < 8 || (password == "") || password == "undefined") {
+            alert("Scegli una password con minimo 8 caratteri");
+            return false;
+        };
+
+        // controllo sulla conferma della password
+        if ((confirmPassword == "") || (confirmPassword == "undefined")) {
+            alert("Devi confermare la password");
+            return false;
+        };
+
+        // controllo sulla partita iva
+        var validVatNumber = /^[0-9]{11}$/;
+        if (isNaN(vatNumber) || !validVatNumber.test(vatNumber) || vatNumber == "" || vatNumber == "undefined" ) {
+            alert("Devi inserire una partita iva di 11 numeri");
+            return false;
+        };
+    }
+</script>
 @endsection
