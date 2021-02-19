@@ -8,14 +8,14 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form name="myLoginForm" method="POST" action="{{ route('login') }}" onsubmit="return validateLogForm()">
                         @csrf
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control-deliveroo @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="text" class="form-control-deliveroo @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -70,4 +70,23 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function validateLogForm() {
+        var email = document.forms["myLoginForm"]["email"].value;
+        var password = document.forms["myLoginForm"]["password"].value;
+
+        // controllo sull'email
+        var validEmail = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
+        if (!validEmail.test(email) || (email == "") || email == "undefined") {
+            alert("Devi inserire un indirizzo email corretto");
+            return false;
+        };
+
+        // controllo sulla password
+        if (password.length < 8 || (password == "") || password == "undefined") {
+            alert("Scegli una password con minimo 8 caratteri");
+            return false;
+        };
+    }
+</script>
 @endsection
