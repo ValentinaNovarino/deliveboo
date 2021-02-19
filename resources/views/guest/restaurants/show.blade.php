@@ -72,12 +72,33 @@
     {{-- FINE POPUP CART --}}
 
     <main>
-        <h1 class="text-center m-5">Pagina singolo ristorante</h1>
+        <div class="container">
 
-        <h2>{{ $restaurant->name}}</h2>
+            <div class="">
+                <a href="{{ route('guest.restaurants') }}" class="btn btn-deliveroo ml-5">
+                    <i class="fas fa-arrow-left"></i> Tutti i ristoranti
+                </a>
+            </div>
+            <h1 class="text-center">Pagina singolo risorante</h1>
 
-        <p>Città: {{ $restaurant->city}}</p>
-        <p>Indirizzo: {{ $restaurant->address}}</p>
+            <div class="card-restaurant border-form m-2 p-5 d-flex">
+                <div class="info-restaurant">
+                    <h2>{{ $restaurant->name}}</h2>
+                    <p>Città: {{ $restaurant->city}}</p>
+                    <p>Indirizzo: {{ $restaurant->address}}</p>
+                    <p>Descrizione: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="cover-restaurant border m-2">
+                    <img src="{{asset("img/logo.png")}}" alt="Cover ristorante" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="our-dishes border-top mt-5">
+                <h1 class="text-center m-5">I nostri piatti</h1>
+
+                {{-- stampa dei piatti del ristorante  --}}
+            </div>
+        </div>
 
 
     </main>
