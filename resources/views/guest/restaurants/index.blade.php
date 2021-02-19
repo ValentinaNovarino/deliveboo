@@ -50,11 +50,13 @@
                                         <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
                                     </li>
                                 </ul>
-                                <label>Choose a category!</label>
-                                <vue-multi-select
-	                                v-model="value"
-	                                :options="filterCategory"
-                                ></vue-multi-select>
+                                <div class="d-flex align-items-center" v-if="prova">
+                                    <label>Choose a category!</label>
+                                    <vue-multi-select
+                                    v-model="value"
+                                    :options="filterCategory"
+                                    ></vue-multi-select>
+                                </div>
 
                             </div>
                         </nav>
