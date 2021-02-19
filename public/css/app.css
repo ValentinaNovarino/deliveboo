@@ -11102,6 +11102,7 @@ body {
   color: white;
   font-weight: bold;
   font-size: 28px;
+  transform: rotate(-2deg);
 }
 
 .div-search {
