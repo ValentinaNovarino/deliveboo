@@ -26,6 +26,7 @@
             </div>
 
             <div class="our-dishes border-top mt-5">
+                <span id="status"></span>
                 <h1 class="text-center m-5">I nostri piatti</h1>
 
                 {{-- stampa dei piatti del ristorante  --}}
@@ -45,7 +46,7 @@
                                <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
                            </p> --}}
 
-                           <button class="button-add-cart">
+                           <button class="button-add-cart text-center add-to-cart btn-loading">
                                <span>Add to cart</span>
                                <div class="cart">
                                    <svg viewBox="0 0 36 26">
@@ -68,6 +69,7 @@
 
     <script type="text/javascript">
 
+// Animazione buttone aggiunta al carrello
     document.querySelectorAll('.button-add-cart').forEach(button => button.addEventListener('click', e => {
         if (!button.classList.contains('loading')) {
 
@@ -77,6 +79,31 @@
         }
         e.preventDefault();
     }));
+    // fine animazione bottone
+
+
+// Funzione aggiunta al carrello
+    $(".button-add-cart").click(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            ele.siblings('.btn-loading').show();
+
+            $.ajax({
+                url: '{{ url('button-add-cart') }}' + '/' + ele.attr("data-id"),
+                method: "get",
+                // data: {_token: '{{ csrf_token() }}'},
+                dataType: "json",
+                success: function (response) {
+
+                    ele.siblings('.btn-loading').hide();
+                        // restituisce il messaggio di successo
+                    $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
+                    $("#header-bar").html(response.data);
+                }
+            });
+        });
 
     </script>
 
