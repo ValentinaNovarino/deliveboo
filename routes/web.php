@@ -27,7 +27,7 @@ Route::get('/restaurants/{slug}', 'RestaurantController@show')->name('restaurant
 Route::get('/home', 'HomeController@index')->name('home');
 
 // ROTTE PER IL CARRELLO
-Route::get('/', 'DishController@index');
+// Route::get('/', 'DishController@index');
 Route::get('cart', 'DishController@cart')->name('cart');
 Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
 Route::patch('update-cart', 'ProductsController@update');
