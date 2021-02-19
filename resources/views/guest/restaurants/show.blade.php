@@ -2,7 +2,7 @@
 
 @section('content')
     {{-- POPUP CART  --}}
-    <div class="section-dropcart p-2 d-flex justify-content-center">
+    <div class="section-dropcart">
         <button id="open"onclick=popup() type="button" class="btn-deliveroo " data-toggle="dropdown">
             @if (!session()->get('cart'))
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">0 €</span>
@@ -78,11 +78,11 @@
     </main>
 
     <script type="text/javascript">
-    //function for opening the popup
+        //function for opening the popup
         function popup(){
             var mes=document.getElementById('pop');
             mes.style.transform="scale(1)";
-            mes.style.transitionTimingFunction="linear";
+            mes.style.transitionTimingFunction="cubic-bezier(0,0,0,1.47)";
             navigator.vibrate(250);
         }
 
@@ -90,7 +90,7 @@
         function popin(){
             var mes=document.getElementById('pop');
             mes.style.transform="scale(0)";
-            mes.style.transitionTimingFunction="linear";
+            mes.style.transitionTimingFunction="cubic-bezier(0,0,0,-1.47)";
         }
     </script>
 @endsection

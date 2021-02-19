@@ -65,7 +65,7 @@
             </div>
             <main>
                 {{-- POPUP CART  --}}
-                <div class="section-dropcart p-2">
+                <div class="section-dropcart">
                     <button id="open"onclick=popup() type="button" class="btn-deliveroo " data-toggle="dropdown">
                         @if (!session()->get('cart'))
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">0 €</span>
