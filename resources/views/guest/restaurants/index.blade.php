@@ -50,14 +50,13 @@
                                         <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
                                     </li>
                                 </ul>
-                                <div v-for="category in filterCategory">
-
+                                <div class="d-flex align-items-center" v-if="prova">
+                                    <label>Choose a category!</label>
+                                    <vue-multi-select
+                                    v-model="value"
+                                    :options="filterCategory"
+                                    ></vue-multi-select>
                                 </div>
-                                <lable>Choose a category!</lable>
-                                <vue-multi-select
-	                                v-model="value"
-	                                :options="filterCategory"
-                                ></vue-multi-select>
 
                             </div>
                         </nav>
@@ -139,44 +138,67 @@
                     <div class="bg-light" id="sidebar-wrapper">
                         <h3>seleziona una categoria</h3>
                         <div class="form-check" v-for="category in categories">
-                            <input  class="form-check-input" type="checkbox" v-model="checked" :value="category">
+                            <input  @click="checkSuperContainer(category)" class="form-check-input" type="checkbox" v-model="checked" :value="category">
                             <label class="form-check-label">@{{category.name}}</label>
                         </div>
                     </div>
-                    <div class="card-restaurant-container">
+                    {{-- <div class="card-restaurant-container">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <div v-for="category in categories" class="card-restaurant" v-if="value.includes(category.name)">
-                                        <h2>Categoria: @{{category.name}}</h2>
-                                        <div v-for="item in category.restaurants" class="card-restaurant">
-                                            <h4>Nome del ristorante: <a href="#">@{{item.name}}</a></h4>
+                                    <div v-for="check in checked" class="div" v-if="check.restaurants.length">
+                                        <div v-for="category in categories" class="div2" v-if="value.includes(category.name) || check.restaurants.length">
+                                            <h2>Categoria: @{{check.name}}</h2>
+                                            <div v-for="item in check.restaurants" class="card-restaurant">
+                                                <h4>nome del ristorante : <a href="#">@{{item.name}}</a>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div v-if="checked.length" class="for-checkbox-container">
+                        <div class="card-restaurant-container">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length">
+                                            <h2>Categoria: @{{check.name}}</h2>
+                                            <div v-for="item in check.restaurants" class="card-restaurant">
+                                                <h4>nome del ristorante : <a href="#">@{{item.name}}</a>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div v-else class="card-restaurant">
+                                            <h4>Non ci sono ristoranti per la categoria @{{check.name}}</h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card-restaurant-container">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length">
-                                        <h2>Categoria: @{{check.name}}</h2>
-                                        <div v-for="item in check.restaurants" class="card-restaurant">
-                                            <h4>nome del ristorante : <a href="#">@{{item.name}}</a>
-                                            </h4>
+                    <div v-else class="for-select-container">
+                        <div class="card-restaurant-container">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div v-for="category in categories" class="card-restaurant" v-if="value.includes(category.name)">
+                                            <h2>Categoria: @{{category.name}}</h2>
+                                            <div v-for="item in category.restaurants" class="card-restaurant">
+                                                <h4>Nome del ristorante: <a href="#">@{{item.name}}</a></h4>
+                                            </div>
+                                            <div v-if="category.restaurants.length < 1" class="card-restaurant">
+                                                <h4>Non ci sono ristoranti per la categoria @{{category.name}}</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div v-else class="card-restaurant">
-                                        <h4>Non ci sono ristoranti per la categoria @{{check.name}}</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 {{-- test sezione stampa di tutti i ristoranti --}}
                 <section id="all-restaurants">
                     @foreach ($restaurants as $restaurant)
@@ -215,7 +237,9 @@
                     checked: [],
                     link: "{{url('/')}}",
                     value: '',
-                    filterCategory: []
+                    filterCategory: [],
+                    superContainer: [],
+                    prova: true,
                 },
                 methods: {
                     onChange(value) {
@@ -241,6 +265,9 @@
                                 }
                             }
                         })
+                    },
+                    checkSuperContainer(element) {
+                        this.superContainer.push(element)
                     },
                 },
                 mounted() {
