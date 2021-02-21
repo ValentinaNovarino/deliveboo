@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('partials.header-cart')
+
+        @include('partials.header-cart')
+
 
     <main>
         <div class="container">
@@ -30,6 +32,7 @@
                 <h1 class="text-center m-5">I nostri piatti</h1>
 
                 {{-- stampa dei piatti del ristorante  --}}
+
                 {{-- @foreach($dishes as $dish) --}}
                <div class="col-xs-12 col-sm-6 col-md-3">
                    <div class="thumbnail">
@@ -46,7 +49,9 @@
                                <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
                            </p> --}}
 
-                           <button class="button-add-cart text-center add-to-cart btn-loading">
+                           {{-- AGGIUNGERE DATA_ID UNA VOLTA PASSATI I DISH --}}
+                           {{-- data-id="{{ $dish->id }} --}}
+                           <button class="button-add-cart text-center btn-loading">
                                <span>Add to cart</span>
                                <div class="cart">
                                    <svg viewBox="0 0 36 26">
@@ -69,21 +74,20 @@
 
     <script type="text/javascript">
 
-// Animazione buttone aggiunta al carrello
-    document.querySelectorAll('.button-add-cart').forEach(button => button.addEventListener('click', e => {
-        if (!button.classList.contains('loading')) {
+    // Animazione buttone aggiunta al carrello
+        document.querySelectorAll('.button-add-cart').forEach(button => button.addEventListener('click', e => {
+            if (!button.classList.contains('loading')) {
 
-            button.classList.add('loading');
+                button.classList.add('loading');
 
-            setTimeout(() => button.classList.remove('loading'), 3700);
-        }
-        e.preventDefault();
-    }));
-    // fine animazione bottone
+                setTimeout(() => button.classList.remove('loading'), 3700);
+            }
+            e.preventDefault();
+        }));
+        // fine animazione bottone
 
-
-// Funzione aggiunta al carrello
-    $(".button-add-cart").click(function (e) {
+    // Funzione aggiunta al carrello
+    $(".add-to-cart").click(function (e) {
             e.preventDefault();
 
             var ele = $(this);
@@ -91,19 +95,22 @@
             ele.siblings('.btn-loading').show();
 
             $.ajax({
-                url: '{{ url('button-add-cart') }}' + '/' + ele.attr("data-id"),
+                url: '{{ url('add-to-cart') }}' + '/' + ele.attr("data-id"),
                 method: "get",
-                // data: {_token: '{{ csrf_token() }}'},
+                data: {_token: '{{ csrf_token() }}'},
                 dataType: "json",
                 success: function (response) {
 
                     ele.siblings('.btn-loading').hide();
-                        // restituisce il messaggio di successo
+
                     $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
-                    $("#header-bar").html(response.data);
+                    $(".section-dropcart").html(response.data);
                 }
             });
         });
+
+
+
 
     </script>
 

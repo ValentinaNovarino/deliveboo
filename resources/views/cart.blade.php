@@ -99,7 +99,7 @@
 
                     $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
 
-                    $("#header-bar").html(response.data);
+                    $(".section-dropcart").html(response.data);
 
                     dish_subtotal.text(response.subTotal);
 
@@ -129,7 +129,7 @@
 
                         $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
 
-                        $("#header-bar").html(response.data);
+                        $(".section-dropcart").html(response.data);
 
                         cart_total.text(response.total);
                     }
