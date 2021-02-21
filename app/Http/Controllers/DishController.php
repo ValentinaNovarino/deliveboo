@@ -45,7 +45,7 @@ class DishController extends Controller
 
             session()->put('cart', $cart);
 
-            $htmlCart = view('header-cart')->render();
+            $htmlCart = view('partials.header-cart')->render();
 
             return response()->json(['msg' => 'Piatto aggiunto con successo!', 'data' => $htmlCart]);
 
@@ -59,7 +59,7 @@ class DishController extends Controller
 
             session()->put('cart', $cart);
 
-            $htmlCart = view('header-cart')->render();
+            $htmlCart = view('partials.header-cart')->render();
 
             return response()->json(['msg' => 'Piatto aggiunto con successo!', 'data' => $htmlCart]);
 
@@ -77,7 +77,7 @@ class DishController extends Controller
 
         session()->put('cart', $cart);
 
-        $htmlCart = view('header-cart')->render();
+        $htmlCart = view('partials.header-cart')->render();
 
         return response()->json(['msg' => 'Piatto aggiunto con successo!', 'data' => $htmlCart]);
 
@@ -99,9 +99,9 @@ class DishController extends Controller
 
             $total = $this->getCartTotal();
 
-            $htmlCart = view('_header_cart')->render();
+            $htmlCart = view('header-cart')->render();
 
-            return response()->json(['msg' => 'Cart updated successfully', 'data' => $htmlCart, 'total' => $total, 'subTotal' => $subTotal]);
+            return response()->json(['msg' => 'Carrello aggiornato con successo', 'data' => $htmlCart, 'total' => $total, 'subTotal' => $subTotal]);
 
             //session()->flash('success', 'Cart updated successfully');
         }
@@ -123,9 +123,9 @@ class DishController extends Controller
 
             $total = $this->getCartTotal();
 
-            $htmlCart = view('_header_cart')->render();
+            $htmlCart = view('header-cart')->render();
 
-            return response()->json(['msg' => 'Product removed successfully', 'data' => $htmlCart, 'total' => $total]);
+            return response()->json(['msg' => 'Piatto eliminato', 'data' => $htmlCart, 'total' => $total]);
 
             //session()->flash('success', 'Product removed successfully');
         }
