@@ -63,7 +63,7 @@
                 </div>
             </div>
             <main>
-            @include('partials.header-cart')
+            @include('_header_cart')
 
                 <div class="main-container">
                     <div class="bg-light" id="sidebar-wrapper">

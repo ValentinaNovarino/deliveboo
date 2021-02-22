@@ -42,13 +42,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 
 
-// TEST CARRELLO 
+// TEST CARRELLO
 
-try {
-    window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap-sass');
-} catch (e) {}
+// try {
+//     window.$ = window.jQuery = require('jquery');
+//
+//     require('bootstrap-sass');
+// } catch (e) {}
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
 

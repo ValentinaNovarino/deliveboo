@@ -2,7 +2,7 @@
 
 @section('content')
 
-        @include('partials.header-cart')
+        @include('_header_cart')
 
 
     <main>
@@ -45,21 +45,11 @@
                            <p>Descrizione</p>
                            {{-- <p><strong>Price: </strong> {{ $dish->price }}$</p> --}}
                            <p>Prezzo</p>
-                           {{-- <p class="btn-holder"><a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
+                           <p class="btn-holder"><a href="javascript:void(0);"
+                               {{-- data-id="{{ $dish->id }}" --}}
+                               class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
                                <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
-                           </p> --}}
-
-                           {{-- AGGIUNGERE DATA_ID UNA VOLTA PASSATI I DISH --}}
-                           {{-- data-id="{{ $dish->id }} --}}
-                           <button class="button-add-cart text-center btn-loading">
-                               <span>Add to cart</span>
-                               <div class="cart">
-                                   <svg viewBox="0 0 36 26">
-                                       <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
-                                       <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
-                                   </svg>
-                               </div>
-                            </button>
+                           </p>
                        </div>
                    </div>
                </div>
@@ -67,24 +57,11 @@
 
             </div>
         </div>
-
-
     </main>
 
 
     <script type="text/javascript">
 
-    // Animazione buttone aggiunta al carrello
-        document.querySelectorAll('.button-add-cart').forEach(button => button.addEventListener('click', e => {
-            if (!button.classList.contains('loading')) {
-
-                button.classList.add('loading');
-
-                setTimeout(() => button.classList.remove('loading'), 3700);
-            }
-            e.preventDefault();
-        }));
-        // fine animazione bottone
 
     // Funzione aggiunta al carrello
     $(".add-to-cart").click(function (e) {
