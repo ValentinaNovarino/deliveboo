@@ -6,54 +6,16 @@
 
 
 <div class="wrap">
-    {{-- <div class="header-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-xs-12">
-                    <div class="logo">
-                        <img class="logo-header" src="{{'../img/logo-bianco.jpg'}}" alt="logo deliveroo">
-                    </div>
-                </div>
-                <div class="col-md-2 col-xs-12">
-                    <div class="menu-header">
-                        <button type="button" name="button">Collabora con noi</button>
-                    </div>
-                </div>
-                <div class="col-md-1 col-xs-12">
-                    <button type="button" name="button">0.00</button>
-                </div>
-                <div class="col-md-1 col-xs-12">
-                    <button type="button" name="button">Menu</button>
-                </div>
-            </div>
-            {{-- <div class="row">
-                <div class="col-xs-12 col-xs-12"> --}}
-                    {{-- <div class="titleHeader">
-                        <h1>I piatti che ami, a domicilio.</h1>
-                    </div> --}}
-                {{-- </div>
-            </div> --}}
-        {{-- </div>
-    </div> --}}
-
-
-
     <div class="header-bottom">
         <div class="container">
-
-            {{-- <div class="titleHeader">
-                <h1>I piatti che ami, a domicilio.</h1>
-            </div> --}}
             <div class="row">
                 <div class="col-md-6 col-xs-12">
                     <div class="titleHeader">
                         <h1>I piatti che ami, a domicilio.</h1>
                     </div>
                     <div class="div-search">
-                        {{-- <div class="search-header"> --}}
                             <span>Entra e scegli il tuo ristorante</span>
-                            <a href="{{ route('guest.restaurants') }}"><button class="capitalize btn btn-primary" type="button" name="button">cerca</button></a>
-                        {{-- </div> --}}
+                            <a href="{{ route('guest.restaurants') }}"><button class="capitalize btn btn-primary" type="button" name="button">entra</button></a>
                     </div>
                 </div>
                 <div class="col-md-1 col-xs-12">
@@ -83,7 +45,7 @@
                 <div class="menu-image-small">
                     <a href="#">
                         <img class="img-small" src="{{'../img/confort.jpg'}}" alt="">
-                        <p>I grandi classici che scaldano il cuore, perfetti in ogni momento.</p>
+                            <p>I grandi classici che scaldano il cuore, perfetti in ogni momento.</p>
                         <a href="#">Scopri Comfort food</a>
                         <div class="centered">
                                 <h2>Comfort food</h2>
@@ -109,7 +71,7 @@
                 <div class="menu-image-large">
                     <a href="#">
                         <img class="img-large" src="{{'../img/condividere.jpg'}}" alt="">
-                        <p>Serve una scusa per stare insieme? Ordina dai ristoranti che trasformeranno la tua serata in una vera festa.</p>
+                            <p>Serve una scusa per stare insieme? Ordina dai ristoranti che trasformeranno la tua serata in una vera festa.</p>
                         <a href="#">Scopri Perfetti da condividere</a>
                     <div class="centered">
                         <h2>Perfetti da condividere</h2>
@@ -121,7 +83,7 @@
                 <div class="menu-image-small">
                     <a href="#">
                         <img class="img-small" src="{{'../img/esclusiva.jpg'}}" alt="">
-                        <p>I più famosi, i più buoni, i preferiti. Quelli che trovi solo su Deliveroo.</p>
+                            <p>I più famosi, i più buoni, i preferiti. Quelli che trovi solo su Deliveroo.</p>
                         <a href="#">Scopri Esclusiva Deliveroo</a>
                     <div class="centered">
                         <h2>Esclusiva Deliveroo</h2>
@@ -139,68 +101,68 @@
             <div class="row justify-content-between">
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/croce.jpg'}}" alt="">
-                    <h2>Deliveroo per Croce Rossa Italiana</h2>
+                        <h2>Deliveroo per Croce Rossa Italiana</h2>
                     <p>Deliveroo sta raccogliendo fondi per fornire cibo gratuito alle famiglie più in difficoltà, attraverso la Croce Rossa Italiana (CRI). Puoi contribuire alla raccolta fondi facendo una donazione qui.</p>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/mac.jpg'}}" alt="">
-                    <h2>McDonald's</h2>
+                        <h2>McDonald's</h2>
                     <p></p>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/obica.jpg'}}" alt="">
-                    <h2>Obicà</h2>
+                        <h2>Obicà</h2>
                     <p>Ordina la tua mozzarella preferita a casa tua da Obicà grazie alla consegna a domicilio di Deliveroo.</p>
                 </div>
             </div>
             <div class="row justify-content-between">
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/lievita.jpg'}}" alt="">
-                    <h2>Lievità</h2>
+                        <h2>Lievità</h2>
                     <p>Ordina la tua pizza preferita a casa tua da Lievità grazie alla consegna a domicilio di Deliveroo.</p>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/poke.jpg'}}" alt="">
-                    <h2>Pokèria by NIMA</h2>
+                        <h2>Pokèria by NIMA</h2>
                     <p></p>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/sushi.jpg'}}" alt="">
-                    <h2>Daruma Sushi - Ponte Milvio e Centro</h2>
+                        <h2>Daruma Sushi - Ponte Milvio e Centro</h2>
                     <p>Ordina il tuo sushi preferito a casa tua da Daruma Sushi grazie alla consegna a domicilio di Deliveroo.</p>
                 </div>
             </div>
             <div class="row justify-content-between">
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/temakinho.jpg'}}" alt="">
-                    <h2>Temakinho</h2>
+                        <h2>Temakinho</h2>
                     <p>Ordina il tuo sushi preferito a casa tua da Temakinho grazie alla consegna a domicilio di Deliveroo.</p>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/berbere.jpg'}}" alt="">
-                    <h2>Berberè Pizzeria</h2>
+                        <h2>Berberè Pizzeria</h2>
                     <p></p>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/rosticceria.jpg'}}" alt="">
-                    <h2>Rosticceria Giacomo</h2>
+                        <h2>Rosticceria Giacomo</h2>
                     <p></p>
                 </div>
             </div>
             <div class="row justify-content-between">
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/burger_king.jpg'}}" alt="">
-                    <h2>Burger King</h2>
+                        <h2>Burger King</h2>
                     <p></p>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/macha.jpg'}}" alt="">
-                    <h2>Macha</h2>
+                        <h2>Macha</h2>
                     <p>Ordina i tuoi piatti preferiti della cucina giapponese a casa tua da Macha grazie alla consegna a domicilio di Deliveroo.</p>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <img src="{{'../img/grom.jpg'}}" alt="">
-                    <h2>Grom</h2>
+                        <h2>Grom</h2>
                     <p>Tutti i prodotti sono senza glutine. Sono realizzati senza aggiunta di aromi, coloranti o emulsionanti e creati scegliendo solo il meglio della natura. Innamorati del nostro gelato e gusta anche i nostri biscotti, le creme spalmabili e il nostro cioccolato</p>
                 </div>
             </div>
@@ -210,21 +172,85 @@
 <section class="cerca-tipo">
     <div class="container">
         <h1>Cerchi qualcos'altro?</h1>
-        <span class="capitalize">halal</span>
-        <span class="capitalize">colazione</span>
-        <span class="capitalize">vegetariano</span>
-        <span class="capitalize">messicano</span>
-        <span class="capitalize">dessert</span>
-        <span class="capitalize">indiano</span>
-        <span class="capitalize">greco</span>
-        <span class="capitalize">giapponese</span>
-        <span class="capitalize">cinese</span>
-        <span class="capitalize">libanese</span>
-        <span class="capitalize">americano</span>
-        <span class="capitalize">italiano</span>
-        <span class="capitalize">thailandese</span>
-        <span class="capitalize">sushi</span>
-        <span class="capitalize">pizza</span>
+            <span class="capitalize">halal</span>
+            <span class="capitalize">colazione</span>
+            <span class="capitalize">vegetariano</span>
+            <span class="capitalize">messicano</span>
+            <span class="capitalize">dessert</span>
+            <span class="capitalize">indiano</span>
+            <span class="capitalize">greco</span>
+            <span class="capitalize">giapponese</span>
+            <span class="capitalize">cinese</span>
+            <span class="capitalize">libanese</span>
+            <span class="capitalize">americano</span>
+            <span class="capitalize">italiano</span>
+            <span class="capitalize">thailandese</span>
+            <span class="capitalize">sushi</span>
+            <span class="capitalize">pizza</span>
     </div>
 </section>
+<section class="novita">
+    <div class="container">
+        <h1>Novità dalla nostra cucina</h1>
+        <div class="row">
+            <div class="col-xs-12 col md-6">
+                <div class="business">
+                    <img src="{{'../img/business.jpg'}}" alt="">
+                </div>
+            </div>
+            <div class="col-xs-12 col md-6">
+                <div class="aziende">
+                    <h2>Deliveroo per le Aziende</h2>
+                        <p>Clienti o colleghi affamati? il nostro team Corporate ti può aiutare.</p>
+                    <button type="button" name="button">Contattaci</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="app_google">
+                    <h2>Hai già la nostra app?</h2>
+                        <p>Scaricala ora - disponibile su Apple store e Google Play!</p>
+                    <img src="{{'../img/appicon.png'}}" alt="">
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                    <div class="deliveroo_icon">
+                        <img src="{{'../img/bunny.png'}}" alt="">
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <div class="banner_verticale">
+                    <img src="" alt="">
+                    <h2>Rider</h2>
+                    <p></p>
+                    <button type="button" name="button"></button>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <div class="banner_verticale">
+                    <img src="" alt="">
+                    <h2>Ristoranti</h2>
+                    <p></p>
+                    <button type="button" name="button"></button>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <div class="banner_verticale">
+                    <img src="" alt="">
+                    <h2>Lavora con noi</h2>
+                    <p></p>
+                    <button type="button" name="button"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection
