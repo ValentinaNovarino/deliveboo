@@ -24,12 +24,13 @@ class RestaurantController extends Controller
 
 
     public function show($slug) {
-       $restaurant = Restaurant::where('slug', $slug)->first();
-       if(!$restaurant) {
+
+       $restaurantDishes = Restaurant::where('slug', $slug)->with('dishes')->get();
+       if(!$restaurantDishes) {
            abort(404);
        }
        $data = [
-           'restaurant' => $restaurant,
+           'restaurantDishes' => $restaurantDishes
         ];
        return view('guest.restaurants.show', $data);
    }

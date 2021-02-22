@@ -3,8 +3,16 @@
 @section('content')
 
         @include('_header_cart')
+        {{-- {{dd($restaurantDishes)}} --}}
 
+        {{-- @foreach ($restaurantDishes as $value) --}}
+            {{-- {{dd($value->name)}} nome ristorante --}}
+            {{-- {{dd($value->dishes)}} --}}
+            {{-- @foreach ($value->dishes as $e)
+                {{dd($e->name)}}
+            @endforeach
 
+        @endforeach --}}
     <main>
         <div class="container">
 
@@ -17,10 +25,12 @@
 
             <div class="card-restaurant border-form m-2 p-5 d-flex">
                 <div class="info-restaurant">
-                    <h2>{{ $restaurant->name}}</h2>
-                    <p>Città: {{ $restaurant->city}}</p>
-                    <p>Indirizzo: {{ $restaurant->address}}</p>
-                    <p>Descrizione: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    @foreach ($restaurantDishes as $restaurant)
+                        <h2>{{ $restaurant->name}}</h2>
+                        <p>Città: {{ $restaurant->city}}</p>
+                        <p>Indirizzo: {{ $restaurant->address}}</p>
+                        <p>Descrizione: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    @endforeach
                 </div>
                 <div class="cover-restaurant border m-2">
                     <img src="{{asset("img/logo.png")}}" alt="Cover ristorante" class="img-fluid">
@@ -39,12 +49,16 @@
                        {{-- <img src="{{ $dish->cover }}" width="200" height="200"> --}}
                        <img src="{{asset("img/logo.png")}}" alt="Cover piatto" width="200" height="200" class="img-fluid">
                        <div class="caption">
+                           @foreach ($restaurantDishes as $restaurant)
+                               @foreach ($restaurant->dishes as $dish)
+                                   <h4>Nome piatto: {{ $dish->name }}</h4>
+                                   <p>Descrizione: {{ $dish->description }}</p>
+                                   <p>Prezzo: {{ $dish->price }}</p>
+                               @endforeach
+                           @endforeach
                            {{-- <h4>{{ $dish->name }}</h4> --}}
-                           <h4>Nome piatto</h4>
                            {{-- <p>{{ str_limit(strtolower($dish->description), 50) }}</p> --}}
-                           <p>Descrizione</p>
                            {{-- <p><strong>Price: </strong> {{ $dish->price }}$</p> --}}
-                           <p>Prezzo</p>
                            <p class="btn-holder"><a href="javascript:void(0);"
                                {{-- data-id="{{ $dish->id }}" --}}
                                class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
