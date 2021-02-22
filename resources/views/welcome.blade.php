@@ -222,31 +222,32 @@
         </div>
     </div>
 </section>
-<section>
+<section class="lavora_con_noi">
     <div class="container">
+        <h1>Lavora con Deliveroo</h1>
         <div class="row">
             <div class="col-xs-12 col-md-4">
-                <div class="banner_verticale">
-                    <img src="" alt="">
-                    <h2>Rider</h2>
-                    <p></p>
-                    <button type="button" name="button"></button>
+                <div class="banner_verticale red">
+                    <img src="{{'../img/riders.jpg'}}" alt="">
+                        <h2>Rider</h2>
+                        <p>Diventa un rider: flessibilità, ottimi guadagni e un mondo di vantaggi per te.</p>
+                    <button type="button" name="button">Unisciti a noi</button>
                 </div>
             </div>
             <div class="col-xs-12 col-md-4">
-                <div class="banner_verticale">
-                    <img src="" alt="">
-                    <h2>Ristoranti</h2>
-                    <p></p>
-                    <button type="button" name="button"></button>
+                <div class="banner_verticale orange">
+                    <img src="{{'../img/restaurants.jpg'}}" alt="">
+                        <h2>Ristoranti</h2>
+                        <p>Diventa partner di Deliveroo e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.</p>
+                    <button type="button" name="button">Diventa nostro partner</button>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-4 violet">
                 <div class="banner_verticale">
-                    <img src="" alt="">
-                    <h2>Lavora con noi</h2>
-                    <p></p>
-                    <button type="button" name="button"></button>
+                    <img src="{{'../img/team.jpg'}}" alt="">
+                        <h2>Lavora con noi</h2>
+                        <p>La nostra missione è trasformare il modo in cui le persone mangiano. È un obiettivo ambizioso, come noi, e ci servono persone che ci aiutino a raggiungerlo.</p>
+                    <button type="button" name="button">Scopri di più</button>
                 </div>
             </div>
         </div>
