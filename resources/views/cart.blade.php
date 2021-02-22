@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+{{-- @section('title', 'Cart') --}}
 
 @section('content')
 
@@ -25,7 +26,7 @@
                 <?php $total += $details['price'] * $details['quantity'] ?>
 
                 <tr>
-                    <td data-th="Dish">
+                    <td data-th="Product">
                         <div class="row">
                             <div class="col-sm-3 hidden-xs"><img src="{{ $details['photo'] }}" width="100" height="100" class="img-responsive"/></div>
                             <div class="col-sm-9">
@@ -37,7 +38,7 @@
                     <td data-th="Quantity">
                         <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
                     </td>
-                    <td data-th="Subtotal" class="text-center">$<span class="dish-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
+                    <td data-th="Subtotal" class="text-center">$<span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
                     <td class="actions" data-th="">
                         {{-- refresh da azzurro a giallo --}}
                         <button class="btn btn-warning btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
@@ -54,10 +55,10 @@
             <td class="text-center"><strong>Total $<span class="cart-total">{{ $total }}</span></strong></td>
         </tr>
         <tr>
-            <td><a href="{{ route('guest.restaurants') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td>
-                <a href="{{ route("checkout.index")}}" class="btn btn-info">Procedi con l'ordine</a>
+                <a href="{{ route('checkout.index') }}" class="btn btn-info">Procedi con l'ordine</a>
             </td>
             <td class="hidden-xs text-center"><strong>Total $<span class="cart-total">{{ $total }}</span></strong></td>
         </tr>
@@ -80,7 +81,7 @@
 
             var quantity = parent_row.find(".quantity").val();
 
-            var dish_subtotal = parent_row.find("span.dish-subtotal");
+            var product_subtotal = parent_row.find("span.product-subtotal");
 
             var cart_total = $(".cart-total");
 
@@ -99,9 +100,9 @@
 
                     $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
 
-                    $(".section-dropcart").html(response.data);
+                    $("#header-bar").html(response.data);
 
-                    dish_subtotal.text(response.subTotal);
+                    product_subtotal.text(response.subTotal);
 
                     cart_total.text(response.total);
                 }
@@ -117,7 +118,7 @@
 
             var cart_total = $(".cart-total");
 
-            if(confirm("Sei sicuro?")) {
+            if(confirm("Are you sure")) {
                 $.ajax({
                     url: '{{ url('remove-from-cart') }}',
                     method: "DELETE",
@@ -129,7 +130,7 @@
 
                         $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
 
-                        $(".section-dropcart").html(response.data);
+                        $("#header-bar").html(response.data);
 
                         cart_total.text(response.total);
                     }
