@@ -12,19 +12,20 @@
         border: 1px solid gray;
         padding: 10px 15px;
     }
+    // .box-restaurant-container {
+    //     height: 100vh;
+    // }
     .card-restaurant-container {
-        height: 80vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
 
         .card-restaurant{
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-            word-wrap: break-word;
-            background-color: #fff;
-            background-clip: border-box;
-            border: 2px solid #00ccbc;
-            border-radius: 0.25rem;
+            width: 350px;
+            height: 350px;
+            border: 2px solid $colorPrimary;
+            margin: 5px;
         }
     }
 }
@@ -47,9 +48,19 @@
     flex-wrap: wrap;
 
     .box-restaurant{
-        width: 250px;
-        height: 250px;
+        width: 350px;
+        height: 350px;
         border: 2px solid $colorPrimary;
         margin: 5px;
+    }
+}
+
+.restaurant-img {
+    height: 150px;
+    width: 150px;
+    img {
+        display: block;
+        height: 100%;
+        width: 100%;
     }
 }

@@ -54,10 +54,18 @@ class RestaurantController extends Controller
             'name' => 'required|max:100',
             'city' => 'required|max:100',
             'address' => 'required|max:100',
-            'categories' => 'required|exists:categories,id'
+            'categories' => 'required|exists:categories,id',
+            'image' => 'nullable|image|max:512'
         ]);
         $data = $request->all();
+        // dd($data);
         $newRestaurant = new Restaurant();
+
+        if(array_key_exists('image', $data)) {
+            $coverPath = Storage::put('restaurantsCover', $data['image']);
+            $data['cover'] = $coverPath;
+        }
+
         $newRestaurant->fill($data);
         $newRestaurant->user_id = Auth::user()->id;
         $slug = Str::slug($newRestaurant->name, '-');

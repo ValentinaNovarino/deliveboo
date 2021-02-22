@@ -61,44 +61,55 @@
                 <div class="main-container">
                     <div class="bg-light" id="sidebar-wrapper">
                         <h3>seleziona una categoria</h3>
-                        <div v-for="categoryName in filterCategory" class="">
+                        <div v-for="categoryName in filterCategory">
                             <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
                             :value="categoryName">
                             <label class="form-check-label">@{{categoryName}}</label>
                         </div>
                     </div>
-                    <div class="container card-restaurant-container">
+                    <div class="container box-restaurant-container">
+                        <div v-if="!checked.length">
+                            {{-- test sezione stampa di tutti i ristoranti --}}
+                            <h1>I migliori ristoranti</h1>
+                            <section id="all-restaurants">
+                                @foreach ($restaurants as $restaurant)
+                                    <div class="box-restaurant">
+                                        <div class="restaurant-img">
+                                            <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="{{ $restaurant->name }}">
+                                        </div>
+                                        <h2>
+                                            {{ $restaurant->name }}
+                                        </h2>
+                                        <p> {{ $restaurant->slug }}</p>
+                                        <p> {{ $restaurant->city }}</p>
+                                        <p> {{ $restaurant->address}}</p>
+                                        <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
+                                            See restaurant page
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </section>
+                            {{-- Fine sezione stampa dei ristoranti--}}
+
+                        </div>
                         <div v-for="categoryRest in categoriesRestaurants" v-if="visibleRestaurant">
-                            <div v-for="item in categoryRest" v-if="checked.includes(item.name)" class="card-restaurant">
+                            <div v-for="item in categoryRest" v-if="checked.includes(item.name)">
                                 <h2>Categoria: @{{item.name}}</h2>
-                                <div v-for="restaurant in item.restaurants" class="card-restaurant">
-                                    <h4>Restaurant: <a href="#">@{{restaurant.name}}</a></h4>
-                                </div>
-                                <div v-if="item.restaurants.length < 1" class="card-restaurant">
-                                    <h4>Non ci sono ristoranti per la categoria @{{item.name}}</h4>
+                                <div class="card-restaurant-container">
+                                    <div v-for="restaurant in item.restaurants" class="card-restaurant">
+                                        <div class="restaurant-img">
+                                            <img :src="'../../storage/' + restaurant.cover" :alt="'immagine ' + restaurant.name">
+                                        </div>
+                                        <h4>Restaurant: <a :href="'restaurants/' + restaurant.slug">@{{restaurant.name}}</a></h4>
+                                    </div>
+                                    <div v-if="item.restaurants.length < 1" class="card-restaurant">
+                                        <h4>Non ci sono ristoranti per la categoria @{{item.name}}</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                {{-- test sezione stampa di tutti i ristoranti --}}
-                <section id="all-restaurants">
-                    @foreach ($restaurants as $restaurant)
-                        <div class="box-restaurant">
-                            <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="">
-                            <h2>
-                                {{ $restaurant->name }}
-                            </h2>
-                            <p> {{ $restaurant->slug }}</p>
-                            <p> {{ $restaurant->city }}</p>
-                            <p> {{ $restaurant->address}}</p>
-                            <a class="" href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
-                                See restaurant page
-                            </a>
-                        </div>
-                    @endforeach
-                </section>
-                {{-- Fine sezione stampa dei ristoranti--}}
             </main>
         </div>
 

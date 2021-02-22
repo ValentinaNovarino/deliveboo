@@ -101,3 +101,11 @@ $fontprimary: 'Stratos Web';
     font-size: 14px;
     display: none;
 }
+
+.sub-card {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}

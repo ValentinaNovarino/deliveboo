@@ -22,7 +22,6 @@ class RestaurantController extends Controller
     }
 
 
-
     public function show($slug) {
 
        $restaurantDishes = Restaurant::where('slug', $slug)->with('dishes')->get();
@@ -34,4 +33,5 @@ class RestaurantController extends Controller
         ];
        return view('guest.restaurants.show', $data);
    }
-}
+
+ }
