@@ -11723,6 +11723,13 @@ li.list-group-item.restaurant-info {
   .cerca-tipo span {
     font-size: 30px;
   }
+
+  .dropdown-menu.show {
+    padding: 10px;
+    width: 250px !important;
+    left: -150px !important;
+    box-shadow: 0px 5px 30px black;
+  }
 }
 
 @media screen and (max-width: 862px) {
@@ -11750,6 +11757,7 @@ li.list-group-item.restaurant-info {
   .dropdown-menu.show {
     padding: 10px;
     width: 250px !important;
+    left: -180px !important;
     box-shadow: 0px 5px 30px black;
   }
 
@@ -11796,10 +11804,6 @@ li.list-group-item.restaurant-info {
   .image-header {
     width: 200px;
     overflow: hidden;
-  }
-
-  .btn.btn-deliveroo {
-    display: none;
   }
 
   .btn.add.btn-deliveroo {
@@ -11883,6 +11887,17 @@ li.list-group-item.restaurant-info {
   .image-header {
     width: 200px;
   }
+
+  .dropdown-menu.show {
+    padding: 10px;
+    width: 250px !important;
+    left: -70px !important;
+    box-shadow: 0px 5px 30px black;
+  }
+
+  .dropdown-menu.show a.btn-deliveroo {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -11925,6 +11940,17 @@ li.list-group-item.restaurant-info {
 
   .cerca-tipo span {
     font-size: 18px;
+  }
+
+  .dropdown-menu.show {
+    padding: 10px;
+    width: 250px !important;
+    left: -90px !important;
+    box-shadow: 0px 5px 30px black;
+  }
+
+  .dropdown-menu.show a.btn-deliveroo {
+    display: block;
   }
 }
 
@@ -11999,17 +12025,16 @@ td {
 }
 
 #header-bar {
-  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   background: transparent;
+  height: 100px;
+  padding: 20px;
 }
 
 .main-section {
   background-color: #F8F8F8;
-}
-
-.dropdown {
-  float: right;
-  padding-right: 30px;
 }
 
 .btn {
@@ -12019,11 +12044,12 @@ td {
 }
 
 .dropdown .dropdown-menu {
-  padding: 20px;
+  width: 350px;
+  position: absolute;
   top: 30px !important;
-  width: 350px !important;
-  left: -110px !important;
+  left: -270px;
   box-shadow: 0px 5px 30px black;
+  padding: 10px;
 }
 
 .total-header-section {
@@ -12068,15 +12094,6 @@ td {
 .checkout .btn-primary {
   border-radius: 50px;
   height: 50px;
-}
-
-.dropdown-menu:before {
-  content: " ";
-  position: absolute;
-  top: -20px;
-  right: 50px;
-  border: 10px solid transparent;
-  border-bottom-color: #fff;
 }
 
 .thumbnail {

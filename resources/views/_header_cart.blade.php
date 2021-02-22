@@ -1,9 +1,9 @@
-<div id="header-bar" class="col-lg-12 col-sm-12 col-12 main-section">
+<div id="header-bar" class="main-section">
     <div class="dropdown">
         <button type="button" class="btn btn-deliveroo" data-toggle="dropdown">
 
             @if (!session()->get('cart'))
-                <i class="fa fa-shopping-cart p-1" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger"> 0 €</span>
+                <i class="fa fa-shopping-cart p-1" aria-hidden="true"></i><span class="badge badge-pill badge-danger"> 0 €</span>
 
             @else
                 @php
@@ -30,7 +30,7 @@
         </button>
         <div class="dropdown-menu">
             <div class="row total-header-section">
-                <div class="col-lg-6 col-sm-6 col-6">
+                <div class="col-xs-6 col-lg-6 col-sm-6 col-6">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                 </div>
 
@@ -40,7 +40,7 @@
                 @endforeach
 
                 <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
-                    <p>Total: <span class="text-info">$ {{ $total }}</span></p>
+                    <p>Totale: <span class="text-info">€ {{ $total }}</span></p>
                 </div>
             </div>
 
@@ -52,14 +52,14 @@
                         </div>
                         <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
                             <p>{{ $details['name'] }}</p>
-                            <span class="price text-info"> ${{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
+                            <span class="price text-info"> €{{ $details['price'] }}</span> <span class="count"> Quantità:{{ $details['quantity'] }}</span>
                         </div>
                     </div>
                 @endforeach
             @endif
             <div class="row">
                 <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                    <a href="{{ url('cart') }}" class="btn btn-deliveroo btn-block">View all</a>
+                    <a href="{{ url('cart') }}" class="btn btn-deliveroo btn-block">Vai al carrello</a>
                 </div>
             </div>
         </div>
