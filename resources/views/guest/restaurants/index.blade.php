@@ -49,13 +49,6 @@
                                         <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
                                     </li>
                                 </ul>
-                                <div class="d-flex align-items-center" v-if="prova">
-                                    <label>Choose a category!</label>
-                                    <vue-multi-select
-                                    v-model="value"
-                                    :options="filterCategory"
-                                    ></vue-multi-select>
-                                </div>
 
                             </div>
                         </nav>
@@ -68,63 +61,21 @@
                 <div class="main-container">
                     <div class="bg-light" id="sidebar-wrapper">
                         <h3>seleziona una categoria</h3>
-                        <div class="form-check" v-for="category in categories">
-                            <input @click="apiCategories()" class="form-check-input" type="checkbox" v-model="checked" :value="category">
-                            <label class="form-check-label">@{{category.name}}</label>
+                        <div v-for="categoryName in filterCategory" class="">
+                            <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
+                            :value="categoryName">
+                            <label class="form-check-label">@{{categoryName}}</label>
                         </div>
                     </div>
-                    {{-- <div class="card-restaurant-container">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <div v-for="check in checked" class="div" v-if="check.restaurants.length">
-                                        <div v-for="category in categories" class="div2" v-if="value.includes(category.name) || check.restaurants.length">
-                                            <h2>Categoria: @{{check.name}}</h2>
-                                            <div v-for="item in check.restaurants" class="card-restaurant">
-                                                <h4>nome del ristorante : <a href="#">@{{item.name}}</a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <div class="container card-restaurant-container">
+                        <div v-for="categoryRest in categoriesRestaurants" v-if="visibleRestaurant">
+                            <div v-for="item in categoryRest" v-if="checked.includes(item.name)" class="card-restaurant">
+                                <h2>Categoria: @{{item.name}}</h2>
+                                <div v-for="restaurant in item.restaurants" class="card-restaurant">
+                                    <h4>Restaurant: <a href="#">@{{restaurant.name}}</a></h4>
                                 </div>
-                            </div>
-                        </div>
-                    </div> --}}
-                    <div v-if="checked.length" class="for-checkbox-container">
-                        <div class="card-restaurant-container">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <div v-for="check in checked" class="card-restaurant" v-if="check.restaurants.length">
-                                            <h2>Categoria: @{{check.name}}</h2>
-                                            <div v-for="item in check.restaurants" class="card-restaurant">
-                                                <h4>nome del ristorante : <a href="#">@{{item.name}}</a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div v-else class="card-restaurant">
-                                            <h4>Non ci sono ristoranti per la categoria @{{check.name}}</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-else class="for-select-container">
-                        <div class="card-restaurant-container">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <div v-for="category in categories" class="card-restaurant" v-if="value.includes(category.name)">
-                                            <h2>Categoria: @{{category.name}}</h2>
-                                            <div v-for="item in category.restaurants" class="card-restaurant">
-                                                <h4>Nome del ristorante: <a href="#">@{{item.name}}</a></h4>
-                                            </div>
-                                            <div v-if="category.restaurants.length < 1" class="card-restaurant">
-                                                <h4>Non ci sono ristoranti per la categoria @{{category.name}}</h4>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div v-if="item.restaurants.length < 1" class="card-restaurant">
+                                    <h4>Non ci sono ristoranti per la categoria @{{item.name}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -159,82 +110,53 @@
             var app = new Vue ({
                 el: '#root',
                 data: {
-                    selectedValue: '',
-                    selectedCategoryValue: '',
-                    changedValue: '',
-                    changedCategoryValue: '',
-                    visible: false,
-                    visibleCategory: false,
-                    restaurants: [],
-                    restaurantSlugs: [],
-                    categories: [],
+                    categoriesRestaurants: [],
                     checked: [],
-                    value: '',
                     filterCategory: [],
-                    prova: true,
-                    container: [],
+                    visibleRestaurant: false,
+                    // selectedValue: '',
+                    // selectedCategoryValue: '',
+                    // changedValue: '',
+                    // changedCategoryValue: '',
+                    // visible: false,
+                    // visibleCategory: false,
+                    // restaurants: [],
+                    // restaurantSlugs: [],
+                    //
+                    // value: '',
+                    //
+                    // supaCntainer: [],
+                    // valoreCheck: '',
                 },
                 methods: {
-                    onChange(value) {
-                        this.visible = false;
-                        this.restaurants = [];
-                        this.categories = [];
+                    onChangeCategory(value) {
+                        this.visibleRestaurant = false;
+                        this.categoriesRestaurants = [];
 
-                        console.log(this.selectedValue);
-
-                        axios.post('/api/restaurants')
+                        // console.log(this.selectedCategoryValue);
+                        axios.post('/api/categoriesRestaurants')
                         .then((element) => {
-                            // this.dishes = response.data.dishes;
-                            console.log(element.data.response);
-                            // console.log(element.data);
-                            this.restaurants = element.data.response;
-                            for (var i = 0; i < element.data.response.length; i++) {
-                                console.log(element.data.response[i].id);
-                                console.log(element.data.response[i].slug);
-                                this.restaurantSlugs.push(element.data.response[i].slug);
-                                this.changedValue = element.data.response[i].id;
-                                if (this.selectedValue == this.changedValue) {
-                                    this.visible = true;
+                            // console.log(element.data.response.categoriesRestaurants);
+                            this.categoriesRestaurants.push(element.data.response.categoriesRestaurants);
+                            for (var i = 0; i < element.data.response.categoriesRestaurants.length; i++) {
+                                this.visibleRestaurant = false;
+
+                                if (element.data.response.categoriesRestaurants[i].restaurants.length > 0) {
+                                    this.visibleRestaurant = true;
                                 }
+                                // console.log(this.visibleRestaurant);
                             }
-                        })
-                    },
-                    apiCategories(value) {
-                        this.visible = false;
-                        // this.restaurants = [];
-                        // this.categories = [];
 
-                        console.log(this.selectedValue);
 
-                        axios.post('/api/categories')
-                        .then((element) => {
-                            // this.dishes = response.data.dishes;
-                            console.log(element.data.response.categoriesRestaurants);
-                            // console.log(element.data);
-                            // this.restaurants = element.data.response;
-                            // for (var i = 0; i < element.data.response.length; i++) {
-                            //     console.log(element.data.response[i].id);
-                            //     console.log(element.data.response[i].slug);
-                            //     this.restaurantSlugs.push(element.data.response[i].slug);
-                            //     this.changedValue = element.data.response[i].id;
-                            //     if (this.selectedValue == this.changedValue) {
-                            //         this.visible = true;
-                            //     }
-                            // }
                         })
                     },
                 },
                 mounted() {
                         axios.post('/api/categories')
                         .then((element) => {
-                            this.categories = element.data.response.categoriesRestaurants;
-                            for (var i = 0; i < element.data.response.categoriesRestaurants.length; i++) {
-
-                                this.filterCategory.push(element.data.response.categoriesRestaurants[i].name);
-                                // console.log(element.data.response.categoriesRestaurants[i].restaurants);
-                                // if (element.data.response.categoriesRestaurants[i].restaurants.length) {
-                                //     this.filterCategory.push(element.data.response.categoriesRestaurants[i].name);
-                                // }
+                            // console.log(element.data.response.categories);
+                            for (var i = 0; i < element.data.response.categories.length; i++) {
+                                this.filterCategory.push(element.data.response.categories[i].name);
                             }
 
                         })
