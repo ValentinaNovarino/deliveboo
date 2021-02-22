@@ -11039,6 +11039,14 @@ body {
   display: none;
 }
 
+.sub-card {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
@@ -12071,5 +12079,9 @@ td {
   display: block;
   height: 100%;
   width: 100%;
+}
+
+.checkout-without-container {
+  height: 80vh;
 }
 
