@@ -10,10 +10,22 @@ class CategoryController extends Controller
 {
     public function index() {
 
-    // $categories = Category::all();
+    $categories = Category::all();
+    // $categoriesRestaurants = Category::with('restaurants')->get();
+    $data = [
+        'categories' => $categories,
+        // 'categoriesRestaurants' => $categoriesRestaurants
+    ];
+    return response()->json([
+        'succes' => true,
+        'response' => $data,
+    ]);
+}
+
+    public function categoriesRestaurants() {
+
     $categoriesRestaurants = Category::with('restaurants')->get();
     $data = [
-        // 'categories' => $categories,
         'categoriesRestaurants' => $categoriesRestaurants
     ];
     return response()->json([
