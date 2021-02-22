@@ -92,10 +92,10 @@
         };
 
         // controllo sulle checkbox delle categorie
-        if (!checked) {
-            alert("Nessuna CheckBox spuntata. Spuntane almeno una");
-            return false;
-        };
+        // if (!checked) {
+        //     alert("Nessuna CheckBox spuntata. Spuntane almeno una");
+        //     return false;
+        // };
     }
 </script>
 @endsection

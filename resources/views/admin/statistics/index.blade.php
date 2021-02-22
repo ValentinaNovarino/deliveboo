@@ -18,6 +18,8 @@
 
 <script>
 
+
+
 let myCanvasMonth = document.getElementById("myCanvasMonth").getContext('2d');
 let myLabelsMonth = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago","Set", "Ott", "Nov", "Dic"];
 let myDataMonth = [50, 70, 80, 20, 15, 35, 65, 90, 150, 200, 175, 300]
@@ -124,6 +126,7 @@ let chartYear = new Chart(myCanvasYear, {
         }
     },
 });
+
 
 
 </script>
