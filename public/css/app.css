@@ -12018,19 +12018,17 @@ td {
 }
 
 .main-container .card-restaurant-container {
-  height: 80vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .main-container .card-restaurant-container .card-restaurant {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
+  width: 250px;
+  height: 250px;
   border: 2px solid #00ccbc;
-  border-radius: 0.25rem;
+  margin: 5px;
 }
 
 .logo-guest-restaurant {
