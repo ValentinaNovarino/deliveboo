@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('_header_cart')
 
-        @include('_header_cart')
         {{-- {{dd($restaurantDishes)}} --}}
 
         {{-- @foreach ($restaurantDishes as $value) --}}
