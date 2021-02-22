@@ -4,7 +4,7 @@
 <div class="container border-form p-5">
     <div class="row justify-content-center">
         <div class="col 12">
-            {{-- @if ($errors->any())
+            @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                     @foreach ($errors->all() as $error)
@@ -12,7 +12,7 @@
                     @endforeach
                     </ul>
                 </div>
-            @endif --}}
+            @endif
             <h1>Inserisci i dati del tuo Ristorante</h1>
             <form name="myRestaurantForm" method="POST" action="{{ route('admin.restaurants.store') }}" enctype="multipart/form-data" onsubmit="return validateRestaurantForm()">
                 @csrf
@@ -50,7 +50,7 @@
                     @endforeach
                     @error('categories')
                        <div class="alert alert-danger">{{ $message }}</div>
-                   @enderror
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-deliveroo">Invio</button>
             </form>
@@ -62,7 +62,6 @@
         var name = document.forms["myRestaurantForm"]["name"].value;
         var city = document.forms["myRestaurantForm"]["city"].value;
         var address = document.forms["myRestaurantForm"]["address"].value;
-        var checked = document.forms["myRestaurantForm"]["categories[]"].checked;
 
         // controllo sul nome del ristorante
         if (name == "" || name == "undefined") {
@@ -91,11 +90,16 @@
             return false;
         };
 
-        // controllo sulle checkbox delle categorie
-        if (!checked) {
-            alert("Nessuna CheckBox spuntata. Spuntane almeno una");
-            return false;
+        // // controllo sulle checkbox delle categorie
+        var selected = false;
+        for (var i=0; i<document.forms["myRestaurantForm"].elements.length; i++){
+            if (document.forms["myRestaurantForm"].elements[i].type && document.forms["myRestaurantForm"].elements[i].type.toLowerCase() == "checkbox" && document.forms["myRestaurantForm"].elements[i].checked)
+            selected = true;
+        }
+        if (!selected){
+            alert ("Devi spuntare almeno una categoria");
         };
     }
+
 </script>
 @endsection
