@@ -1,9 +1,9 @@
-<div class="col-lg-12 col-sm-12 col-12 main-section">
+<div id="header-bar" class="col-lg-12 col-sm-12 col-12 main-section">
     <div class="dropdown">
-        <button type="button" class="btn btn-info" data-toggle="dropdown">
+        <button type="button" class="btn btn-deliveroo" data-toggle="dropdown">
 
             @if (!session()->get('cart'))
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">0 €</span>
+                <i class="fa fa-shopping-cart p-1" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger"> 0 €</span>
 
             @else
                 @php
@@ -21,7 +21,7 @@
                     @endphp
 
                 @endforeach
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ $totale }} €</span>
+                <i class="fa fa-shopping-cart p-1" aria-hidden="true"></i><span class="badge badge-pill badge-danger"> {{ $totale }} €</span>
 
             @endif
 
@@ -59,7 +59,7 @@
             @endif
             <div class="row">
                 <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                    <a href="{{ url('cart') }}" class="btn btn-primary btn-block">View all</a>
+                    <a href="{{ url('cart') }}" class="btn btn-deliveroo btn-block">View all</a>
                 </div>
             </div>
         </div>

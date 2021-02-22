@@ -9,10 +9,10 @@
     <table id="cart" class="table table-hover table-condensed">
         <thead>
         <tr>
-            <th style="width:50%">Product</th>
-            <th style="width:10%">Price</th>
-            <th style="width:8%">Quantity</th>
-            <th style="width:22%" class="text-center">Subtotal</th>
+            <th style="width:50%">Piatti</th>
+            <th style="width:10%">Prezzo</th>
+            <th style="width:8%">Quantità</th>
+            <th style="width:22%" class="text-center">Subtotale</th>
             <th style="width:10%"></th>
         </tr>
         </thead>
@@ -34,15 +34,15 @@
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price">${{ $details['price'] }}</td>
+                    <td data-th="Price">€ {{ $details['price'] }}</td>
                     <td data-th="Quantity">
                         <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
                     </td>
-                    <td data-th="Subtotal" class="text-center">$<span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
+                    <td data-th="Subtotal" class="text-center">€ <span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
                     <td class="actions" data-th="">
                         {{-- refresh da azzurro a giallo --}}
-                        <button class="btn btn-warning btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
-                        <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fa fa-trash-o"></i></button>
+                        <button class="btn btn-warning btn-sm update-cart p-2" data-id="{{ $id }}"><i class="fas fa-sync-alt"></i></button>
+                        <button class="btn btn-danger btn-sm remove-from-cart p-2" data-id="{{ $id }}"><i class="fas fa-trash-alt"></i></button>
                         <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
                     </td>
                 </tr>
@@ -52,22 +52,18 @@
         </tbody>
         <tfoot>
         <tr class="visible-xs">
-            <td class="text-center"><strong>Total $<span class="cart-total">{{ $total }}</span></strong></td>
+            <td class="text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td>
         </tr>
         <tr>
-            <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td><a href="{{ url('/') }}" class="btn btn-deliveroo"><i class="fa fa-angle-left"></i> Continua lo Shopping</a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td>
-                <a href="{{ route('checkout.index') }}" class="btn btn-info">Procedi con l'ordine</a>
+                <a href="{{ route('checkout.index') }}" class="btn btn-deliveroo">Procedi con l'ordine</a>
             </td>
-            <td class="hidden-xs text-center"><strong>Total $<span class="cart-total">{{ $total }}</span></strong></td>
+            <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td>
         </tr>
         </tfoot>
     </table>
-
-@endsection
-
-@section('scripts')
 
 
     <script type="text/javascript">
@@ -141,3 +137,10 @@
     </script>
 
 @endsection
+
+{{-- @section('scripts') --}}
+
+
+
+
+{{-- @endsection --}}
