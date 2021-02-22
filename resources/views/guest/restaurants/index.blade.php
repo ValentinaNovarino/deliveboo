@@ -74,7 +74,9 @@
                             <section id="all-restaurants">
                                 @foreach ($restaurants as $restaurant)
                                     <div class="box-restaurant">
-                                        <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="{{ $restaurant->name }}">
+                                        <div class="restaurant-img">
+                                            <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="{{ $restaurant->name }}">
+                                        </div>
                                         <h2>
                                             {{ $restaurant->name }}
                                         </h2>

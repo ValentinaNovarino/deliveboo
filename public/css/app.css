@@ -12033,8 +12033,8 @@ td {
 }
 
 .main-container .card-restaurant-container .card-restaurant {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   border: 2px solid #00ccbc;
   margin: 5px;
 }
@@ -12056,9 +12056,20 @@ td {
 }
 
 #all-restaurants .box-restaurant {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   border: 2px solid #00ccbc;
   margin: 5px;
+}
+
+.restaurant-img {
+  height: 150px;
+  width: 150px;
+}
+
+.restaurant-img img {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 

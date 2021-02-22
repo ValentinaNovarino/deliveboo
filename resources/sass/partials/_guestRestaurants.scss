@@ -22,8 +22,8 @@
         flex-wrap: wrap;
 
         .card-restaurant{
-            width: 250px;
-            height: 250px;
+            width: 350px;
+            height: 350px;
             border: 2px solid $colorPrimary;
             margin: 5px;
         }
@@ -48,9 +48,19 @@
     flex-wrap: wrap;
 
     .box-restaurant{
-        width: 250px;
-        height: 250px;
+        width: 350px;
+        height: 350px;
         border: 2px solid $colorPrimary;
         margin: 5px;
+    }
+}
+
+.restaurant-img {
+    height: 150px;
+    width: 150px;
+    img {
+        display: block;
+        height: 100%;
+        width: 100%;
     }
 }
