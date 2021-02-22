@@ -142,7 +142,16 @@
             font-size: 30px;
         }
     }
-}
+
+    .dropdown-menu.show{
+        padding:10px;
+        width: 250px !important;
+        left: -150px !important;
+        box-shadow:0px 5px 30px black;
+    }
+
+
+    }
 
 @media screen and (max-width: 862px) {
 
@@ -172,7 +181,7 @@
     .dropdown-menu.show{
         padding:10px;
         width: 250px !important;
-        // left: -150px !important;
+        left: -180px !important;
         box-shadow:0px 5px 30px black;
     }
 
@@ -228,9 +237,9 @@
         overflow: hidden;
     }
 
-    .btn.btn-deliveroo {
-        display: none;
-    }
+    // .btn.btn-deliveroo {
+    //     display: none;
+    // }
 
     .btn.add.btn-deliveroo {
         display: inline-block;
@@ -328,6 +337,17 @@
     width: 200px;
 
     }
+
+    .dropdown-menu.show{
+        padding:10px;
+        width: 250px !important;
+        left: -70px !important;
+        box-shadow:0px 5px 30px black;
+
+        a.btn-deliveroo{
+            display:block;
+        }
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -371,6 +391,17 @@
     .cerca-tipo{
         span{
             font-size: 18px;
+        }
+    }
+
+    .dropdown-menu.show{
+        padding:10px;
+        width: 250px !important;
+        left: -90px !important;
+        box-shadow:0px 5px 30px black;
+
+        a.btn-deliveroo{
+            display:block;
         }
     }
 }

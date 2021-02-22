@@ -43,7 +43,7 @@
 
                 {{-- stampa dei piatti del ristorante  --}}
 
-               <div class="col-xs-12 col-sm-6 col-md-3 d-flex">
+               <div id="all-restaurants" class="">
                    @foreach ($restaurantDishes as $restaurant)
                        @foreach ($restaurant->dishes as $dish)
                            <div class="thumbnail ">
