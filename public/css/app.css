@@ -12379,7 +12379,7 @@ td {
 
 #all-restaurants .box-restaurant {
   width: 350px;
-  height: 350px;
+  height: auto;
   border: 2px solid #00ccbc;
   margin: 5px;
 }
