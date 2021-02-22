@@ -63,6 +63,8 @@
     <script type="text/javascript">
 
 
+
+
     // Funzione aggiunta al carrello
     $(".add-to-cart").click(function (e) {
             e.preventDefault();
