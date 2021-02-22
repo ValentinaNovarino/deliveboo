@@ -43,31 +43,24 @@
 
                 {{-- stampa dei piatti del ristorante  --}}
 
-                {{-- @foreach($dishes as $dish) --}}
-               <div class="col-xs-12 col-sm-6 col-md-3">
-                   <div class="thumbnail">
-                       {{-- <img src="{{ $dish->cover }}" width="200" height="200"> --}}
-                       <img src="{{asset("img/logo.png")}}" alt="Cover piatto" width="200" height="200" class="img-fluid">
-                       <div class="caption">
-                           @foreach ($restaurantDishes as $restaurant)
-                               @foreach ($restaurant->dishes as $dish)
-                                   <h4>Nome piatto: {{ $dish->name }}</h4>
-                                   <p>Descrizione: {{ $dish->description }}</p>
-                                   <p>Prezzo: {{ $dish->price }}</p>
-                               @endforeach
-                           @endforeach
-                           {{-- <h4>{{ $dish->name }}</h4> --}}
-                           {{-- <p>{{ str_limit(strtolower($dish->description), 50) }}</p> --}}
-                           {{-- <p><strong>Price: </strong> {{ $dish->price }}$</p> --}}
-                           <p class="btn-holder"><a href="javascript:void(0);"
-                               {{-- data-id="{{ $dish->id }}" --}}
-                               class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
-                               <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
-                           </p>
-                       </div>
-                   </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 d-flex">
+                   @foreach ($restaurantDishes as $restaurant)
+                       @foreach ($restaurant->dishes as $dish)
+                           <div class="thumbnail ">
+                               {{-- <img src="{{ $dish->cover }}" width="200" height="200"> --}}
+                               <img src="{{asset("img/logo.png")}}" alt="Cover piatto" width="200" height="200" class="img-fluid">
+                               <div class="caption">
+                                   <h4>{{ $dish->name }}</h4>
+                                   <p><strong>Descrizione:</strong>{{ ($dish->description) }}</p>
+                                   <p><strong>Prezzo:</strong> {{ $dish->price }} </p>
+                                   <p class="btn-holder"><a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
+                                       <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
+                                   </p>
+                               </div>
+                           </div>
+                       @endforeach
+                   @endforeach
                </div>
-           {{-- @endforeach --}}
 
             </div>
         </div>

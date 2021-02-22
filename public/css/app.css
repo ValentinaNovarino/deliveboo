@@ -11926,8 +11926,11 @@ td {
 
 .thumbnail {
   position: relative;
-  padding: 0px;
-  margin-bottom: 20px;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #00ccbc;
+  padding: 20px;
+  margin: 30px;
 }
 
 .thumbnail img {

@@ -29,9 +29,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 // ROTTE PER IL CARRELLO
 // Route::get('/', 'DishController@index');
 Route::get('cart', 'DishController@cart')->name('cart');
-Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
-Route::patch('update-cart', 'ProductsController@update');
-Route::delete('remove-from-cart', 'ProductsController@remove');
+Route::get('add-to-cart/{id}', 'DishController@addToCart');
+Route::patch('update-cart', 'DishController@update');
+Route::delete('remove-from-cart', 'DishController@remove');
 
 Route::get('checkout', 'CheckoutController@index')->name('checkout.index');
 
