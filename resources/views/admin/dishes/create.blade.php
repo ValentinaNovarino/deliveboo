@@ -74,8 +74,11 @@
         var visibleNo = document.getElementById('visibleNo').checked;
 
         // controllo sul nome del piatto
-        if (name == "" || name.length > 100 || name == "undefined") {
-            alert ("Non hai inserito il nome del tuo piatto o la lunghezza supera i 100 caratteri");
+        if (name == "" || name == "undefined") {
+            alert ("Non hai inserito il nome del tuo piatto");
+            return false;
+        } else if ( name.length > 100) {
+            alert ("La lunghezzo del nome non può superare i 100 caratteri");
             return false;
         };
 
@@ -92,11 +95,11 @@
             return false;
         };
 
-        // // controllo sulla descrizione
-        // if (description == "" || description == "undefined") {
-        //     alert ("Non hai inserito una descrizione");
-        //     return false;
-        // };
+        // controllo sulla descrizione
+        if (description==='') {
+            alert ("Non hai inserito una descrizione");
+            return false;
+        };
         //
         // // controllo sul prezzo
         // if (price == "" || price == "undefined") {

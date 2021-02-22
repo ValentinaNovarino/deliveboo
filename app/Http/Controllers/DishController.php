@@ -48,7 +48,7 @@ class DishController extends Controller
 
             $htmlCart = view('_header_cart')->render();
 
-            return response()->json(['msg' => 'Piatto aggiunto al carrello!', 'data' => $htmlCart]);
+            return response()->json(['msg' => 'Product added to cart successfully!', 'data' => $htmlCart]);
 
             //return redirect()->back()->with('success', 'Product added to cart successfully!');
         }
@@ -62,7 +62,7 @@ class DishController extends Controller
 
             $htmlCart = view('_header_cart')->render();
 
-            return response()->json(['msg' => 'Piatto aggiunto al carrello!', 'data' => $htmlCart]);
+            return response()->json(['msg' => 'Product added to cart successfully!', 'data' => $htmlCart]);
 
             //return redirect()->back()->with('success', 'Product added to cart successfully!');
 
@@ -124,7 +124,7 @@ class DishController extends Controller
 
             $htmlCart = view('_header_cart')->render();
 
-            return response()->json(['msg' => 'Piatto rimosso', 'data' => $htmlCart, 'total' => $total]);
+            return response()->json(['msg' => 'Product removed!', 'data' => $htmlCart, 'total' => $total]);
 
             //session()->flash('success', 'Product removed successfully');
         }

@@ -55,7 +55,7 @@
             <td class="text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td>
         </tr>
         <tr>
-            <td><a href="{{ url('/') }}" class="btn btn-deliveroo"><i class="fa fa-angle-left"></i> Continua lo Shopping</a></td>
+            <td><a href="{{ route('guest.restaurants') }}" class="btn btn-deliveroo"><i class="fa fa-angle-left"></i> Continua lo Shopping</a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td>
                 <a href="{{ route('checkout.index') }}" class="btn btn-deliveroo">Procedi con l'ordine</a>

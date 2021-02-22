@@ -10948,6 +10948,10 @@ body {
   font-family: "Stratos Web";
 }
 
+body p {
+  font-family: sans-serif;
+}
+
 .container {
   max-width: 1200px;
 }
@@ -11359,7 +11363,7 @@ li.list-group-item.restaurant-info {
 
 .jumbo-first h1 {
   font-weight: bold;
-  font-size: 50px;
+  font-size: 40px;
   font-family: "Stratos Web";
 }
 
@@ -11377,18 +11381,20 @@ li.list-group-item.restaurant-info {
 .menu-image-small {
   position: relative;
   color: white;
+  padding-bottom: 15px;
 }
 
 .menu-image-large p,
 .menu-image-small p {
-  font-size: 20px;
+  font-size: 16px;
   padding-top: 5px;
+  color: black;
 }
 
 .menu-image-large a,
 .menu-image-small a {
   color: #00a396;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -11421,7 +11427,7 @@ li.list-group-item.restaurant-info {
 
 .cibi-preferiti h1 {
   font-weight: bold;
-  font-size: 50px;
+  font-size: 40px;
   padding-bottom: 20px;
 }
 
@@ -11438,7 +11444,7 @@ li.list-group-item.restaurant-info {
 
 .cerca-tipo h1 {
   font-weight: bold;
-  font-size: 50px;
+  font-size: 40px;
   padding-bottom: 30px;
   padding-top: 40px;
 }
@@ -11447,6 +11453,142 @@ li.list-group-item.restaurant-info {
   font-size: 40px;
   font-weight: bold;
   padding-right: 30px;
+}
+
+.novita h1 {
+  font-size: 40px;
+  padding-bottom: 30px;
+  padding-top: 40px;
+  font-weight: bold;
+}
+
+.novita h2 {
+  font-weight: bold;
+  padding-bottom: 1px;
+}
+
+.novita p {
+  font-size: 16px;
+}
+
+.business img,
+.deliveroo_icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.aziende button {
+  color: white;
+  padding: 12px 24px;
+  margin-top: 15px;
+  font-size: 20px;
+  background-color: #00ccbc;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+}
+
+.aziende button:hover {
+  background-color: #00bbad;
+}
+
+.app_google img {
+  width: 46%;
+}
+
+.business {
+  height: 217px;
+  width: 500px;
+  position: relative;
+  background: #dbdbdb;
+  text-align: center;
+  line-height: 40px;
+}
+
+.business:after {
+  content: "";
+  width: 20px;
+  height: 100%;
+  position: absolute;
+  transform: skewX(-5deg);
+  right: -11px;
+  top: 1px;
+  background: white;
+}
+
+.deliveroo_icon {
+  height: 217px;
+  width: 500px;
+  position: relative;
+  background: #dbdbdb;
+  text-align: center;
+  line-height: 40px;
+}
+
+.deliveroo_icon:after {
+  content: "";
+  width: 20px;
+  height: 100%;
+  position: absolute;
+  transform: skewX(-4deg);
+  left: -9px;
+  top: 0;
+  background: white;
+}
+
+.banner_verticale {
+  color: white;
+}
+
+.banner_verticale img {
+  width: 100%;
+}
+
+.banner_verticale h2 {
+  font-size: 40px;
+  padding: 5px 20px;
+}
+
+.banner_verticale p {
+  font-size: 15px;
+  padding: 20px;
+}
+
+.banner_verticale button {
+  color: white;
+  padding: 12px 24px;
+  margin-top: 15px;
+  font-size: 20px;
+  background-color: #00ccbc;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  margin-bottom: 10px 20px;
+}
+
+.banner_verticale button:hover {
+  background-color: #00bbad;
+}
+
+.red {
+  background-color: #ff483b;
+}
+
+.orange {
+  background-color: #ff8100;
+}
+
+.violet {
+  background-color: #bac3c3;
+}
+
+.lavora_con_noi h1 {
+  font-size: 40px;
+  padding-bottom: 30px;
+  padding-top: 40px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 1220px) {
@@ -11581,6 +11723,13 @@ li.list-group-item.restaurant-info {
   .cerca-tipo span {
     font-size: 30px;
   }
+
+  .dropdown-menu.show {
+    padding: 10px;
+    width: 250px !important;
+    left: -150px !important;
+    box-shadow: 0px 5px 30px black;
+  }
 }
 
 @media screen and (max-width: 862px) {
@@ -11608,6 +11757,7 @@ li.list-group-item.restaurant-info {
   .dropdown-menu.show {
     padding: 10px;
     width: 250px !important;
+    left: -180px !important;
     box-shadow: 0px 5px 30px black;
   }
 
@@ -11654,10 +11804,6 @@ li.list-group-item.restaurant-info {
   .image-header {
     width: 200px;
     overflow: hidden;
-  }
-
-  .btn.btn-deliveroo {
-    display: none;
   }
 
   .btn.add.btn-deliveroo {
@@ -11741,6 +11887,17 @@ li.list-group-item.restaurant-info {
   .image-header {
     width: 200px;
   }
+
+  .dropdown-menu.show {
+    padding: 10px;
+    width: 250px !important;
+    left: -70px !important;
+    box-shadow: 0px 5px 30px black;
+  }
+
+  .dropdown-menu.show a.btn-deliveroo {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -11783,6 +11940,17 @@ li.list-group-item.restaurant-info {
 
   .cerca-tipo span {
     font-size: 18px;
+  }
+
+  .dropdown-menu.show {
+    padding: 10px;
+    width: 250px !important;
+    left: -90px !important;
+    box-shadow: 0px 5px 30px black;
+  }
+
+  .dropdown-menu.show a.btn-deliveroo {
+    display: block;
   }
 }
 
@@ -11857,17 +12025,16 @@ td {
 }
 
 #header-bar {
-  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   background: transparent;
+  height: 100px;
+  padding: 20px 40px;
 }
 
 .main-section {
   background-color: #F8F8F8;
-}
-
-.dropdown {
-  float: right;
-  padding-right: 30px;
 }
 
 .btn {
@@ -11877,11 +12044,12 @@ td {
 }
 
 .dropdown .dropdown-menu {
-  padding: 20px;
+  width: 350px;
+  position: absolute;
   top: 30px !important;
-  width: 350px !important;
-  left: -110px !important;
+  left: -280px;
   box-shadow: 0px 5px 30px black;
+  padding: 10px;
 }
 
 .total-header-section {
@@ -11926,15 +12094,6 @@ td {
 .checkout .btn-primary {
   border-radius: 50px;
   height: 50px;
-}
-
-.dropdown-menu:before {
-  content: " ";
-  position: absolute;
-  top: -20px;
-  right: 50px;
-  border: 10px solid transparent;
-  border-bottom-color: #fff;
 }
 
 .thumbnail {
@@ -12017,6 +12176,161 @@ td {
   }
 }
 
+.button-add-cart {
+  position: relative;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  width: 150px;
+  color: #fff;
+  background: #00ccbc;
+  transform: scale(0.95, 1);
+  transition: transform 0.4s cubic-bezier(0.36, 1.01, 0.32, 1.27);
+}
+
+.button-add-cart:active {
+  --scale: .95;
+}
+
+.button-add-cart a {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  position: relative;
+  transform: translateY(var(--a-y, 0));
+  transition: transform 0.7s ease;
+}
+
+.button-add-cart .cart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 12px 23px;
+  transform: translateX(-120px) rotate(-18deg);
+}
+
+.button-add-cart .cart:before,
+.button-add-cart .cart:after {
+  content: "";
+  position: absolute;
+}
+
+.button-add-cart .cart:before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #111;
+  bottom: 0;
+  left: 9px;
+  filter: drop-shadow(11px 0 0 #111);
+}
+
+.button-add-cart .cart:after {
+  width: 16px;
+  height: 9px;
+  background: #111;
+  left: 9px;
+  bottom: 7px;
+  transform-origin: 50% 100%;
+  transform: perspective(4px) rotateX(-6deg) scaleY(var(--fill, 0));
+  transition: transform 1.2s ease 0.8s;
+}
+
+.button-add-cart .cart svg {
+  z-index: 1;
+  width: 36px;
+  height: 26px;
+  display: block;
+  position: relative;
+  fill: none;
+  stroke: #111;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.button-add-cart .cart svg polyline:last-child {
+  stroke: #fff;
+  troke-dasharray: 10px;
+  stroke-dashoffset: var(--offset, 10px);
+  transition: stroke-dashoffset 0.4s ease 1.73s;
+}
+
+.button-add-cart.loading {
+  --a-y: -32px;
+  --fill: 1;
+  --offset: 0;
+}
+
+.button-add-cart.loading .cart {
+  -webkit-animation: cart 3.4s linear forwards 0.2s;
+          animation: cart 3.4s linear forwards 0.2s;
+}
+
+@-webkit-keyframes cart {
+  12.5% {
+    transform: translateX(-60px) rotate(-18deg);
+  }
+
+  25%, 45%, 55%, 75% {
+    transform: none;
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  44%, 56% {
+    transform-origin: 12px 23px;
+  }
+
+  45%, 55% {
+    transform-origin: 50% 50%;
+  }
+
+  87.5% {
+    transform: translateX(70px) rotate(-18deg);
+  }
+
+  100% {
+    transform: translateX(140px) rotate(-18deg);
+  }
+}
+
+@keyframes cart {
+  12.5% {
+    transform: translateX(-60px) rotate(-18deg);
+  }
+
+  25%, 45%, 55%, 75% {
+    transform: none;
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  44%, 56% {
+    transform-origin: 12px 23px;
+  }
+
+  45%, 55% {
+    transform-origin: 50% 50%;
+  }
+
+  87.5% {
+    transform: translateX(70px) rotate(-18deg);
+  }
+
+  100% {
+    transform: translateX(140px) rotate(-18deg);
+  }
+}
+
 .nav-bar-container {
   border-bottom: 1px solid grey;
 }
@@ -12065,7 +12379,7 @@ td {
 
 #all-restaurants .box-restaurant {
   width: 350px;
-  height: 350px;
+  height: auto;
   border: 2px solid #00ccbc;
   margin: 5px;
 }

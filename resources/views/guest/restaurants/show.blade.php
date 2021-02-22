@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('_header_cart')
 
-        @include('_header_cart')
         {{-- {{dd($restaurantDishes)}} --}}
 
         {{-- @foreach ($restaurantDishes as $value) --}}
@@ -43,7 +43,7 @@
 
                 {{-- stampa dei piatti del ristorante  --}}
 
-               <div class="col-xs-12 col-sm-6 col-md-3 d-flex">
+               <div id="all-restaurants" class="">
                    @foreach ($restaurantDishes as $restaurant)
                        @foreach ($restaurant->dishes as $dish)
                            <div class="thumbnail ">
@@ -53,9 +53,20 @@
                                    <h4>{{ $dish->name }}</h4>
                                    <p><strong>Descrizione:</strong>{{ ($dish->description) }}</p>
                                    <p><strong>Prezzo:</strong> {{ $dish->price }} </p>
-                                   <p class="btn-holder"><a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
+                                   {{-- <p class="btn-holder "><a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
                                        <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
-                                   </p>
+
+                                   </p> --}}
+
+                                   <button class="button-add-cart">
+                                       <a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-deliveroo btn-block add-to-cart p-3 m-0" role="button">Add to cart</a>
+                                       <div class="cart">
+                                           <svg viewBox="0 0 36 26">
+                                               <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+                                               <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+                                           </svg>
+                                       </div>
+                                    </button>
                                </div>
                            </div>
                        @endforeach
@@ -68,6 +79,17 @@
 
 
     <script type="text/javascript">
+
+    document.querySelectorAll('.button-add-cart').forEach(button => button.addEventListener('click', e => {
+if (!button.classList.contains('loading')) {
+
+button.classList.add('loading');
+
+setTimeout(() => button.classList.remove('loading'), 3700);
+}
+e.preventDefault();
+}));
+
             $(".add-to-cart").click(function (e) {
                 e.preventDefault();
 
