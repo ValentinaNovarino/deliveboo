@@ -11544,6 +11544,8 @@ li.list-group-item.restaurant-info {
 
 .banner_verticale img {
   width: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
 }
 
 .banner_verticale h2 {
@@ -11565,7 +11567,7 @@ li.list-group-item.restaurant-info {
   border-radius: 5px;
   border: none;
   font-size: 15px;
-  margin-bottom: 10px 20px;
+  margin: 20px 20px;
 }
 
 .banner_verticale button:hover {
@@ -11574,10 +11576,12 @@ li.list-group-item.restaurant-info {
 
 .red {
   background-color: #ff483b;
+  padding-bottom: 70px;
 }
 
 .orange {
   background-color: #ff8100;
+  padding-bottom: 25px;
 }
 
 .violet {
