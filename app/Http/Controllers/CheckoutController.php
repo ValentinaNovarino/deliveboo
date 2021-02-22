@@ -11,7 +11,7 @@ class CheckoutController extends Controller
 
         $cartItems = session()->get('cart');
         $data = [
-            'items' => $cartItems
+            'dishes' => $cartItems
         ];
         // dd(session()->get('cart'));
         // dd(Product::all());
