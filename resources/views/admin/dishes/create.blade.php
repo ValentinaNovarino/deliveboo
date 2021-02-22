@@ -96,10 +96,10 @@
         };
 
         // controllo sulla descrizione
-        if (description==='') {
-            alert ("Non hai inserito una descrizione");
-            return false;
-        };
+        if (description == "" || description == "undefined") {
+        alert ("Non hai scritto alcuna descrizione del piatto");
+        return false;
+        }
         //
         // // controllo sul prezzo
         // if (price == "" || price == "undefined") {
