@@ -11514,7 +11514,7 @@ li.list-group-item.restaurant-info {
   position: absolute;
   transform: skewX(-5deg);
   right: -11px;
-  top: 1;
+  top: 1px;
   background: white;
 }
 
@@ -11532,9 +11532,9 @@ li.list-group-item.restaurant-info {
   width: 20px;
   height: 100%;
   position: absolute;
-  transform: skewX(5deg);
-  left: -10px;
-  top: 1;
+  transform: skewX(-4deg);
+  left: -9px;
+  top: 0;
   background: white;
 }
 
