@@ -61,14 +61,14 @@
                 <div class="main-container">
                     <div class="bg-light" id="sidebar-wrapper">
                         <h3>seleziona una categoria</h3>
-                        <div v-for="categoryName in filterCategory" class="">
+                        <div v-for="categoryName in filterCategory">
                             <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
                             :value="categoryName">
                             <label class="form-check-label">@{{categoryName}}</label>
                         </div>
                     </div>
                     <div class="container box-restaurant-container">
-                        <div v-if="!checked.length" class="">
+                        <div v-if="!checked.length">
                             {{-- test sezione stampa di tutti i ristoranti --}}
                             <h1>I migliori ristoranti</h1>
                             <section id="all-restaurants">
@@ -96,7 +96,7 @@
                                 <div class="card-restaurant-container">
                                     <div v-for="restaurant in item.restaurants" class="card-restaurant">
                                         <div class="restaurant-img">
-                                            <img :src="'../../public/storage/' + restaurant.cover" :alt="'immagine ' + restaurant.name">
+                                            <img :src="'../../storage/' + restaurant.cover" :alt="'immagine ' + restaurant.name">
                                         </div>
                                         <h4>Restaurant: <a :href="'restaurants/' + restaurant.slug">@{{restaurant.name}}</a></h4>
                                     </div>

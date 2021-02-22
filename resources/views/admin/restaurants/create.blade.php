@@ -38,6 +38,13 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label for="restaurantImage">Inserisci l'immagine del ristorante</label>
+                    <input id="restaurantImage" type="file" name="image" class="form-control-file" >
+                    @error('image')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
                     <p>Seleziona le categorie:</p>
                     @foreach ($categories as $category)
                         <div class="form-check">
