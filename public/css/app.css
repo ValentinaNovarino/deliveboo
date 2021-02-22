@@ -11848,6 +11848,11 @@ td {
   box-shadow: 0 0 5px #00ccbc;
 }
 
+#header-bar {
+  position: fixed;
+  background: transparent;
+}
+
 .main-section {
   background-color: #F8F8F8;
 }
