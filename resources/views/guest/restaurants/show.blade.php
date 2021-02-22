@@ -61,36 +61,27 @@
 
 
     <script type="text/javascript">
+            $(".add-to-cart").click(function (e) {
+                e.preventDefault();
 
+                var ele = $(this);
 
+                ele.siblings('.btn-loading').show();
 
+                $.ajax({
+                    url: '{{ url('add-to-cart') }}' + '/' + ele.attr("data-id"),
+                    method: "get",
+                    data: {_token: '{{ csrf_token() }}'},
+                    dataType: "json",
+                    success: function (response) {
 
-    // Funzione aggiunta al carrello
-    $(".add-to-cart").click(function (e) {
-            e.preventDefault();
+                        ele.siblings('.btn-loading').hide();
 
-            var ele = $(this);
-
-            ele.siblings('.btn-loading').show();
-
-            $.ajax({
-                url: '{{ url('add-to-cart') }}' + '/' + ele.attr("data-id"),
-                method: "get",
-                data: {_token: '{{ csrf_token() }}'},
-                dataType: "json",
-                success: function (response) {
-
-                    ele.siblings('.btn-loading').hide();
-
-                    $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
-                    $(".section-dropcart").html(response.data);
-                }
+                        $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
+                        $("#header-bar").html(response.data);
+                    }
+                });
             });
-        });
-
-
-
-
-    </script>
+        </script>
 
 @endsection
