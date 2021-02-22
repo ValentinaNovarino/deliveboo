@@ -65,20 +65,29 @@
         var checked = document.forms["myRestaurantForm"]["categories[]"].checked;
 
         // controllo sul nome del ristorante
-        if (name == "" || name.length > 100 || name == "undefined") {
-            alert ("Non hai inseto il nome del tuo ristorante o la lunghezza supera i 100 caratteri");
+        if (name == "" || name == "undefined") {
+            alert ("Non hai inserito il nome del tuo ristorante");
+            return false;
+        } else if ( name.length > 100) {
+            alert ("La lunghezzo del nome non può superare i 100 caratteri");
             return false;
         };
 
         // controllo sulla citta
-        if (city == "" || city.length > 100 || city == "undefined") {
-            alert ("Non hai inseto il nome della città o la lunghezza supera i 100 caratteri");
+        if (city == "" || city == "undefined") {
+            alert ("Non hai inserito il nome della città o la lunghezza supera i 100 caratteri");
+            return false;
+        } else if ( city.length > 100) {
+            alert ("La lunghezzo del nome della città non può superare i 100 caratteri");
             return false;
         };
 
         // controllo sull'indirizzo del ristorante
-        if (address == "" || address.length > 100 || address == "undefined" ) {
-            alert ("Non hai inseto l'indirizzo del tuo ristorante o la lunghezza supera i 100 caratteri");
+        if (address == "" || address == "undefined" ) {
+            alert ("Non hai inserito l'indirizzo del tuo ristorante o la lunghezza supera i 100 caratteri");
+            return false;
+        } else if ( address.length > 100) {
+            alert ("La lunghezzo del nome dell'indirizzo non può superare i 100 caratteri");
             return false;
         };
 
