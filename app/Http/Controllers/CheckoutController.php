@@ -23,27 +23,21 @@ class CheckoutController extends Controller
     public function store(Request $request) {
         // dd($request);
 
-        // $request->validate([
-        //     'guest_name' => 'required|max:100',
-        //     'guest_lastname' => 'required|max:100',
-        //     'guest_city' => 'required|max:100',
-        //     'guest_address' => 'required|max:100',
-        //     'guest_mobile' => 'required|numeric|gt:-1|max:9999999999|min:1111111111',
-        //     'guest_email' => 'email:rfc|required|max:100'
-        // ]);
-        // $data = $request->all();
-        // $newOrder = new Order();
-        //
-        // $newOrder->order_price = 0;
-        // $newOrder->delivery_price = 0;
-        // $newOrder->delivery_time = 0;
-        // $newOrder->discount = 0;
-        // $newOrder->final_price = 0;
-        //
-        //
-        // $newOrder->fill($data);
-        //
-        // $newOrder->save();
-        // return redirect()->route('home');
+        $request->validate([
+            'guest_name' => 'required|max:100',
+            'guest_lastname' => 'required|max:100',
+            'guest_city' => 'required|max:100',
+            'guest_address' => 'required|max:100',
+            'guest_mobile' => 'required|numeric|gt:-1|max:9999999999|min:1111111111',
+            'guest_email' => 'email:rfc|required|max:100'
+        ]);
+        $data = $request->all();
+        $newOrder = new Order();
+
+
+        $newOrder->fill($data);
+
+        $newOrder->save();
+        return redirect()->route('guest.restaurants');
     }
 }

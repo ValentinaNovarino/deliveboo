@@ -7,6 +7,15 @@
             <div class="col">
                 {{-- {{dd($dishes)}} --}}
                 {{-- {{dd(session()->get('cart'))}} --}}
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                        </ul>
+                    </div>
+                @endif
                 @if (!session()->get('cart'))
                     <div class="checkout-without-container">
                         <h1>Non ci sono prodotti nel carrello</h1>
@@ -83,6 +92,24 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
+
+                        {{-- input non visibili --}}
+                        <input type="hidden" name="order_price" value="{{ $finalTotal }}">
+                        @php $sconto10 = $finalTotal * 10 / 100 @endphp
+                        @if ($finalTotal >= 30)
+                            <input type="hidden" name="delivery_price" value="0">
+                            <input type="hidden" name="discount" value="{{ $sconto10 }}">
+                            <input type="hidden" name="final_price" value="{{ $finalTotal + 0 - $sconto10 }}">
+                        @else
+                            <input type="hidden" name="delivery_price" value="5">
+                            <input type="hidden" name="discount" value="0">
+                            <input type="hidden" name="final_price" value="{{ $finalTotal + 5 }}">
+                        @endif
+                        {{-- tempo della consegna in secondi --}}
+                        <input type="hidden" name="delivery_time" value="1800">
+
+
+
                         <button type="submit" class="btn btn-deliveroo">Procedi con il pagamento</button>
                     </form>
                     <a href="{{ route('cart') }}">
@@ -94,3 +121,7 @@
     </div>
 
 @endsection
+
+<script type="">
+
+</script>
