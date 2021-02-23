@@ -1,3 +1,29 @@
 .checkout-without-container {
     height: 80vh;
 }
+.checkout-card-total {
+    background-color: #CCA914;
+    border-bottom: 10px solid #00ccbc;
+    border-left: 10px solid #00ccbc;
+    border-right: 10px solid #00ccbc;
+    padding: 15px;
+}
+
+label.checkout-mobile {
+    display: block;
+}
+
+span.checkout-mobile {
+    width: 20px;
+    border: 1px solid $colorPrimary;
+    padding: 7.2px 10px;
+    margin-right: -4px;
+}
+
+.form-control-deliveroo.checkout-mobile {
+    display: inline;
+    width: calc(100% - 47px);
+    padding: 5px 10px;
+    outline: none;
+    border: 1px solid #00ccbc;
+}
