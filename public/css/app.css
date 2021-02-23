@@ -12052,11 +12052,6 @@ td {
   position: relative;
 }
 
-.dropdown {
-  position: fixed;
-  margin-right: 10px;
-}
-
 .btn {
   border: 0px;
   margin: 10px 0px;
@@ -12477,11 +12472,6 @@ td {
   border-right: 10px solid #00ccbc;
   padding: 15px;
 }
-.cover-restaurant {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 label.checkout-mobile {
   display: block;
@@ -12502,6 +12492,11 @@ span.checkout-mobile {
   border: 1px solid #00ccbc;
 }
 
+.cover-restaurant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 #all-dishes {
   display: flex;

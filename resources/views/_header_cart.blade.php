@@ -12,9 +12,6 @@
                 @endphp
                 {{-- {{ dd($elementi) }} --}}
                 @foreach ($elementi as $element)
-                    {{-- {{$element['name'] }}
-                    {{$element['quantity'] }}
-                    {{$element['price'] }} --}}
                     @php
                     $subtotale = $element['price'] * $element['quantity'];
                     $totale = $subtotale + $totale;
@@ -22,10 +19,7 @@
 
                 @endforeach
                 <i class="fa fa-shopping-cart p-1" aria-hidden="true"></i><span class="badge badge-pill badge-danger"> {{ $totale }} €</span>
-
             @endif
-
-            {{-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span> --}}
 
         </button>
         <div id="pop" class="dropdown-menu">
@@ -38,6 +32,7 @@
                 @foreach((array) session('cart') as $id => $details)
                     <?php $total += $details['price'] * $details['quantity'] ?>
                 @endforeach
+                {{-- {{dd($details)}} --}}
 
                 <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
                     <p>Totale: <span class="text-info">€ {{ $total }}</span></p>

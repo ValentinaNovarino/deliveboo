@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Dish;
 
+use App\Restaurant;
+
 class DishController extends Controller
 {
         // TEST Carrello
@@ -12,19 +14,21 @@ class DishController extends Controller
     public function index()
     {
         $dishes = Dish::all();
+        $restaurants = Restaurant::all();
 
-        return view('guest.restaurants.show', compact('dishes'));
+        return view('guest.restaurants.show', compact('dishes', "restaurants"));
     }
 
     public function cart()
     {
         return view('cart');
+
     }
+
     public function addToCart($id)
     {
         $dish = Dish::find($id);
-
-        if(!$dish) {
+        if(!$dish)  {
 
             abort(404);
 
@@ -32,7 +36,18 @@ class DishController extends Controller
 
         $cart = session()->get('cart');
 
-        // if cart is empty then this the first product
+        // se il prodotto cliccato è di un ristorante diverso visualizzo un alert
+        // if ($dish->restaurant_id =! $cart[$id]->restaurant_id ) {
+        //     alert("Non puoi inserire piatti da ristoranti diversi");
+        // }
+        //
+        // session()->put('cart', $cart);
+        //
+        // $htmlCart = view('_header_cart')->render();
+        //
+        // return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
+
+        // se il carrello è vuoto aggiungo il prodotto
         if(!$cart) {
 
             $cart = [
@@ -40,7 +55,7 @@ class DishController extends Controller
                     "name" => $dish->name,
                     "quantity" => 1,
                     "price" => $dish->price,
-                    "cover" => $dish->cover
+                    "cover" => $dish->cover,
                 ]
             ];
 
@@ -48,12 +63,12 @@ class DishController extends Controller
 
             $htmlCart = view('_header_cart')->render();
 
-            return response()->json(['msg' => 'Product added to cart successfully!', 'data' => $htmlCart]);
+            return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
 
-            //return redirect()->back()->with('success', 'Product added to cart successfully!');
+            //return redirect()->back()->with('success', 'Prodotto aggiunto al carrello!');
         }
 
-        // if cart not empty then check if this product exist then increment quantity
+        // se il carrello non è vuoto, check del prodotto e aumento della quantità
         if(isset($cart[$id])) {
 
             $cart[$id]['quantity']++;
@@ -62,28 +77,29 @@ class DishController extends Controller
 
             $htmlCart = view('_header_cart')->render();
 
-            return response()->json(['msg' => 'Product added to cart successfully!', 'data' => $htmlCart]);
+            return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
 
-            //return redirect()->back()->with('success', 'Product added to cart successfully!');
-
+            //return redirect()->back()->with('success', 'Prodotto aggiunto al carrello!');
         }
 
-        // if item not exist in cart then add to cart with quantity = 1
+
+        // se il prodotto non esiste nel carrello, viene aggiunto con quantità = 1
         $cart[$id] = [
             "name" => $dish->name,
             "quantity" => 1,
             "price" => $dish->price,
-            "cover" => $dish->cover
+            "cover" => $dish->cover,
         ];
 
         session()->put('cart', $cart);
 
         $htmlCart = view('_header_cart')->render();
 
-        return response()->json(['msg' => 'Product added to cart successfully!', 'data' => $htmlCart]);
+        return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
 
-        //return redirect()->back()->with('success', 'Product added to cart successfully!');
+        //return redirect()->back()->with('success', 'Prodotto aggiunto al carrello!');
     }
+
 
     public function update(Request $request)
     {
@@ -101,7 +117,7 @@ class DishController extends Controller
 
             $htmlCart = view('_header_cart')->render();
 
-            return response()->json(['msg' => 'Cart updated successfully', 'data' => $htmlCart, 'total' => $total, 'subTotal' => $subTotal]);
+            return response()->json(['msg' => 'Carrello aggiornato', 'data' => $htmlCart, 'total' => $total, 'subTotal' => $subTotal]);
 
             //session()->flash('success', 'Cart updated successfully');
         }
@@ -124,7 +140,7 @@ class DishController extends Controller
 
             $htmlCart = view('_header_cart')->render();
 
-            return response()->json(['msg' => 'Product removed!', 'data' => $htmlCart, 'total' => $total]);
+            return response()->json(['msg' => 'Prodotto rimosso!', 'data' => $htmlCart, 'total' => $total]);
 
             //session()->flash('success', 'Product removed successfully');
         }
@@ -149,4 +165,5 @@ class DishController extends Controller
 
         return number_format($total, 2);
     }
+
 }

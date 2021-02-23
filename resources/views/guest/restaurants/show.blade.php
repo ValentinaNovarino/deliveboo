@@ -1,18 +1,12 @@
+
 @extends('layouts.app')
 
 @section('content')
+
+
     @include('_header_cart')
 
-        {{-- {{dd($restaurantDishes)}} --}}
 
-        {{-- @foreach ($restaurantDishes as $value) --}}
-            {{-- {{dd($value->name)}} nome ristorante --}}
-            {{-- {{dd($value->dishes)}} --}}
-            {{-- @foreach ($value->dishes as $e)
-                {{dd($e->name)}}
-            @endforeach
-
-        @endforeach --}}
     <main>
         <div class="container">
 
@@ -93,27 +87,30 @@
 
             </div>
         </div>
+
     </main>
 
 
     <script type="text/javascript">
 
+    // ANIMAZIONE BOTTONE
     document.querySelectorAll('.button-add-cart').forEach(button => button.addEventListener('click', e => {
-if (!button.classList.contains('loading')) {
+        if (!button.classList.contains('loading')) {
 
-button.classList.add('loading');
+        button.classList.add('loading');
 
-setTimeout(() => button.classList.remove('loading'), 3700);
-}
-e.preventDefault();
-}));
+        setTimeout(() => button.classList.remove('loading'), 3700);
+        }
+        e.preventDefault();
+        }));
+    // FINE ANIMAZIONE BOTTONE
 
             $(".add-to-cart").click(function (e) {
                 e.preventDefault();
 
                 var ele = $(this);
 
-                ele.siblings('.btn-loading').show();
+                // ele.siblings('.btn-loading').show();
 
                 $.ajax({
                     url: '{{ url('add-to-cart') }}' + '/' + ele.attr("data-id"),
@@ -122,13 +119,16 @@ e.preventDefault();
                     dataType: "json",
                     success: function (response) {
 
-                        ele.siblings('.btn-loading').hide();
+                        // ele.siblings('.btn-loading').hide();
 
                         $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
                         $("#header-bar").html(response.data);
                     }
                 });
             });
+
+
+
         </script>
 
 @endsection
