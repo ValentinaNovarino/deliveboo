@@ -6,27 +6,28 @@
     background: transparent;
     height: 100px;
     padding: 20px 40px;
+    position: relative;
 }
-.main-section{
-    background-color: #F8F8F8;
-}
-// .dropdown{
-//     float:right;
-//     padding-right: 30px;
+// .main-section{
+//     background-color: #F8FAFC;
 // }
+.dropdown{
+    position: fixed;
+    margin-right: 10px;
+}
 .btn{
     border:0px;
     margin:10px 0px;
     box-shadow:none !important;
 }
-.dropdown .dropdown-menu{
-    width:350px;
-    position: absolute;
-    top:30px !important;
-    left: -280px;
-    box-shadow:0px 5px 30px black;
-    padding: 10px;
-}
+// .dropdown .dropdown-menu{
+//     width:350px;
+//     position: absolute;
+//     top:30px !important;
+//     left: -280px;
+//     box-shadow:0px 5px 30px black;
+//     padding: 10px;
+// }
 .total-header-section{
     border-bottom:1px solid #d2d2d2;
 }
@@ -130,3 +131,50 @@
     table#cart tfoot td .btn{display:block;}
 
 }
+
+
+
+// TEST POPUP DEL CARRELLO
+
+#open{
+    border:3px solid transparent ;
+    border-radius:10px;
+    color: $colorPrimary;
+    // background-color:#F8FAFC;
+    background-color: transparent;
+    scroll-behavior: smooth;
+}
+
+#open:hover{
+    color:white;
+    background-color:$colorPrimary;
+}
+
+#pop{
+    border:3px solid transparent ;
+    border-radius:10px;
+    color:$colorPrimary;
+    background-color: aliceblue;
+    width:300px;
+    height: auto;
+    transition:all 0.5s;
+    transform:scale(1);
+    position: absolute;
+    top: 50%;
+    left: -150%;
+    box-shadow:0px 5px 30px black;
+    padding: 20px 10px;
+
+}
+
+// #cross{
+//     border:3px solid transparent ;
+//     border-radius:10px;
+//     color:red;
+//     background-color:white;
+// }
+//
+// #cross:hover{
+//     color:white;
+//     background-color:red;
+// }

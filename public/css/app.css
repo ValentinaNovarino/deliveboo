@@ -10944,6 +10944,10 @@ a.text-dark:focus {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Stratos Web";
 }
@@ -12035,25 +12039,18 @@ td {
   background: transparent;
   height: 100px;
   padding: 20px 40px;
+  position: relative;
 }
 
-.main-section {
-  background-color: #F8F8F8;
+.dropdown {
+  position: fixed;
+  margin-right: 10px;
 }
 
 .btn {
   border: 0px;
   margin: 10px 0px;
   box-shadow: none !important;
-}
-
-.dropdown .dropdown-menu {
-  width: 350px;
-  position: absolute;
-  top: 30px !important;
-  left: -280px;
-  box-shadow: 0px 5px 30px black;
-  padding: 10px;
 }
 
 .total-header-section {
@@ -12178,6 +12175,35 @@ td {
   table#cart tfoot td .btn {
     display: block;
   }
+}
+
+#open {
+  border: 3px solid transparent;
+  border-radius: 10px;
+  color: #00ccbc;
+  background-color: transparent;
+  scroll-behavior: smooth;
+}
+
+#open:hover {
+  color: white;
+  background-color: #00ccbc;
+}
+
+#pop {
+  border: 3px solid transparent;
+  border-radius: 10px;
+  color: #00ccbc;
+  background-color: aliceblue;
+  width: 300px;
+  height: auto;
+  transition: all 0.5s;
+  transform: scale(1);
+  position: absolute;
+  top: 50%;
+  left: -150%;
+  box-shadow: 0px 5px 30px black;
+  padding: 20px 10px;
 }
 
 .button-add-cart {

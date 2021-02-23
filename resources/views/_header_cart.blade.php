@@ -1,6 +1,6 @@
 <div id="header-bar" class="main-section">
     <div class="dropdown">
-        <button type="button" class="btn btn-deliveroo" data-toggle="dropdown">
+        <button id="open"onclick=popup() type="button" class="btn btn-deliveroo" data-toggle="dropdown">
 
             @if (!session()->get('cart'))
                 <i class="fa fa-shopping-cart p-1" aria-hidden="true"></i><span class="badge badge-pill badge-danger"> 0 €</span>
@@ -28,7 +28,7 @@
             {{-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span> --}}
 
         </button>
-        <div class="dropdown-menu">
+        <div id="pop" class="dropdown-menu">
             <div class="row total-header-section">
                 <div class="col-xs-6 col-lg-6 col-sm-6 col-6">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
@@ -65,3 +65,21 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+
+    //function for opening the popup
+    function popup(){
+        var mes=document.getElementById('pop');
+        mes.style.transform="scale(1)";
+        mes.style.transitionTimingFunction="cubic-bezier(0,0,0,1.47)";
+        navigator.vibrate(250);
+    }
+
+    //function for closing the popup
+    function popin(){
+        var mes=document.getElementById('pop');
+        mes.style.transform="scale(0)";
+        mes.style.transitionTimingFunction="cubic-bezier(0,0,0,-1.47)";
+    }
+</script>

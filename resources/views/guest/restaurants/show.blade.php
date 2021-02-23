@@ -31,6 +31,7 @@
                         <p>Indirizzo: {{ $restaurant->address}}</p>
                         <p>Descrizione: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     @endforeach
+                    <a href="#all-restaurants">Clicca per vedere i nostri piatti</a>
                 </div>
                 <div class="cover-restaurant border m-2">
                     <img src="{{asset("img/logo.png")}}" alt="Cover ristorante" class="img-fluid">
