@@ -5,6 +5,8 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                {{-- {{dd($dishes)}} --}}
+                {{-- {{dd(session()->get('cart'))}} --}}
                 @if (!session()->get('cart'))
                     <div class="checkout-without-container">
                         <h1>Non ci sono prodotti nel carrello</h1>
@@ -14,6 +16,7 @@
                     </div>
                 @else
                     <div class="items-checkout">
+                        @php $finalTotal = 0; @endphp
                         <h1>tutti i tuoi prodotti</h1>
                         @foreach ($dishes as $dish)
                             <div class="card">
@@ -27,29 +30,64 @@
                                     <p class="d-inline-block">Totale: {{ $dish['quantity'] * $dish['price'] }} €</p>
                                 </div>
                             </div>
+                            @php $finalTotal += $dish['quantity'] * $dish['price']; @endphp
                         @endforeach
                     </div>
-                    <a href="{{ route('cart') }}">
-                        <button type="submit" class="btn btn-warning">Torna al carrello</button>
-                    </a>
+                    <div class="checkout-card-total">
+                        <h3>Totale ordine: € {{$finalTotal}}</h3>
+                    </div>
 
                     <h1>inserisci i tuoi dati</h1>
-                    <form>
+                    <form method="POST" action="{{ route('checkout.store') }}">
+                        @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" require>
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <label for="guestName">Nome</label>
+                            <input type="text" id="guestName" class="form-control-deliveroo" placeholder="Inserisci il tuo nome" name="guest_name" value="{{ old('guest_name') }}" maxlength="100" required>
+                            @error('guest_name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" require>
+                            <label for="guestLastname">Cognome</label>
+                            <input type="text" id="guestLastname" class="form-control-deliveroo" placeholder="Inserisci il tuo cognome" name="guest_lastname" value="{{ old('guest_lastname') }}" maxlength="100" required>
+                            @error('guest_lastname')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1" require>
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <div class="form-group">
+                            <label for="guestCity">Città</label>
+                            <input type="text" id="guestCity" class="form-control-deliveroo" placeholder="Inserisci la città di consegna" name="guest_city" value="{{ old('guest_city') }}" maxlength="100" required>
+                            @error('guest_city')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group">
+                            <label for="guestAddress">Indirizzo</label>
+                            <input type="text" id="guestAddress" class="form-control-deliveroo" placeholder="Inserisci l'indirizzo di consegna" name="guest_address" value="{{ old('guest_address') }}" maxlength="100" required>
+                            @error('guest_address')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label class="checkout-mobile" for="guestMobile">Telefono</label>
+                            <span class="checkout-mobile">+39</span>
+                            <input type="text" id="guestMobile" class="form-control-deliveroo checkout-mobile" placeholder="Inserisci il tuo numero" name="guest_mobile" value="{{ old('guest_mobile') }}" maxlength="10" required>
+                            @error('guest_mobile')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="guestEmail">Email</label>
+                            <input type="email" id="guestEmail" class="form-control-deliveroo" placeholder="Inserisci la tua email" name="guest_email" value="{{ old('guest_email') }}" maxlength="100" required>
+                            @error('guest_email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-deliveroo">Procedi con il pagamento</button>
                     </form>
+                    <a href="{{ route('cart') }}">
+                        <button type="submit" class="btn btn-lg btn-warning">Torna al carrello</button>
+                    </a>
                 @endif
             </div>
         </div>
