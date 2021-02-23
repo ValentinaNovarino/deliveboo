@@ -14,7 +14,7 @@
                 </div>
             @endif --}}
             <h1>crea un nuovo piatto</h1>
-            <form name="myDishModifyForm" method="POST" action="{{ route('admin.dishes.update', ['dish' => $dish->slug]) }}" enctype="multipart/form-data" onsubmit="return validateDishRegForm()">
+            <form name="myDishModifyForm" method="POST" action="{{ route('admin.dishes.update', ['dish' => $dish->slug]) }}" enctype="multipart/form-data" onsubmit="return validateDishModifyForm()">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
@@ -66,11 +66,11 @@
     </div>
 </div>
 <script type="text/javascript">
-    function validateDishRegForm() {
-        var name = document.forms["myDishRegForm"]["name"].value;
-        var file = document.forms["myDishRegForm"]["image"].value;
-        var description = document.forms["myDishRegForm"]["description"].value;
-        var price = document.forms["myDishRegForm"]["price"].value;
+    function validateDishModifyForm() {
+        var name = document.forms["myDishModifyForm"]["name"].value;
+        var file = document.forms["myDishModifyForm"]["image"].value;
+        var description = document.forms["myDishModifyForm"]["description"].value;
+        var price = document.forms["myDishModifyForm"]["price"].value;
         var visibleYes = document.getElementById('visibleYes').checked;
         var visibleNo = document.getElementById('visibleNo').checked;
 
