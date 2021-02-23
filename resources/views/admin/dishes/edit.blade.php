@@ -119,8 +119,6 @@
         //     alert ("Non hai espresso la tua preferenza");
         //     return false;
         // };
-
-
     }
 </script>
 @endsection

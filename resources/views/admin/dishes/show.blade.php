@@ -14,7 +14,7 @@
             <div class="back-to-dishes-arrow d-block">
                 <a href="{{ route('admin.dishes.index') }}" class="d-block">
                     <button class="btn all-dishes btn-deliveroo" type="button" name="button">
-                    <i class="fas fa-arrow-left"></i>All Dishes</button>
+                    <i class="fas fa-arrow-left"></i>Tutti i piatti</button>
                 </a>
             </div>
         </div>

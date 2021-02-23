@@ -11886,6 +11886,7 @@ li.list-group-item.restaurant-info {
   .card {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .cerca-tipo span {
@@ -11995,11 +11996,18 @@ td {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
 }
 
 .card h1 {
   color: #440063;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
 }
 
 .card p {
