@@ -12438,3 +12438,68 @@ td {
   height: 80vh;
 }
 
+.cover-restaurant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#all-dishes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail-container {
+  height: 300px;
+  width: 300px;
+  margin: 10px 10px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.thumbnail-container::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnail {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.thumbnail-container:hover .thumbnail {
+  transform: rotateY(180deg);
+}
+
+.thumbnail-front,
+.thumbnail-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.thumbnail-front .caption {
+  margin: 0;
+  padding-top: 10px;
+}
+
+.thumbnail-front .caption #description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thumbnail-back {
+  transform: rotateY(180deg);
+  overflow: auto;
+}
+
