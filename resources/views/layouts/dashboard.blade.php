@@ -56,14 +56,14 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('admin.dishes.index')}}">
                                                 <i class="fas fa-utensils"></i>
-                                            Dishes
+                                            Piatti
                                         </a>
                                         {{-- <a href="{{route('admin.dishes.index')}}"><i class="icon-link fas fa-utensils"></i></i></a> --}}
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route("admin.statistics.index")}}">
                                           <i class="fas fa-chart-bar"></i>
-                                          Statistics
+                                          Statistiche
                                         </a>
                                         {{-- <a href="{{ route("admin.statistics.index")}}"><i class="icon-link fas fa-chart-bar"></i></i></a> --}}
                                     </li>
