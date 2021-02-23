@@ -49,7 +49,7 @@
                     <label>Disponibile?</label>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="visible" id="visibleYes" value="1" required>
-                        <label class="form-check-label" for="visibleYes">Yes</label>
+                        <label class="form-check-label" for="visibleYes">Si</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="visible" id="visibleNo" value="0" required>
@@ -59,7 +59,7 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-deliveroo">Submit</button>
+                <button type="submit" class="btn btn-deliveroo">Crea</button>
             </form>
         </div>
     </div>
@@ -95,11 +95,11 @@
             return false;
         };
 
-        // controllo sulla descrizione
-        if (description == "" || description == "undefined") {
-        alert ("Non hai scritto alcuna descrizione del piatto");
-        return false;
-        }
+        // // controllo sulla descrizione
+        // if (description == "" || description == "undefined") {
+        //     alert ("Non hai scritto alcuna descrizione del piatto");
+        //     return false;
+        // }
         //
         // // controllo sul prezzo
         // if (price == "" || price == "undefined") {
