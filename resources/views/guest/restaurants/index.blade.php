@@ -33,10 +33,10 @@
             <div class="nav-bar-container">
                 <div class="row">
                     <div class="col">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <nav class="navbar navbar-expand-lg navbar-light color-bg">
                             <div class="logo-guest-restaurant">
                                 <a class="navbar-brand" href="{{ url('/') }}">
-                                    <img src="{{ asset('../img/logo.png') }}" alt="logo deliveroo">
+                                    <img src="{{'../img/logo-bianco.jpg'}}" alt="logo deliveroo">
                                 </a>
                             </div>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +70,7 @@
                     <div class="container box-restaurant-container">
                         <div v-if="!checked.length">
                             {{-- test sezione stampa di tutti i ristoranti --}}
-                            <h1>I migliori ristoranti</h1>
+                            <h1>In primo piano</h1>
                             <section id="all-restaurants">
                                 @foreach ($restaurants as $restaurant)
                                     <div class="box-restaurant">
@@ -80,7 +80,7 @@
                                         <h2>
                                             {{ $restaurant->name }}
                                         </h2>
-                                        <p> {{ $restaurant->slug }}</p>
+                                        {{-- <p> {{ $restaurant->slug }}</p> --}}
                                         <p> {{ $restaurant->city }}</p>
                                         <p> {{ $restaurant->address}}</p>
                                         <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">

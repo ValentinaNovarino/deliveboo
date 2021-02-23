@@ -10949,7 +10949,9 @@ html {
 }
 
 body {
-  font-family: "Stratos Web";
+  font-family: stratos, sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 body p {
@@ -11368,7 +11370,6 @@ li.list-group-item.restaurant-info {
 .jumbo-first h1 {
   font-weight: bold;
   font-size: 40px;
-  font-family: "Stratos Web";
 }
 
 .img-small {
@@ -12370,8 +12371,13 @@ td {
   }
 }
 
-.nav-bar-container {
-  border-bottom: 1px solid grey;
+.color-bg {
+  background-color: #00ccbc;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: white;
+  font-weight: bold;
 }
 
 .main-container {
@@ -12382,8 +12388,10 @@ td {
 }
 
 .main-container #sidebar-wrapper {
-  border: 1px solid gray;
   padding: 10px 15px;
+  background-color: #00ccbc0a;
+  width: 200px;
+  height: 300px;
 }
 
 .main-container .card-restaurant-container {
@@ -12409,29 +12417,53 @@ td {
   width: 100%;
 }
 
-#all-restaurants {
+.box-restaurant-container h1 {
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.box-restaurant-container #all-restaurants {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
 
-#all-restaurants .box-restaurant {
-  width: 350px;
-  height: auto;
-  border: 2px solid #00ccbc;
-  margin: 5px;
+.box-restaurant-container #all-restaurants .box-restaurant {
+  margin: 10px;
+  padding: 5px;
+  background-color: #00ccbc26;
+  width: 300px;
+  height: 360px;
+}
+
+.box-restaurant-container #all-restaurants .box-restaurant h2 {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.box-restaurant-container #all-restaurants .box-restaurant p {
+  padding: 0 10px;
+}
+
+.box-restaurant-container #all-restaurants .box-restaurant a {
+  padding: 10px 10px;
+  text-decoration: none;
 }
 
 .restaurant-img {
-  height: 150px;
-  width: 150px;
+  overflow: hidden;
 }
 
 .restaurant-img img {
-  display: block;
-  height: 100%;
   width: 100%;
+  transition: all 0.5s ease;
+}
+
+.restaurant-img img:hover {
+  border-radius: 50%;
+  transform: rotate(360deg);
 }
 
 .checkout-without-container {
