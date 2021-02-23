@@ -31,8 +31,8 @@
                             @endforeach
                         </ul>
                         <div class="card-body text-center">
-                            <a href="#" class="card-link restaurant-menu secondary-btn-deliveroo">Menu ristorante</a>
-                            <a href="#" class="card-link menu secondary-btn-deliveroo">Menu</a>
+                            <a href="{{ route('admin.dishes.index') }}" class="card-link restaurant-menu secondary-btn-deliveroo">Menu ristorante</a>
+                            {{-- <a href="#" class="card-link menu secondary-btn-deliveroo">Menu</a> --}}
                         </div>
                     </div>
                 </div>

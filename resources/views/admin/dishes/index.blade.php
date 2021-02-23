@@ -17,7 +17,7 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Nome</th>
-                            <th scope="col">Slug</th>
+                            <th scope="col">Prezzo</th>
                             <th scope="col">Operazioni</th>
                         </tr>
                     </thead>
@@ -26,21 +26,21 @@
                             <tr>
                                 <td>{{ $dish->id }}</td>
                                 <td>{{ $dish->name }}</td>
-                                <td>{{ $dish->slug }}</td>
+                                <td>{{ $dish->price }} €</td>
                                 <td>
                                     <a href="{{ route('admin.dishes.show', ['dish'=> $dish->slug ]) }}">
-                                        <button class="btn show-btn-deliveroo">Show</button>
+                                        <button class="btn show-btn-deliveroo">Mostra</button>
                                         <button class="btn show show-btn-deliveroo"><i class="fas fa-eye"></i></button>
                                     </a>
                                     <a href="{{ route('admin.dishes.edit', ['dish'=>$dish->slug ]) }}">
-                                        <button class="btn modify-btn-deliveroo">Modify</button>
+                                        <button class="btn modify-btn-deliveroo">Modifica</button>
                                         <button class="btn modify modify-btn-deliveroo"><i class="fas fa-edit"></i></button>
                                     </a>
                                     <form class="d-inline"
                                     action="{{ route('admin.dishes.destroy', ['dish'=>$dish->slug]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger danger-deliveroo" type="submit">Delete</button>
+                                    <button class="btn btn-danger danger-deliveroo" type="submit">Cancella</button>
                                     <button class="btn btn-danger danger danger-deliveroo"><i class="fas fa-times"></i></button>
                                 </form>
                             </td>
