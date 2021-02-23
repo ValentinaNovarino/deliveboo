@@ -18,12 +18,13 @@
                         @foreach ($dishes as $dish)
                             <div class="card">
                                 <div class="image-container d-inline-block">
-                                    <img src="{{ $dish['cover'] }}" alt="'immagine ' . {{ $dish['name'] }}">
+                                    <img src="{{ $dish['cover'] }}" alt="immagine {{ $dish['name'] }}">
                                 </div>
                                 <div class="sub-card">
                                     <p>{{ $dish['name'] }}</p>
-                                    <p>prezzo: {{ $dish['price'] }} €</p>
-                                    <p class="d-inline-block">quantità: {{ $dish['quantity'] }}</p>
+                                    <p>Prezzo unitario: {{ $dish['price'] }} €</p>
+                                    <p class="d-inline-block">Quantità: {{ $dish['quantity'] }}</p>
+                                    <p class="d-inline-block">Totale: {{ $dish['quantity'] * $dish['price'] }} €</p>
                                 </div>
                             </div>
                         @endforeach

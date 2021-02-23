@@ -59,9 +59,9 @@
             @include('_header_cart')
 
                 <div class="main-container">
-                    <div class="bg-light" id="sidebar-wrapper">
+                    <div class="bg-light ml-3" id="sidebar-wrapper">
                         <h3>seleziona una categoria</h3>
-                        <div v-for="categoryName in filterCategory">
+                        <div v-for="categoryName in filterCategory" class="ml-3">
                             <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
                             :value="categoryName">
                             <label class="form-check-label">@{{categoryName}}</label>
