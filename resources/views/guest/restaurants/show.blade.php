@@ -44,35 +44,52 @@
 
                 {{-- stampa dei piatti del ristorante  --}}
 
-               <div id="all-restaurants" class="">
-                   @foreach ($restaurantDishes as $restaurant)
-                       @foreach ($restaurant->dishes as $dish)
-                           <div class="thumbnail ">
-                               {{-- <img src="{{ $dish->cover }}" width="200" height="200"> --}}
-                               <img src="{{asset("img/logo.png")}}" alt="Cover piatto" width="200" height="200" class="img-fluid">
-                               <div class="caption">
+                <div id="all-dishes" class="">
+                    @foreach ($restaurantDishes as $restaurant)
+                        @foreach ($restaurant->dishes as $dish)
+                            <div class="thumbnail-container">
+                                <div class="thumbnail">
+                                    <div class="thumbnail-front">
+                                       {{-- <img src="{{ $dish->cover }}" width="200" height="200"> --}}
+                                        <img src="{{asset("img/logo.png")}}" alt="Cover piatto" width="200" height="200" class="img-fluid">
+                                        <div class="caption">
+                                           <h4>{{ $dish->name }}</h4>
+                                           <p id="description">{{ ($dish->description) }}</p>
+                                           <p>€{{ $dish->price }} </p>
+                                           {{-- <p class="btn-holder "><a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
+                                               <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
+
+                                           </p> --}}
+
+                                        </div>
+                                    </div>
+                                    <div class="thumbnail-back">
+                                        <p><strong>Descrizione:</strong>{{ ($dish->description) }}</p>
+                                        <p><strong>Prezzo:</strong>€{{ $dish->price }} </p>
+                                        <button class="button-add-cart">
+                                            <a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-deliveroo btn-block add-to-cart p-3 m-0" role="button">Add to cart</a>
+                                            <div class="cart">
+                                                <svg viewBox="0 0 36 26">
+                                                    <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+                                                    <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            {{-- <div class="info">
+                                <div class="caption">
                                    <h4>{{ $dish->name }}</h4>
-                                   <p><strong>Descrizione:</strong>{{ ($dish->description) }}</p>
-                                   <p><strong>Prezzo:</strong> {{ $dish->price }} </p>
-                                   {{-- <p class="btn-holder "><a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
-                                       <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
-
-                                   </p> --}}
-
-                                   <button class="button-add-cart">
-                                       <a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-deliveroo btn-block add-to-cart p-3 m-0" role="button">Add to cart</a>
-                                       <div class="cart">
-                                           <svg viewBox="0 0 36 26">
-                                               <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
-                                               <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
-                                           </svg>
-                                       </div>
-                                    </button>
+                                   <p id="description">{{ ($dish->description) }}</p>
+                                   <p>€{{ $dish->price }} </p>
                                </div>
-                           </div>
-                       @endforeach
-                   @endforeach
-               </div>
+                            </div> --}}
+                        @endforeach
+                    @endforeach
+                </div>
 
             </div>
         </div>
