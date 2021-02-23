@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col 12">
-            <div class="card">
+            <div class="card-show">
                 <h1>Dish: {{ $dish->name }}</h1>
                 <img src="{{ $dish->cover }}" alt="{{ $dish->name }}">
                 <p class="dish-info">Description: {{ $dish->description }}</p>

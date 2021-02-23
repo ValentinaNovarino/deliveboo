@@ -11883,7 +11883,7 @@ li.list-group-item.restaurant-info {
     font-size: 12px;
   }
 
-  .card {
+  .card-show {
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -11995,22 +11995,23 @@ td {
   display: none;
 }
 
-.card {
+.card-show {
+  border: 10px solid #00ccbc;
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-.card h1 {
+.card-show h1 {
   color: #440063;
 }
 
-.card img {
+.card-show img {
   width: 200px;
   height: 200px;
 }
 
-.card p {
+.card-show p {
   font-size: 18px;
 }
 
