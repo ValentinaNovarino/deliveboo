@@ -1,3 +1,6 @@
+.card-restaurant {
+    margin: 55px 0;
+}
 
 .cover-restaurant {
     display: flex;
@@ -32,11 +35,22 @@
     margin: 20px 20px !important;
 }
 
-.our-dishes h1 {
+.container-dishes {
+    width: 100%;
+}
+
+#all-dishes-title {
+    // background: linear-gradient(96deg, rgba(208,235,153,1) 63%, rgba(0,204,188,1) 100%);
+    background-color: rgba(208, 235, 153, 0.7);
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+#all-dishes-title h1 {
     color: $colorTitleHaeder;
 }
 
-#all-dishes {
+.all-dishes {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,6 +74,7 @@
 }
 
 .thumbnail {
+    background-color: $adminBgColor;
     position: relative;
     height: 100%;
     width: 100%;
