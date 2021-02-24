@@ -58,8 +58,8 @@
                                         </div>
                                     </div>
                                     <div class="thumbnail-back">
-                                        <p><strong>Descrizione:</strong>{{ ($dish->description) }}</p>
-                                        <p><strong>Prezzo:</strong>€{{ $dish->price }} </p>
+                                        <p><strong>Descrizione: </strong>{{ ($dish->description) }}</p>
+                                        <p><strong>Prezzo: </strong>€{{ $dish->price }} </p>
                                         <button class="button-add-cart">
                                             <a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-deliveroo btn-block add-to-cart p-3 m-0" role="button">Add to cart</a>
                                             <div class="cart">
