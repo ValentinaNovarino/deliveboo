@@ -38,6 +38,7 @@ class CheckoutController extends Controller
         $newOrder->fill($data);
 
         $newOrder->save();
+        session()->forget('cart');
         return redirect()->route('guest.restaurants');
     }
 }
