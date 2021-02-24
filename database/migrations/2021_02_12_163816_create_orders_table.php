@@ -24,8 +24,8 @@ class CreateOrdersTable extends Migration
             $table->string('guest_lastname');
             $table->string('guest_address');
             $table->string('guest_city');
-            $table->string('guest_mobile')->unique();
-            $table->string('guest_email')->unique();
+            $table->string('guest_mobile');
+            $table->string('guest_email');
             $table->timestamps();
         });
     }
