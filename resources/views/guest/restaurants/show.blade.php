@@ -27,8 +27,8 @@
                     @endforeach
                     <a href="#all-restaurants">Clicca per vedere i nostri piatti</a>
                 </div>
-                <div class="cover-restaurant border m-2">
-                    <img src="{{asset("img/logo.png")}}" alt="Cover ristorante" class="img-fluid">
+                <div class="cover-restaurant m-2">
+                    <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="Cover ristorante" class="img-fluid">
                 </div>
             </div>
 
