@@ -12576,6 +12576,11 @@ span.checkout-mobile {
   backface-visibility: hidden;
 }
 
+.thumbnail-front img {
+  width: 100%;
+  height: 150px;
+}
+
 .thumbnail-front .caption {
   margin: 0;
   padding-top: 10px;
