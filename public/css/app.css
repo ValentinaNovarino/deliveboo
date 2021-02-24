@@ -12496,6 +12496,35 @@ span.checkout-mobile {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.title-restaurant {
+  color: #440063;
+  margin-bottom: 40px;
+}
+
+.info-restaurant h2,
+.info-restaurant span {
+  color: #440063;
+}
+
+.info-restaurant .menu {
+  color: #00ccbc;
+}
+
+.info-restaurant .menu:hover {
+  color: #440063;
+  text-decoration: none;
+}
+
+.all-restaurant {
+  margin: 20px 20px !important;
+}
+
+.our-dishes h1 {
+  color: #440063;
 }
 
 #all-dishes {
@@ -12503,6 +12532,11 @@ span.checkout-mobile {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+#all-dishes h4,
+#all-dishes strong {
+  color: #440063;
 }
 
 .thumbnail-container {

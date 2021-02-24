@@ -9,27 +9,27 @@
 
     <main>
         <div class="container">
-
-            <div class="">
-                <a href="{{ route('guest.restaurants') }}" class="btn btn-deliveroo ml-5">
-                    <i class="fas fa-arrow-left"></i> Tutti i ristoranti
-                </a>
-            </div>
-            <h1 class="text-center">Pagina singolo risorante</h1>
+            <h1 class="title-restaurant text-center">Pagina singolo risorante</h1>
 
             <div class="card-restaurant border-form m-2 p-5 d-flex">
                 <div class="info-restaurant">
                     @foreach ($restaurantDishes as $restaurant)
                         <h2>{{ $restaurant->name}}</h2>
-                        <p>Città: {{ $restaurant->city}}</p>
-                        <p>Indirizzo: {{ $restaurant->address}}</p>
-                        <p>Descrizione: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p><span>Città: </span>{{ $restaurant->city}}</p>
+                        <p><span>Indirizzo: </span>{{ $restaurant->address}}</p>
+                        <p><span>Descrizione: </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     @endforeach
-                    <a href="#all-restaurants">Clicca per vedere i nostri piatti</a>
+                    <a class="menu" href="#all-restaurants">Clicca per vedere i nostri piatti</a>
                 </div>
-                <div class="cover-restaurant border m-2">
-                    <img src="{{asset("img/logo.png")}}" alt="Cover ristorante" class="img-fluid">
+                <div class="cover-restaurant m-2">
+                    <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="Cover ristorante" class="img-fluid">
                 </div>
+            </div>
+
+            <div class="">
+                <a href="{{ route('guest.restaurants') }}" class="all-restaurant btn btn-deliveroo ml-5">
+                    <i class="fas fa-arrow-left"></i> Tutti i ristoranti
+                </a>
             </div>
 
             <div class="our-dishes border-top mt-5">
