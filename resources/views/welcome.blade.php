@@ -242,8 +242,8 @@
                     <button type="button" name="button">Diventa nostro partner</button>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-4 violet">
-                <div class="banner_verticale">
+            <div class="col-xs-12 col-md-4">
+                <div class="banner_verticale violet">
                     <img src="{{'../img/team.jpg'}}" alt="">
                         <h2>Lavora con noi</h2>
                         <p>La nostra missione è trasformare il modo in cui le persone mangiano. È un obiettivo ambizioso, come noi, e ci servono persone che ci aiutino a raggiungerlo.</p>

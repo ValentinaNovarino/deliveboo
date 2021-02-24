@@ -11125,7 +11125,8 @@ body p {
 
 .div-search {
   background-color: white;
-  height: 36%;
+  height: 43%;
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -11138,10 +11139,10 @@ body p {
 }
 
 .div-search button {
-  width: 35%;
+  width: 33%;
   padding: 10px 10px;
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 18px;
   background-color: #00ccbc;
 }
 
@@ -11370,6 +11371,7 @@ li.list-group-item.restaurant-info {
 .jumbo-first h1 {
   font-weight: bold;
   font-size: 40px;
+  padding: 20px 0;
 }
 
 .img-small {
@@ -11433,17 +11435,17 @@ li.list-group-item.restaurant-info {
 .cibi-preferiti h1 {
   font-weight: bold;
   font-size: 40px;
-  padding-bottom: 20px;
+  padding: 22px 0px;
 }
 
 .cibi-preferiti h2 {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: bold;
   padding-top: 20px;
 }
 
 .cibi-preferiti p {
-  font-size: 18px;
+  font-size: 16px;
   padding-bottom: 20px;
 }
 
@@ -11455,9 +11457,13 @@ li.list-group-item.restaurant-info {
 }
 
 .cerca-tipo span {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   padding-right: 30px;
+}
+
+.novita {
+  margin-bottom: 60px;
 }
 
 .novita h1 {
@@ -11469,7 +11475,8 @@ li.list-group-item.restaurant-info {
 
 .novita h2 {
   font-weight: bold;
-  padding-bottom: 1px;
+  padding-bottom: 10px;
+  padding-top: 25px;
 }
 
 .novita p {
@@ -11497,6 +11504,11 @@ li.list-group-item.restaurant-info {
 
 .aziende button:hover {
   background-color: #00bbad;
+}
+
+.app_google {
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 .app_google img {
@@ -11545,6 +11557,10 @@ li.list-group-item.restaurant-info {
 
 .banner_verticale {
   color: white;
+  height: 600px;
+  width: 350px;
+  margin-bottom: 50px;
+  margin-right: 5px;
 }
 
 .banner_verticale img {
@@ -11555,12 +11571,13 @@ li.list-group-item.restaurant-info {
 
 .banner_verticale h2 {
   font-size: 40px;
-  padding: 5px 20px;
+  font-weight: bold;
+  padding: 5px 25px;
 }
 
 .banner_verticale p {
   font-size: 15px;
-  padding: 20px;
+  padding: 0 25px;
 }
 
 .banner_verticale button {
@@ -11581,12 +11598,10 @@ li.list-group-item.restaurant-info {
 
 .red {
   background-color: #ff483b;
-  padding-bottom: 70px;
 }
 
 .orange {
   background-color: #ff8100;
-  padding-bottom: 25px;
 }
 
 .violet {
@@ -11601,6 +11616,10 @@ li.list-group-item.restaurant-info {
 }
 
 @media screen and (max-width: 1220px) {
+  .div-search {
+    width: 98%;
+  }
+
   .btn.show-btn-deliveroo,
   .btn.modify-btn-deliveroo,
   .btn.btn-danger.danger-deliveroo {
@@ -11615,6 +11634,10 @@ li.list-group-item.restaurant-info {
 }
 
 @media screen and (max-width: 1110px) {
+  .div-search {
+    width: 97%;
+  }
+
   a.card-link.restaurant-menu.secondary-btn-deliveroo {
     display: none;
   }
@@ -11623,9 +11646,18 @@ li.list-group-item.restaurant-info {
     display: block;
     font-size: 14px;
   }
+
+  .banner_verticale {
+    margin-right: 5px;
+    width: 300px;
+  }
 }
 
 @media screen and (max-width: 1100px) {
+  .div-search {
+    width: 96%;
+  }
+
   .image-header {
     width: 250px;
     overflow: hidden;
@@ -11661,20 +11693,29 @@ li.list-group-item.restaurant-info {
   }
 
   .cibi-preferiti p {
-    font-size: 15px;
+    font-size: 14px;
     padding-bottom: 20px;
   }
 
   .cerca-tipo span {
-    font-size: 35px;
+    font-size: 28px;
   }
 
   .titleHeader h1 {
     font-size: 35px;
   }
+
+  .banner_verticale {
+    margin-right: 5px;
+    width: 300px;
+  }
 }
 
 @media screen and (max-width: 992px) {
+  .div-search {
+    width: 95%;
+  }
+
   .div-search button {
     width: 30%;
     font-size: 10px;
@@ -11730,7 +11771,7 @@ li.list-group-item.restaurant-info {
   }
 
   .cerca-tipo span {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .dropdown-menu.show {
@@ -11739,9 +11780,18 @@ li.list-group-item.restaurant-info {
     left: -150px !important;
     box-shadow: 0px 5px 30px black;
   }
+
+  .banner_verticale {
+    margin-right: 5px;
+    width: 250px;
+  }
 }
 
 @media screen and (max-width: 862px) {
+  .div-search {
+    width: 90%;
+  }
+
   .div-search button {
     width: 25%;
     font-size: 10px;
@@ -11771,11 +11821,20 @@ li.list-group-item.restaurant-info {
   }
 
   .cerca-tipo span {
-    font-size: 28px;
+    font-size: 24px;
+  }
+
+  .banner_verticale {
+    margin-right: 5px;
+    width: 250px;
   }
 }
 
 @media screen and (max-width: 772px) {
+  .div-search {
+    width: 85%;
+  }
+
   .div-search button {
     width: 22%;
     font-size: 10px;
@@ -11786,6 +11845,15 @@ li.list-group-item.restaurant-info {
   }
 
   .image-header {
+    width: 250px;
+  }
+
+  .cerca-tipo span {
+    font-size: 23px;
+  }
+
+  .banner_verticale {
+    margin-right: 5px;
     width: 250px;
   }
 }
@@ -11799,6 +11867,10 @@ li.list-group-item.restaurant-info {
     color: white;
     font-weight: bold;
     font-size: 20px;
+  }
+
+  .div-search {
+    width: 70%;
   }
 
   .div-search button {
@@ -11817,6 +11889,11 @@ li.list-group-item.restaurant-info {
 
   .btn.add.btn-deliveroo {
     display: inline-block;
+  }
+
+  .banner_verticale {
+    margin-right: 5px;
+    width: 250px;
   }
 
   .dropdown-menu.show {
@@ -11866,13 +11943,17 @@ li.list-group-item.restaurant-info {
   }
 
   .cerca-tipo span {
-    font-size: 25px;
+    font-size: 22px;
   }
 }
 
 @media screen and (max-width: 420px) {
   .titleHeader h1 {
     font-size: 18px;
+  }
+
+  .div-search {
+    width: 70%;
   }
 
   .div-search button {
@@ -11908,6 +11989,11 @@ li.list-group-item.restaurant-info {
   .dropdown-menu.show a.btn-deliveroo {
     display: block;
   }
+
+  .banner_verticale {
+    margin-right: 5px;
+    width: 250px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -11918,6 +12004,10 @@ li.list-group-item.restaurant-info {
   .image-header {
     width: 200px;
     overflow: hidden;
+  }
+
+  .div-search {
+    width: 70%;
   }
 
   .div-search button {
@@ -11961,6 +12051,11 @@ li.list-group-item.restaurant-info {
 
   .dropdown-menu.show a.btn-deliveroo {
     display: block;
+  }
+
+  .banner_verticale {
+    margin-right: 5px;
+    width: 200px;
   }
 }
 

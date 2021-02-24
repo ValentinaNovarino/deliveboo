@@ -5,6 +5,7 @@
     h1{
         font-weight: bold;
         font-size: $fontTitleJumbo;
+        padding: 20px 0;
         // font-family: $fontprimary;
     }
 }
@@ -71,18 +72,18 @@ height: 170px;
     h1{
         font-weight: bold;
         font-size: $fontTitleJumbo;
-        padding-bottom: 20px;
+        padding: 22px 0px;
     }
 
     h2{
-        font-size: 25px;
+        font-size: 22px;
         font-weight: bold;
         padding-top:20px;
 
     }
 
     p{
-        font-size: 18px;
+        font-size: 16px;
         padding-bottom:20px;
     }
 }
@@ -97,13 +98,14 @@ height: 170px;
     }
 
     span{
-        font-size: 40px;
+        font-size: 30px;
         font-weight: bold;
         padding-right:30px;
     }
 }
 
 .novita{
+        margin-bottom: 60px;
     h1{
         font-size: $fontTitleJumbo;
         padding-bottom: 30px;
@@ -112,11 +114,14 @@ height: 170px;
     }
         h2{
             font-weight: bold;
-            padding-bottom:1px;
+            padding-bottom: 10px;
+            padding-top: 25px;
+
         }
 
         p{
             font-size:16px;
+
         }
 }
 .business, .deliveroo_icon {
@@ -146,8 +151,12 @@ height: 170px;
 }
 
 .app_google{
+        padding-left: 20px;
+        padding-top: 20px;
+
     img{
         width: 46%;
+
     }
 }
 
@@ -192,6 +201,10 @@ height: 170px;
 
 .banner_verticale{
     color:$colorCurrent;
+    height: 600px;
+    width: 350px;
+    margin-bottom:50px;
+    margin-right: 5px;
 
 
 
@@ -202,11 +215,12 @@ height: 170px;
     }
     h2{
         font-size:40px;
-        padding:5px 20px;
+        font-weight: bold;
+        padding:5px 25px;
     }
     p{
         font-size:15px;
-        padding:20px;
+        padding:0 25px;
     }
     button{
         color:$colorCurrent;
@@ -228,11 +242,11 @@ height: 170px;
 
 .red{
     background-color: #ff483b;
-        padding-bottom:70px;
+        // padding-bottom:70px;
 }
 .orange{
     background-color: #ff8100;
-        padding-bottom:25px;
+        // padding-bottom:25px;
 }
 .violet{
     background-color: #bac3c3;
