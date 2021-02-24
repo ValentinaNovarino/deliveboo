@@ -1,7 +1,6 @@
 <div id="header-bar" class="main-section">
     <div class="dropdown">
         <button id="open"onclick=popup() type="button" class="btn btn-deliveroo" data-toggle="dropdown">
-
             @if (!session()->get('cart'))
                 <i class="fa fa-shopping-cart p-1" aria-hidden="true"></i><span class="badge badge-pill badge-danger"> 0 €</span>
 
@@ -10,6 +9,8 @@
                 $elementi = session()->get('cart');
                 $totale = 0;
                 @endphp
+
+                {{-- {{dd($elementi)}} --}}
                 {{-- {{ dd($elementi) }} --}}
                 @foreach ($elementi as $element)
                     @php
@@ -31,8 +32,8 @@
                 <?php $total = 0 ?>
                 @foreach((array) session('cart') as $id => $details)
                     <?php $total += $details['price'] * $details['quantity'] ?>
+                    {{-- {{dd($details)}} --}}
                 @endforeach
-                {{-- {{dd($details)}} --}}
 
                 <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
                     <p>Totale: <span class="text-info">€ {{ $total }}</span></p>

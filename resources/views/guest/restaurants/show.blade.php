@@ -6,7 +6,6 @@
 
     @include('_header_cart')
 
-
     <main>
         <div class="container">
 

@@ -19,10 +19,10 @@
         <tbody>
 
         <?php $total = 0 ?>
-
         @if(session('cart'))
             @foreach((array) session('cart') as $id => $details)
-
+                {{-- {{dd(session())}} --}}
+                {{-- {{dd($details['restaurant_id'])}} --}}
                 <?php $total += $details['price'] * $details['quantity'] ?>
 
                 <tr>
@@ -31,6 +31,7 @@
                             <div class="col-sm-3 hidden-xs"><img src="{{ $details['cover'] }}" width="100" height="100" class="img-responsive"/></div>
                             <div class="col-sm-9">
                                 <h4 class="nomargin">{{ $details['name'] }}</h4>
+                                {{-- <h4 class="nomargin">{{ $details['id'] }}</h4> --}}
                             </div>
                         </div>
                     </td>

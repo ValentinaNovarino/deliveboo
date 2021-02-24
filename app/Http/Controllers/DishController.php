@@ -27,45 +27,48 @@ class DishController extends Controller
 
     public function addToCart($id)
     {
+        $restaurant = Restaurant::all();
+        // $dish = Dish::where('restaurant_id' == $restaurant->id);
+
         $dish = Dish::find($id);
+
+
+
         if(!$dish)  {
 
             abort(404);
 
         }
 
+
         $cart = session()->get('cart');
+        // $currentRestaurantId;
+        if (empty($cart)) {
+            $currentRestaurantId = $dish->restaurant_id;
+        }
 
-        // se il prodotto cliccato è di un ristorante diverso visualizzo un alert
-        // if ($dish->restaurant_id =! $cart[$id]->restaurant_id ) {
-        //     alert("Non puoi inserire piatti da ristoranti diversi");
-        // }
-        //
-        // session()->put('cart', $cart);
-        //
-        // $htmlCart = view('_header_cart')->render();
-        //
-        // return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
-
-        // se il carrello è vuoto aggiungo il prodotto
         if(!$cart) {
 
             $cart = [
                 $id => [
+                    "id" => $dish->id,
                     "name" => $dish->name,
                     "quantity" => 1,
                     "price" => $dish->price,
                     "cover" => $dish->cover,
+                    "restaurant_id" => $dish->restaurant_id
                 ]
             ];
 
+            // $currentId = $dish->id;
+            // $mainRestaurantId = Dish::find($id)->restaurant_id;
             session()->put('cart', $cart);
-
+            // session()->put('cart', $mainRestaurantId);
+            // $currentRestaurantId = $cart[$id]->restaurant_id;
             $htmlCart = view('_header_cart')->render();
 
             return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
 
-            //return redirect()->back()->with('success', 'Prodotto aggiunto al carrello!');
         }
 
         // se il carrello non è vuoto, check del prodotto e aumento della quantità
@@ -74,30 +77,38 @@ class DishController extends Controller
             $cart[$id]['quantity']++;
 
             session()->put('cart', $cart);
-
             $htmlCart = view('_header_cart')->render();
 
             return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
 
-            //return redirect()->back()->with('success', 'Prodotto aggiunto al carrello!');
         }
+        // if (session()->has('restaurant_id')) {
+        //
+        // }
 
 
         // se il prodotto non esiste nel carrello, viene aggiunto con quantità = 1
-        $cart[$id] = [
-            "name" => $dish->name,
-            "quantity" => 1,
-            "price" => $dish->price,
-            "cover" => $dish->cover,
-        ];
+        if ($dish->restaurant_id == 1) {
+            $cart[$id] = [
+                "id" => $dish->id,
+                "name" => $dish->name,
+                "quantity" => 1,
+                "price" => $dish->price,
+                "cover" => $dish->cover,
+                "restaurant_id" => $dish->restaurant_id
+            ];
 
-        session()->put('cart', $cart);
+            session()->put('cart', $cart);
 
-        $htmlCart = view('_header_cart')->render();
+            $htmlCart = view('_header_cart')->render();
 
-        return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
+            return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
+        } else {
+            return response()->json(['msg' => 'errore', 'data' => $htmlCart]);
 
-        //return redirect()->back()->with('success', 'Prodotto aggiunto al carrello!');
+        }
+
+
     }
 
 
