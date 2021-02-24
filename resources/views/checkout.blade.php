@@ -106,7 +106,7 @@
                             <input type="hidden" name="final_price" value="{{ $finalTotal + 5 }}">
                         @endif
                         {{-- tempo della consegna in secondi --}}
-                        <input type="hidden" name="delivery_time" value="1800">
+                        <input type="hidden" name="delivery_time" value="3000">
 
 
 
