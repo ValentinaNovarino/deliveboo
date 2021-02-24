@@ -12587,6 +12587,10 @@ span.checkout-mobile {
   border: 1px solid #00ccbc;
 }
 
+.card-restaurant {
+  margin: 55px 0;
+}
+
 .cover-restaurant {
   display: flex;
   align-items: center;
@@ -12618,19 +12622,29 @@ span.checkout-mobile {
   margin: 20px 20px !important;
 }
 
-.our-dishes h1 {
+.container-dishes {
+  width: 100%;
+}
+
+#all-dishes-title {
+  background-color: rgba(208, 235, 153, 0.7);
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+#all-dishes-title h1 {
   color: #440063;
 }
 
-#all-dishes {
+.all-dishes {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
-#all-dishes h4,
-#all-dishes strong {
+.all-dishes h4,
+.all-dishes strong {
   color: #440063;
 }
 
@@ -12647,6 +12661,7 @@ span.checkout-mobile {
 }
 
 .thumbnail {
+  background-color: #fff;
   position: relative;
   height: 100%;
   width: 100%;
