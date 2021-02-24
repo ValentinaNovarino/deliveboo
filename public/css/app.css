@@ -12500,7 +12500,7 @@ span.checkout-mobile {
 
 #all-dishes {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -12508,7 +12508,7 @@ span.checkout-mobile {
 .thumbnail-container {
   height: 300px;
   width: 300px;
-  margin: 10px 10px;
+  margin: 10px 10px 20px 10px;
   cursor: pointer;
   perspective: 1000px;
 }
@@ -12521,6 +12521,7 @@ span.checkout-mobile {
   position: relative;
   height: 100%;
   width: 100%;
+  margin: 0;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
