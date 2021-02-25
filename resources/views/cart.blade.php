@@ -37,7 +37,7 @@
                     </td>
                     <td data-th="Price">€ {{ $details['price'] }}</td>
                     <td data-th="Quantity">
-                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity"/>
+                        <input type="number" min="1" value="{{ $details['quantity'] }}" class="form-control quantity"/>
                     </td>
                     <td data-th="Subtotal" class="text-center">€ <span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
                     <td class="actions" data-th="">
