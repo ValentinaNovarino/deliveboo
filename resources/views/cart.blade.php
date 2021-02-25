@@ -18,10 +18,10 @@
         </thead>
         <tbody>
 
+            {{-- {{dd(session('mainRestaurantId'))}} --}}
         <?php $total = 0 ?>
         @if(session('cart'))
             @foreach((array) session('cart') as $id => $details)
-                {{-- {{dd(session())}} --}}
                 {{-- {{dd($details['restaurant_id'])}} --}}
                 <?php $total += $details['price'] * $details['quantity'] ?>
 

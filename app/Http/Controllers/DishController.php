@@ -9,6 +9,7 @@ use App\Restaurant;
 
 class DishController extends Controller
 {
+
         // TEST Carrello
 
     public function index()
@@ -27,6 +28,8 @@ class DishController extends Controller
 
     public function addToCart($id)
     {
+        // session_start();
+
         $restaurant = Restaurant::all();
         // $dish = Dish::where('restaurant_id' == $restaurant->id);
 
@@ -40,12 +43,11 @@ class DishController extends Controller
 
         }
 
+        if (empty(session()->get('cart'))) {
+            $restaurantMainId = $dish->restaurant_id;
+        }
 
         $cart = session()->get('cart');
-        // $currentRestaurantId;
-        if (empty($cart)) {
-            $currentRestaurantId = $dish->restaurant_id;
-        }
 
         if(!$cart) {
 
@@ -56,15 +58,15 @@ class DishController extends Controller
                     "quantity" => 1,
                     "price" => $dish->price,
                     "cover" => $dish->cover,
-                    "restaurant_id" => $dish->restaurant_id
+                    "restaurant_id" => $dish->restaurant_id,
+                    // "prova" => $prova,
+                    // "prova2" => $prova2,
                 ]
+
             ];
 
-            // $currentId = $dish->id;
-            // $mainRestaurantId = Dish::find($id)->restaurant_id;
+            session(['mainRestaurantId' => $restaurantMainId]);
             session()->put('cart', $cart);
-            // session()->put('cart', $mainRestaurantId);
-            // $currentRestaurantId = $cart[$id]->restaurant_id;
             $htmlCart = view('_header_cart')->render();
 
             return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
@@ -82,31 +84,31 @@ class DishController extends Controller
             return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
 
         }
-        // if (session()->has('restaurant_id')) {
-        //
-        // }
 
 
+        $mainId = session('mainRestaurantId');
         // se il prodotto non esiste nel carrello, viene aggiunto con quantità = 1
-        if ($dish->restaurant_id == 1) {
             $cart[$id] = [
                 "id" => $dish->id,
                 "name" => $dish->name,
                 "quantity" => 1,
                 "price" => $dish->price,
                 "cover" => $dish->cover,
-                "restaurant_id" => $dish->restaurant_id
+                "restaurant_id" => $dish->restaurant_id,
             ];
 
+            if ($cart[$id]['restaurant_id'] == $mainId) {
             session()->put('cart', $cart);
 
             $htmlCart = view('_header_cart')->render();
 
             return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
         } else {
-            return response()->json(['msg' => 'errore', 'data' => $htmlCart]);
+            // alert("Attenzione!! Non puoi prenotare da più ristoranti");
+            return response()->json(['msg' => 'Attenzione!! Non puoi prenotare da più ristoranti']);
 
         }
+
 
 
     }
