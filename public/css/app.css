@@ -11325,6 +11325,17 @@ footer .nav-icon .copyright span {
   font-size: 18px;
 }
 
+li.only-icon {
+  display: none;
+  padding-top: 16px;
+  text-align: center;
+}
+
+li.only-icon a.only-icon {
+  color: #440063;
+  font-size: 25px;
+}
+
 .header-card-restaurants {
   margin-bottom: 40px;
 }
@@ -11616,6 +11627,10 @@ li.list-group-item.restaurant-info {
 }
 
 @media screen and (max-width: 1220px) {
+  .sidebar-nav.link a.nav-link {
+    font-size: 18px;
+  }
+
   .div-search {
     width: 98%;
   }
@@ -11711,6 +11726,12 @@ li.list-group-item.restaurant-info {
   }
 }
 
+@media screen and (max-width: 1060px) {
+  .sidebar-nav.link a.nav-link {
+    font-size: 16px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .div-search {
     width: 95%;
@@ -11784,6 +11805,24 @@ li.list-group-item.restaurant-info {
   .banner_verticale {
     margin-right: 5px;
     width: 250px;
+  }
+
+  .sidebar-nav.link a.nav-link {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  a.nav-link {
+    display: none;
+  }
+
+  li.only-icon {
+    display: block;
+  }
+
+  a.logout {
+    display: block;
   }
 }
 
@@ -11885,6 +11924,10 @@ li.list-group-item.restaurant-info {
   .image-header {
     width: 200px;
     overflow: hidden;
+  }
+
+  .btn.btn-deliveroo.new-dish {
+    display: none;
   }
 
   .btn.add.btn-deliveroo {
@@ -11993,6 +12036,20 @@ li.list-group-item.restaurant-info {
   .banner_verticale {
     margin-right: 5px;
     width: 250px;
+  }
+
+  .card-restaurants {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  li.list-group-item.restaurant-info {
+    padding: 16px 0;
+  }
+
+  .card-link.menu.secondary-btn-deliveroo {
+    margin: 0;
   }
 }
 
