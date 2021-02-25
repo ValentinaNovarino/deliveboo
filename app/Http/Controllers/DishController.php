@@ -23,7 +23,6 @@ class DishController extends Controller
     public function cart()
     {
         return view('cart');
-
     }
 
     public function addToCart($id)
@@ -116,13 +115,17 @@ class DishController extends Controller
 
     public function update(Request $request)
     {
+        // dd($request);
         if($request->id and $request->quantity)
         {
             $cart = session()->get('cart');
+            // $cart = session()->get('discout');
 
             $cart[$request->id]["quantity"] = $request->quantity;
+            // $discount[$request->id]["discount"] = $request->quantity;
 
             session()->put('cart', $cart);
+            // session()->put('discount', $cart);
 
             $subTotal = $cart[$request->id]['quantity'] * $cart[$request->id]['price'];
 
@@ -148,7 +151,7 @@ class DishController extends Controller
 
                 session()->put('cart', $cart);
             }
-
+            // session()->put('cart', $cart);
             $total = $this->getCartTotal();
 
             $htmlCart = view('_header_cart')->render();
