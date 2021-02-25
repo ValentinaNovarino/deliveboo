@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Dish;
 use App\Restaurant;
 use App\Order;
+use Illuminate\Validation\Rule;
 
 class CheckoutController extends Controller
 {
@@ -21,7 +22,6 @@ class CheckoutController extends Controller
     }
 
     public function store(Request $request) {
-        // dd($request);
 
         $request->validate([
             'guest_name' => 'required|max:100',
@@ -29,7 +29,8 @@ class CheckoutController extends Controller
             'guest_city' => 'required|max:100',
             'guest_address' => 'required|max:100',
             'guest_mobile' => 'required|numeric|gt:-1|max:9999999999|min:1111111111',
-            'guest_email' => 'email:rfc|required|max:100'
+            'guest_email' => 'email:rfc|required|max:100',
+            'order_price' => ['required', Rule::in([session('order_price')])],
         ]);
         $data = $request->all();
         $newOrder = new Order();
