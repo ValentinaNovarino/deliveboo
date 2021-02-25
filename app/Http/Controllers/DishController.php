@@ -23,7 +23,6 @@ class DishController extends Controller
     public function cart()
     {
         return view('cart');
-
     }
 
     public function addToCart($id)

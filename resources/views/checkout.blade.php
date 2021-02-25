@@ -7,6 +7,11 @@
             <div class="col">
                 {{-- {{dd(session())}} --}}
                 {{-- {{dd(session()->get('cart'))}} --}}
+                @if(session('success_message'))
+                    <div class="alert alert-success">
+                        {{session('success_message')}}
+                    </div>
+                @endif
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -47,7 +52,7 @@
                     </div>
 
                     <h1>inserisci i tuoi dati</h1>
-                    <form method="POST" action="{{ route('checkout.store') }}">
+                    <form method="POST" action="{{ route('checkout.store') }}" id="form">
                         @csrf
                         <div class="form-group">
                             <label for="guestName">Nome</label>
@@ -93,6 +98,15 @@
                             @enderror
                         </div>
 
+                        <div class="form-group">
+                            <section>
+                                <div class="bt-drop-in-wrapper">
+                                    <div id="bt-dropin"></div>
+                                </div>
+                            </section>
+                            <input id="nonce" name="payment_method_nonce" type="hidden"/>
+                        </div>
+
                         {{-- input non visibili --}}
                         <input type="hidden" name="order_price" value="{{ $finalTotal }}">
                         @php $sconto10 = $finalTotal * 10 / 100 @endphp
@@ -111,7 +125,7 @@
 
 
 
-                        <button type="submit" class="btn btn-deliveroo">Procedi con il pagamento</button>
+                        <button type="submit" class="button btn btn-deliveroo">Procedi con il pagamento</button>
                     </form>
                     <a href="{{ route('cart') }}">
                         <button type="submit" class="btn btn-lg btn-warning">Torna al carrello</button>
@@ -122,6 +136,39 @@
     </div>
 
 @endsection
+
+<script src="https://js.braintreegateway.com/web/dropin/1.26.1/js/dropin.min.js"></script>
+<script>
+    var form = document.querySelector('#form');
+    var client_token = "{{ $token }}";
+
+    braintree.dropin.create({
+      authorization: client_token,
+      selector: '#bt-dropin',
+      paypal: {
+        flow: 'vault'
+      }
+    }, function (createErr, instance) {
+      if (createErr) {
+        console.log('Create Error', createErr);
+        return;
+      }
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        instance.requestPaymentMethod(function (err, payload) {
+          if (err) {
+            console.log('Request Payment Method Error', err);
+            return;
+          }
+
+          // Add the nonce to the form and submit
+          document.querySelector('#nonce').value = payload.nonce;
+          form.submit();
+        });
+      });
+    });
+</script>
 
 {{-- <script type="text/javascript">
     function blocco_mousedx()
