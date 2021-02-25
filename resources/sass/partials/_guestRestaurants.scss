@@ -16,11 +16,25 @@
     padding: 50px 0;
 
     #sidebar-wrapper {
-        border: 1px solid $colorPrimary;
-        padding: 10px 15px;
+        border-top: 1px solid #00ccbc;
+        border-bottom: 1px solid #00ccbc;
+        padding-top: 25px;
+        padding-bottom: 10px;
+        padding-left: 30px;
+        padding-right:5px;
         width: 200px;
-        height: 300px;
+        height: 500px;
+        overflow-y: scroll;
+        h3{
+            padding-bottom:22px;
+            font-weight: bold;
+        }
     }
+}
+    .form-check-label {
+        margin-bottom: 10px;
+        font-size: 16px;
+}
 
     .card-restaurant-container {
         display: flex;
@@ -38,10 +52,11 @@
 
             h4{
                 margin-top:20px;
+
             }
         }
     }
-}
+
 
 .logo-guest-restaurant {
     width: 200px;

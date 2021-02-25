@@ -64,7 +64,7 @@
                         <div v-for="categoryName in filterCategory" class="ml-3">
                             <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
                             :value="categoryName">
-                            <label class="form-check-label">@{{categoryName}}</label>
+                            <label class="form-check-label capitalize">@{{categoryName}}</label>
                         </div>
                     </div>
                     <div class="container box-restaurant-container">

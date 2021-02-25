@@ -14169,20 +14169,35 @@ td {
 }
 
 .main-container #sidebar-wrapper {
-  border: 1px solid #00ccbc;
-  padding: 10px 15px;
+  border-top: 1px solid #00ccbc;
+  border-bottom: 1px solid #00ccbc;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 5px;
   width: 200px;
-  height: 300px;
+  height: 500px;
+  overflow-y: scroll;
 }
 
-.main-container .card-restaurant-container {
+.main-container #sidebar-wrapper h3 {
+  padding-bottom: 22px;
+  font-weight: bold;
+}
+
+.form-check-label {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.card-restaurant-container {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
-.main-container .card-restaurant-container .card-restaurant {
+.card-restaurant-container .card-restaurant {
   margin: 10px;
   padding: 5px;
   background-color: #00ccbc26;
@@ -14191,7 +14206,7 @@ td {
   height: 360px;
 }
 
-.main-container .card-restaurant-container .card-restaurant h4 {
+.card-restaurant-container .card-restaurant h4 {
   margin-top: 20px;
 }
 
