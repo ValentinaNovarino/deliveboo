@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                {{-- {{dd($dishes)}} --}}
+                {{-- {{dd(session())}} --}}
                 {{-- {{dd(session()->get('cart'))}} --}}
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -107,6 +107,7 @@
                         @endif
                         {{-- tempo della consegna in secondi --}}
                         <input type="hidden" name="delivery_time" value="3000">
+                        {{-- <input type="hidden" name="delivery_time" value="session('cart')"> --}}
 
 
 
@@ -122,6 +123,18 @@
 
 @endsection
 
-<script type="">
+{{-- <script type="text/javascript">
+    function blocco_mousedx()
+     { return(false); }
+    document.oncontextmenu = blocco_mousedx;
 
-</script>
+        document.onkeydown = function(blocco_tasti) {
+     if(event.keyCode == 123)
+    { return false; }
+     if(blocco_tasti.ctrlKey && blocco_tasti.shiftKey && blocco_tasti.keyCode == 'I'.charCodeAt(0)) { return false; }
+     if(blocco_tasti.ctrlKey && blocco_tasti.shiftKey && blocco_tasti.keyCode == 'C'.charCodeAt(0)) { return false; }
+     if(blocco_tasti.ctrlKey && blocco_tasti.shiftKey && blocco_tasti.keyCode == 'J'.charCodeAt(0)) { return false; }
+     if(blocco_tasti.ctrlKey && blocco_tasti.keyCode == 'U'.charCodeAt(0))
+    { return false; }
+    }
+</script> --}}

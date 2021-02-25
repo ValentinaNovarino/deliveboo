@@ -53,15 +53,48 @@
         </tbody>
         <tfoot>
         <tr class="visible-xs">
-            <td class="text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td>
+            <td class="text-center"><strong>Totale ordine € <span class="cart-total">{{ number_format($total, 2) }}</span></strong></td>
+            {{session((['order_price' => $total]))}}
         </tr>
+        @php $sconto10 = $total * 10 / 100; number_format($sconto10, 2); @endphp
+        @if ($total >= 30)
+            <tr class="visible-xs">
+                <td class="text-center"><strong>Spedizione gratuita</strong></td>
+                {{session((['delivery_price' => 0]))}}
+            </tr>
+            <tr class="visible-xs">
+                <td class="text-center"><strong>Sconto € <span class="cart-total">{{ number_format($sconto10, 2) }}</span></strong></td>
+                {{session((['discount' => $sconto10]))}}
+            </tr>
+        @elseif (session('cart'))
+            <tr class="visible-xs">
+                <td class="text-center"><strong>Spese di spedizione € <span class="cart-total">5</span></strong></td>
+                {{session((['delivery_price' => 5]))}}
+                {{session((['discount' => 0]))}}
+            </tr>
+        @endif
         <tr>
             <td><a href="{{ route('guest.restaurants') }}" class="btn btn-deliveroo"><i class="fa fa-angle-left"></i> Continua lo Shopping</a></td>
+
+            @if ($total >= 30)
+                @php
+                    $final_price = $total + 0 - $sconto10;
+                @endphp
+                <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ number_format($final_price, 2) }}</span></strong></td>
+                {{session((['final_price' => $final_price]))}}
+            @elseif (session('cart'))
+                @php
+                    $final_price = $total + 5;
+                @endphp
+                <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ number_format($final_price, 2) }}</span></strong></td>
+                {{session((['final_price' => $final_price]))}}
+            @endif
+            {{-- <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td> --}}
+
             <td colspan="2" class="hidden-xs"></td>
             <td>
                 <a href="{{ route('checkout.index') }}" class="btn btn-deliveroo">Procedi con l'ordine</a>
             </td>
-            <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td>
         </tr>
         </tfoot>
     </table>
