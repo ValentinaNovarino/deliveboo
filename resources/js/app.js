@@ -10,3 +10,6 @@ require('./bootstrap');
 // const app = new Vue({
 //     el: '#app'
 // });
+
+// SweetAlert2
+const Swal = require('sweetalert2');
