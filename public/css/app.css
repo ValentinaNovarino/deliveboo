@@ -12684,6 +12684,13 @@ body p {
   align-items: flex-start;
 }
 
+.popupCartCustom {
+  width: 80% !important;
+  height: 80% !important;
+  background-color: #00ccbc !important;
+  pointer-events: none !important;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);

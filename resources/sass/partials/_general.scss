@@ -115,3 +115,11 @@ body{
     justify-content: center;
     align-items: flex-start;
 }
+
+// SweetAlert2
+.popupCartCustom {
+    width: 80% !important;
+    height: 80% !important;
+    background-color: $colorPrimary !important;
+    pointer-events: none !important;
+}

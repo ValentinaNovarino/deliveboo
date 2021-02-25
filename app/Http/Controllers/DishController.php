@@ -119,19 +119,21 @@ class DishController extends Controller
         if($request->id and $request->quantity)
         {
             $cart = session()->get('cart');
-            // $cart = session()->get('discout');
+            // $discount = session()->get('discount');
 
             $cart[$request->id]["quantity"] = $request->quantity;
             // $discount[$request->id]["discount"] = $request->quantity;
 
             session()->put('cart', $cart);
-            // session()->put('discount', $cart);
+            // session()->put('discount', $discount);
 
             $subTotal = $cart[$request->id]['quantity'] * $cart[$request->id]['price'];
 
             $total = $this->getCartTotal();
 
             $htmlCart = view('_header_cart')->render();
+
+            // parent.window.location.reload();
 
             return response()->json(['msg' => 'Carrello aggiornato', 'data' => $htmlCart, 'total' => $total, 'subTotal' => $subTotal]);
 
@@ -144,6 +146,7 @@ class DishController extends Controller
         if($request->id) {
 
             $cart = session()->get('cart');
+            // $discount = session()->get('discount');
 
             if(isset($cart[$request->id])) {
 
@@ -151,10 +154,19 @@ class DishController extends Controller
 
                 session()->put('cart', $cart);
             }
-            // session()->put('cart', $cart);
+
+            // if(isset($discount[$request->id])) {
+            //
+            //     unset($discount[$request->id]);
+            //
+            //     session()->put('discount', $discount);
+            // }
+
             $total = $this->getCartTotal();
 
             $htmlCart = view('_header_cart')->render();
+
+            // parent.window.location.reload();
 
             return response()->json(['msg' => 'Prodotto rimosso!', 'data' => $htmlCart, 'total' => $total]);
 

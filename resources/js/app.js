@@ -12,4 +12,4 @@ require('./bootstrap');
 // });
 
 // SweetAlert2
-const Swal = require('sweetalert2');
+const Swal = window.Swal = require('sweetalert2');
