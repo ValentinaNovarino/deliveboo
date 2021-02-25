@@ -31,7 +31,7 @@
             </div>
 
             <div class="our-dishes border-top mt-5">
-                <span id="status"></span>
+                <span id="status" class="text-center"></span>
 
                 {{-- stampa dei piatti del ristorante  --}}
             </div>
@@ -121,9 +121,14 @@
                     success: function (response) {
 
                         // ele.siblings('.btn-loading').hide();
+                        if (response.msg) {
+                            $("span#status").html('<div class="alert alert-success ">'+response.msg+'</div>');
+                            $("#header-bar").html(response.data);
 
-                        $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
-                        $("#header-bar").html(response.data);
+                        } else if (response.error){
+                            $("span#status").html('<div class="alert alert-danger ">'+response.error+'</div>');
+                            $("#header-bar").html(response.data);
+                        }
                     }
                 });
             });
