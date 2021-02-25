@@ -105,7 +105,7 @@ class DishController extends Controller
             return response()->json(['msg' => 'Prodotto aggiunto al carrello!', 'data' => $htmlCart]);
         } else {
             // alert("Attenzione!! Non puoi prenotare da più ristoranti");
-            return response()->json(['msg' => 'Attenzione!! Non puoi prenotare da più ristoranti']);
+            return response()->json(['error' => 'Attenzione!! Non puoi prenotare da più ristoranti']);
 
         }
 
