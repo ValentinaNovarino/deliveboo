@@ -32,7 +32,6 @@
         padding-top: 16px;
     }
 
-
     a.logout {
         color: $colorSecondary;
         background-color: $colorTitleHaeder;
@@ -40,5 +39,16 @@
         padding: 8px;
         text-align: center;
         font-size: 18px;
+    }
+}
+
+li.only-icon {
+    display: none;
+    padding-top: 16px;
+    text-align: center;
+
+    a.only-icon {
+        color: $colorTitleHaeder;
+        font-size: 25px;
     }
 }
