@@ -6,5 +6,8 @@ return [
     ['name' => 'giapponese'],
     ['name' => 'vegano'],
     ['name' => 'gluten-free'],
-    ['name' => 'fast-food'],    
+    ['name' => 'fast-food'],
+    ['name' => 'indiano'],
+    ['name' => 'vegetariano'],
+    ['name' => 'lactose-free'],  
 ];
