@@ -14162,8 +14162,8 @@ td {
 }
 
 .main-container #sidebar-wrapper {
+  border: 1px solid #00ccbc;
   padding: 10px 15px;
-  background-color: #00ccbc0a;
   width: 200px;
   height: 300px;
 }
@@ -14176,10 +14176,16 @@ td {
 }
 
 .main-container .card-restaurant-container .card-restaurant {
-  width: 350px;
-  height: 350px;
-  border: 2px solid #00ccbc;
-  margin: 5px;
+  margin: 10px;
+  padding: 5px;
+  background-color: #00ccbc26;
+  border: 1px solid #00ccbc;
+  width: 300px;
+  height: 360px;
+}
+
+.main-container .card-restaurant-container .card-restaurant h4 {
+  margin-top: 20px;
 }
 
 .logo-guest-restaurant {
@@ -14207,6 +14213,7 @@ td {
   margin: 10px;
   padding: 5px;
   background-color: #00ccbc26;
+  border: 1px solid #00ccbc;
   width: 300px;
   height: 360px;
 }

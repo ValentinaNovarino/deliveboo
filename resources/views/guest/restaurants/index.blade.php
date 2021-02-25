@@ -60,7 +60,7 @@
 
                 <div class="main-container">
                     <div class="bg-light ml-3" id="sidebar-wrapper">
-                        <h3>seleziona una categoria</h3>
+                        <h3>Categorie:</h3>
                         <div v-for="categoryName in filterCategory" class="ml-3">
                             <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
                             :value="categoryName">
@@ -100,7 +100,12 @@
                                         <div class="restaurant-img">
                                             <img :src="'../../storage/' + restaurant.cover" :alt="'immagine ' + restaurant.name">
                                         </div>
-                                        <h4>Restaurant: <a :href="'restaurants/' + restaurant.slug">@{{restaurant.name}}</a></h4>
+                                        <h4>Ristorante: <a :href="'restaurants/' + restaurant.slug">@{{restaurant.name}}</a></h4>
+                                        <p> @{{restaurant.city}}</p>
+                                        <p> @{{restaurant.address}}</p>
+                                        <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
+                                            See restaurant page
+                                        </a>
                                     </div>
                                     <div v-if="item.restaurants.length < 1" class="card-restaurant">
                                         <h4>Non ci sono ristoranti per la categoria @{{item.name}}</h4>
