@@ -53,6 +53,11 @@
                                         </a>
                                         {{-- <a href="{{route('admin.index')}}"><i class="icon-link fas fa-house-user"></i></a> --}}
                                     </li>
+                                    <li class="only-icon">
+                                        <a class="only-icon" href="{{route('admin.index')}}">
+                                            <i class="fas fa-house-user"></i>
+                                        </a>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('admin.dishes.index')}}">
                                                 <i class="fas fa-utensils"></i>
@@ -60,12 +65,22 @@
                                         </a>
                                         {{-- <a href="{{route('admin.dishes.index')}}"><i class="icon-link fas fa-utensils"></i></i></a> --}}
                                     </li>
+                                    <li class="only-icon">
+                                        <a class="only-icon" href="{{route('admin.dishes.index')}}">
+                                            <i class="fas fa-utensils"></i>
+                                        </a>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route("admin.statistics.index")}}">
                                           <i class="fas fa-chart-bar"></i>
                                           Statistiche
                                         </a>
                                         {{-- <a href="{{ route("admin.statistics.index")}}"><i class="icon-link fas fa-chart-bar"></i></i></a> --}}
+                                    </li>
+                                    <li class="only-icon">
+                                        <a class="only-icon" href="{{ route("admin.statistics.index")}}">
+                                            <i class="fas fa-chart-bar"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>

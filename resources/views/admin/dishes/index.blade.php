@@ -7,7 +7,7 @@
             <div class="add-dish">
                 <h1>Menù del tuo ristorante</h1>
                 <a href="{{ route('admin.dishes.create') }}">
-                    <button type="button" class="btn btn-deliveroo">Aggiungi nuovo piatto</button>
+                    <button type="button" class="btn btn-deliveroo new-dish">Aggiungi nuovo piatto</button>
                     <button type="button" class="btn add btn-deliveroo"><i class="fas fa-plus"></i></button>
                 </a>
             </div>

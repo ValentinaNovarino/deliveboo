@@ -27,12 +27,12 @@
                             <li class="list-group-item restaurant-info">{{$restaurant->city}}</li>
                             <li class="list-group-item restaurant-info">{{$restaurant->address}}</li>
                             @foreach ($categories as $category)
-                                <li class="list-group-item">{{$category->name}}</li>
+                                <li class="list-group-item restaurant-info">{{$category->name}}</li>
                             @endforeach
                         </ul>
                         <div class="card-body text-center">
                             <a href="{{ route('admin.dishes.index') }}" class="card-link restaurant-menu secondary-btn-deliveroo">Menu ristorante</a>
-                            {{-- <a href="#" class="card-link menu secondary-btn-deliveroo">Menu</a> --}}
+                            <a href="#" class="card-link menu secondary-btn-deliveroo">Menu</a>
                         </div>
                     </div>
                 </div>

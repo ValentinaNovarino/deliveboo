@@ -1,5 +1,9 @@
 @media screen and (max-width: 1220px) {
 
+    .sidebar-nav.link a.nav-link {
+        font-size: 18px;
+    }
+
     .div-search {
             width: 98%;
         }
@@ -95,7 +99,11 @@
 
 }
 
-
+@media screen and (max-width: 1060px) {
+    .sidebar-nav.link a.nav-link {
+        font-size: 16px;
+    }
+}
 
 @media screen and (max-width: 992px) {
 
@@ -175,19 +183,38 @@
         width: 250px;
     }
 
-
+    .sidebar-nav.link a.nav-link {
+        font-size: 14px;
     }
+}
+
+@media screen and (max-width: 920px) {
+
+    a.nav-link {
+        display: none;
+    }
+
+    li.only-icon {
+        display: block;
+    }
+
+    a.logout {
+        display: block;
+    }
+}
 
 @media screen and (max-width: 862px) {
 
     .div-search {
         width: 90%;
+
         button {
             width: 25%;
             font-size: 10px;
         }
-    span{
-        font-size: 14px;
+
+        span{
+            font-size: 14px;
         }
     }
 
@@ -222,6 +249,8 @@
         width: 250px;
     }
 }
+
+// @media screen and (max-width: 768px)
 
 
 @media screen and (max-width: 772px) {
@@ -284,9 +313,9 @@
         overflow: hidden;
     }
 
-    // .btn.btn-deliveroo {
-    //     display: none;
-    // }
+    .btn.btn-deliveroo.new-dish {
+        display: none;
+    }
 
     .btn.add.btn-deliveroo {
         display: inline-block;
@@ -402,9 +431,25 @@
             display:block;
         }
     }
+
     .banner_verticale{
         margin-right: 5px;
         width: 250px;
+    }
+
+    .card-restaurants {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    li.list-group-item.restaurant-info {
+        padding: 16px 0;
+    }
+
+    .card-link.menu.secondary-btn-deliveroo {
+        margin: 0;
     }
 }
 
