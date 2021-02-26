@@ -67,7 +67,7 @@
         <tfoot>
         <tr class="visible-xs">
             <td class="text-center"><strong>Totale ordine € <span class="cart-total">{{ number_format($total, 2) }}</span></strong></td>
-            {{session((['order_price' => $total]))}}
+            {{session((['order_price' => number_format($total, 2)]))}}
         </tr>
         @php $discount = $total * 10 / 100; number_format($discount, 2); @endphp
         @if ($total >= 30)
@@ -77,7 +77,7 @@
             </tr>
             <tr class="visible-xs">
                 <td class="text-center"><strong>Sconto € <span class="cart-total">{{ number_format($discount, 2) }}</span></strong></td>
-                {{session((['discount' => $discount]))}}
+                {{session((['discount' => number_format($discount, 2)]))}}
             </tr>
         @elseif (session('cart'))
             <tr class="visible-xs">
