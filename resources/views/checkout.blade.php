@@ -111,11 +111,36 @@
 
                         {{-- tempo della consegna in secondi --}}
                         <input type="hidden" name="delivery_time" value="{{ session('delivery_time')}}">
-                        
 
 
 
-                        <button type="submit" class="btn btn-deliveroo" id="submit-button">Procedi con il pagamento</button>
+
+                        {{-- TEST BOTTONE INVIO PAGAMENTO --}}
+                       <button type="submit" class="btn" id="submit-button">
+                           <div class="container-btn-send-payment">
+                            <div class="left-side">
+                             <div class="card-btn-send-payment">
+                              <div class="card-line"></div>
+                              <div class="buttons-send-payment"></div>
+                             </div>
+                             <div class="post-payment">
+                              <div class="post-line"></div>
+                              <div class="screen-btn-payment">
+                               <div class="dollar-btn-payment">€</div>
+                              </div>
+                              <div class="numbers-payment"></div>
+                              <div class="numbers-line2"></div>
+                             </div>
+                            </div>
+                            <div class="right-side">
+                             <div class="new-payment">Invia</div>
+
+                             <i class="fas fa-chevron-right arrow"></i>
+                            </div>
+                           </div>
+                       </button>
+
+                       {{-- FINE TEST BOTTONE INVIO PAGAMENTO --}}
                     </form>
                     <a href="{{ route('cart') }}">
                         <button type="button" class="btn btn-lg btn-warning">Torna al carrello</button>
