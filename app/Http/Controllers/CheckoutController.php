@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Dish;
 use App\Restaurant;
 use App\Order;
+use App\Payment;
 use Illuminate\Validation\Rule;
 
 class CheckoutController extends Controller
@@ -33,7 +34,7 @@ class CheckoutController extends Controller
             'guest_lastname' => 'required|max:100',
             'guest_city' => 'required|max:100',
             'guest_address' => 'required|max:100',
-            'guest_mobile' => 'required|numeric|gt:-1|max:9999999999|min:1111111111',
+            'guest_mobile' => 'required|numeric|gt:-1|max:9999999999',
             'guest_email' => 'email:rfc|required|max:100',
             'order_price' => ['required', Rule::in([session('order_price')])],
             'delivery_price' => ['required', Rule::in([session('delivery_price')])],
@@ -41,10 +42,15 @@ class CheckoutController extends Controller
             'discount' => ['required', Rule::in([session('discount')])],
             'final_price' => ['required', Rule::in([session('final_price')])],
         ]);
+        // dd($request);
         $data = $request->all();
         $newOrder = new Order();
+        $newOrder->restaurant_id = session('mainRestaurantId');
         $newOrder->fill($data);
         $newOrder->save();
+        $newPayment = new Payment();
+        $newPayment->order_id = $newOrder->id;
+        $newPayment->save();
 
         $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
@@ -67,7 +73,7 @@ class CheckoutController extends Controller
         if ($result->success) {
             $transaction = $result->transaction;
             session()->forget('cart');
-            return redirect()->route('guest.restaurants')->with('success_message', 'Transaction successful. The ID is:'.$transaction->id);
+            return redirect()->route('postCheckout')->with('success_message', 'Transaction successful. The ID is:'.$transaction->id);
         } else {
             $errorString = "";
 
@@ -76,5 +82,10 @@ class CheckoutController extends Controller
             }
             return back()->withErrors('An error occurred with the message:'.$result->message);
         }
+    }
+
+    public function postCheckout() {
+        
+        return view('postCheckout');
     }
 }
