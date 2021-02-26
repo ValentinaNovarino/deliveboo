@@ -12923,6 +12923,72 @@ footer .nav-icon .copyright span {
   background: linear-gradient(96deg, #d0eb99 63%, #00ccbc 100%);
 }
 
+.button-ham {
+  background-color: white;
+  display: none;
+}
+
+.ham {
+  position: fixed;
+  z-index: 100;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 4px;
+  border: 1px solid #00ccbc;
+  border-radius: 3px;
+  cursor: pointer;
+  background: #00ccbc;
+}
+
+.ham i {
+  color: #fff;
+  font-size: 20px;
+}
+
+.dropdown {
+  z-index: 99;
+}
+
+.dropdown li {
+  padding: 20px;
+}
+
+.drop-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #00ccbc;
+  color: white;
+  transform: translateY(-100%);
+  transition: transform 0.4s;
+  list-style: none;
+  padding: 0;
+}
+
+.showMenu {
+  transform: translateY(0);
+}
+
+.menuLink {
+  display: inline;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menuLink:hover {
+  text-decoration: none;
+  color: #d0eb99;
+}
+
 .sidebar-nav {
   height: 100%;
 }
@@ -13531,6 +13597,16 @@ li.list-group-item.restaurant-info {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .button-ham {
+    display: block;
+  }
+
+  .xIcon {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .titleHeader h1 {
     font-size: 20px;
@@ -13560,14 +13636,6 @@ li.list-group-item.restaurant-info {
     overflow: hidden;
   }
 
-  .btn.btn-deliveroo.new-dish {
-    display: none;
-  }
-
-  .btn.add.btn-deliveroo {
-    display: inline-block;
-  }
-
   .banner_verticale {
     margin-right: 5px;
     width: 250px;
@@ -13589,7 +13657,8 @@ li.list-group-item.restaurant-info {
 
   .header-card-restaurants h1,
   .add-dish h1,
-  .card h1 {
+  .card h1,
+  h1.info-alert {
     font-size: 30px;
   }
 
@@ -13685,6 +13754,16 @@ li.list-group-item.restaurant-info {
   .card-link.menu.secondary-btn-deliveroo {
     margin: 0;
   }
+
+  .ham {
+    background-color: white;
+    border: none;
+  }
+
+  .ham i {
+    color: #00ccbc;
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -13712,13 +13791,9 @@ li.list-group-item.restaurant-info {
 
   .header-card-restaurants h1,
   .add-dish h1,
-  .card h1 {
+  .card h1,
+  h1.info-alert {
     font-size: 23px;
-  }
-
-  .add.btn-deliveroo {
-    padding: 5px 7px;
-    font-size: 12px;
   }
 
   table td {
@@ -13780,6 +13855,11 @@ td {
 
 .danger.danger-deliveroo {
   display: none;
+}
+
+.no-dishes {
+  margin-top: 200px;
+  color: #440063;
 }
 
 .card-show {

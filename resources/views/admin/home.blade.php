@@ -4,14 +4,14 @@
 <div class="container h-100 d-flex flex-column">
     <div class="row">
         <div class="col-md-12">
-            <div class="header-card-restaurants d-flex justify-content-between align-items-center">
+            <div class="header-card-restaurants d-flex flex-column justify-content-center align-items-center">
                 <h1>Ristoranti</h1>
-                @if (is_null($restaurant))
+                {{-- @if (is_null($restaurant))
                     <a href="{{ route('admin.restaurants.create') }}">
                         <button type="button" class="btn btn-deliveroo">Aggiungi nuovo ristorante</button>
                         <button type="button" class="btn add btn-deliveroo"><i class="fas fa-plus"></i></button>
                     </a>
-                @endif
+                @endif --}}
             </div>
         </div>
     </div>
@@ -39,8 +39,11 @@
             </div>
         </div>
     @else
-        <div class="container no-restaurant align-self-center m-auto">
-            <h1 class="text-center">Non hai ristoranti</h1>
+        <div class="container no-restaurant d-flex flex-column justify-content-center align-items-center m-auto">
+            <h1 class="info-alert text-center">Non hai ristoranti</h1>
+            <a href="{{ route('admin.restaurants.create') }}">
+                <button type="button" class="btn btn-deliveroo">Aggiungi nuovo ristorante</button>
+            </a>
         </div>
     @endif
 </div>

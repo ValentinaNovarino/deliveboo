@@ -250,8 +250,6 @@
     }
 }
 
-// @media screen and (max-width: 768px)
-
 
 @media screen and (max-width: 772px) {
     .div-search {
@@ -284,6 +282,17 @@
 
 }
 
+@media screen and (max-width: 767px) {
+
+    .button-ham {
+        display: block;
+    }
+
+    .xIcon {
+      display: none;
+    }
+}
+
 
 @media screen and (max-width: 600px) {
 
@@ -313,14 +322,6 @@
         overflow: hidden;
     }
 
-    .btn.btn-deliveroo.new-dish {
-        display: none;
-    }
-
-    .btn.add.btn-deliveroo {
-        display: inline-block;
-    }
-
     .banner_verticale{
         margin-right: 5px;
         width: 250px;
@@ -345,7 +346,7 @@
         display: block;
     }
 
-    .header-card-restaurants h1, .add-dish h1, .card h1 {
+    .header-card-restaurants h1, .add-dish h1, .card h1, h1.info-alert {
         font-size: 30px;
     }
 
@@ -451,6 +452,16 @@
     .card-link.menu.secondary-btn-deliveroo {
         margin: 0;
     }
+
+    .ham {
+        background-color: white;
+        border: none;
+
+        i {
+            color: $colorPrimary;
+            font-size: 16px;
+        }
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -475,13 +486,8 @@
             }
     }
 
-    .header-card-restaurants h1, .add-dish h1, .card h1 {
+    .header-card-restaurants h1, .add-dish h1, .card h1, h1.info-alert {
         font-size: 23px;
-    }
-
-    .add.btn-deliveroo {
-        padding: 5px 7px;
-        font-size: 12px;
     }
 
     table td {
