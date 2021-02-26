@@ -55,7 +55,8 @@ class RestaurantController extends Controller
             'city' => 'required|max:100',
             'address' => 'required|max:100',
             'categories' => 'required|exists:categories,id',
-            'image' => 'nullable|image|max:512'
+            'image' => 'nullable|image|max:512',
+            'description' => 'required|max:300'
         ]);
         $data = $request->all();
         // dd($data);
