@@ -4,11 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col 12">
-            <div class="add-dish">
+            <div class="add-dish d-flex flex-column justify-content-center align-items-center">
                 <h1>Menù del tuo ristorante</h1>
                 <a href="{{ route('admin.dishes.create') }}">
                     <button type="button" class="btn btn-deliveroo new-dish">Aggiungi nuovo piatto</button>
-                    <button type="button" class="btn add btn-deliveroo"><i class="fas fa-plus"></i></button>
                 </a>
             </div>
             @if (count($dishes) == 0)
@@ -43,14 +42,18 @@
                                     action="{{ route('admin.dishes.destroy', ['dish'=>$dish->slug]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger danger-deliveroo" type="submit">Cancella</button>
-                                    <button class="btn btn-danger danger danger-deliveroo"><i class="fas fa-times"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                                        <button class="btn btn-danger danger-deliveroo" type="submit">Cancella</button>
+                                        <button class="btn btn-danger danger danger-deliveroo"><i class="fas fa-times"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @else
+                <div class="container no-dishes d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="info-alert text-center">Non hai piatti registrati nel tuo ristorante</h1>
+                </div>
             @endif
         </div>
     </div>

@@ -34,6 +34,23 @@
 </head>
 <body>
     <div class="container-dashboard d-flex flex-column vh-100">
+        <div class="button-ham">
+            <button class="ham">
+                <span class="menuIcon">
+                    <i class="fas fa-bars"></i>
+                </span>
+                <span class="xIcon">
+                    <i class="fas fa-times"></i>
+                </span>
+            </button>
+        </div>
+        <div class="dropdown">
+            <ul class="drop-menu">
+                <li><a class="menuLink" href="{{route('admin.index')}}">Dashboard</a></li>
+                <li><a class="menuLink" href="{{route('admin.dishes.index')}}">Piatti</a></li>
+                <li><a class="menuLink" href="{{route('admin.dishes.index')}}">Statistiche</a></li>
+            </ul>
+        </div>
         <div class="container-fluid h-100">
             <div class="row h-100">
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar py-4 border-right position-fixed vh-100">
@@ -107,5 +124,34 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+    var menu = document.querySelector(".drop-menu")
+    var ham = document.querySelector(".ham")
+    var xIcon = document.querySelector(".xIcon")
+    var menuIcon = document.querySelector(".menuIcon")
+
+    ham.addEventListener("click", toggleMenu)
+
+    function toggleMenu() {
+        if (menu.classList.contains("showMenu")) {
+            menu.classList.remove("showMenu");
+            xIcon.style.display = "none";
+            menuIcon.style.display = "block";
+        } else {
+            menu.classList.add("showMenu");
+            xIcon.style.display = "block";
+            menuIcon.style.display = "none";
+        }
+    }
+
+    var menuLinks = document.querySelectorAll(".menuLink")
+
+    menuLinks.forEach(
+        function (menuLink) {
+            menuLink.addEventListener("click", toggleMenu)
+        }
+    )
+    </script>
 </body>
 </html>
