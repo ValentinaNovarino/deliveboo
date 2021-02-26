@@ -11,7 +11,7 @@
                 </a>
             </div>
             @if (count($dishes) == 0)
-                <h2>Non hai nessun pitto al momento</h2>
+                <h2 class="back-dish-title">Non hai nessun pitto al momento</h2>
             @endif
             @if (count($dishes) > 0)
                 <table class="table">
