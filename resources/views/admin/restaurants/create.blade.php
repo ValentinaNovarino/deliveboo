@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <label for="restaurantDescription">Descrizione</label>
-                    <input type="text" id="restaurantdescription" class="form-control-deliveroo" placeholder="Inserisci la descrizione del tuo ristorante" name="description" value="{{ old('description') }}" required>
+                    <input type="text" id="restaurantDescription" class="form-control-deliveroo" placeholder="Inserisci la descrizione del tuo ristorante" name="description" value="{{ old('description') }}" required>
                     @error('description')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -76,6 +76,7 @@
         var name = document.forms["myRestaurantForm"]["name"].value;
         var city = document.forms["myRestaurantForm"]["city"].value;
         var address = document.forms["myRestaurantForm"]["address"].value;
+        var address = document.forms["myRestaurantForm"]["description"].value;
 
         // controllo sul nome del ristorante
         if (name == "" || name == "undefined") {
@@ -100,10 +101,18 @@
             alert ("Non hai inserito l'indirizzo del tuo ristorante o la lunghezza supera i 100 caratteri");
             return false;
         } else if ( address.length > 100) {
-            alert ("La lunghezzo del nome dell'indirizzo non può superare i 100 caratteri");
+            alert ("La lunghezza del nome dell'indirizzo non può superare i 100 caratteri");
             return false;
         };
 
+        // controllo sulla descrizione del ristorante
+        if (description == "" || description == "undefined" ) {
+            alert ("Non hai inserito la descrizione del tuo ristorante o la lunghezza supera i 200 caratteri");
+            return false;
+        } else if ( description.length > 200) {
+            alert ("La lunghezza del nome della descrizione non può superare i 200 caratteri");
+            return false;
+        };
         // // controllo sulle checkbox delle categorie
         var selected = false;
         for (var i=0; i<document.forms["myRestaurantForm"].elements.length; i++){
