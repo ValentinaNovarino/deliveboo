@@ -23,7 +23,7 @@
             @endif
 
         </button>
-        <div id="pop" class="dropdown-menu">
+        <div id="pop" class="dropdown-menu p-4">
             <div class="row total-header-section">
                 <div class="col-xs-6 col-lg-6 col-sm-6 col-6">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>

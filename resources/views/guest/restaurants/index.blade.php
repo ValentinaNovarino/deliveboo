@@ -31,8 +31,8 @@
         <div id="root">
             {{-- navbar --}}
             <div class="nav-bar-container">
-                <div class="row">
-                    <div class="col">
+                <div class="row m-0">
+                    <div class="col p-0">
                         <nav class="navbar navbar-expand-lg navbar-light color-bg">
                             <div class="logo-guest-restaurant">
                                 <a class="navbar-brand" href="{{ url('/') }}">
