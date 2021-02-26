@@ -51,6 +51,7 @@
                                 </ul>
 
                             </div>
+                            @include('_header_cart')
                         </nav>
                     </div>
                 </div>
@@ -107,7 +108,7 @@
                 </section>
                 {{-- FINE ANIMAZIONE CAMION --}}
 
-            @include('_header_cart')
+
 
                 <div class="main-container">
                     <div class="bg-light ml-3" id="sidebar-wrapper">
