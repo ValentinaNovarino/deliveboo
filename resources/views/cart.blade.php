@@ -103,6 +103,8 @@
     <script type="text/javascript">
 
      // const Swal = require('sweetalert2')
+
+     //FUNZIONE DI AGGIORNAMENTO PIATTO NEL CARRELLO
         $(".update-cart").click(function (e) {
             e.preventDefault();
 
@@ -135,8 +137,6 @@
                         console.log('I was closed by the timer')
                     }
             })
-
-
 
             var ele = $(this);
 
@@ -174,65 +174,69 @@
             });
         });
 
+
+        //Funzione di rimozione piatto dal carrello
         $(".remove-from-cart").click(function (e) {
             e.preventDefault();
 
-            let timerInterval
-            Swal.fire({
-                title: 'Stiamo aggiornando il tuo carrello!',
-                html: 'Attendi',
-                customClass: 'popupCartCustom',
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: () => {
-                    Swal.showLoading()
-                    timerInterval = setInterval(() => {
-                        const content = Swal.getContent()
-                        if (content) {
-                            const b = content.querySelector('b')
-                            if (b) {
-                                b.textContent = Swal.getTimerLeft()
-                            }
-                        }
-                    }, 100)
-                },
-                willClose: () => {
-                    clearInterval(timerInterval)
-                }
+            const swalWithBootstrapButtons = Swal.mixin({
+                  customClass: {
+                    confirmButton: 'btn btn-danger',
+                    cancelButton: 'btn btn-success'
+                  },
+                  buttonsStyling: false
+                })
+
+                swalWithBootstrapButtons.fire({
+                  title: 'Vuoi rimuovere il piatto dal carrello?',
+                  text: "",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Elimina',
+                  cancelButtonText: 'Mantieni',
+                  reverseButtons: true
                 }).then((result) => {
-                    /* Read more about handling dismissals below */
-                    if (result.dismiss === Swal.DismissReason.timer) {
-                        console.log('I was closed by the timer')
+
+                    var ele = $(this);
+
+                    var parent_row = ele.parents("tr");
+
+                    var cart_total = $(".cart-total");
+
+                    // (confirm("Are you sure"))
+                    if (result.isConfirmed) {
+                        {
+                            $.ajax({
+                                url: '{{ url('remove-from-cart') }}',
+                                method: "DELETE",
+                                data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                                dataType: "json",
+                                success: function (response) {
+                                    location.reload();
+                                    parent_row.remove();
+                                    $("span#status").html('<div class="alert alert-danger">'+response.msg+'</div>');
+                                    $("#header-bar").html(response.data);
+                                    cart_total.text(response.total);
+                                }
+                            });
+                        }
+                      swalWithBootstrapButtons.fire(
+                        'Eliminato',
+                        'Il piatto è stato rimosso',
+                        'success'
+                      )
+                    } else if (
+                      /* Read more about handling dismissals below */
+                      result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                      swalWithBootstrapButtons.fire(
+                        'Piatto salvato',
+                        'Il tuo piatto è nel carrello :)',
+                        'success'
+                      )
                     }
-            })
-
-            var ele = $(this);
-
-            var parent_row = ele.parents("tr");
-
-            var cart_total = $(".cart-total");
-
-            if(confirm("Are you sure")) {
-                $.ajax({
-                    url: '{{ url('remove-from-cart') }}',
-                    method: "DELETE",
-                    data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
-                    dataType: "json",
-                    success: function (response) {
-
-                        location.reload();
-                        parent_row.remove();
-
-                        $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
-
-                        $("#header-bar").html(response.data);
-
-                        cart_total.text(response.total);
-                    }
-
+                  })
                 });
-            }
-        });
 
     </script>
 
