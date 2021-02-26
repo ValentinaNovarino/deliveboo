@@ -17,102 +17,110 @@
             </ul>
         </div>
     @endif
-    <span id="status"></span>
+    @if (!session()->get('cart'))
+        <div class="checkout-without-container">
+            <h1>Non ci sono prodotti nel carrello</h1>
+            <a href="{{ route('guest.restaurants') }}">
+                <button type="submit" class="btn btn-warning">Torna allo shopping</button>
+            </a>
+        </div>
+    @else
+        <span id="status"></span>
 
-    <table id="cart" class="table table-hover table-condensed">
-        <thead>
-        <tr>
-            <th style="width:50%">Piatti</th>
-            <th style="width:10%">Prezzo</th>
-            <th style="width:8%">Quantità</th>
-            <th style="width:22%" class="text-center">Subtotale</th>
-            <th style="width:10%"></th>
-        </tr>
-        </thead>
-        <tbody>
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+            <tr>
+                <th style="width:50%">Piatti</th>
+                <th style="width:10%">Prezzo</th>
+                <th style="width:8%">Quantità</th>
+                <th style="width:22%" class="text-center">Subtotale</th>
+                <th style="width:10%"></th>
+            </tr>
+            </thead>
+            <tbody>
 
-            {{-- {{dd(session('mainRestaurantId'))}} --}}
-        <?php $total = 0 ?>
-        @if(session('cart'))
-            @foreach((array) session('cart') as $id => $details)
-                {{-- {{dd($details['restaurant_id'])}} --}}
-                <?php $total += $details['price'] * $details['quantity'] ?>
+                {{-- {{dd(session('mainRestaurantId'))}} --}}
+            <?php $total = 0 ?>
+            @if(session('cart'))
+                @foreach((array) session('cart') as $id => $details)
+                    {{-- {{dd($details['restaurant_id'])}} --}}
+                    <?php $total += $details['price'] * $details['quantity'] ?>
 
-                <tr>
-                    <td data-th="Product">
-                        <div class="row">
-                            <div class="col-sm-3 hidden-xs"><img src="{{ $details['cover'] }}" width="100" height="100" class="img-responsive"/></div>
-                            <div class="col-sm-9">
-                                <h4 class="nomargin">{{ $details['name'] }}</h4>
-                                {{-- <h4 class="nomargin">{{ $details['id'] }}</h4> --}}
+                    <tr>
+                        <td data-th="Product">
+                            <div class="row">
+                                <div class="col-sm-3 hidden-xs"><img src="{{ $details['cover'] }}" width="100" height="100" class="img-responsive"/></div>
+                                <div class="col-sm-9">
+                                    <h4 class="nomargin">{{ $details['name'] }}</h4>
+                                    {{-- <h4 class="nomargin">{{ $details['id'] }}</h4> --}}
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td data-th="Price">€ {{ $details['price'] }}</td>
-                    <td data-th="Quantity">
-                        <input type="number" min="1" value="{{ $details['quantity'] }}" class="form-control quantity"/>
-                    </td>
-                    <td data-th="Subtotal" class="text-center">€ <span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
-                    <td class="actions" data-th="">
-                        {{-- refresh da azzurro a giallo --}}
-                        <button class="btn btn-warning btn-sm update-cart p-2" data-id="{{ $id }}"><i class="fas fa-sync-alt"></i></button>
-                        <button class="btn btn-danger btn-sm remove-from-cart p-2" data-id="{{ $id }}"><i class="fas fa-trash-alt"></i></button>
-                        <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
-                    </td>
-                </tr>
-            @endforeach
-        @endif
-        {{-- salviamo tempo di consegna sempre 30 minuti --}}
-        {{session((['delivery_time' => 3000]))}}
-        </tbody>
-        <tfoot>
-        <tr class="visible-xs">
-            <td class="text-center"><strong>Totale ordine € <span class="cart-total">{{ number_format($total, 2) }}</span></strong></td>
-            {{session((['order_price' => number_format($total, 2)]))}}
-        </tr>
-        @php $discount = $total * 10 / 100; number_format($discount, 2); @endphp
-        @if ($total >= 30)
-            <tr class="visible-xs">
-                <td class="text-center"><strong>Spedizione gratuita</strong></td>
-                {{session((['delivery_price' => 0]))}}
-            </tr>
-            <tr class="visible-xs">
-                <td class="text-center"><strong>Sconto € <span class="cart-total">{{ number_format($discount, 2) }}</span></strong></td>
-                {{session((['discount' => number_format($discount, 2)]))}}
-            </tr>
-        @elseif (session('cart'))
-            <tr class="visible-xs">
-                <td class="text-center"><strong>Spese di spedizione € <span class="cart-total">5</span></strong></td>
-                {{session((['delivery_price' => 5]))}}
-                {{session((['discount' => 0]))}}
-            </tr>
-        @endif
-        <tr>
-            <td><a href="{{ route('guest.restaurants') }}" class="btn btn-deliveroo"><i class="fa fa-angle-left"></i> Continua lo Shopping</a></td>
-
-            @if ($total >= 30)
-                @php
-                    $final_price = $total + 0 - $discount;
-                @endphp
-                <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ number_format($final_price, 2) }}</span></strong></td>
-                {{session((['final_price' => number_format($final_price, 2)]))}}
-            @elseif (session('cart'))
-                @php
-                    $final_price = $total + 5;
-                @endphp
-                <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ number_format($final_price, 2) }}</span></strong></td>
-                {{session((['final_price' => number_format($final_price, 2)]))}}
+                        </td>
+                        <td data-th="Price">€ {{ $details['price'] }}</td>
+                        <td data-th="Quantity">
+                            <input type="number" min="1" value="{{ $details['quantity'] }}" class="form-control quantity"/>
+                        </td>
+                        <td data-th="Subtotal" class="text-center">€ <span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
+                        <td class="actions" data-th="">
+                            {{-- refresh da azzurro a giallo --}}
+                            <button class="btn btn-warning btn-sm update-cart p-2" data-id="{{ $id }}"><i class="fas fa-sync-alt"></i></button>
+                            <button class="btn btn-danger btn-sm remove-from-cart p-2" data-id="{{ $id }}"><i class="fas fa-trash-alt"></i></button>
+                            <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
+                        </td>
+                    </tr>
+                @endforeach
             @endif
-            {{-- <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td> --}}
+            {{-- salviamo tempo di consegna sempre 30 minuti --}}
+            {{session((['delivery_time' => 3000]))}}
+            </tbody>
+            <tfoot>
+            <tr class="visible-xs">
+                <td class="text-center"><strong>Totale ordine € <span class="cart-total">{{ number_format($total, 2) }}</span></strong></td>
+                {{session((['order_price' => number_format($total, 2)]))}}
+            </tr>
+            @php $discount = $total * 10 / 100; number_format($discount, 2); @endphp
+            @if ($total >= 30)
+                <tr class="visible-xs">
+                    <td class="text-center"><strong>Spedizione gratuita</strong></td>
+                    {{session((['delivery_price' => 0]))}}
+                </tr>
+                <tr class="visible-xs">
+                    <td class="text-center"><strong>Sconto € <span class="cart-total">{{ number_format($discount, 2) }}</span></strong></td>
+                    {{session((['discount' => number_format($discount, 2)]))}}
+                </tr>
+            @elseif (session('cart'))
+                <tr class="visible-xs">
+                    <td class="text-center"><strong>Spese di spedizione € <span class="cart-total">5</span></strong></td>
+                    {{session((['delivery_price' => 5]))}}
+                    {{session((['discount' => 0]))}}
+                </tr>
+            @endif
+            <tr>
+                <td><a href="{{ route('guest.restaurants') }}" class="btn btn-deliveroo"><i class="fa fa-angle-left"></i> Continua lo Shopping</a></td>
 
-            <td colspan="2" class="hidden-xs"></td>
-            <td>
-                <a href="{{ route('checkout.index') }}" class="btn btn-deliveroo">Procedi con l'ordine</a>
-            </td>
-        </tr>
-        </tfoot>
-    </table>
+                @if ($total >= 30)
+                    @php
+                        $final_price = $total + 0 - $discount;
+                    @endphp
+                    <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ number_format($final_price, 2) }}</span></strong></td>
+                    {{session((['final_price' => number_format($final_price, 2)]))}}
+                @elseif (session('cart'))
+                    @php
+                        $final_price = $total + 5;
+                    @endphp
+                    <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ number_format($final_price, 2) }}</span></strong></td>
+                    {{session((['final_price' => number_format($final_price, 2)]))}}
+                @endif
+                {{-- <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td> --}}
 
+                <td colspan="2" class="hidden-xs"></td>
+                <td>
+                    <a href="{{ route('checkout.index') }}" class="btn btn-deliveroo">Procedi con l'ordine</a>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    @endif
 
     <script type="text/javascript">
 

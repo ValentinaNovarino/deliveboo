@@ -57,9 +57,7 @@ class DishController extends Controller
                     "quantity" => 1,
                     "price" => $dish->price,
                     "cover" => $dish->cover,
-                    "restaurant_id" => $dish->restaurant_id,
-                    // "prova" => $prova,
-                    // "prova2" => $prova2,
+                    "restaurant_id" => $dish->restaurant_id
                 ]
 
             ];
