@@ -33,10 +33,10 @@
             <div class="nav-bar-container">
                 <div class="row m-0">
                     <div class="col p-0">
-                        <nav class="navbar navbar-expand-lg navbar-light color-bg">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-white">
                             <div class="logo-guest-restaurant">
                                 <a class="navbar-brand" href="{{ url('/') }}">
-                                    <img src="{{'../img/logo-bianco.jpg'}}" alt="logo deliveroo">
+                                    <img src="{{'../img/logo.png'}}" alt="logo deliveroo">
                                 </a>
                             </div>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

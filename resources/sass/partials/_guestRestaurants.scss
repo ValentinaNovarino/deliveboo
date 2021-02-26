@@ -1,9 +1,8 @@
-.nav-bar-container {
+.navbar{
+    height: 70px;
+    border-bottom:1px solid #ccd0c6;
+}
 
-}
-.color-bg{
-    background-color: $colorPrimary;
-}
 .navbar-light .navbar-nav .active > .nav-link,{
     color:white;
     font-weight: bold;
@@ -59,7 +58,7 @@
 
 
 .logo-guest-restaurant {
-    width: 200px;
+    width: 130px;
 
     img {
         display: block;
