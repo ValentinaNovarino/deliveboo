@@ -14158,8 +14158,9 @@ td {
   }
 }
 
-.color-bg {
-  background-color: #00ccbc;
+.navbar {
+  height: 70px;
+  border-bottom: 1px solid #ccd0c6;
 }
 
 .navbar-light .navbar-nav .active > .nav-link {
@@ -14217,7 +14218,7 @@ td {
 }
 
 .logo-guest-restaurant {
-  width: 200px;
+  width: 130px;
 }
 
 .logo-guest-restaurant img {
