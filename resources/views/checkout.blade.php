@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                {{dd(session())}}
+                {{-- {{dd(session())}} --}}
                 {{-- {{dd(session()->get('cart'))}} --}}
                 @if(session('success_message'))
                     <div class="alert alert-success">

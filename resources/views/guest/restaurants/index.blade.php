@@ -103,9 +103,9 @@
                                         <h4>Ristorante: <a :href="'restaurants/' + restaurant.slug">@{{restaurant.name}}</a></h4>
                                         <p> @{{restaurant.city}}</p>
                                         <p> @{{restaurant.address}}</p>
-                                        <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
+                                        {{-- <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
                                             See restaurant page
-                                        </a>
+                                        </a> --}}
                                     </div>
                                     <div v-if="item.restaurants.length < 1" class="card-restaurant">
                                         <h4>Non ci sono ristoranti per la categoria @{{item.name}}</h4>
