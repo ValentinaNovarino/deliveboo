@@ -48,4 +48,6 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     Route::resource('dishes', 'DishController');
     Route::resource('restaurants', 'RestaurantController');
     Route::resource('statistics', 'StatisticController');
+    Route::get('orders', 'OrderController@index')->name('orders.index');
+    // Route::get('orders/{id}', 'OrderController@show')->name('orders.show');
 });

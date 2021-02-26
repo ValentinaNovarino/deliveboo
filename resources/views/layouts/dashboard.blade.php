@@ -48,7 +48,8 @@
             <ul class="drop-menu">
                 <li><a class="menuLink" href="{{route('admin.index')}}">Dashboard</a></li>
                 <li><a class="menuLink" href="{{route('admin.dishes.index')}}">Piatti</a></li>
-                <li><a class="menuLink" href="{{route('admin.dishes.index')}}">Statistiche</a></li>
+                <li><a class="menuLink" href="{{route('admin.orders.index')}}">Ordini</a></li>
+                <li><a class="menuLink" href="{{route('admin.statistics.index')}}">Statistiche</a></li>
             </ul>
         </div>
         <div class="container-fluid h-100">
@@ -68,7 +69,6 @@
                                             <i class="fas fa-house-user"></i>
                                             Dashboard
                                         </a>
-                                        {{-- <a href="{{route('admin.index')}}"><i class="icon-link fas fa-house-user"></i></a> --}}
                                     </li>
                                     <li class="only-icon">
                                         <a class="only-icon" href="{{route('admin.index')}}">
@@ -80,7 +80,6 @@
                                                 <i class="fas fa-utensils"></i>
                                             Piatti
                                         </a>
-                                        {{-- <a href="{{route('admin.dishes.index')}}"><i class="icon-link fas fa-utensils"></i></i></a> --}}
                                     </li>
                                     <li class="only-icon">
                                         <a class="only-icon" href="{{route('admin.dishes.index')}}">
@@ -88,11 +87,21 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="nav-link" href="{{route('admin.orders.index')}}">
+                                                <i class="fab fa-elementor"></i>
+                                            Ordini
+                                        </a>
+                                    </li>
+                                    <li class="only-icon">
+                                        <a class="only-icon" href="{{route('admin.orders.index')}}">
+                                            <i class="fab fa-elementor"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link" href="{{ route("admin.statistics.index")}}">
                                           <i class="fas fa-chart-bar"></i>
                                           Statistiche
                                         </a>
-                                        {{-- <a href="{{ route("admin.statistics.index")}}"><i class="icon-link fas fa-chart-bar"></i></i></a> --}}
                                     </li>
                                     <li class="only-icon">
                                         <a class="only-icon" href="{{ route("admin.statistics.index")}}">

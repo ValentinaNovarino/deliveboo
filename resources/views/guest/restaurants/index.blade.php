@@ -24,8 +24,6 @@
         {{-- AXIOS --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
 
-        {{-- VUE-MULTIselect --}}
-        {{-- <script src="https://unpkg.com/vue-simple-multi-select@latest"></script> --}}
     </head>
     <body>
         <div id="root">
@@ -182,19 +180,6 @@
                     checked: [],
                     filterCategory: [],
                     visibleRestaurant: false,
-                    // selectedValue: '',
-                    // selectedCategoryValue: '',
-                    // changedValue: '',
-                    // changedCategoryValue: '',
-                    // visible: false,
-                    // visibleCategory: false,
-                    // restaurants: [],
-                    // restaurantSlugs: [],
-                    //
-                    // value: '',
-                    //
-                    // supaCntainer: [],
-                    // valoreCheck: '',
                 },
                 methods: {
                     onChangeCategory(value) {
