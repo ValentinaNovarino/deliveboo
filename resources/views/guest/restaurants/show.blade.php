@@ -15,7 +15,7 @@
                         <h2>{{ $restaurant->name}}</h2>
                         <p>Città: {{ $restaurant->city}}</p>
                         <p>Indirizzo: {{ $restaurant->address}}</p>
-                        <p>Descrizione: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Descrizione: {{ $restaurant->description}}</p>
                     @endforeach
                     <a class="menu" href="#all-dishes-title">Clicca per vedere i nostri piatti</a>
                 </div>

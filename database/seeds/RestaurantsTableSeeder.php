@@ -23,6 +23,8 @@ class RestaurantsTableSeeder extends Seeder
             $newRestaurant->city = $restaurantsData[$i]['city'];
             $newRestaurant->address = $restaurantsData[$i]['address'];
             $newRestaurant->cover = $restaurantsData[$i]['cover'];
+            $newRestaurant->cover = $restaurantsData[$i]['description'];
+
 
             $slug = Str::slug($newRestaurant->name, '-');
 
