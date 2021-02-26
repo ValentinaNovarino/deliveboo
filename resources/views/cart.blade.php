@@ -62,7 +62,8 @@
                 </tr>
             @endforeach
         @endif
-
+        {{-- salviamo tempo di consegna sempre 30 minuti --}}
+        {{session((['delivery_time' => 3000]))}}
         </tbody>
         <tfoot>
         <tr class="visible-xs">

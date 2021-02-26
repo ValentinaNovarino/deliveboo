@@ -103,20 +103,15 @@
                         </div>
 
                         {{-- input non visibili --}}
-                        <input type="hidden" name="order_price" value="{{ $finalTotal }}">
-                        @php $sconto10 = $finalTotal * 10 / 100 @endphp
-                        @if ($finalTotal >= 30)
-                            <input type="hidden" name="delivery_price" value="0">
-                            <input type="hidden" name="discount" value="{{ $sconto10 }}">
-                            <input type="hidden" name="final_price" value="{{ $finalTotal + 0 - $sconto10 }}">
-                        @else
-                            <input type="hidden" name="delivery_price" value="5">
-                            <input type="hidden" name="discount" value="0">
-                            <input type="hidden" name="final_price" value="{{ $finalTotal + 5 }}">
-                        @endif
+
+                        <input type="hidden" name="order_price" value="{{ session('order_price')}}">
+                        <input type="hidden" name="delivery_price" value="{{ session('delivery_price')}}">
+                        <input type="hidden" name="discount" value="{{ session('discount')}}">
+                        <input type="hidden" name="final_price" value="{{ session('final_price')}}">
+
                         {{-- tempo della consegna in secondi --}}
-                        <input type="hidden" name="delivery_time" value="3000">
-                        {{-- <input type="hidden" name="delivery_time" value="session('cart')"> --}}
+                        <input type="hidden" name="delivery_time" value="{{ session('delivery_time')}}">
+                        
 
 
 
