@@ -33,7 +33,7 @@
             <div class="nav-bar-container">
                 <div class="row m-0">
                     <div class="col p-0">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-restaurants">
                             <div class="logo-guest-restaurant">
                                 <a class="navbar-brand" href="{{ url('/') }}">
                                     <img src="{{'../img/logo.png'}}" alt="logo deliveroo">
