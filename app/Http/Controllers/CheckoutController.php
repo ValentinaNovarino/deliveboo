@@ -49,7 +49,7 @@ class CheckoutController extends Controller
             'privateKey' => config('services.braintree.privateKey')
         ]);
 
-        $amount = $request->amount;
+        $amount = session()->get('final_price');
         $nonce = $request->payment_method_nonce;
 
         $result = $gateway->transaction()->sale([

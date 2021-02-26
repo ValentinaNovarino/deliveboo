@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                {{dd(session())}}
+                {{-- {{dd(session('final_price'))}} --}}
                 {{-- {{dd(session()->get('cart'))}} --}}
                 @if(session('success_message'))
                     <div class="alert alert-success">
@@ -52,7 +52,7 @@
                     </div>
 
                     <h1>inserisci i tuoi dati</h1>
-                    <form method="POST" action="{{ route('checkout.store') }}" id="form">
+                    <form id="form" method="POST" action="{{ route('checkout.store') }}">
                         @csrf
                         <div class="form-group">
                             <label for="guestName">Nome</label>
@@ -128,7 +128,7 @@
                         <button type="submit" class="button btn btn-deliveroo">Procedi con il pagamento</button>
                     </form>
                     <a href="{{ route('cart') }}">
-                        <button type="submit" class="btn btn-lg btn-warning">Torna al carrello</button>
+                        <button type="button" class="btn btn-lg btn-warning">Torna al carrello</button>
                     </a>
                 @endif
             </div>
@@ -138,7 +138,7 @@
 @endsection
 
 <script src="https://js.braintreegateway.com/web/dropin/1.26.1/js/dropin.min.js"></script>
-<script>
+<script type="text/javascript">
     var form = document.querySelector('#form');
     var client_token = "{{ $token }}";
 

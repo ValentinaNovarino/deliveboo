@@ -81,13 +81,13 @@
                     $final_price = $total + 0 - $discount;
                 @endphp
                 <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ number_format($final_price, 2) }}</span></strong></td>
-                {{session((['final_price' => $final_price]))}}
+                {{session((['final_price' => number_format($final_price, 2)]))}}
             @elseif (session('cart'))
                 @php
                     $final_price = $total + 5;
                 @endphp
                 <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ number_format($final_price, 2) }}</span></strong></td>
-                {{session((['final_price' => $final_price]))}}
+                {{session((['final_price' => number_format($final_price, 2)]))}}
             @endif
             {{-- <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td> --}}
 
