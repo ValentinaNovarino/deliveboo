@@ -11,5 +11,4 @@ class Order extends Model
     }
 
     protected $fillable = ['order_price', 'delivery_price', 'delivery_time', 'discount', 'final_price', 'guest_name', 'guest_lastname', 'guest_address', 'guest_city', 'guest_mobile', 'guest_email'];
-    // protected $fillable = ['restaurant_id', 'order_price', 'delivery_price', 'delivery_time', 'discount', 'final_price', 'guest_name', 'guest_lastname', 'guest_address', 'guest_city', 'guest_mobile', 'guest_email'];
 }
