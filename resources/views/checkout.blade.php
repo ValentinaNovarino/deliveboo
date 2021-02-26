@@ -52,7 +52,7 @@
                     </div>
 
                     <h1>inserisci i tuoi dati</h1>
-                    <form id="form" method="POST" action="{{ route('checkout.store') }}">
+                    <form id="form" method="POST" name="formform" action="{{ route('checkout.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="guestName">Nome</label>
@@ -125,7 +125,7 @@
 
 
 
-                        <button type="submit" class="button btn btn-deliveroo">Procedi con il pagamento</button>
+                        <button type="submit" name="formform" class="button btn btn-deliveroo">Procedi con il pagamento</button>
                     </form>
                     <a href="{{ route('cart') }}">
                         <button type="button" class="btn btn-lg btn-warning">Torna al carrello</button>
@@ -145,9 +145,9 @@
     braintree.dropin.create({
       authorization: client_token,
       selector: '#bt-dropin',
-      paypal: {
-        flow: 'vault'
-      }
+      // paypal: {
+      //   flow: 'vault'
+      // }
     }, function (createErr, instance) {
       if (createErr) {
         console.log('Create Error', createErr);
@@ -169,19 +169,3 @@
       });
     });
 </script>
-
-{{-- <script type="text/javascript">
-    function blocco_mousedx()
-     { return(false); }
-    document.oncontextmenu = blocco_mousedx;
-
-        document.onkeydown = function(blocco_tasti) {
-     if(event.keyCode == 123)
-    { return false; }
-     if(blocco_tasti.ctrlKey && blocco_tasti.shiftKey && blocco_tasti.keyCode == 'I'.charCodeAt(0)) { return false; }
-     if(blocco_tasti.ctrlKey && blocco_tasti.shiftKey && blocco_tasti.keyCode == 'C'.charCodeAt(0)) { return false; }
-     if(blocco_tasti.ctrlKey && blocco_tasti.shiftKey && blocco_tasti.keyCode == 'J'.charCodeAt(0)) { return false; }
-     if(blocco_tasti.ctrlKey && blocco_tasti.keyCode == 'U'.charCodeAt(0))
-    { return false; }
-    }
-</script> --}}

@@ -23,7 +23,7 @@ class CheckoutController extends Controller
             'token' => $gateway->ClientToken()->generate()
         ];
         // dd(session()->get('cart'));
-        // dd(Product::all());
+        // dd($data);
         return view('checkout', $data);
     }
 
@@ -36,6 +36,10 @@ class CheckoutController extends Controller
             'guest_mobile' => 'required|numeric|gt:-1|max:9999999999|min:1111111111',
             'guest_email' => 'email:rfc|required|max:100',
             'order_price' => ['required', Rule::in([session('order_price')])],
+            'delivery_price' => ['required', Rule::in([session('delivery_price')])],
+            'delivery_time' => ['required', Rule::in([session('delivery_time')])],
+            'discount' => ['required', Rule::in([session('discount')])],
+            'final_price' => ['required', Rule::in([session('final_price')])],
         ]);
         $data = $request->all();
         $newOrder = new Order();
