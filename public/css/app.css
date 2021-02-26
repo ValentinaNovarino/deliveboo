@@ -13767,6 +13767,10 @@ li.list-group-item.restaurant-info {
   color: #440063;
 }
 
+h2 {
+  color: #440063;
+}
+
 th {
   width: calc(100% / 4);
   font-size: 20px;

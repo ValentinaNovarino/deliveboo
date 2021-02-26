@@ -11,6 +11,9 @@
                     <button type="button" class="btn add btn-deliveroo"><i class="fas fa-plus"></i></button>
                 </a>
             </div>
+            @if (count($dishes) == 0)
+                <h2>Non hai nessun pitto al momento</h2>
+            @endif
             @if (count($dishes) > 0)
                 <table class="table">
                     <thead>
@@ -53,16 +56,3 @@
     </div>
 </div>
 @endsection
-
-{{-- <a href="{{ route('admin.dishes.show', ['dish'=> $dish->slug ]) }}">
-    <button class="btn btn-primary">Show</button>
-</a>
-<a href="{{ route('admin.dishes.edit', ['dish'=>$dish->slug ]) }}">
-    <button class="btn btn-info">Modify</button>
-</a>
-<form class="d-inline"
-action="{{ route('admin.dishes.destroy', ['dish'=>$dish->slug]) }}" method="POST">
-@csrf
-@method('DELETE')
-<button class="btn btn-danger" type="submit">Delete</button>
-</form> --}}
