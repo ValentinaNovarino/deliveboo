@@ -12697,6 +12697,14 @@ body p {
   font-size: 20px;
 }
 
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff url(/images/logo.png?0316ad3f3454defaf145b4a9f7704a0d) no-repeat center;
+  z-index: 99999;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);

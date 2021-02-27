@@ -2,7 +2,10 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <div id="loading" class="">
+        
+        </div>
+    </div>
 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-color-primary p-5">
@@ -311,5 +314,13 @@
         </div>
     </div>
 </section>
+
+<script type="text/javascript">
+    var preloader = document.getElementById("loading");
+
+    function myFunction() {
+        preloader.style.display = "none";
+    }
+</script>
 
 @endsection
