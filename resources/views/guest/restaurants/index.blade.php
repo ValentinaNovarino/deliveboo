@@ -177,7 +177,7 @@
                                 <h4 class="capitalize">Categoria: @{{item.name}}</h4>
                                 <div class="card-restaurant-container">
                                     <div v-for="restaurant in item.restaurants" class="all-category">
-                                        <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
+                                            <a :href="'restaurants/' + restaurant.slug">
                                             <div class="card-restaurant">
                                                 <div class="restaurant-img">
                                                         <img :src="'../../storage/' + restaurant.cover" :alt="'immagine ' + restaurant.name">
