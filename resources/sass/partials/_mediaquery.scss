@@ -382,6 +382,8 @@
         }
     }
 
+
+
 }
 
 @media screen and (max-width: 420px) {
@@ -461,6 +463,11 @@
             color: $colorPrimary;
             font-size: 16px;
         }
+    }
+
+    .card-success-payment {
+        width: 300px;
+        height: 300px;
     }
 }
 
