@@ -1,0 +1,37 @@
+.row-border-bottom {
+    border-bottom: 2px solid #dddde0;
+    border-top: 2px solid #dddde0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+}
+.row-border-bottom:first-child {
+    border-top: none;
+}
+
+p.order-p {
+    font-size: $fontSizeDashboard;
+    color: $colorTitleHaeder;
+}
+
+p.p-order-row {
+    font-size: 18px;
+    color: $colorTitleHaeder;
+}
+
+.hide-order-div {
+    padding: 20px 0;
+
+    p.hide-order-p {
+        font-size: 20px;
+        font-weight: bold;
+        color: $colorPrimary;
+
+        span.hide-order-span {
+            font-size: 20px;
+            font-weight: 100;
+            color: $colorTitleHaeder;
+        }
+    }
+}
