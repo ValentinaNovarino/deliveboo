@@ -62,7 +62,7 @@
                 visible: false,
             },
             methods: {
-                onClick() {
+                onClick(id) {
                     this.visible = !this.visible;
                 }
             }
