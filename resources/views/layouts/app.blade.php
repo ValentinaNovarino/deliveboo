@@ -26,8 +26,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body>
-    
+<body onload="myFunction()">
+
+
+
 
     <main>
         @yield('content')
@@ -35,6 +37,11 @@
 
 
             @include('partials.footer')
+
+            <script type="text/javascript">
+
+
+            </script>
 
 </body>
 </html>

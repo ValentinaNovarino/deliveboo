@@ -110,52 +110,83 @@
 
                 <div class="main-container">
                     <div class="bg-light ml-3" id="sidebar-wrapper">
-                        <h3>Categorie:</h3>
-                        <div v-for="categoryName in filterCategory" class="ml-3">
-                            <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
-                            :value="categoryName">
-                            <label class="form-check-label capitalize">@{{categoryName}}</label>
-                        </div>
+                        <h4>Categorie:</h4>
+                            <div v-for="categoryName in filterCategory" class="ml-3">
+                                <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
+                                :value="categoryName">
+                                <label class="form-check-label capitalize">@{{categoryName}}</label>
+                            </div>
                     </div>
-                    <div class="container box-restaurant-container">
-                        <div v-if="!checked.length">
-                            {{-- test sezione stampa di tutti i ristoranti --}}
-                            <h1>In primo piano</h1>
-                            <section id="all-restaurants">
-                                @foreach ($restaurants as $restaurant)
-                                    <div class="box-restaurant">
-                                        <div class="restaurant-img">
-                                            <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="{{ $restaurant->name }}">
-                                        </div>
-                                        <h2>
-                                            {{ $restaurant->name }}
-                                        </h2>
-                                        {{-- <p> {{ $restaurant->slug }}</p> --}}
-                                        <p> {{ $restaurant->city }}</p>
-                                        <p> {{ $restaurant->address}}</p>
-                                        <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
-                                            See restaurant page
-                                        </a>
+                    <div class="box-restaurant-container">
+                        <h4>Ristoranti che consegnano nella tua città</h4>
+                            <div class="restaurant-strip">
+                                <div class="strip">
+                                    <img src="{{'../img/offers.png'}}" alt="offers">
+                                    <span class="capitalize">offerte</span>
+                                </div>
+                                <div class="strip">
+                                    <img src="{{'../img/grocery.png'}}" alt="grocery">
+                                    <span class="capitalize">spesa</span>
+                                </div>
+                                <div class="strip">
+                                    <img src="{{'../img/pizza.png'}}" alt="pizza">
+                                    <span class="capitalize">pizza</span>
+                                </div>
+                                <div class="strip">
+                                    <img src="{{'../img/sushi-1.png'}}" alt="sushi-1">
+                                    <span class="capitalize">sushi</span>
+                                </div>
+                                <div class="strip">
+                                    <img src="{{'../img/dessert.png'}}" alt="dessert">
+                                    <span class="capitalize">dessert</span>
                                     </div>
+                                <div class="strip">
+                                    <img src="{{'../img/poke.png'}}" alt="poke">
+                                    <span class="capitalize">poke</span>
+                                </div>
+                            </div>
+                            <div class="offers-promo">
+                                    <img src="{{'../img/promo-1.jpg'}}" alt="offers">
+                                    <img src="{{'../img/promo-2.jpg'}}" alt="offers">
+                                    <img src="{{'../img/promo-3.jpg'}}" alt="offers">
+                            </div>
+                {{-- test sezione stampa di tutti i ristoranti --}}
+                        <div class="print-restaurants" v-if="!checked.length">
+                                <h4>In primo piano</h4>
+                                <p>Spazi pagati da partner di qualità</p>
+                            <div id="all-restaurants">
+                                @foreach ($restaurants as $restaurant)
+                                    <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
+                                        <div class="box-restaurant">
+                                            <div class="restaurant-img">
+                                                <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="{{ $restaurant->name }}">
+                                            </div>
+                                            <h4>
+                                                {{ $restaurant->name }}
+                                            </h4>
+                                            <p> {{ $restaurant->city }}</p>
+                                            <p> {{ $restaurant->address}}</p>
+                                        </div>
+                                    </a>
                                 @endforeach
-                            </section>
-                            {{-- Fine sezione stampa dei ristoranti--}}
-
+                            </div>
                         </div>
+                        {{-- Fine sezione stampa dei ristoranti--}}
                         <div v-for="categoryRest in categoriesRestaurants" v-if="visibleRestaurant">
                             <div v-for="item in categoryRest" v-if="checked.includes(item.name)">
-                                <h2>Categoria: @{{item.name}}</h2>
+                                <h4 class="capitalize">Categoria: @{{item.name}}</h4>
                                 <div class="card-restaurant-container">
-                                    <div v-for="restaurant in item.restaurants" class="card-restaurant">
-                                        <div class="restaurant-img">
-                                            <img :src="'../../storage/' + restaurant.cover" :alt="'immagine ' + restaurant.name">
-                                        </div>
-                                        <h4>Ristorante: <a :href="'restaurants/' + restaurant.slug">@{{restaurant.name}}</a></h4>
-                                        <p> @{{restaurant.city}}</p>
-                                        <p> @{{restaurant.address}}</p>
-                                        {{-- <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
-                                            See restaurant page
-                                        </a> --}}
+                                    <div v-for="restaurant in item.restaurants" class="all-category">
+                                            <a :href="'restaurants/' + restaurant.slug">
+                                            <div class="card-restaurant">
+                                                <div class="restaurant-img">
+                                                        <img :src="'../../storage/' + restaurant.cover" :alt="'immagine ' + restaurant.name">
+                                                </div>
+                                                <h4>Ristorante: @{{restaurant.name}}</h4>
+                                                <p> @{{restaurant.city}}</p>
+                                                <p> @{{restaurant.address}}</p>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div v-if="item.restaurants.length < 1" class="card-restaurant">
                                         <h4>Non ci sono ristoranti per la categoria @{{item.name}}</h4>
@@ -165,6 +196,43 @@
                         </div>
                     </div>
                 </div>
+            <div class="main-container">
+                <div class="side">
+
+                </div>
+                <div class="reserch-restaurant">
+                    <h4>Serve una mano con la ricerca?</h4>
+                {{-- </div> --}}
+                    <div class="restaurant-strip">
+                        <div class="strip">
+                            <img src="{{'../img/offers.png'}}" alt="offers">
+                            <span class="capitalize">offerte</span>
+                        </div>
+                        <div class="strip">
+                            <img src="{{'../img/grocery.png'}}" alt="grocery">
+                            <span class="capitalize">spesa</span>
+                        </div>
+                        <div class="strip">
+                            <img src="{{'../img/pizza.png'}}" alt="pizza">
+                            <span class="capitalize">pizza</span>
+                        </div>
+                        <div class="strip">
+                            <img src="{{'../img/sushi-1.png'}}" alt="sushi-1">
+                            <span class="capitalize">sushi</span>
+                        </div>
+                        <div class="strip">
+                            <img src="{{'../img/dessert.png'}}" alt="dessert">
+                            <span class="capitalize">dessert</span>
+                            </div>
+                        <div class="strip">
+                            <img src="{{'../img/poke.png'}}" alt="poke">
+                            <span class="capitalize">poke</span>
+                        </div>
+                    </div>
+            </div>
+            </div>
+
+
             </main>
         </div>
 
