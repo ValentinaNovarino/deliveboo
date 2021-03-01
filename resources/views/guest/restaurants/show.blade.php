@@ -9,87 +9,113 @@
     <main>
         <div class="container">
 
-            <div class="card-restaurant border-form p-5 d-flex">
-                <div class="info-restaurant">
+            <div class="card-restaurant d-flex">
+                <div class="info-restaurant d-flex flex-column justify-content-center">
                     @foreach ($restaurantDishes as $restaurant)
                         <h2>{{ $restaurant->name}}</h2>
-                        <p>Città: {{ $restaurant->city}}</p>
-                        <p>Indirizzo: {{ $restaurant->address}}</p>
-                        <p>Descrizione: {{ $restaurant->description}}</p>
+                        <p> <i id="star-vote" class="fas fa-star"></i> {{ $numero = rand(2,5)}},{{ $numero2 = rand(0,9) }} </p>
+                        <p><span>Città: </span>{{ $restaurant->city}}</p>
+                        <p><span>Indirizzo: </span>{{ $restaurant->address}}</p>
+                        <p><span>Descrizione: </span>{{ $restaurant->description}}</p>
                     @endforeach
                     <a class="menu" href="#all-dishes-title">Clicca per vedere i nostri piatti</a>
+                    <span class="text-center" id="news"><i class="fas fa-exclamation"></i> New</span>
+                    <div class="info-details">
+                        <div class="info-icon d-flex justify-content-start align-items-center">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="details d-flex flex-column justify-content-center align-items-start">
+                            <p>Dettagli del ristorante</p>
+                            <a href="#">Allergenti e tanto altro</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="cover-restaurant m-2">
                     <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="Cover ristorante" class="img-fluid">
+                    <div class="delivery">
+                        <div class="img-rider">
+                            <p>Consegna dalle 19:30</p>
+                            <span>{{ $restaurant->city}}, Italia</span>
+                        </div>
+                    </div>
+                    <button class="order" type="button" name="button">Avvia ordine di gruppo</button>
                 </div>
             </div>
 
-            <div class="">
-                <a href="{{ route('guest.restaurants') }}" class=" all-restaurant btn btn-deliveroo ml-5">
+            <div>
+                <a href="{{ route('guest.restaurants') }}" class=" all-restaurant-btn btn btn-deliveroo">
                     <i class="fas fa-arrow-left"></i> Tutti i ristoranti
                 </a>
             </div>
 
-            <div class="our-dishes border-top mt-5">
+            <div class="components border-top border-bottom mt-5 d-flex align-items-center">
                 <span id="status" class="text-center"></span>
 
-                {{-- stampa dei piatti del ristorante  --}}
+                <ul>
+                    <li>
+                        <a href="#">Piatti</a>
+                    </li>
+                    <li>
+                        <a href="#">Bevande</a>
+                    </li>
+                    <li>
+                        <a href="#">Birre</a>
+                    </li>
+                    <li>
+                        <a href="#">Vini</a>
+                    </li>
+                </ul>
             </div>
+
         </div>
 
         <div class="container-dishes">
+            <div class="container">
                 <div id="all-dishes-title">
-                    <h1 class="text-center m-5">I nostri piatti</h1>
+                    <h1>I nostri piatti</h1>
                     <div class="all-dishes">
                         @foreach ($restaurantDishes as $restaurant)
                             @foreach ($restaurant->dishes as $dish)
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail">
-                                        <div class="thumbnail-front">
-                                           {{-- <img src="{{ $dish->cover }}" width="200" height="200"> --}}
-                                            <img src="{{$dish->cover}}" alt="Cover piatto" width="200" height="200" class="img-fluid">
-                                            <div class="caption">
-                                               <h4>{{ $dish->name }}</h4>
-                                               <p id="description">{{ ($dish->description) }}</p>
-                                               <p>€{{ $dish->price }} </p>
-                                               {{-- <p class="btn-holder "><a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
-                                                   <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
-
-                                               </p> --}}
-
+                                <a onclick="show('{{ $dish->id }}'); return false" class="dish-card-link" href="#">
+                                    <div id="dish-card">
+                                        <div class="left-card">
+                                            <h4>{{ $dish->name }}</h4>
+                                            <p id="description">{{ ($dish->description) }}</p>
+                                            <p>€{{ $dish->price }}</p>
+                                        </div>
+                                        <div class="right-card d-flex justify-content-end align-items-center">
+                                            <div class="dish-cover">
+                                                <img src="{{$dish->cover}}" alt="Cover piatto" class="img-fluid">
                                             </div>
                                         </div>
-                                        <div class="thumbnail-back">
-                                            <p><strong>Descrizione: </strong>{{ ($dish->description) }}</p>
-                                            <p><strong>Prezzo: </strong>€{{ $dish->price }} </p>
-                                            <p> <i id="star-vote" class="fas fa-star"></i> {{ $numero = rand(2,5)}},{{ $numero2 = rand(0,9) }} </p>
-
-
-                                            <button class="button-add-cart">
-                                                <a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-deliveroo btn-block add-to-cart p-3 m-0" role="button">Add to cart</a>
-                                                <div class="cart">
-                                                    <svg viewBox="0 0 36 26">
-                                                        <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
-                                                        <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
-                                                    </svg>
-                                                </div>
-                                            </button>
-                                        </div>
                                     </div>
-
+                                </a>
+                                <div id="{{ $dish->id }}" class="dish-card-details" style="display:none">
+                                    <div class="card-details-header text-right">
+                                        <i onclick="show('{{ $dish->id }}'); return false" class="fas fa-times"></i>
+                                    </div>
+                                    <h4>{{ $dish->name }}</h4>
+                                    <p> <i id="star-vote" class="fas fa-star"></i> {{ $numero = rand(2,5)}},{{ $numero2 = rand(0,9) }} </p>
+                                    <div class="dish-cover">
+                                        <img src="{{$dish->cover}}" alt="Cover piatto" class="img-fluid">
+                                    </div>
+                                    <p id="description">{{ ($dish->description) }}</p>
+                                    <p>€{{ $dish->price }}</p>
+                                    <button class="button-add-cart">
+                                        <a href="javascript:void(0);" data-id="{{ $dish->id }}" class="btn btn-deliveroo btn-block add-to-cart p-3 m-0" role="button">Add to cart</a>
+                                        <div class="cart">
+                                            <svg viewBox="0 0 36 26">
+                                                <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+                                                <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+                                            </svg>
+                                        </div>
+                                    </button>
                                 </div>
-
-                                {{-- <div class="info">
-                                    <div class="caption">
-                                       <h4>{{ $dish->name }}</h4>
-                                       <p id="description">{{ ($dish->description) }}</p>
-                                       <p>€{{ $dish->price }} </p>
-                                   </div>
-                                </div> --}}
                             @endforeach
                         @endforeach
                     </div>
                 </div>
+            </div>
         </div>
 
     </main>
@@ -136,8 +162,23 @@
                 });
             });
 
+        function show(id){
+            if (document.getElementById){
+                if(document.getElementById(id).style.display == 'none'){
+                    document.getElementById(id).style.display = 'block';
+                } else {
+                    document.getElementById(id).style.display = 'none';
+                }
+            }
+        }
 
+        function hide(id) {
+            if(document.getElementById(id).style.display == 'block'){
+                document.getElementById(id).style.display = 'none;';
+            }
+        }
+    </script>
 
-        </script>
+    </script>
 
 @endsection

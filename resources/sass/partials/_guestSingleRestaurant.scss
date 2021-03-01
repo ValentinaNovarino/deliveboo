@@ -1,13 +1,27 @@
+main {
+    background-color: #fff;
+}
+
 .card-restaurant {
-    margin: 55px 0;
+    padding: 15px 0;
 }
 
 .cover-restaurant {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    width: 100%;
+    width: 40%;
     height: 100%;
+
+    img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+.img-rider p {
+    margin: 5px 0;
 }
 
 .title-restaurant {
@@ -17,96 +31,171 @@
 
 .info-restaurant {
 
+    width: 60%;
+
     h2, span {
         color: $colorTitleHaeder;
     }
 
     .menu {
         color: $colorPrimary;
+        transition: 0.5s;
 
         &:hover {
             color: $colorTitleHaeder;
             text-decoration: none;
         }
     }
+
+    #news {
+        background-color: rgb(255, 246, 247);
+        color: red;
+        width: 60px;
+        padding: 3px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    .info-details:after {
+        content: "";
+        display: table;
+        clear: both;
+        height: 30px;
+    }
+
+    .info-icon {
+        float:left;
+        width: 5%;
+        height: 100%;
+
+        i {
+            font-size: 20px;
+            color: grey;
+        }
+    }
+
+    .details {
+        float:left;
+        width: 50%;
+        height: 100%;
+
+        p {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: $colorPrimary;
+            text-decoration: none;
+            transition: 0.5s;
+
+            &:hover {
+                color: $colorTitleHaeder;
+            }
+        }
+    }
+}
+
+.order {
+    margin-top: 10px;
+    padding: 7px 14px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    color: $colorPrimary;
+    border: 1px solid $colorPrimary;
+    border-radius: 3px;
+    transition: 0.5s;
+
+    &:hover {
+        color: $colorTitleHaeder;
+        border: 1px solid $colorTitleHaeder;
+    }
 }
 
 .all-restaurant {
     margin: 20px 20px !important;
+
+    .all-restaurant-btn {
+        margin: 0;
+    }
+
+}
+
+.components {
+    height: 50px;
+
+    ul {
+        margin-bottom: 0;
+        padding-left: 0;
+
+        li {
+            display: inline-block;
+            list-style-type: none;
+            padding-right: 30px;
+
+            a {
+                color: $colorPrimary;
+                text-decoration: none;
+                transition: 0.5s;
+
+                &:hover {
+                    color: $colorTitleHaeder;
+                }
+            }
+        }
+    }
 }
 
 .container-dishes {
     width: 100%;
+    background-color: #f4f5f5;
 }
 
 #all-dishes-title {
-    // background: linear-gradient(96deg, rgba(208,235,153,1) 63%, rgba(0,204,188,1) 100%);
-    background-color: rgba(208, 235, 153, 0.7);
-    padding-top: 10px;
-    padding-bottom: 40px;
-}
+    padding: 30px 0;
 
-#all-dishes-title h1 {
-    color: $colorTitleHaeder;
+    h1 {
+        color: $colorTitleHaeder;
+    }
 }
 
 .all-dishes {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-
-    h4, strong {
-        color: $colorTitleHaeder;
-    }
+    flex-wrap: wrap; position: relative;
 }
 
-.thumbnail-container {
-    height: 300px;
-    width: 300px;
-    margin: 10px 10px 20px 10px;
+.dish-card-link {
     cursor: pointer;
-    perspective: 1000px;
 }
 
-.thumbnail-container::-webkit-scrollbar {
-  display: none;
+#dish-card::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.thumbnail {
-    background-color: $adminBgColor;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
+#dish-card {
+    width: 350px;
+    height: 140px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #fff;
 
-.thumbnail-container:hover .thumbnail{
-    transform: rotateY(180deg);
-}
+    .left-card {
+        float: left;
+        height: 100%;
+        width: 60%;
 
-.thumbnail-front, .thumbnail-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
+        h4 {
+            color: $colorTitleHaeder;
+        }
 
-.thumbnail-front {
-
-    img {
-        width: 100%;
-        height: 150px;
-    }
-    .caption {
-        margin: 0;
-        padding-top: 10px;
+        p {
+            color: #000;
+        }
 
         #description {
             white-space: nowrap;
@@ -114,9 +203,41 @@
             text-overflow: ellipsis;
         }
     }
+
+    .right-card {
+        float: left;
+        height: 100%;
+        width: 40%;
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
 }
 
-.thumbnail-back {
-    transform: rotateY(180deg);
-    overflow: auto;
+.dish-card-details {
+    text-align: center;
+    position: absolute;
+    z-index: 99;
+    padding: 16px;
+    height: 650px;
+    width: 450px;
+    background-color: #fff;
+    border: 3px solid $colorPrimary;
+
+    i {
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    h4 {
+        color: $colorPrimary;
+    }
+
+    img {
+        width: 100%;
+        height: 250px;
+        margin: 15px 0;
+    }
 }
