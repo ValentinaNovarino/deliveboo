@@ -1,4 +1,4 @@
-{{-- <div class="container"> --}}
+<div class="container">
     <div id="header-bar" class="main-section">
         <div class="dropdown">
             <button id="open"onclick=popup() type="button" class="btn btn-deliveroo" data-toggle="dropdown">
