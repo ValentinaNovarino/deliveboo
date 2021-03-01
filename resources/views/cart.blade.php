@@ -56,11 +56,11 @@
                                 </div>
                             </div>
                         </td>
-                        <td data-th="Price">€ {{ $details['price'] }}</td>
+                        <td data-th="Price" >€ <span class="hideItem">{{ $details['price'] }}</span></td>
                         <td data-th="Quantity">
                             <input type="number" min="1" value="{{ $details['quantity'] }}" class="form-control quantity"/>
                         </td>
-                        <td data-th="Subtotal" class="text-center">€ <span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
+                        <td data-th="Subtotal" class="text-center">€ <span class="product-subtotal hideItem">{{ $details['price'] * $details['quantity'] }}</span></td>
                         <td class="actions" data-th="">
                             {{-- refresh da azzurro a giallo --}}
                             <button class="btn btn-warning btn-sm update-cart p-2" data-id="{{ $id }}"><i class="fas fa-sync-alt"></i></button>
@@ -73,42 +73,41 @@
             {{-- salviamo tempo di consegna sempre 30 minuti --}}
             {{session((['delivery_time' => 3000]))}}
             </tbody>
-            <tfoot>
-            <tr class="visible-xs">
-                <td class="text-center"><strong>Totale ordine € <span class="cart-total">{{ number_format($total, 2) }}</span></strong></td>
-                {{session((['order_price' => number_format($total, 2)]))}}
-            </tr>
-            @php $discount = $total * 10 / 100; number_format($discount, 2); @endphp
-            @if ($total >= 30)
-                <tr class="visible-xs">
-                    <td class="text-center"><strong>Spedizione gratuita</strong></td>
-                    {{session((['delivery_price' => 0]))}}
-                </tr>
-                <tr class="visible-xs">
-                    <td class="text-center"><strong>Sconto € <span class="cart-total">{{ number_format($discount, 2) }}</span></strong></td>
-                    {{session((['discount' => number_format($discount, 2)]))}}
-                </tr>
-            @elseif (session('cart'))
-                <tr class="visible-xs">
-                    <td class="text-center"><strong>Spese di spedizione € <span class="cart-total">5</span></strong></td>
-                    {{session((['delivery_price' => 5]))}}
-                    {{session((['discount' => 0]))}}
-                </tr>
-            @endif
-            <tr>
                 <td><a href="{{ route('guest.restaurants') }}" class="btn btn-deliveroo"><i class="fa fa-angle-left"></i> Continua lo Shopping</a></td>
-
+                <tfoot>
+                <tr class="visible-xs">
+                    <td class="text-center"><strong>Totale ordine € <span class="cart-total hideItem">{{ number_format($total, 2) }}</span></strong></td>
+                    {{session((['order_price' => number_format($total, 2)]))}}
+                </tr>
+                @php $discount = $total * 10 / 100; number_format($discount, 2); @endphp
+                @if ($total >= 30)
+                    <tr class="visible-xs">
+                        <td class="text-center"><strong>Spedizione gratuita</strong></td>
+                        {{session((['delivery_price' => 0]))}}
+                    </tr>
+                    <tr class="visible-xs">
+                        <td class="text-center"><strong>Sconto € <span class="cart-total hideItem">{{ number_format($discount, 2) }}</span></strong></td>
+                        {{session((['discount' => number_format($discount, 2)]))}}
+                    </tr>
+                @elseif (session('cart'))
+                    <tr class="visible-xs">
+                        <td class="text-center"><strong>Spese di spedizione € <span class="cart-total hideItem">5</span></strong></td>
+                        {{session((['delivery_price' => 5]))}}
+                        {{session((['discount' => 0]))}}
+                    </tr>
+                @endif
+                <tr>
                 @if ($total >= 30)
                     @php
                         $final_price = $total + 0 - $discount;
                     @endphp
-                    <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ number_format($final_price, 2) }}</span></strong></td>
+                    <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total hideItem">{{ number_format($final_price, 2) }}</span></strong></td>
                     {{session((['final_price' => number_format($final_price, 2)]))}}
                 @elseif (session('cart'))
                     @php
                         $final_price = $total + 5;
                     @endphp
-                    <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ number_format($final_price, 2) }}</span></strong></td>
+                    <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total hideItem">{{ number_format($final_price, 2) }}</span></strong></td>
                     {{session((['final_price' => number_format($final_price, 2)]))}}
                 @endif
                 {{-- <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td> --}}
@@ -132,6 +131,7 @@
 
             let timerInterval
             Swal.fire({
+                imageUrl: '{{ asset('img/logo.png') }}',
                 title: 'Stiamo aggiornando il tuo carrello!',
                 html: 'Attendi',
                 // html: element: data-backdrop="static", data-keyboard="false",
@@ -181,7 +181,8 @@
                 dataType: "json",
                 success: function (response) {
 
-                    location.reload();
+                    document.location.reload();
+                    $('.hideItem').css({'display':'none'});
                     loading.hide();
 
                     $("span#status").html('<div class="alert alert-success">'+response.msg+'</div>');
@@ -235,6 +236,8 @@
                                 dataType: "json",
                                 success: function (response) {
                                     location.reload();
+                                    $('.hideItem').css({'display':'none'});
+
                                     parent_row.remove();
                                     $("span#status").html('<div class="alert alert-danger">'+response.msg+'</div>');
                                     $("#header-bar").html(response.data);
