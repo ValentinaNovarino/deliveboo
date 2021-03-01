@@ -25,32 +25,37 @@
                                 <td>{{ $order->guest_name }}</td>
                                 <td>{{ $order->final_price }} €</td>
                                 <td>
-                                    <a @click="onClick()" href="#{{--{{ route('admin.dishes.show', ['dish'=> $dish->slug ]) }}--}}">
+                                    <div class="d-inline-block click">
                                         <button class="btn show-btn-deliveroo">Mostra Dettagli</button>
                                         <button class="btn show show-btn-deliveroo"><i class="fas fa-eye"></i></button>
-                                    </a>
+                                    </div>
                                 </td>
-                            </tr>
-                            <tr v-if="visible" >
-                                <td>Ordine effettuato in data: </td>
-                                <td>{{ $order->final_price }}</td>
-                                <td>{{ $order->final_price }}</td>
-                                <td>{{ $order->final_price }}</td>
-                            </tr>
-                            <tr v-if="visible" >
-                                <td>prezzo consegna: </td>
-                                <td>{{ $order->final_price }}</td>
-                                <td>{{ $order->final_price }}</td>
-                                <td>{{ $order->final_price }}</td>
+                                <tr class="cane">
+                                    <td>Ordine effettuato in data: </td>
+                                    <td>{{ $order->final_price }}</td>
+                                    <td>{{ $order->final_price }}</td>
+                                    <td>{{ $order->final_price }}</td>
+                                </tr>
+                                <tr class="cane">
+                                    <td>prezzo consegna: </td>
+                                    <td>{{ $order->final_price }}</td>
+                                    <td>{{ $order->final_price }}</td>
+                                    <td>{{ $order->final_price }}</td>
+                                </tr>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             @endif
         </div>
-
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
         <script type="text/javascript">
 
+        // $(".click").click(function() {
+        //     // $(".cane").toggle();
+        //     // $(".cane", this).toggle();
+        //     $(this).find(".cane").toggle();
+        // })
         var app = new Vue ({
             el: '#root',
             data: {
