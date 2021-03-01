@@ -15136,7 +15136,7 @@ td {
 .main-container #sidebar-wrapper {
   border-top: 1px solid #e8ebeb;
   border-bottom: 1px solid #e8ebeb;
-  width: 14%;
+  width: 12%;
 }
 
 .main-container #sidebar-wrapper h4 {
@@ -15569,22 +15569,10 @@ main {
   width: 40%;
 }
 
-.flex,
-.main-container,
-.restaurant-strip,
-.offers-promo,
-.box-restaurant-container #all-restaurants,
-.box-restaurant-container .all-category,
-.card-restaurant-container #all-restaurants,
-.card-restaurant-container .all-category {
-  display: flex;
-  flex-wrap: wrap;
-}
 #dish-card .right-card img {
   width: 100px;
   height: 100px;
 }
-
 
 .dish-card-details {
   text-align: center;
@@ -15610,5 +15598,17 @@ main {
   width: 100%;
   height: 250px;
   margin: 15px 0;
+}
+
+.flex,
+.main-container,
+.restaurant-strip,
+.offers-promo,
+.box-restaurant-container #all-restaurants,
+.box-restaurant-container .all-category,
+.card-restaurant-container #all-restaurants,
+.card-restaurant-container .all-category {
+  display: flex;
+  flex-wrap: wrap;
 }
 
