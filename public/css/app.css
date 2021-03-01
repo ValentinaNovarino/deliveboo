@@ -15454,6 +15454,58 @@ main {
   background-color: #fff;
 }
 
+.header-single-rest::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header-single-rest {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+  border-bottom: 3px solid #e8ebeb;
+}
+
+.header-single-rest .single-restaurant-logo {
+  float: left;
+  width: 25%;
+}
+
+.header-single-rest .single-restaurant-logo img {
+  width: 130px;
+  height: 35px;
+}
+
+.header-bar-menu {
+  text-align: right;
+  float: left;
+  width: 75%;
+}
+
+.header-bar-menu ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+.header-bar-menu ul li {
+  display: inline-block;
+  text-align: center;
+}
+
+.header-bar-menu ul li a {
+  width: 100px;
+  margin: 0;
+  color: #000;
+  border: 1px solid #e8ebeb;
+  border-radius: 3px;
+}
+
+.header-bar-menu ul li a i {
+  color: #00ccbc;
+}
+
 .card-restaurant {
   padding: 15px 0;
 }
@@ -15635,6 +15687,7 @@ main {
   padding: 15px;
   margin: 10px;
   background-color: #fff;
+  border-radius: 3px;
 }
 
 #dish-card .left-card {
