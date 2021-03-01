@@ -42,14 +42,19 @@
         </div>
     @endif
     @if (!session()->get('cart'))
-        <div class="checkout-without-container">
-            <h1>Non ci sono prodotti nel carrello</h1>
-            <a href="{{ route('guest.restaurants') }}">
-                <button type="submit" class="btn btn-warning">Torna allo shopping</button>
-            </a>
+        <div class="container">
+            <div class="checkout-without-container">
+                <h1 class="text-center mb-5">Non ci sono prodotti nel carrello</h1>
+                <a href="{{ route('guest.restaurants') }}">
+                    <button type="submit" class="btn btn-deliveroo">Torna allo shopping</button>
+                </a>
+            </div>
+
         </div>
     @else
         <span id="status"></span>
+
+        <h1 class="text-center mb-4"> Il tuo carrello</h1>
 
         <table id="cart" class="table table-hover table-condensed">
             <thead>

@@ -30,7 +30,7 @@
                 @else
                     <div class="items-checkout">
                         @php $finalTotal = 0; @endphp
-                        <h1>tutti i tuoi prodotti</h1>
+                        <h1 class="text-center mb-4">Il tuo ordine</h1>
                         @foreach ($dishes as $dish)
                             <div class="card">
                                 <div class="image-container d-inline-block">
@@ -50,7 +50,7 @@
                         <h3>Totale ordine: € {{$finalTotal}}</h3>
                     </div>
 
-                    <h1>inserisci i tuoi dati</h1>
+                    <h1 class="text-center mb-4 mt-4">Inserisci i tuoi dati</h1>
                     <form id="form" method="POST" name="formform" action="{{ route('checkout.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
@@ -143,7 +143,7 @@
                        {{-- FINE TEST BOTTONE INVIO PAGAMENTO --}}
                     </form>
                     <a href="{{ route('cart') }}">
-                        <button type="button" class="btn btn-lg btn-warning">Torna al carrello</button>
+                        <button type="button" class="btn btn-lg btn-deliveroo">Torna al carrello</button>
                     </a>
                 @endif
             </div>
