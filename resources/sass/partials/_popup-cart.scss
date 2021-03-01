@@ -1,12 +1,16 @@
 // TEST Carrello
 #header-bar{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     background: transparent;
-    height: 100px;
-    padding: 20px 40px;
     position: relative;
+    border-bottom: 3px solid #e8ebeb;
+
+    .single-restaurant-logo img {
+        width: 130px;
+        height: 100%;
+    }
 }
 // .main-section{
 //     background-color: #F8FAFC;
