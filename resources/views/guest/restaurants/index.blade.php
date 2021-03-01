@@ -29,7 +29,7 @@
         <div id="root">
             {{-- navbar --}}
 
-                            @include('_header_cart')
+            @include('_header_cart')
 
             <main>
                 {{-- ANIMATIONE CAMION --}}
