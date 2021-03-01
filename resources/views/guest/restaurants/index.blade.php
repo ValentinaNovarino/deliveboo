@@ -46,7 +46,6 @@
                                     <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
-
                         </div>
                         @include('_header_cart')
                     </nav>
