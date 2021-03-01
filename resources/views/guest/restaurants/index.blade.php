@@ -26,34 +26,34 @@
 
     </head>
     <body>
-        <div id="root">
-            {{-- navbar --}}
-            <div class="nav-bar-container">
-                <div class="row m-0">
-                    <div class="col p-0">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-restaurants">
-                            <div class="logo-guest-restaurant">
-                                <a class="navbar-brand" href="{{ url('/') }}">
-                                    <img src="{{'../img/logo.png'}}" alt="logo deliveroo">
-                                </a>
-                            </div>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
+        {{-- navbar --}}
+        <div class="nav-bar-container">
+            <div class="row m-0">
+                <div class="col p-0">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-restaurants">
+                        <div class="logo-guest-restaurant">
+                            <a class="navbar-brand" href="{{ url('/') }}">
+                                <img src="{{'../img/logo.png'}}" alt="logo deliveroo">
+                            </a>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
-                                    </li>
-                                </ul>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                            </ul>
 
-                            </div>
-                            @include('_header_cart')
-                        </nav>
-                    </div>
+                        </div>
+                        @include('_header_cart')
+                    </nav>
                 </div>
             </div>
+        </div>
+        <div id="root">
             <main>
                 {{-- ANIMATIONE CAMION --}}
                 <section id="bike-animation">
@@ -196,13 +196,12 @@
                         </div>
                     </div>
                 </div>
-            <div class="main-container">
-                <div class="side">
-
+                <div class="main-container">
+                    <div class="side">
+                    </div>
                 </div>
                 <div class="reserch-restaurant">
                     <h4>Serve una mano con la ricerca?</h4>
-                {{-- </div> --}}
                     <div class="restaurant-strip">
                         <div class="strip">
                             <img src="{{'../img/offers.png'}}" alt="offers">
@@ -229,15 +228,13 @@
                             <span class="capitalize">poke</span>
                         </div>
                     </div>
-            </div>
-            </div>
+                </div>
 
-
-            </main>
+            </div>
+            {{-- footer --}}
+            @include('partials.footer')
         </div>
 
-        {{-- footer --}}
-        @include('partials.footer')
 
         <script type="text/javascript">
 
