@@ -15122,7 +15122,6 @@ td {
 }
 
 .main-container {
-  display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 50px 0;
@@ -15474,6 +15473,7 @@ span.checkout-mobile {
 }
 
 .flex,
+.main-container,
 .restaurant-strip,
 .offers-promo,
 .box-restaurant-container #all-restaurants,
