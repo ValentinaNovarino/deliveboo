@@ -13926,45 +13926,6 @@ td {
   box-shadow: 0 0 5px #00ccbc;
 }
 
-#header-bar {
-  height: 75px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: transparent;
-  position: relative;
-  border-bottom: 3px solid #e8ebeb;
-}
-
-#header-bar .single-restaurant-logo img {
-  width: 130px;
-  height: 35px;
-}
-
-.header-bar-menu ul {
-  margin: 0;
-}
-
-.header-bar-menu ul li {
-  display: inline-block;
-  text-align: center;
-}
-
-.header-bar-menu ul li a {
-  width: 100px;
-  margin: 0;
-  color: #00ccbc;
-}
-
-.header-bar-menu ul li a:hover {
-  border: 1px solid #00ccbc;
-  border-radius: 3px;
-}
-
-.dropdown {
-  margin-left: 550px;
-}
-
 .btn {
   border: 0px;
   margin: 10px 0px;

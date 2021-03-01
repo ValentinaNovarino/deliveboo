@@ -1,10 +1,10 @@
-<div class="container">
+{{-- <div class="container"> --}}
     <div id="header-bar" class="main-section">
-        <div class="single-restaurant-logo">
+        {{-- <div class="single-restaurant-logo">
             <a href="{{ route('uiHome') }}">
                 <img src="../img/logo.png" alt="">
             </a>
-        </div>
+        </div> --}}
         <div class="dropdown">
             <button id="open"onclick=popup() type="button" class="btn btn-deliveroo" data-toggle="dropdown">
                 @if (!session()->get('cart'))
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div class="header-bar-menu">
+        {{-- <div class="header-bar-menu">
             <!-- Right Side Of Navbar -->
             <ul>
                 <li>
@@ -108,8 +108,8 @@
 
                 @endguest
             </ul>
-        </div>
-    </div>
+        </div> --}}
+    {{-- </div> --}}
 </div>
 
 <script type="text/javascript">
