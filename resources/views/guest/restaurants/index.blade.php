@@ -46,7 +46,6 @@
                                     <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
-
                         </div>
                         @include('_header_cart')
                     </nav>
@@ -106,16 +105,14 @@
                 </section>
                 {{-- FINE ANIMAZIONE CAMION --}}
 
-
-
                 <div class="main-container">
                     <div class="bg-light ml-3" id="sidebar-wrapper">
                         <h4>Categorie:</h4>
-                            <div v-for="categoryName in filterCategory" class="ml-3">
-                                <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
-                                :value="categoryName">
-                                <label class="form-check-label capitalize">@{{categoryName}}</label>
-                            </div>
+                        <div v-for="categoryName in filterCategory" class="ml-3">
+                            <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
+                            :value="categoryName">
+                            <label class="form-check-label capitalize">@{{categoryName}}</label>
+                        </div>
                     </div>
                     <div class="box-restaurant-container">
                         <h4>Ristoranti che consegnano nella tua città</h4>
@@ -177,7 +174,7 @@
                                 <h4 class="capitalize">Categoria: @{{item.name}}</h4>
                                 <div class="card-restaurant-container">
                                     <div v-for="restaurant in item.restaurants" class="all-category">
-                                            <a :href="'restaurants/' + restaurant.slug">
+                                        <a :href="'restaurants/' + restaurant.slug">
                                             <div class="card-restaurant">
                                                 <div class="restaurant-img">
                                                         <img :src="'../../storage/' + restaurant.cover" :alt="'immagine ' + restaurant.name">
@@ -198,41 +195,39 @@
                 </div>
                 <div class="main-container">
                     <div class="side">
-                    </div>
-                </div>
-                <div class="reserch-restaurant">
-                    <h4>Serve una mano con la ricerca?</h4>
-                    <div class="restaurant-strip">
-                        <div class="strip">
-                            <img src="{{'../img/offers.png'}}" alt="offers">
-                            <span class="capitalize">offerte</span>
-                        </div>
-                        <div class="strip">
-                            <img src="{{'../img/grocery.png'}}" alt="grocery">
-                            <span class="capitalize">spesa</span>
-                        </div>
-                        <div class="strip">
-                            <img src="{{'../img/pizza.png'}}" alt="pizza">
-                            <span class="capitalize">pizza</span>
-                        </div>
-                        <div class="strip">
-                            <img src="{{'../img/sushi-1.png'}}" alt="sushi-1">
-                            <span class="capitalize">sushi</span>
-                        </div>
-                        <div class="strip">
-                            <img src="{{'../img/dessert.png'}}" alt="dessert">
-                            <span class="capitalize">dessert</span>
-                            </div>
-                        <div class="strip">
-                            <img src="{{'../img/poke.png'}}" alt="poke">
-                            <span class="capitalize">poke</span>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-            {{-- footer --}}
-            @include('partials.footer')
+                    </div>
+                    <div class="reserch-restaurant">
+                        <h4>Serve una mano con la ricerca?</h4>
+                        <div class="restaurant-strip">
+                            <div class="strip">
+                                <img src="{{'../img/offers.png'}}" alt="offers">
+                                <span class="capitalize">offerte</span>
+                            </div>
+                            <div class="strip">
+                                <img src="{{'../img/grocery.png'}}" alt="grocery">
+                                <span class="capitalize">spesa</span>
+                            </div>
+                            <div class="strip">
+                                <img src="{{'../img/pizza.png'}}" alt="pizza">
+                                <span class="capitalize">pizza</span>
+                            </div>
+                            <div class="strip">
+                                <img src="{{'../img/sushi-1.png'}}" alt="sushi-1">
+                                <span class="capitalize">sushi</span>
+                            </div>
+                            <div class="strip">
+                                <img src="{{'../img/dessert.png'}}" alt="dessert">
+                                <span class="capitalize">dessert</span>
+                            </div>
+                            <div class="strip">
+                                <img src="{{'../img/poke.png'}}" alt="poke">
+                                <span class="capitalize">poke</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
 
 
@@ -270,16 +265,15 @@
                     },
                 },
                 mounted() {
-                        axios.post('/api/categories')
-                        .then((element) => {
-                            // console.log(element.data.response.categories);
-                            for (var i = 0; i < element.data.response.categories.length; i++) {
-                                this.filterCategory.push(element.data.response.categories[i].name);
-                            }
+                    axios.post('/api/categories').then((element) => {
+                        // console.log(element.data.response.categories);
+                        for (var i = 0; i < element.data.response.categories.length; i++) {
+                            this.filterCategory.push(element.data.response.categories[i].name);
+                        }
 
-                        })
+                    });
                 }
-            })
+            });
 
         </script>
     </body>

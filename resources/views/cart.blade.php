@@ -1,8 +1,32 @@
 @extends('layouts.app')
 
-{{-- @section('title', 'Cart') --}}
 
 @section('content')
+    <div class="nav-bar-container">
+        <div class="row m-0">
+            <div class="col p-0">
+                <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-restaurants">
+                    <div class="logo-guest-restaurant">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            <img src="{{'../img/logo.png'}}" alt="logo deliveroo">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
     @if(session('success_message'))
         <div class="alert alert-success">
             {{session('success_message')}}
