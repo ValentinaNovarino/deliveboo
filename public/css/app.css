@@ -12685,9 +12685,9 @@ body p {
 }
 
 .popupCartCustom {
-  width: 80% !important;
-  height: 80% !important;
-  background-color: #00ccbc !important;
+  width: 550px !important;
+  height: 350px !important;
+  background-color: #fff !important;
   pointer-events: none !important;
 }
 
@@ -13962,6 +13962,14 @@ p.p-order-row {
 .form-control-deliveroo:focus {
   border-radius: 5px;
   box-shadow: 0 0 5px #00ccbc;
+}
+
+table#cart {
+  min-height: 80vh;
+}
+
+table#cart td {
+  padding: 20px;
 }
 
 .btn {
