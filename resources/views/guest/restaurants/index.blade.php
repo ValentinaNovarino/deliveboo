@@ -23,6 +23,9 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
         {{-- AXIOS --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+        {{-- MULTI_SELECT2 --}}
+        {{-- <script src="bundle.min.js"></script> --}}
+        <script src="https://unpkg.com/vue-simple-multi-select@latest"></script>
 
     </head>
     <body>
@@ -104,6 +107,13 @@
                     </div>
                 </section>
                 {{-- FINE ANIMAZIONE CAMION --}}
+                <div class="container">
+                    <label>Choose a category!</label>
+                    <vue-multi-select @change="onChangeCategory(this.value)"
+                    v-model="checked"
+                    :options="filterCategory"
+                    ></vue-multi-select>
+                </div>
 
                 <div class="main-container">
                     <div class="bg-light ml-3" id="sidebar-wrapper">
@@ -113,6 +123,7 @@
                             :value="categoryName">
                             <label class="form-check-label capitalize">@{{categoryName}}</label>
                         </div>
+
                     </div>
                     <div class="box-restaurant-container print-restaurants">
                         <h4>Ristoranti che consegnano nella tua città</h4>
@@ -143,6 +154,13 @@
                                     <span class="capitalize">Poke</span>
                                 </label>
                             </div>
+                            {{-- <div class="video-spot">
+                                <div class="container-video">
+                                    <video width='600' height="200" autoplay loop muted>
+                                        <source src={{asset("video/spot-deliveroo.webm")}} type="video/webm">
+                                    </video>
+                                </div>
+                            </div> --}}
                             <div class="offers-promo">
                                 <img src="{{'../img/promo-1.jpg'}}" alt="offers">
                                 <img src="{{'../img/promo-2.jpg'}}" alt="offers">

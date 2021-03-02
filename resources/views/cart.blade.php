@@ -76,9 +76,9 @@
                     <?php $total += $details['price'] * $details['quantity'] ?>
 
                     <tr>
-                        <td data-th="Product">
-                            <div class="row">
-                                <div class="col-sm-3 hidden-xs"><img src="{{ $details['cover'] }}" width="100" height="100" class="img-responsive"/></div>
+                        <td data-th="Product" >
+                            <div class="row cart-title-container">
+                                <div class="col-sm-3 hidden-xs"><img src="{{ asset('storage/' . $details['cover']) }}" width="100" height="100" class="img-responsive"/></div>
                                 <div class="col-sm-9 d-flex align-items-center">
                                     <h4 class="nomargin">{{ $details['name'] }}</h4>
                                 </div>
@@ -90,10 +90,12 @@
                         </td>
                         <td data-th="Subtotal" class="text-center">€ <span class="product-subtotal hideItem">{{ $details['price'] * $details['quantity'] }}</span></td>
                         <td class="actions" data-th="">
-                            {{-- refresh da azzurro a giallo --}}
-                            <button class="btn btn-warning btn-sm update-cart p-2" data-id="{{ $id }}"><i class="fas fa-sync-alt"></i></button>
-                            <button class="btn btn-danger btn-sm remove-from-cart p-2" data-id="{{ $id }}"><i class="fas fa-trash-alt"></i></button>
-                            <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
+                            <div class="cart-button-container">
+                                {{-- refresh da azzurro a giallo --}}
+                                <button class="btn btn-warning btn-sm update-cart p-2" data-id="{{ $id }}"><i class="fas fa-sync-alt"></i></button>
+                                <button class="btn btn-danger btn-sm remove-from-cart p-2" data-id="{{ $id }}"><i class="fas fa-trash-alt"></i></button>
+                                <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
+                            </div>
                         </td>
                     </tr>
                 @endforeach
