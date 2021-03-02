@@ -103,6 +103,12 @@
     .sidebar-nav.link a.nav-link {
         font-size: 16px;
     }
+
+    div.cart-button-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -201,6 +207,14 @@
     a.logout {
         display: block;
     }
+    // cart
+    div.cart-title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
 }
 
 @media screen and (max-width: 862px) {

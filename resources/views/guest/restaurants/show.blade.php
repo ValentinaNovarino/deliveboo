@@ -127,7 +127,7 @@
                                         </div>
                                         <div class="right-card d-flex justify-content-end align-items-center">
                                             <div class="dish-cover">
-                                                <img src="{{$dish->cover}}" alt="Cover piatto" class="img-fluid">
+                                                <img src="{{ asset('storage/' . $dish->cover) }}" alt="Cover piatto" class="img-fluid">
                                             </div>
                                         </div>
                                     </div>
