@@ -45,11 +45,46 @@
                             </li>
                         @endguest
                         <li>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" onclick="showMenu('faq-drop-menu')" href="#">
                                 <i class="fas fa-bars"></i> Menu
                             </a>
                         </li>
                     </ul>
+                </div>
+                <div id="faq-drop-menu" style="display:none">
+                    <div class="faq-drop-top">
+                        <div class="faq-drop-close">
+                            <img src="../img/logo.png" alt="">
+                            <i onclick="showMenu('faq-drop-menu')" class="fas fa-times"></i>
+                        </div>
+                        <div class="btn-login">
+                            <button class="btn btn-deliveroo"type="button" name="button">Log in</button>
+                        </div>
+
+                        <div class="faq-info">
+                            <a id="faq" href="{{ route('faq') }}">
+                                <i class="far fa-question-circle"></i> faq
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faq-drop-bottom">
+                        <select class="language">
+                            <option>italiano</option>
+                            <option>inglese</option>
+                        </select>
+                        <select class="state">
+                            <option>Italia</option>
+                            <option>Australia</option>
+                            <option>Blegio</option>
+                            <option>Emirati Arabi Uniti</option>
+                            <option>Francia</option>
+                            <option>Germania</option>
+                            <option>Hong Kong</option>
+                            <option>Irlanda</option>
+                            <option>Kwait</option>
+
+                        </select>
+                    </div>
                 </div>
             </nav>
             <div class="card-restaurant d-flex">
@@ -76,7 +111,7 @@
                 <div class="cover-restaurant m-2">
                     <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="Cover ristorante" class="img-fluid">
                     <div class="delivery">
-                        <div class="img-rider">
+                        <div class="img-rider d-flex flex-column align-items-start">
                             <p>Consegna dalle 19:30</p>
                             <span>{{ $restaurant->city}}, Italia</span>
                         </div>
@@ -214,11 +249,18 @@
         }
     }
 
-    function hide(id) {
-        if(document.getElementById(id).style.display == 'block'){
-            document.getElementById(id).style.display = 'none;';
+    function showMenu(id){
+        if (document.getElementById){
+            if(document.getElementById(id).style.display == 'none'){
+                document.getElementById(id).style.display = 'flex';
+                document.getElementById(id).classList.add("flex-drop-faq");
+            } else {
+                document.getElementById(id).style.display = 'none';
+                document.getElementById(id).classList.remove("flex-drop-faq");
+            }
         }
     }
+
     </script>
 
 @endsection
