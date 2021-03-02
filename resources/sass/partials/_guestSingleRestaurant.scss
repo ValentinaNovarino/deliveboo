@@ -42,7 +42,7 @@ main {
             a {
                 width: 100px;
                 margin: 0;
-                color: #000;
+                color: #2e3333;
                 border: 1px solid #e8ebeb;
                 border-radius: 3px;
 
@@ -55,6 +55,68 @@ main {
 
 }
 
+#faq-drop-menu {
+    padding: 16px;
+    width: 350px;
+    height: 600px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: $colorSecondary;
+    color: #2e3333;
+    z-index: 101;
+
+    .faq-drop-close {
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #e8ebeb;
+
+        img {
+            width: 130px;
+            height: 35px;
+        }
+    }
+
+    i {
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .btn-deliveroo {
+        width: 100%;
+    }
+
+    .faq-info {
+        margin-top: 10px;
+
+        #faq {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #2e3333;
+
+            &:hover {
+                color: $colorPrimary;
+            }
+        }
+    }
+
+    select {
+        margin-top: 20px;
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #e8ebeb;
+        border-radius: 5px;
+        outline-color: $colorPrimary;
+    }
+}
+
+.flex-drop-faq {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .card-restaurant {
     padding: 15px 0;
 }
@@ -62,15 +124,19 @@ main {
 .cover-restaurant {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     width: 40%;
     height: 100%;
 
     img {
-        width: 100%;
-        height: 200px;
+        width: 400px;
+        height: auto;
     }
+}
+
+.img-rider {
+    width: 400px;
 }
 
 .img-rider p {
@@ -87,7 +153,8 @@ main {
     width: 60%;
 
     h2, span {
-        color: $colorTitleHaeder;
+        color: #2e3333;
+        font-weight: 700;
     }
 
     .menu {
@@ -152,7 +219,7 @@ main {
 .order {
     margin-top: 10px;
     padding: 7px 14px;
-    width: 100%;
+    width: 400px;
     text-align: center;
     background-color: #fff;
     color: $colorPrimary;
@@ -209,7 +276,9 @@ main {
     padding: 30px 0;
 
     h1 {
-        color: $colorTitleHaeder;
+        color: #2e3333;
+        font-weight: 700;
+        font-size: 28.8px;
     }
 }
 
@@ -244,7 +313,8 @@ main {
         width: 60%;
 
         h4 {
-            color: $colorTitleHaeder;
+            color: #2e3333;
+            font-weight: 700;
         }
 
         p {
@@ -286,7 +356,8 @@ main {
     }
 
     h4 {
-        color: $colorPrimary;
+        color: #2e3333;
+        font-weight: 700;
     }
 
     img {

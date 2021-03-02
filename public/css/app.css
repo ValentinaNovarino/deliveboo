@@ -15513,13 +15513,75 @@ main {
 .header-bar-menu ul li a {
   width: 100px;
   margin: 0;
-  color: #000;
+  color: #2e3333;
   border: 1px solid #e8ebeb;
   border-radius: 3px;
 }
 
 .header-bar-menu ul li a i {
   color: #00ccbc;
+}
+
+#faq-drop-menu {
+  padding: 16px;
+  width: 350px;
+  height: 600px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #d0eb99;
+  color: #2e3333;
+  z-index: 101;
+}
+
+#faq-drop-menu .faq-drop-close {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e8ebeb;
+}
+
+#faq-drop-menu .faq-drop-close img {
+  width: 130px;
+  height: 35px;
+}
+
+#faq-drop-menu i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#faq-drop-menu .btn-deliveroo {
+  width: 100%;
+}
+
+#faq-drop-menu .faq-info {
+  margin-top: 10px;
+}
+
+#faq-drop-menu .faq-info #faq {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #2e3333;
+}
+
+#faq-drop-menu .faq-info #faq:hover {
+  color: #00ccbc;
+}
+
+#faq-drop-menu select {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #e8ebeb;
+  border-radius: 5px;
+  outline-color: #00ccbc;
+}
+
+.flex-drop-faq {
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-restaurant {
@@ -15529,15 +15591,19 @@ main {
 .cover-restaurant {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   width: 40%;
   height: 100%;
 }
 
 .cover-restaurant img {
-  width: 100%;
-  height: 200px;
+  width: 400px;
+  height: auto;
+}
+
+.img-rider {
+  width: 400px;
 }
 
 .img-rider p {
@@ -15555,7 +15621,8 @@ main {
 
 .info-restaurant h2,
 .info-restaurant span {
-  color: #440063;
+  color: #2e3333;
+  font-weight: 700;
 }
 
 .info-restaurant .menu {
@@ -15619,7 +15686,7 @@ main {
 .order {
   margin-top: 10px;
   padding: 7px 14px;
-  width: 100%;
+  width: 400px;
   text-align: center;
   background-color: #fff;
   color: #00ccbc;
@@ -15676,7 +15743,9 @@ main {
 }
 
 #all-dishes-title h1 {
-  color: #440063;
+  color: #2e3333;
+  font-weight: 700;
+  font-size: 28.8px;
 }
 
 .all-dishes {
@@ -15713,7 +15782,8 @@ main {
 }
 
 #dish-card .left-card h4 {
-  color: #440063;
+  color: #2e3333;
+  font-weight: 700;
 }
 
 #dish-card .left-card p {
@@ -15754,7 +15824,8 @@ main {
 }
 
 .dish-card-details h4 {
-  color: #00ccbc;
+  color: #2e3333;
+  font-weight: 700;
 }
 
 .dish-card-details img {
@@ -15773,5 +15844,82 @@ main {
 .card-restaurant-container .all-category {
   display: flex;
   flex-wrap: wrap;
+}
+
+main {
+  background-color: #fff;
+}
+
+.info-faq {
+  background-color: #377f8b;
+  padding: 20px;
+}
+
+.info-faq h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.info-faq-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.info-faq-content .info-faq-content-left {
+  float: left;
+  background-color: #fff;
+  margin-right: 10px;
+  width: calc(35% - 10px);
+  border-radius: 3px;
+}
+
+.info-faq-content .info-faq-content-left ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-faq-content .info-faq-content-left ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e8ebeb;
+}
+
+.info-faq-content .info-faq-content-left ul li a {
+  padding: 0 15px;
+  color: #00ccbc;
+  text-decoration: none;
+}
+
+.info-faq-content .info-faq-content-left ul li a:hover {
+  color: #d0eb99;
+}
+
+.info-faq-content .info-faq-content-right {
+  float: left;
+  background-color: #fff;
+  margin-left: 10px;
+  padding: 15px;
+  width: calc(65% - 10px);
+  border-radius: 3px;
+}
+
+.info-faq-content .info-faq-content-right h2 {
+  font-size: 28px;
+  color: #2e3333;
+  font-weight: 700;
+}
+
+.info-faq-content .info-faq-content-right h3 {
+  font-size: 20px;
+  color: #2e3333;
+  font-weight: 700;
+}
+
+.info-faq-content .info-faq-content-right span {
+  font-size: 18px;
+  color: #2e3333;
+  font-weight: 700;
 }
 
