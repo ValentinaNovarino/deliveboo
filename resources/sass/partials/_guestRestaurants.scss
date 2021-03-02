@@ -1,6 +1,12 @@
+.stiky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    border-bottom: 1px solid $colorTitleHaeder;
+}
+
 .navbar-restaurants{
     height: 70px;
-    width: 1390px;
     margin: auto;
 }
 
@@ -23,15 +29,15 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: 50px 0;
-    width: 1390px;
-    margin: auto;
 
     #sidebar-wrapper {
         border-top: 1px solid #e8ebeb;
         border-bottom: 1px solid #e8ebeb;
-        width: 12%;
-        // height: 500px;
-
+        min-width: 180px;
+        min-width: 200px;
+        background-color: #00ccbc33;
+        position: sticky;
+        top: 70px;
 
         h4{
             padding: 22px 0;
@@ -113,8 +119,8 @@
 
 // stile stampa dei ristoranti e categorie
 .box-restaurant-container, .card-restaurant-container{
-    width: calc(86% - 20px);
-    margin-left:20px;
+    display: flex;
+    flex-wrap: wrap;
     h1{
         font-weight: bold;
         padding-bottom:20px;
@@ -125,8 +131,7 @@
     }
 #all-restaurants, .all-category{
     @extend .flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
     a{
         text-decoration: none;
     }
@@ -134,7 +139,7 @@
 
     .box-restaurant, .card-restaurant{
         box-shadow: 0 1px 4px rgb(0 0 0 / 8%), 0 0 0 1px rgb(0 0 0 / 4%);
-        margin: 1px 1px 5px;
+        margin: 5px 5px 5px;
         border-radius: 3px;
         background-color: #fff;
         overflow: hidden;
@@ -203,5 +208,9 @@ width: calc(86% - 20px);
 }
 
 h4.divisor {
-    background-color: #00ccbc80;
+    background-color: #00ccbc33;
+}
+
+div.select-under-600 {
+    display: none;
 }
