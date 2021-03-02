@@ -37,6 +37,10 @@ Route::get('checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('checkout', 'CheckoutController@store')->name('checkout.store');
 // rotta dopo il checkout
 Route::get('postCheckout', 'CheckoutController@postCheckout')->name('postCheckout');
+// rotta pagina faq
+Route::get('faq', function () {
+    return view('faq');
+})->name('faq');
 
 
 
