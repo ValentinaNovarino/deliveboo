@@ -13977,6 +13977,10 @@ table#cart td {
   padding: 20px;
 }
 
+div.nav-cart-border-bottom {
+  border-bottom: 2px solid #dee2e6;
+}
+
 .btn {
   border: 0px;
   margin: 10px 0px;

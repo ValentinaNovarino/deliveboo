@@ -114,8 +114,9 @@
                             <label class="form-check-label capitalize">@{{categoryName}}</label>
                         </div>
                     </div>
-                    <div class="box-restaurant-container">
+                    <div class="box-restaurant-container print-restaurants">
                         <h4>Ristoranti che consegnano nella tua città</h4>
+                            <p>Consegna gratuita per ordini superiori a 30 €</p>
                             <div class="restaurant-strip">
                                 <input type="checkbox" id="checkboxItaliano" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="italiano"/>
                                 <label class="strip" for="checkboxItaliano"><img src="{{'../img/italian-r.png'}}" alt="ristorante italiano">
