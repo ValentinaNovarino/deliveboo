@@ -29,7 +29,7 @@
         {{-- navbar --}}
         <div class="nav-bar-container">
             <div class="row m-0">
-                <div class="col p-0">
+                <div class="col p-0" style="background-color:white;">
                     <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-restaurants">
                         <div class="logo-guest-restaurant">
                             <a class="navbar-brand" href="{{ url('/') }}">

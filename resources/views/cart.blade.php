@@ -79,9 +79,8 @@
                         <td data-th="Product">
                             <div class="row">
                                 <div class="col-sm-3 hidden-xs"><img src="{{ $details['cover'] }}" width="100" height="100" class="img-responsive"/></div>
-                                <div class="col-sm-9">
+                                <div class="col-sm-9 d-flex align-items-center">
                                     <h4 class="nomargin">{{ $details['name'] }}</h4>
-                                    {{-- <h4 class="nomargin">{{ $details['id'] }}</h4> --}}
                                 </div>
                             </div>
                         </td>
