@@ -113,6 +113,7 @@
                             :value="categoryName">
                             <label class="form-check-label capitalize">@{{categoryName}}</label>
                         </div>
+
                     </div>
                     <div class="box-restaurant-container print-restaurants">
                         <h4>Ristoranti che consegnano nella tua città</h4>
@@ -142,6 +143,13 @@
                                 <label class="strip" for="checkboxPoke"><img src="{{'../img/poke.png'}}" alt="ristorante poke">
                                     <span class="capitalize">Poke</span>
                                 </label>
+                            </div>
+                            <div class="video-spot">
+                                <div class="container-video">
+                                    <video width='600' height="200" controls autoplay loop muted>
+                                        <source src={{asset("video/spot-deliveroo.mp4")}} type="video/mp4">
+                                    </video>
+                                </div>
                             </div>
                             <div class="offers-promo">
                                 <img src="{{'../img/promo-1.jpg'}}" alt="offers">
