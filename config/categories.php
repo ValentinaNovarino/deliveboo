@@ -9,5 +9,8 @@ return [
     ['name' => 'fast-food'],
     ['name' => 'indiano'],
     ['name' => 'vegetariano'],
-    ['name' => 'lactose-free'],  
+    ['name' => 'lactose-free'],
+    ['name' => 'pizzeria'],
+    ['name' => 'dessert'],
+    ['name' => 'poke'],
 ];
