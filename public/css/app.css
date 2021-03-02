@@ -15435,6 +15435,10 @@ table#cart td {
   color: black;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .checkout-without-container {
   height: 80vh;
 }

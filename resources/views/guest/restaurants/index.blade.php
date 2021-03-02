@@ -118,12 +118,12 @@
                         <h4>Ristoranti che consegnano nella tua città</h4>
                             <div class="restaurant-strip">
                                 <div class="strip">
-                                    <img src="{{'../img/offers.png'}}" alt="offers">
-                                    <span class="capitalize">offerte</span>
+                                    <img src="{{'../img/italian-r.png'}}" alt="italian-restaurant">
+                                    <span class="capitalize">italiano</span>
                                 </div>
                                 <div class="strip">
-                                    <img src="{{'../img/grocery.png'}}" alt="grocery">
-                                    <span class="capitalize">spesa</span>
+                                    <img src="{{'../img/fast-food-r.png'}}" alt="fast-food">
+                                    <span class="capitalize">fast-food</span>
                                 </div>
                                 <div class="strip">
                                     <img src="{{'../img/pizza.png'}}" alt="pizza">
@@ -171,7 +171,7 @@
                         {{-- Fine sezione stampa dei ristoranti--}}
                         <div v-for="categoryRest in categoriesRestaurants" v-if="visibleRestaurant">
                             <div v-for="item in categoryRest" v-if="checked.includes(item.name)">
-                                <h4 class="capitalize">Categoria: @{{item.name}}</h4>
+                                <h4 class="capitalize underline">Categoria: @{{item.name}}</h4>
                                 <div class="card-restaurant-container">
                                     <div v-for="restaurant in item.restaurants" class="all-category">
                                         <a :href="'restaurants/' + restaurant.slug">
