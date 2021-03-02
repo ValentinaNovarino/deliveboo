@@ -222,6 +222,41 @@
         align-items: flex-start;
     }
 
+    // guest restaurants
+    div.select-under-600{
+        display: block !important;
+    }
+
+    div.select-over-600 {
+        display: none;
+    }
+
+    div.main-container {
+        justify-content: center;
+    }
+
+    .restaurant-strip {
+        justify-content: center;
+    }
+
+    .offers-promo {
+        justify-content: center;
+
+    }
+    .offers-promo img {
+        width: 250px!important;
+        height: 145px!important;
+    }
+
+    .box-restaurant-container #all-restaurants .box-restaurant, .box-restaurant-container #all-restaurants .card-restaurant, .box-restaurant-container .all-category .box-restaurant, .box-restaurant-container .all-category .card-restaurant, .card-restaurant-container #all-restaurants .box-restaurant, .card-restaurant-container #all-restaurants .card-restaurant, .card-restaurant-container .all-category .box-restaurant, .card-restaurant-container .all-category .card-restaurant {
+        width: 255px!important;
+    }
+
+    // all restaurants guest
+    div#all-restaurants {
+        justify-content: center!important;
+    }
+
 }
 
 @media screen and (max-width: 862px) {
@@ -407,7 +442,6 @@
             font-size: 22px;
         }
     }
-
 
 
 }

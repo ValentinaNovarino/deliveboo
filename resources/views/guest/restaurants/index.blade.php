@@ -30,7 +30,7 @@
     </head>
     <body>
         {{-- navbar --}}
-        <div class="nav-bar-container">
+        <div class="nav-bar-container stiky-nav">
             <div class="row m-0">
                 <div class="col p-0" style="background-color:white;">
                     <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-restaurants">
@@ -107,27 +107,30 @@
                     </div>
                 </section>
                 {{-- FINE ANIMAZIONE CAMION --}}
-                <div class="container">
-                    <label>Choose a category!</label>
-                    <vue-multi-select @change="onChangeCategory(this.value)"
-                    v-model="checked"
-                    :options="filterCategory"
-                    ></vue-multi-select>
-                </div>
-
-                <div class="main-container">
-                    <div class="bg-light ml-3" id="sidebar-wrapper">
-                        <h4>Categorie:</h4>
-                        <div v-for="categoryName in filterCategory" class="ml-3">
-                            <input @change="onChangeCategory(this.value)" class="form-check-input" type="checkbox" v-model="checked"
-                            :value="categoryName">
-                            <label class="form-check-label capitalize">@{{categoryName}}</label>
-                        </div>
-
+                <div class="all-restaurants-content">
+                    <div class="container select-under-600">
+                        <h4>Scegli una o più categorie</h4>
+                        <vue-multi-select @change="onChangeCategory(this.value)"
+                        v-model="checked"
+                        :options="filterCategory" placeholder="cerca"
+                        ></vue-multi-select>
                     </div>
-                    <div class="box-restaurant-container print-restaurants">
-                        <h4>Ristoranti che consegnano nella tua città</h4>
-                            <p>Consegna gratuita per ordini superiori a 30 €</p>
+
+                    <div class="main-container">
+                        <div class="col-md-2 ml-3 select-over-600" id="sidebar-wrapper">
+                            <h4>Categorie:</h4>
+                            <div v-for="categoryName in filterCategory" class="ml-3">
+                                <input @change="onChangeCategory(this.value)" class="form-check-input check-rounded" type="checkbox" v-model="checked"
+                                :value="categoryName">
+                                <label class="form-check-label capitalize">@{{categoryName}}</label>
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-md-9 box-restaurant-container print-restaurants">
+                            <div class="flex-column">
+                                <h4>Ristoranti che consegnano nella tua città</h4>
+                                <p>Consegna gratuita per ordini superiori a 30 €</p>
+                            </div>
                             <div class="restaurant-strip">
                                 <input type="checkbox" id="checkboxItaliano" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="italiano"/>
                                 <label class="strip" for="checkboxItaliano"><img src="{{'../img/italian-r.png'}}" alt="ristorante italiano">
@@ -154,96 +157,85 @@
                                     <span class="capitalize">Poke</span>
                                 </label>
                             </div>
-                            {{-- <div class="video-spot">
-                                <div class="container-video">
-                                    <video width='600' height="200" autoplay loop muted>
-                                        <source src={{asset("video/spot-deliveroo.webm")}} type="video/webm">
-                                    </video>
-                                </div>
-                            </div> --}}
                             <div class="offers-promo">
                                 <img src="{{'../img/promo-1.jpg'}}" alt="offers">
                                 <img src="{{'../img/promo-2.jpg'}}" alt="offers">
                                 <img src="{{'../img/promo-3.jpg'}}" alt="offers">
                             </div>
-                {{-- test sezione stampa di tutti i ristoranti --}}
-                        <div class="print-restaurants" v-if="!checked.length">
+                            {{-- test sezione stampa di tutti i ristoranti --}}
+                            <div class="print-restaurants" v-if="!checked.length">
                                 <h4>In primo piano</h4>
                                 <p>Spazi pagati da partner di qualità</p>
-                            <div id="all-restaurants">
-                                @foreach ($restaurants as $restaurant)
-                                    <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
-                                        <div class="box-restaurant">
-                                            <div class="restaurant-img">
-                                                <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="{{ $restaurant->name }}">
-                                            </div>
-                                            <h4>
-                                                {{ $restaurant->name }}
-                                            </h4>
-                                            <p> {{ $restaurant->city }}</p>
-                                            <p> {{ $restaurant->address}}</p>
-                                        </div>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                        {{-- Fine sezione stampa dei ristoranti--}}
-                        <div v-for="categoryRest in categoriesRestaurants" v-if="visibleRestaurant">
-                            <div v-for="item in categoryRest" v-if="checked.includes(item.name)">
-                                <h4 class="capitalize underline divisor">Categoria: @{{item.name}}</h4>
-                                <div class="card-restaurant-container">
-                                    <div v-for="restaurant in item.restaurants" class="all-category">
-                                        <a :href="'restaurants/' + restaurant.slug">
-                                            <div class="card-restaurant">
+                                <div id="all-restaurants">
+                                    @foreach ($restaurants as $restaurant)
+                                        <a href="{{ route('restaurants.show', ['slug' => $restaurant->slug]) }}">
+                                            <div class="box-restaurant">
                                                 <div class="restaurant-img">
-                                                        <img :src="'../../storage/' + restaurant.cover" :alt="'immagine ' + restaurant.name">
+                                                    <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="{{ $restaurant->name }}">
                                                 </div>
-                                                <h4>Ristorante: @{{restaurant.name}}</h4>
-                                                <p> @{{restaurant.city}}</p>
-                                                <p> @{{restaurant.address}}</p>
+                                                <h4>
+                                                    {{ $restaurant->name }}
+                                                </h4>
+                                                <p> {{ $restaurant->city }}</p>
+                                                <p> {{ $restaurant->address}}</p>
                                             </div>
                                         </a>
-                                    </div>
-                                    <div v-if="item.restaurants.length < 1" class="card-restaurant">
-                                        <h4>Non ci sono ristoranti per la categoria @{{item.name}}</h4>
+                                    @endforeach
+                                </div>
+                            </div>
+                            {{-- Fine sezione stampa dei ristoranti--}}
+                            <div v-for="categoryRest in categoriesRestaurants" v-if="visibleRestaurant">
+                                <div v-for="item in categoryRest" v-if="checked.includes(item.name)">
+                                    <h4 class="capitalize underline divisor">Categoria: @{{item.name}}</h4>
+                                    <div class="card-restaurant-container">
+                                        <div v-for="restaurant in item.restaurants" class="all-category">
+                                            <a :href="'restaurants/' + restaurant.slug">
+                                                <div class="card-restaurant">
+                                                    <div class="restaurant-img">
+                                                        <img :src="'../../storage/' + restaurant.cover" :alt="'immagine ' + restaurant.name">
+                                                    </div>
+                                                    <h4>Ristorante: @{{restaurant.name}}</h4>
+                                                    <p> @{{restaurant.city}}</p>
+                                                    <p> @{{restaurant.address}}</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div v-if="item.restaurants.length < 1" class="card-restaurant">
+                                            <h4>Non ci sono ristoranti per la categoria @{{item.name}}</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="main-container">
-                    <div class="side">
-
-                    </div>
-                    <div class="reserch-restaurant">
-                        <h4>Serve una mano con la ricerca?</h4>
-                        <div class="restaurant-strip">
-                            <input type="checkbox" id="checkboxItaliano" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="italiano"/>
-                            <label class="strip" for="checkboxItaliano"><img src="{{'../img/italian-r.png'}}" alt="ristorante italiano">
-                                <span class="capitalize">Italiano</span>
-                            </label>
-                            <input type="checkbox" id="checkboxFastFood" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="fast-food"/>
-                            <label class="strip" for="checkboxFastFood"><img src="{{'../img/fast-food-r.png'}}" alt="ristorante fast-food">
-                                <span class="capitalize">Fast-Food</span>
-                            </label>
-                            <input type="checkbox" id="checkboxPizza" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="pizzeria"/>
-                            <label class="strip" for="checkboxPizza"><img src="{{'../img/pizza.png'}}" alt="ristorante pizzeria">
-                                <span class="capitalize">Pizza</span>
-                            </label>
-                            <input type="checkbox" id="checkboxSushi" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="giapponese"/>
-                            <label class="strip" for="checkboxSushi"><img src="{{'../img/sushi-1.png'}}" alt="ristorante sushi">
-                                <span class="capitalize">Sushi</span>
-                            </label>
-                            <input type="checkbox" id="checkboxDessert" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="dessert"/>
-                            <label class="strip" for="checkboxDessert"><img src="{{'../img/dessert.png'}}" alt="ristorante dessert">
-                                <span class="capitalize">Dessert</span>
-                            </label>
-                            <input type="checkbox" id="checkboxPoke" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="poke"/>
-                            <label class="strip" for="checkboxPoke"><img src="{{'../img/poke.png'}}" alt="ristorante poke">
-                                <span class="capitalize">Poke</span>
-                            </label>
-                        </div>
+                <div class="reserch-restaurant">
+                    <h4>Serve una mano con la ricerca?</h4>
+                    <div class="restaurant-strip">
+                        <input type="checkbox" id="checkboxItaliano" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="italiano"/>
+                        <label class="strip" for="checkboxItaliano"><img src="{{'../img/italian-r.png'}}" alt="ristorante italiano">
+                            <span class="capitalize">Italiano</span>
+                        </label>
+                        <input type="checkbox" id="checkboxFastFood" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="fast-food"/>
+                        <label class="strip" for="checkboxFastFood"><img src="{{'../img/fast-food-r.png'}}" alt="ristorante fast-food">
+                            <span class="capitalize">Fast-Food</span>
+                        </label>
+                        <input type="checkbox" id="checkboxPizza" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="pizzeria"/>
+                        <label class="strip" for="checkboxPizza"><img src="{{'../img/pizza.png'}}" alt="ristorante pizzeria">
+                            <span class="capitalize">Pizza</span>
+                        </label>
+                        <input type="checkbox" id="checkboxSushi" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="giapponese"/>
+                        <label class="strip" for="checkboxSushi"><img src="{{'../img/sushi-1.png'}}" alt="ristorante sushi">
+                            <span class="capitalize">Sushi</span>
+                        </label>
+                        <input type="checkbox" id="checkboxDessert" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="dessert"/>
+                        <label class="strip" for="checkboxDessert"><img src="{{'../img/dessert.png'}}" alt="ristorante dessert">
+                            <span class="capitalize">Dessert</span>
+                        </label>
+                        <input type="checkbox" id="checkboxPoke" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="poke"/>
+                        <label class="strip" for="checkboxPoke"><img src="{{'../img/poke.png'}}" alt="ristorante poke">
+                            <span class="capitalize">Poke</span>
+                        </label>
                     </div>
                 </div>
             </main>
