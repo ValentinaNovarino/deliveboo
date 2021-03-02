@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 use App\Dish;
 
@@ -12,15 +11,17 @@ class DishesTableSeeder extends Seeder
      *
      * @return void
      */
-     public function run(Faker $faker)
+     public function run()
    {
+       $dishesData = config('dishes');
+
        for ($i=0; $i < 20 ; $i++) {
        $newDish = new Dish();
-       $newDish->name = $faker->sentence(2);
-       $newDish->price = $faker->randomFloat(2, 5, 100);
-       $newDish->description = $faker->text(200);
-       $newDish->visible = true;
-       $newDish->cover = $faker->imageUrl(250, 250, 'foods', true);
+       $newDish->name = $dishesData[$i]['name'];
+       $newDish->price = $dishesData[$i]['price'];
+       $newDish->description = $dishesData[$i]['description'];
+       // $newDish->visible = $dishesData[$i]['visible'];
+       $newDish->cover = $dishesData[$i]['cover'];
 
        $slug = Str::slug($newDish->name, '-');
 
