@@ -13811,6 +13811,16 @@ li.list-group-item.restaurant-info {
   .card-success-payment {
     width: 300px;
     height: 300px;
+    padding: 0;
+  }
+
+  .content-success-payment {
+    font-size: 16px;
+    padding: 0;
+  }
+
+  .content-success-payment h1 {
+    display: none;
   }
 }
 
@@ -13870,6 +13880,21 @@ li.list-group-item.restaurant-info {
   .banner_verticale {
     margin-right: 5px;
     width: 200px;
+  }
+
+  .card-success-payment {
+    width: 300px;
+    height: 300px;
+    padding: 0;
+  }
+
+  .content-success-payment {
+    font-size: 16px;
+    padding: 0;
+  }
+
+  .content-success-payment h1 {
+    display: none;
   }
 }
 
