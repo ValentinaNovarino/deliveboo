@@ -16107,16 +16107,14 @@ h4.divisor {
   background-color: #00ccbc33;
 }
 
-.checkout::after {
-  content: "";
-  display: table;
-  clear: both;
 div.select-under-600 {
   display: none;
 }
 
-.checkout-without-container {
-  height: 80vh;
+.checkout::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .checkout {
