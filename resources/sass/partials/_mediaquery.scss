@@ -97,12 +97,21 @@
         width: 300px;
     }
 
+    .video-spot{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
 }
 
 @media screen and (max-width: 1060px) {
     .sidebar-nav.link a.nav-link {
         font-size: 16px;
     }
+
+
 }
 
 @media screen and (max-width: 992px) {
@@ -247,6 +256,11 @@
     .banner_verticale{
         margin-right: 5px;
         width: 250px;
+    }
+
+    .video-spot{
+        display: none;
+
     }
 }
 

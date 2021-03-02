@@ -12705,6 +12705,12 @@ body p {
   z-index: 99999;
 }
 
+.video-spot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
@@ -13438,6 +13444,12 @@ li.list-group-item.restaurant-info {
     margin-right: 5px;
     width: 300px;
   }
+
+  .video-spot {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 1060px) {
@@ -13580,6 +13592,10 @@ li.list-group-item.restaurant-info {
   .banner_verticale {
     margin-right: 5px;
     width: 250px;
+  }
+
+  .video-spot {
+    display: none;
   }
 }
 
