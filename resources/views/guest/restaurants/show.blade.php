@@ -162,7 +162,7 @@
                                         </div>
                                         <div class="right-card d-flex justify-content-end align-items-center">
                                             <div class="dish-cover">
-                                                <img src="{{$dish->cover}}" alt="Cover piatto" class="img-fluid">
+                                                <img src="{{ asset('storage/' . $dish->cover) }}" alt="Cover piatto" class="img-fluid">
                                             </div>
                                         </div>
                                     </div>
@@ -174,7 +174,7 @@
                                     <h4>{{ $dish->name }}</h4>
                                     <p> <i id="star-vote" class="fas fa-star"></i> {{ $numero = rand(2,5)}},{{ $numero2 = rand(0,9) }} </p>
                                     <div class="dish-cover">
-                                        <img src="{{$dish->cover}}" alt="Cover piatto" class="img-fluid">
+                                        <img src="{{ asset('storage/' . $dish->cover) }}" alt="Cover piatto" class="img-fluid">
                                     </div>
                                     <p id="description">{{ ($dish->description) }}</p>
                                     <p>€{{ $dish->price }}</p>
