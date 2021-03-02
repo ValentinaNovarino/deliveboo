@@ -23,6 +23,9 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
         {{-- AXIOS --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+        {{-- MULTI_SELECT2 --}}
+        {{-- <script src="bundle.min.js"></script> --}}
+        <script src="https://unpkg.com/vue-simple-multi-select@latest"></script>
 
     </head>
     <body>
@@ -104,6 +107,13 @@
                     </div>
                 </section>
                 {{-- FINE ANIMAZIONE CAMION --}}
+                <div class="container">
+                    <label>Choose a category!</label>
+                    <vue-multi-select @change="onChangeCategory(this.value)"
+                    v-model="checked"
+                    :options="filterCategory"
+                    ></vue-multi-select>
+                </div>
 
                 <div class="main-container">
                     <div class="bg-light ml-3" id="sidebar-wrapper">

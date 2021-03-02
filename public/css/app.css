@@ -13456,6 +13456,12 @@ li.list-group-item.restaurant-info {
   .sidebar-nav.link a.nav-link {
     font-size: 16px;
   }
+
+  div.cart-button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -13549,6 +13555,13 @@ li.list-group-item.restaurant-info {
 
   a.logout {
     display: block;
+  }
+
+  div.cart-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 }
 
