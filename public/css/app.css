@@ -15440,6 +15440,10 @@ table#cart td {
   text-decoration: underline;
 }
 
+h4.divisor {
+  background-color: #00ccbc80;
+}
+
 .checkout-without-container {
   height: 80vh;
 }

@@ -36,9 +36,7 @@
         h4{
             padding: 22px 0;
             font-weight: bold;
-            // font-size: 14px;
             color: #2e3333;
-
         }
     }
 }
@@ -202,4 +200,8 @@ width: calc(86% - 20px);
 
 .underline{
     text-decoration: underline;
+}
+
+h4.divisor {
+    background-color: #00ccbc80;
 }
