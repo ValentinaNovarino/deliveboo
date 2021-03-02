@@ -147,7 +147,7 @@
                             <div class="video-spot">
                                 <div class="container-video">
                                     <video width='600' height="200" controls autoplay loop muted>
-                                        <source src={{asset("video/spot-deliveroo.mp4")}} type="video/mp4">
+                                        <source src={{asset("video/spot-deliveroo.webm")}} type="video/webm">
                                     </video>
                                 </div>
                             </div>
