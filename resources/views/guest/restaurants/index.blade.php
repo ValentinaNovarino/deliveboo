@@ -144,13 +144,13 @@
                                     <span class="capitalize">Poke</span>
                                 </label>
                             </div>
-                            <div class="video-spot">
+                            {{-- <div class="video-spot">
                                 <div class="container-video">
-                                    <video width='600' height="200" controls autoplay loop muted>
+                                    <video width='600' height="200" autoplay loop muted>
                                         <source src={{asset("video/spot-deliveroo.webm")}} type="video/webm">
                                     </video>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="offers-promo">
                                 <img src="{{'../img/promo-1.jpg'}}" alt="offers">
                                 <img src="{{'../img/promo-2.jpg'}}" alt="offers">
