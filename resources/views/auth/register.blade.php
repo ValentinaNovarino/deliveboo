@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <div class="logo-form d-flex justify-content-center">
+        <img src="{{asset('img/logo.png')}}" alt="logo deliveroo">
+    </div>
+<div class="container" style="min-height:60vh;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card m-5">
