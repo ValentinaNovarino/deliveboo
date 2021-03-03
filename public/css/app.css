@@ -13617,6 +13617,16 @@ li.list-group-item.restaurant-info {
   div#all-restaurants {
     justify-content: center !important;
   }
+
+  .card-restaurant {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cover-restaurant button {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 862px) {

@@ -111,7 +111,7 @@
                 <div class="cover-restaurant m-2">
                     <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="Cover ristorante" class="img-fluid">
                     <div class="delivery">
-                        <div class="img-rider d-flex flex-column align-items-start">
+                        <div class="img-rider d-flex flex-column align-items-center">
                             <p>Consegna dalle 19:30</p>
                             <span>{{ $restaurant->city}}, Italia</span>
                         </div>
