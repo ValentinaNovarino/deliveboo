@@ -127,7 +127,7 @@
             </div>
 
             <div class="components border-top border-bottom mt-5 d-flex align-items-center">
-                <span id="status" class="text-center"></span>
+                {{-- <span id="status" class="text-center"></span> --}}
 
                 <ul>
                     <li>
@@ -187,6 +187,7 @@
                                             </svg>
                                         </div>
                                     </button>
+                                    <p id="status" class="text-center mt-2"></p>
                                 </div>
                             @endforeach
                         @endforeach
@@ -228,12 +229,20 @@
 
                 // ele.siblings('.btn-loading').hide();
                 if (response.msg) {
-                    $("span#status").html('<div class="alert alert-success ">'+response.msg+'</div>');
+
+                    $("p#status").html('<div class="alert alert-success ">'+response.msg+'</div>').show();
+
                     $("#header-bar").html(response.data);
+                    setTimeout( function() {
+                        $("p#status").html('<div class="alert alert-success ">'+response.msg+'</div>').hide();
+                    }, 5000);
 
                 } else if (response.error){
-                    $("span#status").html('<div class="alert alert-danger ">'+response.error+'</div>');
+                    $("p#status").html('<div class="alert alert-danger ">'+response.error+'</div>').show();
                     $("#header-bar").html(response.data);
+                    setTimeout( function() {
+                        $("p#status").html('<div class="alert alert-danger ">'+response.error+'</div>').hide();
+                    }, 6000);
                 }
             }
         });
