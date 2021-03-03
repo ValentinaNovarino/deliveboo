@@ -1,7 +1,6 @@
-.wrap{
+.wrap {
     background: rgb(0,204,188);
     background-image: linear-gradient(177deg, rgba(0,204,188,1) 49%, rgba(208,235,153,1) 49%);
-
     width: 100%;
 }
 
@@ -10,24 +9,22 @@
     height: 50px;
 }
 
-.logo img{
+.logo img {
     width: 150px;
 }
-.header-bottom{
+.header-bottom {
     padding-top: 100px;
 }
 
-.titleHeader h1{
+.titleHeader h1 {
     color: #440063;
-    // margin-top: 95px;
     font-size: 40px;
     font-weight: bold;
     padding-top: 35px;
     padding-bottom: 46px;
-
 }
 
-.search-header{
+.search-header {
     margin-top:160px;
     display:flex;
     justify-content: center;
@@ -39,70 +36,66 @@
     overflow: hidden;
 
 }
-.image-header img{
+
+.image-header img {
     width: 100%;
     height: 100%;
 }
 
-.riquadro-blu-header{
+.riquadro-blu-header {
     position: absolute;
     overflow-y: hidden;
     bottom: 0;
     // width: 92%;
     padding: 0 32px;
     margin-left: -70px;
-
 }
 
-.riquadro-blu-header-inside{
-
+.riquadro-blu-header-inside {
     background-color: #007e8a;
     transform: rotate(3deg);
     transform-origin: left;
     padding: 28px 53px;
 
-    h1{
-    color:$colorCurrent;
-    font-weight: bold;
-    font-size: 28px;
-    transform: rotate( -2deg);
+    h1 {
+        color:$colorCurrent;
+        font-weight: bold;
+        font-size: 28px;
+        transform: rotate( -2deg);
     }
 
 }
 
-.div-search{
+.div-search {
     background-color: $colorCurrent;
     height: 43%;
     width: 100%;
     border-radius: 5px;
 
-    span{
+    span {
         color: #2e3333;
         font-size: 19px;
-        padding-top: 20px;
         padding-left: 20px;
         padding-right: 20px;
     }
 
-    button{
+    .button {
         width: 33%;
         padding: 10px 10px;
         margin-top: 15px;
         font-size: 18px;
         background-color: $colorPrimary;
 
-    &:hover{
+        &:hover {
             background-color:#00bbad;
         }
-
     }
 }
 
-.search-home{
-
+.search-home {
     border: none;
     border: 1px solid #80808029;
     margin-left:30px;
     padding-top: 18px;
     width: 50%;
-    }
+}
