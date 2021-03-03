@@ -359,7 +359,7 @@
         display: none;
     }
 
-    .add-dish{
+    .add-dish,.header-card-restaurants{
         .logo-admin-dish{
             width: 300px !important;
         }
@@ -407,7 +407,7 @@
         width: 250px;
     }
 
-    .add-dish{
+    .add-dish,.header-card-restaurants{
         .logo-admin-dish{
         width: 280px !important;
         }
@@ -440,7 +440,7 @@
         width: 220px!important;
     }
 
-    .add-dish{
+    .add-dish,.header-card-restaurants{
         .logo-admin-dish{
             width: 250px !important;
         }
@@ -564,7 +564,7 @@
         height: 600px;
     }
 
-    .add-dish{
+    .add-dish,.header-card-restaurants{
         .logo-admin-dish{
             width: 230px !important;
         }
@@ -681,16 +681,17 @@
         width: 300px;
         height: 600px;
     }
-    .add-dish{
+    .add-dish,.header-card-restaurants{
         .logo-admin-dish{
             width: 200px !important;
         }
         h1{
             font-size:20px;
         }
-        button{
-            font-size: 14px;
-        }
+
+    }
+    button,.button9{
+        font-size: 14px;
     }
     .td-dish-9{
         img{
@@ -785,16 +786,14 @@
         width: 250px;
     }
 
-    .add-dish{
+    .add-dish.header-card-restaurants{
         .logo-admin-dish{
             width: 180px !important;
         }
         h1{
             font-size:18px;
         }
-        button{
-            font-size: 12px;
-        }
+
     }
 
     .td-dish-9{
@@ -809,6 +808,7 @@
     }
     .button9{
             padding: 5px 29px;
+            font-size: 10px !important;
     }
 
 }

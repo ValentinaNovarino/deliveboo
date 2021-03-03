@@ -13709,11 +13709,13 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     display: none;
   }
 
-  .add-dish .logo-admin-dish {
+  .add-dish .logo-admin-dish,
+  .header-card-restaurants .logo-admin-dish {
     width: 300px !important;
   }
 
-  .add-dish h1 {
+  .add-dish h1,
+  .header-card-restaurants h1 {
     font-size: 30px;
   }
 
@@ -13749,11 +13751,13 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     width: 250px;
   }
 
-  .add-dish .logo-admin-dish {
+  .add-dish .logo-admin-dish,
+  .header-card-restaurants .logo-admin-dish {
     width: 280px !important;
   }
 
-  .add-dish h1 {
+  .add-dish h1,
+  .header-card-restaurants h1 {
     font-size: 25px;
   }
 
@@ -13777,11 +13781,13 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     width: 220px !important;
   }
 
-  .add-dish .logo-admin-dish {
+  .add-dish .logo-admin-dish,
+  .header-card-restaurants .logo-admin-dish {
     width: 250px !important;
   }
 
-  .add-dish h1 {
+  .add-dish h1,
+  .header-card-restaurants h1 {
     font-size: 22px;
   }
 
@@ -13891,11 +13897,13 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     height: 600px;
   }
 
-  .add-dish .logo-admin-dish {
+  .add-dish .logo-admin-dish,
+  .header-card-restaurants .logo-admin-dish {
     width: 230px !important;
   }
 
-  .add-dish h1 {
+  .add-dish h1,
+  .header-card-restaurants h1 {
     font-size: 20px;
   }
 
@@ -13996,15 +14004,18 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     height: 600px;
   }
 
-  .add-dish .logo-admin-dish {
+  .add-dish .logo-admin-dish,
+  .header-card-restaurants .logo-admin-dish {
     width: 200px !important;
   }
 
-  .add-dish h1 {
+  .add-dish h1,
+  .header-card-restaurants h1 {
     font-size: 20px;
   }
 
-  .add-dish button {
+  button,
+  .button9 {
     font-size: 14px;
   }
 
@@ -14096,16 +14107,12 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     width: 250px;
   }
 
-  .add-dish .logo-admin-dish {
+  .add-dish.header-card-restaurants .logo-admin-dish {
     width: 180px !important;
   }
 
-  .add-dish h1 {
+  .add-dish.header-card-restaurants h1 {
     font-size: 18px;
-  }
-
-  .add-dish button {
-    font-size: 12px;
   }
 
   .td-dish-9 img {
@@ -14118,6 +14125,7 @@ li.list-group-item.restaurant-info:nth-child(2n) {
 
   .button9 {
     padding: 5px 29px;
+    font-size: 10px !important;
   }
 }
 
