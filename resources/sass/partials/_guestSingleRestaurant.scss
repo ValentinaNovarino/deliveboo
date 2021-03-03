@@ -52,7 +52,6 @@ main {
             }
         }
     }
-
 }
 
 #faq-drop-menu {
@@ -62,7 +61,9 @@ main {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: $colorSecondary;
+    background-color: #fff;
+    border: 3px solid $colorPrimary;
+    border-radius: 3px;
     color: #2e3333;
     z-index: 101;
 
