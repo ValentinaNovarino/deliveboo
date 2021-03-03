@@ -16,14 +16,14 @@
                         <li>
                             @include('_header_cart')
                         </li>
-                        <li>
+                        {{-- <li>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-house-user"></i> {{ __('Login') }}</a>
                             </li>
-                        @else
-                            <li class="nav-item dropdown">
+                        @else --}}
+                            {{-- <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
@@ -42,8 +42,8 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
-                        @endguest
+                            </li> --}}
+                        {{-- @endguest --}}
                         <li>
                             <a class="nav-link" onclick="showMenu('faq-drop-menu')" href="#">
                                 <i class="fas fa-bars"></i>
@@ -51,7 +51,7 @@
                         </li>
                     </ul>
                 </div>
-                <div id="faq-drop-menu" style="display:none">
+                <div id="faq-drop-menu" class="mt-2 mr-2" style="display:none">
                     <div class="faq-drop-top">
                         <div class="faq-drop-close">
                             <img src="../img/logo.png" alt="">

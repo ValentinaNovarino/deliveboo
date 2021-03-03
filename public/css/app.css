@@ -13935,6 +13935,15 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     width: 300px;
     height: 600px;
   }
+
+  .header-single-rest > .single-restaurant-logo > a > img {
+    width: 80px;
+    height: auto;
+  }
+
+  .header-single-rest > #faq-drop-menu {
+    width: 280px;
+  }
 }
 
 @media screen and (max-width: 400px) {
