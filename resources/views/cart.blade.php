@@ -106,22 +106,22 @@
                 <td><a href="{{ route('guest.restaurants') }}" class="btn btn-deliveroo"><i class="fa fa-angle-left"></i> Continua lo Shopping</a></td>
                 <tfoot>
                 <tr class="visible-xs">
-                    <td class="text-center"><strong>Totale ordine € <span class="cart-total hideItem">{{ number_format($total, 2) }}</span></strong></td>
+                    <td class="text-center"><strong>Subtotale € <span class="cart-total hideItem">{{ number_format($total, 2) }}</span></strong></td>
                     {{session((['order_price' => number_format($total, 2)]))}}
                 </tr>
                 @php $discount = $total * 10 / 100; number_format($discount, 2); @endphp
                 @if ($total >= 30)
                     <tr class="visible-xs">
-                        <td class="text-center"><strong>Spedizione gratuita</strong></td>
+                        <td class="text-center"> <img src="{{asset("img/icon-deliveryman.png")}}" width="30px" height="30px" alt="icon"> <strong>Spedizione gratuita</strong></td>
                         {{session((['delivery_price' => 0]))}}
                     </tr>
                     <tr class="visible-xs">
-                        <td class="text-center"><strong>Sconto € <span class="cart-total hideItem">{{ number_format($discount, 2) }}</span></strong></td>
+                        <td class="text-center"> <i class="fas fa-percent"></i> <strong>Sconto € <span class="cart-total hideItem">{{ number_format($discount, 2) }}</span></strong></td>
                         {{session((['discount' => number_format($discount, 2)]))}}
                     </tr>
                 @elseif (session('cart'))
                     <tr class="visible-xs">
-                        <td class="text-center"><strong>Spese di spedizione € <span class="cart-total hideItem">5</span></strong></td>
+                        <td class="text-center"> <img src="{{asset("img/icon-deliveryman.png")}}" width="30px" height="30px" alt="icon"> <strong>Spese di spedizione € <span class="cart-total hideItem">5</span></strong></td>
                         {{session((['delivery_price' => 5]))}}
                         {{session((['discount' => 0]))}}
                     </tr>
@@ -131,13 +131,13 @@
                     @php
                         $final_price = $total + 0 - $discount;
                     @endphp
-                    <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total hideItem">{{ number_format($final_price, 2) }}</span></strong></td>
+                    <td class="hidden-xs text-center"> <i class="fas fa-tag"></i> <strong>Totale € <span class="cart-total hideItem">{{ number_format($final_price, 2) }}</span></strong></td>
                     {{session((['final_price' => number_format($final_price, 2)]))}}
                 @elseif (session('cart'))
                     @php
                         $final_price = $total + 5;
                     @endphp
-                    <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total hideItem">{{ number_format($final_price, 2) }}</span></strong></td>
+                    <td class="hidden-xs text-center"> <i class="fas fa-tag"></i> <strong>Totale ordine € <span class="cart-total hideItem">{{ number_format($final_price, 2) }}</span></strong></td>
                     {{session((['final_price' => number_format($final_price, 2)]))}}
                 @endif
                 {{-- <td class="hidden-xs text-center"><strong>Totale € <span class="cart-total">{{ $total }}</span></strong></td> --}}
