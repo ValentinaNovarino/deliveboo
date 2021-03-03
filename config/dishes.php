@@ -222,7 +222,7 @@ return [
     [
         'name' => 'Ravioli Cinesi',
         'price' => '5',
-        'description' => 'ravio9li ripieni di carne e verdure',
+        'description' => 'ravioli ripieni di carne e verdure',
         'cover' => 'dishesCover/ravioli-c.jpg'
 
     ],

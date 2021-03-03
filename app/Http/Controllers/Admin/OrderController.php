@@ -14,14 +14,23 @@ class OrderController extends Controller
     public function index() {
 
         $userRestaurant = Restaurant::where('user_id', Auth::user()->id)->first();
-        $userOrders = Order::where('restaurant_id', $userRestaurant->id)->get();
+        if ($userRestaurant) {
+            $userOrders = Order::where('restaurant_id', $userRestaurant->id)->get();
+
+            $data = [
+                'orders' => $userOrders,
+                'restaurant' => $userRestaurant,
+            ];
+
+            return view('admin.orders.index', $data);
+        }
 
         $data = [
-            'orders' => $userOrders,
             'restaurant' => $userRestaurant,
         ];
 
-        // dd($data);
+
         return view('admin.orders.index', $data);
+
     }
 }
