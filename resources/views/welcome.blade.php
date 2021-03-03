@@ -3,7 +3,7 @@
 
 @section('content')
     <div id="loading" class="">
-        
+
         </div>
     </div>
 
@@ -74,9 +74,11 @@
                     <div class="titleHeader">
                         <h1>I piatti che ami, a domicilio.</h1>
                     </div>
-                    <div class="div-search">
+                    <div class="div-search d-flex align-items-center">
                             <span>Entra e scegli il tuo ristorante</span>
-                            <a href="{{ route('guest.restaurants') }}"><button class="capitalize btn btn-primary" type="button" name="button">entra</button></a>
+                            <a class="capitalize btn btn-primary button" href="{{ route('guest.restaurants') }}">
+                                entra
+                            </a>
                     </div>
                 </div>
                 <div class="col-md-1 col-xs-12">

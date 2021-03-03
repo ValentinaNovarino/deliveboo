@@ -5,8 +5,8 @@
     }
 
     .div-search {
-            width: 98%;
-        }
+        width: 98%;
+    }
 
     .btn.show-btn-deliveroo, .btn.modify-btn-deliveroo, .btn.btn-danger.danger-deliveroo {
         display: none;
@@ -20,8 +20,8 @@
 @media screen and (max-width: 1110px) {
 
     .div-search {
-            width: 97%;
-        }
+        width: 97%;
+    }
 
     a.card-link.restaurant-menu.secondary-btn-deliveroo {
         display: none;
@@ -31,6 +31,7 @@
         display: block;
         font-size: 14px;
     }
+
     .banner_verticale{
         margin-right: 5px;
         width: 300px;
@@ -40,17 +41,18 @@
 @media screen and (max-width: 1100px) {
 
     .div-search {
-            width: 96%;
-        }
+        width: 96%;
+    }
+
     .image-header {
         width: 250px;
         overflow: hidden;
     }
 
     .riquadro-blu-header-inside h1 {
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
     }
 
     .cibi-preferiti {
@@ -73,7 +75,6 @@
             font-size: 18px;
             font-weight: bold;
             padding-top:10px;
-
         }
 
         p{
@@ -83,7 +84,7 @@
     }
 
     .cerca-tipo{
-        span{
+        span {
             font-size: 28px;
         }
     }
@@ -101,12 +102,12 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-
     }
 
 }
 
 @media screen and (max-width: 1060px) {
+
     .sidebar-nav.link a.nav-link {
         font-size: 16px;
     }
@@ -121,14 +122,16 @@
 @media screen and (max-width: 992px) {
 
     .div-search {
-            width: 95%;
-    button {
-    width: 30%;
-    font-size: 10px;
-    }
-    span{
-        font-size: 16px;
+        width: 95%;
+
+        .button {
+           width: 30%;
+           font-size: 10px;
         }
+    }
+
+    span {
+        font-size: 16px;
     }
 
     .titleHeader h1 {
@@ -136,29 +139,28 @@
     }
 
     .image-header {
-    width: 250px;
-}
+        width: 250px;
+    }
     .cibi-preferiti {
-
-        img{
+        img {
             width: 200px;
             margin-right:5px;
         }
 
-        h1{
+        h1 {
             font-weight: bold;
             font-size: 38px;
             padding-bottom: 10px;
         }
 
-        h2{
+        h2 {
             font-size: 16px;
             font-weight: bold;
             padding-top:10px;
 
         }
 
-        p{
+        p {
             font-size: 13px;
             padding-bottom:20px;
         }
@@ -169,7 +171,7 @@
         padding: 7px 5px;
     }
 
-    .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo{
+    .btn.show.show-btn-deliveroo, .btn.modify.modify-btn-deliveroo,  .btn.danger.danger-deliveroo {
         padding: 5px;
     }
 
@@ -178,20 +180,20 @@
     }
 
 
-    .cerca-tipo{
-        span{
+    .cerca-tipo {
+        span {
             font-size: 26px;
         }
     }
 
-    .dropdown-menu.show{
+    .dropdown-menu.show {
         padding:10px;
         width: 250px !important;
         left: -150px !important;
         box-shadow:0px 5px 30px black;
     }
 
-    .banner_verticale{
+    .banner_verticale {
         margin-right: 5px;
         width: 250px;
     }
@@ -214,7 +216,7 @@
         width: 245px!important;
     }
 
-    .navbar-restaurants{
+    .navbar-restaurants {
         max-height: 200px!important;
     }
 }
@@ -241,7 +243,7 @@
     }
 
     // guest restaurants
-    div.select-under-600{
+    div.select-under-600 {
         display: block !important;
     }
 
@@ -282,7 +284,7 @@
     .div-search {
         width: 90%;
 
-        button {
+        .button {
             width: 25%;
             font-size: 10px;
         }
@@ -293,11 +295,10 @@
     }
 
     .image-header {
-    width: 250px;
-
+        width: 250px;
     }
 
-    .section-dropcart{
+    .section-dropcart {
         padding-top: 10px;
     }
 
@@ -305,25 +306,25 @@
         font-size: 25px;
     }
 
-    .dropdown-menu.show{
+    .dropdown-menu.show {
         padding:10px;
         width: 250px !important;
         left: -180px !important;
         box-shadow:0px 5px 30px black;
     }
 
-    .cerca-tipo{
-        span{
+    .cerca-tipo {
+        span {
             font-size: 24px;
         }
     }
 
-    .banner_verticale{
+    .banner_verticale {
         margin-right: 5px;
         width: 250px;
     }
 
-    .video-spot{
+    .video-spot {
         display: none;
     }
 }
@@ -333,31 +334,31 @@
     .div-search {
         width: 85%;
 
-        button {
+        .button {
             width: 22%;
             font-size: 10px;
         }
-        span{
-        font-size: 14px;
+
+        span {
+            font-size: 14px;
         }
     }
 
-        .image-header {
+    .image-header {
         width: 250px;
     }
 
 
-    .cerca-tipo{
-        span{
+    .cerca-tipo {
+        span {
             font-size: 23px;
         }
     }
 
-    .banner_verticale{
+    .banner_verticale {
         margin-right: 5px;
         width: 250px;
     }
-
 }
 
 @media screen and (max-width: 767px) {
@@ -385,19 +386,21 @@
     }
 
     .riquadro-blu-header-inside h1 {
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
     }
 
     .div-search {
         width: 70%;
-        button {
+
+        .button {
             width: 20%;
             font-size: 10px;
         }
-        span{
-        font-size: 12px;
+
+        span {
+            font-size: 12px;
         }
     }
 
@@ -406,7 +409,7 @@
         overflow: hidden;
     }
 
-    .banner_verticale{
+    .banner_verticale {
         margin-right: 5px;
         width: 250px;
     }
@@ -415,18 +418,18 @@
     //     display: block;
     // }
 
-    .dropdown-menu.show{
+    .dropdown-menu.show {
         padding:10px;
         width: 250px !important;
         // left: -90px !important;
         box-shadow:0px 5px 30px black;
 
-        a.btn-deliveroo{
+        a.btn-deliveroo {
             display:block;
         }
     }
 
-    .section-dropcart.dropdown-menu.btn-deliveroo{
+    .section-dropcart.dropdown-menu.btn-deliveroo {
         display: block;
     }
 
@@ -460,8 +463,8 @@
         font-size: 16px;
     }
 
-    .cerca-tipo{
-        span{
+    .cerca-tipo {
+        span {
             font-size: 22px;
         }
     }
@@ -486,12 +489,14 @@
 
     .div-search {
         width: 70%;
-        button {
+
+        .button {
             width: 18%;
             font-size: 10px;
-            }
-        span{
-        font-size: 12px;
+        }
+
+        span {
+            font-size: 12px;
         }
     }
 
@@ -505,29 +510,28 @@
         // }
     }
 
-    .cerca-tipo{
-        span{
+    .cerca-tipo {
+        span {
             font-size: 20px;
         }
     }
 
     .image-header {
-    width: 200px;
-
+        width: 200px;
     }
 
-    .dropdown-menu.show{
+    .dropdown-menu.show {
         padding:10px;
         width: 250px !important;
         left: -70px !important;
         box-shadow:0px 5px 30px black;
 
-        a.btn-deliveroo{
+        a.btn-deliveroo {
             display:block;
         }
     }
 
-    .banner_verticale{
+    .banner_verticale {
         margin-right: 5px;
         width: 250px;
     }
@@ -564,11 +568,11 @@
 
     }
 
-    .content-success-payment{
+    .content-success-payment {
         font-size: 16px;
         padding: 0;
 
-        h1{
+        h1 {
             display: none;
         }
     }
@@ -589,13 +593,16 @@
 
     .div-search {
         width: 70%;
-        button {
-        width: 15%;
-        font-size: 8px;
+
+        .button {
+            width: 15%;
+            font-size: 8px;
+            padding: 7px;
         }
-        span{
+
+        span {
             font-size: 10px;
-            }
+        }
     }
 
     .header-card-restaurants h1, .add-dish h1, .card h1, h1.info-alert {
@@ -610,24 +617,24 @@
         font-size: 16px;
     }
 
-    .cerca-tipo{
-        span{
+    .cerca-tipo {
+        span {
             font-size: 18px;
         }
     }
 
-    .dropdown-menu.show{
+    .dropdown-menu.show {
         padding:10px;
         width: 250px !important;
         left: -90px !important;
         box-shadow:0px 5px 30px black;
 
-        a.btn-deliveroo{
+        a.btn-deliveroo {
             display:block;
         }
     }
 
-    .banner_verticale{
+    .banner_verticale {
         margin-right: 5px;
         width: 200px;
     }
@@ -639,11 +646,11 @@
 
     }
 
-    .content-success-payment{
+    .content-success-payment {
         font-size: 16px;
         padding: 0;
 
-        h1{
+        h1 {
             display: none;
         }
     }
