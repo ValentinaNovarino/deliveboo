@@ -162,7 +162,11 @@
                                         </div>
                                         <div class="right-card d-flex justify-content-end align-items-center">
                                             <div class="dish-cover">
-                                                <img src="{{ asset('storage/' . $dish->cover) }}" alt="Cover piatto" class="img-fluid">
+                                                @if (file_exists(asset('storage/' . $dish->cover)))
+                                                    <img src="{{ asset('storage/' . $dish->cover)}}" alt="Cover piatto" class="img-fluid">
+                                                @else
+                                                    <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="Cover piatto" class="img-fluid">
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

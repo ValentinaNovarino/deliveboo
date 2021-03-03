@@ -15,7 +15,7 @@ class DishesTableSeeder extends Seeder
    {
        $dishesData = config('dishes');
 
-       for ($i=0; $i < 120 ; $i++) {
+       for ($i=0; $i < count($dishesData) ; $i++) {
        $newDish = new Dish();
        $newDish->name = $dishesData[$i]['name'];
        $newDish->price = $dishesData[$i]['price'];
