@@ -57,7 +57,12 @@
                                         <span>{{ $dish['name'] }}</span>
                                         <div id="info-dish">
                                             <div class="image-container">
-                                                <img class="img-fluid" src="{{ asset('storage/'.$dish['cover']) }}" alt="immagine {{ $dish['name'] }}">
+                                                {{-- <img class="img-fluid" src="{{ asset('storage/'.$dish['cover']) }}" alt="immagine {{ $dish['name'] }}"> --}}
+                                                @if ((file_exists('storage/' . $dish['cover'])))
+                                                    <img src="{{ asset('storage/' . $dish['cover'])}}" alt="Cover piatto" class="img-fluid">
+                                                @else
+                                                    <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="Cover piatto" class="img-fluid">
+                                                @endif
                                             </div>
                                             <div id="price">
                                                 <p class="price single">Prezzo unitario: <span>€ {{ $dish['price'] }}</span></p>

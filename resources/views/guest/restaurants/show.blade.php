@@ -162,7 +162,7 @@
                                         </div>
                                         <div class="right-card d-flex justify-content-end align-items-center">
                                             <div class="dish-cover">
-                                                @if (file_exists(asset('storage/' . $dish->cover)))
+                                                @if ((file_exists('storage/' . $dish->cover)))
                                                     <img src="{{ asset('storage/' . $dish->cover)}}" alt="Cover piatto" class="img-fluid">
                                                 @else
                                                     <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="Cover piatto" class="img-fluid">
@@ -178,7 +178,11 @@
                                     <h4>{{ $dish->name }}</h4>
                                     <p> <i id="star-vote" class="fas fa-star"></i> {{ $numero = rand(2,5)}},{{ $numero2 = rand(0,9) }} </p>
                                     <div class="dish-cover">
-                                        <img src="{{ asset('storage/' . $dish->cover) }}" alt="Cover piatto" class="img-fluid">
+                                        @if ((file_exists('storage/' . $dish->cover)))
+                                            <img src="{{ asset('storage/' . $dish->cover)}}" alt="Cover piatto" class="img-fluid">
+                                        @else
+                                            <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="Cover piatto" class="img-fluid">
+                                        @endif
                                     </div>
                                     <p id="description">{{ ($dish->description) }}</p>
                                     <p>€{{ $dish->price }}</p>

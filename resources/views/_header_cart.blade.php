@@ -45,7 +45,11 @@
                     @foreach((array) session('cart') as $id => $details)
                         <div class="row cart-detail">
                             <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                <img src="{{ $details['cover'] }} " />
+                                @if ((file_exists('storage/' . $details['cover'])))
+                                    <img src="{{ asset('storage/' . $details['cover'])}}" alt="Cover piatto" class="img-fluid">
+                                @else
+                                    <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="Cover piatto" class="img-fluid">
+                                @endif
                             </div>
                             <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
                                 <p>{{ $details['name'] }}</p>

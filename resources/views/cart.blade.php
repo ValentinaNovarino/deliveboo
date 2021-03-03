@@ -78,7 +78,14 @@
                     <tr>
                         <td data-th="Product" >
                             <div class="row cart-title-container">
-                                <div class="col-sm-3 hidden-xs"><img src="{{ asset('storage/' . $details['cover']) }}" width="100" height="100" class="img-responsive"/></div>
+                                <div class="col-sm-3 hidden-xs">
+                                    {{-- <img src="{{ asset('storage/' . $details['cover']) }}" width="100" height="100" class="img-responsive"/> --}}
+                                    @if ((file_exists('storage/' . $details['cover'])))
+                                        <img src="{{ asset('storage/' . $details['cover'])}}" alt="Cover piatto" class="img-fluid">
+                                    @else
+                                        <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="Cover piatto" class="img-fluid">
+                                    @endif
+                                </div>
                                 <div class="col-sm-9 d-flex align-items-center">
                                     <h4 class="nomargin">{{ $details['name'] }}</h4>
                                 </div>
