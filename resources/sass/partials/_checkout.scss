@@ -8,12 +8,18 @@
     width: 100%;
 
     h1 {
+        font-size: 23px;
         color: #2e3333;
         font-weight: 700;
     }
 
     .card-checkout {
         border: 2px solid $colorPrimary;
+        color: #2e3333;
+
+        span {
+            font-weight: 700;
+        }
     }
 
     .items-checkout {
@@ -31,6 +37,11 @@
             border: 2px solid $colorPrimary;
             padding: 10px;
             border-radius: 3px;
+
+            label {
+                color: #2e3333;
+                font-weight: 700;
+            }
         }
     }
 }
@@ -46,7 +57,7 @@
 }
 
 .item-container {
-    padding: 10px;
+    padding: 10px 10px 0 10px;
     width: 100%;
 
     span {
@@ -81,6 +92,7 @@
 
 .checkout-card-total {
     padding: 10px;
+    margin-top: 10px;
     background-color: #e8ebeb;
     border-radius: 3px;
 

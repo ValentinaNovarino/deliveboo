@@ -60,15 +60,15 @@
                                                 <img src="{{ asset('storage/'.$dish['cover']) }}" alt="immagine {{ $dish['name'] }}">
                                             </div>
                                             <div id="price">
-                                                <p class="price">Prezzo unitario: € {{ $dish['price'] }}</span>
-                                                <p class="price">Totale: € {{ $dish['quantity'] * $dish['price'] }}</p>
+                                                <p class="price single">Prezzo unitario: <span>€ {{ $dish['price'] }}</span></p>
+                                                <p class="price">Totale:<span> € {{ $dish['quantity'] * $dish['price'] }}</span></p>
                                             </div>
                                         </div>
                                     </div>
                                     @php $finalTotal += $dish['quantity'] * $dish['price']; @endphp
                                 @endforeach
                                 <div class="checkout-card-total">
-                                    <h3>Totale ordine: € {{$finalTotal}}</h3>
+                                    <h3>Totale ordine: <span>€ {{$finalTotal}}</span></h3>
                                 </div>
                             </div>
                             <a href="{{ route('cart') }}">
