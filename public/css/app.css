@@ -16728,6 +16728,7 @@ main {
   width: 450px;
   background-color: #fff;
   border: 3px solid #00ccbc;
+  box-shadow: 5px 5px 10px #00ccbc, -5px -5px 10px #00ccbc, 5px -5px 10px #00ccbc, -5px 5px 10px #00ccbc;
 }
 
 .dish-card-details i {
