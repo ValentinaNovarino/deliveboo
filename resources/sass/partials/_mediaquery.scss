@@ -441,6 +441,17 @@
             font-size: 22px;
         }
     }
+
+    .item-container {
+        text-align: center;
+
+        #info-dish {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }
 
 @media screen and (max-width: 420px) {

@@ -13774,6 +13774,17 @@ li.list-group-item.restaurant-info {
   .cerca-tipo span {
     font-size: 22px;
   }
+
+  .item-container {
+    text-align: center;
+  }
+
+  .item-container #info-dish {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -16323,12 +16334,10 @@ div.select-under-600 {
 
 .item-container .image-container {
   float: left;
-  max-width: 80px;
-  max-height: 80px;
-}
-
-.item-container .image-container img {
-  width: 100%;
+  width: 20%;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .item-container #price {
@@ -16338,7 +16347,7 @@ div.select-under-600 {
   justify-content: center;
   padding-left: 10px;
   height: 80px;
-  width: calc(100% - 100px);
+  width: 80%;
 }
 
 .item-container #price p.price {
