@@ -490,6 +490,11 @@
         }
     }
 
+    .all-dishes > .dish-card-details{
+        width: 400px;
+        height: 600px;
+    }
+
 }
 
 @media screen and (max-width: 420px) {
@@ -588,6 +593,11 @@
         }
     }
 
+    .all-dishes > .dish-card-details{
+        width: 300px;
+        height: 600px;
+    }
+
 
 }
 
@@ -664,5 +674,14 @@
         h1 {
             display: none;
         }
+    }
+
+    .all-dishes > .dish-card-details{
+        width: 280px;
+        height: 600px;
+    }
+
+    .all-dishes > .dish-card-link > #dish-card {
+        width: 250px;
     }
 }

@@ -46,7 +46,7 @@
                         @endguest
                         <li>
                             <a class="nav-link" onclick="showMenu('faq-drop-menu')" href="#">
-                                <i class="fas fa-bars"></i> Menu
+                                <i class="fas fa-bars"></i>
                             </a>
                         </li>
                     </ul>
