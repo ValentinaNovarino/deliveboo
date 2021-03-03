@@ -223,9 +223,9 @@
 
 @media screen and (max-width: 920px) {
 
-    // a.nav-link {
-    //     display: none;
-    // }
+    .sidebar-nav .link a.nav-link {
+        display: none;
+    }
 
     li.only-icon {
         display: block;

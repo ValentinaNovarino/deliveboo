@@ -71,10 +71,34 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @php $discount = session('discount'); @endphp
+                                    @php $deliveryPrice = session('delivery_price'); @endphp
+                                    {{-- @php $totalFinal = $finalTotal @endphp --}}
+
                                     @php $finalTotal += $dish['quantity'] * $dish['price']; @endphp
                                 @endforeach
+                                @php $finalTotalToPay = $finalTotal + $deliveryPrice - $discount; @endphp
+
+                                {{-- {{dd($finalTotalToPay)}} --}}
                                 <div class="checkout-card-total">
                                     <h3>Totale ordine: <span>€ {{$finalTotal}}</span></h3>
+                                </div>
+                                @if ($deliveryPrice > 0)
+                                    <div class="checkout-card-total">
+                                        <h3>Spese di consegna: <span>€ {{$deliveryPrice}}</span></h3>
+                                    </div>
+                                @else
+                                    <div class="checkout-card-total">
+                                        <h3>Consegna Gratuita</span></h3>
+                                    </div>
+                                @endif
+                                @if ($discount > 0)
+                                    <div class="checkout-card-total">
+                                        <h3>Sconto: <span>€ {{$discount}}</span></h3>
+                                    </div>
+                                @endif
+                                <div class="checkout-card-total" style="background-color: #5de2a3;">
+                                    <h3>Totale da pagare: <span>€ {{$finalTotalToPay}}</span></h3>
                                 </div>
                             </div>
                             <a href="{{ route('cart') }}">
