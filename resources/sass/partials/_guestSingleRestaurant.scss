@@ -307,10 +307,13 @@ main {
     margin: 10px;
     background-color: #fff;
     border-radius: 3px;
-    box-shadow:  5px  5px 10px #dedede,
+
+    &:hover{
+        box-shadow:  5px  5px 10px #dedede,
                 -5px -5px 10px #dedede,
                 5px -5px 10px #dedede,
                 -5px  5px 10px #dedede;
+    }
 
     .left-card {
         float: left;
