@@ -13815,6 +13815,11 @@ li.list-group-item.restaurant-info {
     justify-content: center;
     align-items: center;
   }
+
+  .all-dishes > .dish-card-details {
+    width: 400px;
+    height: 600px;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -13903,6 +13908,11 @@ li.list-group-item.restaurant-info {
   .content-success-payment h1 {
     display: none;
   }
+
+  .all-dishes > .dish-card-details {
+    width: 300px;
+    height: 600px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -13976,6 +13986,15 @@ li.list-group-item.restaurant-info {
 
   .content-success-payment h1 {
     display: none;
+  }
+
+  .all-dishes > .dish-card-details {
+    width: 280px;
+    height: 600px;
+  }
+
+  .all-dishes > .dish-card-link > #dish-card {
+    width: 250px;
   }
 }
 
