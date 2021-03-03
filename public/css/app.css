@@ -14093,6 +14093,10 @@ td {
   padding-right: 5px;
 }
 
+.back-dish-title {
+  text-align: center;
+}
+
 img {
   vertical-align: text-bottom;
 }
@@ -14292,6 +14296,23 @@ p.p-order-row {
 .border-form {
   border: 10px solid #00ccbc;
   border-radius: 5px;
+}
+
+.border-form h1 {
+  padding-bottom: 25px;
+  font-weight: bold;
+  color: #440063;
+}
+
+.border-form label {
+  font-weight: bold;
+  color: #440063;
+  font-size: 15px;
+}
+
+.border-form input,
+.border-form textarea {
+  text-transform: capitalize;
 }
 
 .form-control-deliveroo {

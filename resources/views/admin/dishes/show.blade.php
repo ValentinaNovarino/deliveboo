@@ -17,7 +17,7 @@
 
                     <li class="recipe-details-item servings"><i class="ion ion-ios-person-outline"></i><span class="value">Visibile:</span><span class="title">{{ $dish->visible == 1 ? 'Si' : 'No' }}</span></li>
                   </ul>
-                  <p class="value">Descrizione:</p><span class="title">{{ $dish->description }}</span>
+                  <p class="value">Descrizione:</p><span class="title capitalize">{{ $dish->description }}</span>
                 </header>
                 <footer class="content__footer"><a href="{{ route('admin.dishes.index') }}">Tutti i piatti</a></footer>
               </div>

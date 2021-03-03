@@ -13,7 +13,7 @@
                     </ul>
                 </div>
             @endif
-            <h1>crea un nuovo piatto</h1>
+            <h1>Crea un nuovo piatto</h1>
             <form name="myDishRegForm" method="POST" action="{{ route('admin.dishes.store') }}" enctype="multipart/form-data" onsubmit="return validateDishRegForm()">
                 @csrf
                 <div class="form-group">

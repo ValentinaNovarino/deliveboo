@@ -13,7 +13,7 @@
                     </ul>
                 </div>
             @endif --}}
-            <h1>crea un nuovo piatto</h1>
+            <h1>Modifica il tuo piatto</h1>
             <form name="myDishModifyForm" method="POST" action="{{ route('admin.dishes.update', ['dish' => $dish->slug]) }}" enctype="multipart/form-data" onsubmit="return validateDishModifyForm()">
                 @csrf
                 @method('PUT')

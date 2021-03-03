@@ -1,6 +1,22 @@
 .border-form{
     border: 10px solid $colorPrimary;
     border-radius: 5px;
+
+    h1{
+        padding-bottom:25px;
+        font-weight: bold;
+        color: #440063;
+    }
+
+    label{
+        font-weight: bold;
+        color: #440063;
+        font-size: 15px;
+    }
+
+    input,textarea{
+        text-transform: capitalize;
+    }
 }
 
 .form-control-deliveroo{
