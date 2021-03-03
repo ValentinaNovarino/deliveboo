@@ -16729,6 +16729,9 @@ main {
   margin: 10px;
   background-color: #fff;
   border-radius: 3px;
+}
+
+#dish-card:hover {
   box-shadow: 5px 5px 10px #dedede, -5px -5px 10px #dedede, 5px -5px 10px #dedede, -5px 5px 10px #dedede;
 }
 
