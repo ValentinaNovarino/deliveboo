@@ -38,6 +38,9 @@
                             <a class="navbar-brand" href="{{ url('/') }}">
                                 <img src="{{'../img/logo.png'}}" alt="logo deliveroo">
                             </a>
+                            <div class="hidden-show-cart-restaurant">
+                                @include('_header_cart')
+                            </div>
                         </div>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -50,7 +53,9 @@
                                 </li>
                             </ul>
                         </div>
-                        @include('_header_cart')
+                        <div class="show-hidden-cart-restaurant">
+                            @include('_header_cart')
+                        </div>
                     </nav>
                 </div>
             </div>
