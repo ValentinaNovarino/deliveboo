@@ -13530,6 +13530,10 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     padding-bottom: 20px;
   }
 
+  .cibi-preferiti .td-dish-9 img {
+    height: 90% !important;
+  }
+
   .btn-deliveroo {
     font-size: 12px;
     padding: 7px 5px;
@@ -13582,13 +13586,13 @@ li.list-group-item.restaurant-info:nth-child(2n) {
   .navbar-restaurants {
     max-height: 200px !important;
   }
+
+  .td-dish-9 img {
+    height: 90% !important;
+  }
 }
 
 @media screen and (max-width: 920px) {
-  .sidebar-nav .link a.nav-link {
-    display: none;
-  }
-
   li.only-icon {
     display: block;
   }
@@ -13653,6 +13657,10 @@ li.list-group-item.restaurant-info:nth-child(2n) {
   .cover-restaurant button {
     display: none;
   }
+
+  .td-dish-9 img {
+    height: 90% !important;
+  }
 }
 
 @media screen and (max-width: 862px) {
@@ -13700,6 +13708,18 @@ li.list-group-item.restaurant-info:nth-child(2n) {
   .video-spot {
     display: none;
   }
+
+  .add-dish .logo-admin-dish {
+    width: 300px !important;
+  }
+
+  .add-dish h1 {
+    font-size: 30px;
+  }
+
+  .td-dish-9 img {
+    height: 80% !important;
+  }
 }
 
 @media screen and (max-width: 772px) {
@@ -13728,6 +13748,18 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     margin-right: 5px;
     width: 250px;
   }
+
+  .add-dish .logo-admin-dish {
+    width: 280px !important;
+  }
+
+  .add-dish h1 {
+    font-size: 25px;
+  }
+
+  .td-dish-9 img {
+    height: 80% !important;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -13743,6 +13775,18 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     display: flex;
     align-items: center;
     width: 220px !important;
+  }
+
+  .add-dish .logo-admin-dish {
+    width: 250px !important;
+  }
+
+  .add-dish h1 {
+    font-size: 22px;
+  }
+
+  .td-dish-9 img {
+    height: 50% !important;
   }
 }
 
@@ -13846,6 +13890,18 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     width: 400px;
     height: 600px;
   }
+
+  .add-dish .logo-admin-dish {
+    width: 230px !important;
+  }
+
+  .add-dish h1 {
+    font-size: 20px;
+  }
+
+  .td-dish-9 img {
+    height: 50% !important;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -13940,13 +13996,20 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     height: 600px;
   }
 
-  .header-single-rest > .single-restaurant-logo > a > img {
-    width: 80px;
-    height: auto;
+  .add-dish .logo-admin-dish {
+    width: 200px !important;
   }
 
-  .header-single-rest > #faq-drop-menu {
-    width: 280px;
+  .add-dish h1 {
+    font-size: 20px;
+  }
+
+  .add-dish button {
+    font-size: 14px;
+  }
+
+  .td-dish-9 img {
+    height: 50% !important;
   }
 }
 
@@ -14031,6 +14094,22 @@ li.list-group-item.restaurant-info:nth-child(2n) {
 
   .all-dishes > .dish-card-link > #dish-card {
     width: 250px;
+  }
+
+  .add-dish .logo-admin-dish {
+    width: 180px !important;
+  }
+
+  .add-dish h1 {
+    font-size: 18px;
+  }
+
+  .add-dish button {
+    font-size: 12px;
+  }
+
+  .td-dish-9 img {
+    height: 50% !important;
   }
 }
 
