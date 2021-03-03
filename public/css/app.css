@@ -16337,14 +16337,14 @@ svg {
   overflow: hidden;
 }
 
+.restaurant-img:hover img {
+  border-radius: 50%;
+  transform: rotate(360deg);
+}
+
 .restaurant-img img {
   width: 100%;
   transition: all 0.5s ease;
-}
-
-.restaurant-img img:hover {
-  border-radius: 50%;
-  transform: rotate(360deg);
 }
 
 .side {
