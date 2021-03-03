@@ -172,7 +172,7 @@ return [
     ],
     [
         'name' => 'Temaki',
-        'price' => '8,70',
+        'price' => '8',
         'description' => 'pasta con pesto di basilico e aglio',
         'cover' => 'dishesCover/temaki.jpeg'
 
@@ -228,7 +228,7 @@ return [
     ],
     [
         'name' => 'Involtini primavera',
-        'price' => '3,70',
+        'price' => '3',
         'description' => 'involtini di verdure cinesi',
         'cover' => 'dishesCover/involtini-c.jpg'
 
