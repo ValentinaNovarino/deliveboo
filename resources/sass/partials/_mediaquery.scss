@@ -199,13 +199,31 @@
     .sidebar-nav.link a.nav-link {
         font-size: 14px;
     }
+    // carrello guest restaurants
+    .hidden-show-cart-restaurant {
+        display: inline-block!important;
+    }
+
+    .show-hidden-cart-restaurant {
+        display: none;
+    }
+
+    .logo-guest-restaurant {
+        display: flex;
+        align-items: center;
+        width: 245px!important;
+    }
+
+    .navbar-restaurants{
+        max-height: 200px!important;
+    }
 }
 
 @media screen and (max-width: 920px) {
 
-    a.nav-link {
-        display: none;
-    }
+    // a.nav-link {
+    //     display: none;
+    // }
 
     li.only-icon {
         display: block;
@@ -350,6 +368,12 @@
 
     .xIcon {
       display: none;
+    }
+
+    .logo-guest-restaurant {
+        display: flex;
+        align-items: center;
+        width: 220px!important;
     }
 }
 

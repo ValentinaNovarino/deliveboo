@@ -307,6 +307,10 @@ main {
     margin: 10px;
     background-color: #fff;
     border-radius: 3px;
+    box-shadow:  5px  5px 10px #dedede,
+                -5px -5px 10px #dedede,
+                5px -5px 10px #dedede,
+                -5px  5px 10px #dedede;
 
     .left-card {
         float: left;
@@ -350,6 +354,10 @@ main {
     width: 450px;
     background-color: #fff;
     border: 3px solid $colorPrimary;
+    box-shadow:  5px  5px 10px $colorPrimary,
+                -5px -5px 10px $colorPrimary,
+                5px -5px 10px $colorPrimary,
+                -5px  5px 10px $colorPrimary;
 
     i {
         cursor: pointer;
