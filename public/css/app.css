@@ -14111,6 +14111,14 @@ li.list-group-item.restaurant-info:nth-child(2n) {
   .td-dish-9 img {
     height: 50% !important;
   }
+
+  .table_price th {
+    font-size: 10px !important;
+  }
+
+  .button9 {
+    padding: 5px 29px;
+  }
 }
 
 .add-dish {
