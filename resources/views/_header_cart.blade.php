@@ -26,7 +26,7 @@
             </button>
             <div id="pop" class="dropdown-menu p-4">
                 <div class="row total-header-section">
-                    <div class="col-xs-6 col-lg-6 col-sm-6 col-6">
+                    <div class="col-xs-7 col-lg-7 col-sm-7 col-7">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                     </div>
 
@@ -36,7 +36,7 @@
                         {{-- {{dd($details)}} --}}
                     @endforeach
 
-                    <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+                    <div class="col-lg-5 col-sm-5 col-5 total-section text-right">
                         <p>Totale: <span class="text-info">€ {{ $total }}</span></p>
                     </div>
                 </div>
@@ -44,6 +44,7 @@
                 @if(session('cart'))
                     @foreach((array) session('cart') as $id => $details)
                         <div class="row cart-detail">
+                            <button class="btn btn-danger btn-sm remove-from-cart p-2" data-id="{{ $id }}"><i class="fas fa-trash-alt"></i></button>
                             <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
                                 @if ((file_exists('storage/' . $details['cover'])))
                                     <img src="{{ asset('storage/' . $details['cover'])}}" alt="Cover piatto" class="img-fluid">
@@ -84,4 +85,33 @@
         mes.style.transform="scale(0)";
         mes.style.transitionTimingFunction="cubic-bezier(0,0,0,-1.47)";
     }
+
+    $(".remove-from-cart").click(function (e) {
+        e.preventDefault();
+
+        var ele = $(this);
+
+        var parent_row = ele.parents("tr");
+
+        var cart_total = $(".cart-total");
+        
+
+        $.ajax({
+            url: '{{ url('remove-from-cart') }}',
+            method: "DELETE",
+            data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+            dataType: "json",
+            success: function (response) {
+                location.reload();
+                $('.hideItem').css({'display':'none'});
+
+                parent_row.remove();
+                $("span#status").html('<div class="alert alert-danger">'+response.msg+'</div>');
+                $("#header-bar").html(response.data);
+                cart_total.text(response.total);
+            }
+        });
+
+
+    });
 </script>
