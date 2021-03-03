@@ -3,7 +3,7 @@
 @section('admin.content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col 12">
+        <div class="col-xs-12 col-md-12">
             <div class="add-dish d-flex flex-column justify-content-center align-items-center">
             <a href="{{ url('/') }}">
                 <img class="logo-admin-dish" src="{{asset('../img/logo.png')}}" alt="">

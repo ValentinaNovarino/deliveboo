@@ -3,7 +3,7 @@
 @section('admin.content')
 <div class="container">
     <div class="row justify-content-center">
-            <div class="ft-recipe col-xs-12">
+            <div class="ft-recipe col-xs-12 col-md-6">
               <div class="ft-recipe__content">
                 <header class="content__header">
                   <div class="row-wrapper">

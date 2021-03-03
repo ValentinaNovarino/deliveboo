@@ -13060,38 +13060,61 @@ li.only-icon a.only-icon {
   margin-bottom: 40px;
 }
 
+.header-card-restaurants .logo-admin-dish {
+  vertical-align: middle;
+  border-style: none;
+  width: 350px;
+  padding-bottom: 28px;
+}
+
 .header-card-restaurants h1 {
   color: #440063;
+  font-weight: bold;
+  margin-bottom: 33px;
 }
 
-.card {
-  border: 10px solid #00ccbc;
-  flex-direction: row;
+.card-d {
+  flex-direction: column;
+  color: #440063;
+  border: 3px solid #00ccbc;
+  text-align: center;
 }
 
-.card .card-body {
-  padding: 20px 10px;
+.card-d .card-b {
+  background-color: #00ccbc94;
 }
 
-.card .card-body a {
+.card-d .card-b a {
   padding: 5px;
   border-radius: 5px;
+  text-decoration: none;
+  color: white;
 }
 
-.card a.card-link.menu.secondary-btn-deliveroo {
+.card-d .card-b img {
+  width: 100%;
+}
+
+.card-d .button_no {
   display: none;
 }
 
 h5.card-title {
   font-size: 22px;
+  padding-top: 5px;
 }
 
 li.list-group-item.restaurant-info {
   font-size: 18px;
 }
 
-.card-body a {
+li.list-group-item.restaurant-info:nth-child(2n) {
+  background: #0089ff36;
+}
+
+.card-b a {
   font-size: 16px;
+  display: block;
 }
 
 .jumbo-first {
@@ -14122,9 +14145,9 @@ img {
 }
 
 .ft-recipe {
-  width: 400px;
-  height: 600px;
+  border: 3px solid #00ccbc;
   background-color: #c7e4fc;
+  height: 600px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -14138,6 +14161,10 @@ img {
   position: absolute;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.ft-recipe__content {
+  background-color: #c7e4fc;
 }
 
 .ft-recipe .ft-recipe__thumb {
@@ -14191,7 +14218,6 @@ img {
 
 .ft-recipe .ft-recipe__content {
   flex: 1;
-  border: 3px solid #00ccbc;
 }
 
 .ft-recipe .ft-recipe__content .content__header .row-wrapper {
