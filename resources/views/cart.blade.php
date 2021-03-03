@@ -119,7 +119,7 @@
                 @php $discount = $total * 10 / 100; number_format($discount, 2); @endphp
                 @if ($total >= 30)
                     <tr class="visible-xs">
-                        <td class="text-center"> <img src="{{asset("img/icon-deliveryman.png")}}" width="30px" height="30px" alt="icon"> <strong>Spedizione gratuita</strong></td>
+                        <td class="text-center"> <img src="{{asset("img/icon-deliveryman.png")}}" width="30px" height="30px" alt="icon"> <strong>Consegna gratuita</strong></td>
                         {{session((['delivery_price' => 0]))}}
                     </tr>
                     <tr class="visible-xs">
@@ -128,7 +128,7 @@
                     </tr>
                 @elseif (session('cart'))
                     <tr class="visible-xs">
-                        <td class="text-center"> <img src="{{asset("img/icon-deliveryman.png")}}" width="30px" height="30px" alt="icon"> <strong>Spese di spedizione € <span class="cart-total hideItem">5</span></strong></td>
+                        <td class="text-center"> <img src="{{asset("img/icon-deliveryman.png")}}" width="30px" height="30px" alt="icon"> <strong>Spese di consegna € <span class="cart-total hideItem">5</span></strong></td>
                         {{session((['delivery_price' => 5]))}}
                         {{session((['discount' => 0]))}}
                     </tr>
