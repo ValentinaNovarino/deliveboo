@@ -295,10 +295,10 @@
                         'Piatto salvato',
                         'Il tuo piatto è nel carrello :)',
                         'success'
-                      )
-                    }
-                  })
-                });
+                     )
+                }
+            })
+        });
 
     </script>
 

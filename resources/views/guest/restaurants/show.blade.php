@@ -246,11 +246,11 @@
                     }, 5000);
 
                 } else if (response.error){
-                    $("p#status").html('<div class="alert alert-danger ">'+response.error+'</div>').show();
-                    $("#header-bar").html(response.data);
-                    setTimeout( function() {
-                        $("p#status").html('<div class="alert alert-danger ">'+response.error+'</div>').hide();
-                    }, 6000);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...Non puoi ordinare da più ristoranti!',
+                        text: 'Svuota il carrelo e contina l\'ordine'
+                    })
                 }
             }
         });
