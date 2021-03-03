@@ -16580,9 +16580,15 @@ main {
   height: 35px;
 }
 
+#faq-drop-menu .nav-item > .nav-link {
+  text-decoration: none;
+  color: #00ccbc;
+}
+
 #faq-drop-menu i {
   font-size: 20px;
   cursor: pointer;
+  color: #00ccbc;
 }
 
 #faq-drop-menu .btn-deliveroo {

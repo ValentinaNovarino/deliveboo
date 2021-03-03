@@ -80,9 +80,15 @@ main {
         }
     }
 
+    .nav-item > .nav-link{
+        text-decoration: none;
+        color: $colorPrimary;
+    }
+
     i {
         font-size: 20px;
         cursor: pointer;
+        color: $colorPrimary;
     }
 
     .btn-deliveroo {
