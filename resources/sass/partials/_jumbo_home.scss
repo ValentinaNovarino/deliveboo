@@ -1,41 +1,36 @@
-.jumbo-first{
+.jumbo-first {
     padding-top:$spacingTopJumbo;
     padding-bottom:$spacingBottomJumbo;
 
-    h1{
+    h1 {
         font-weight: bold;
         font-size: $fontTitleJumbo;
         padding: 20px 0;
-        // font-family: $fontprimary;
     }
 }
 
-.img-small{
-width: 100%;
-height: 170px;
-
+.img-small {
+    width: 100%;
+    height: 170px;
 }
 
-.img-large{
-width: 100%;
-height: 170px;
-
+.img-large {
+    width: 100%;
+    height: 170px;
 }
 
-
-.menu-image-large, .menu-image-small{
-
+.menu-image-large, .menu-image-small {
     position: relative;
     color: white;
     padding-bottom:15px;
 
-    p{
+    p {
         font-size:16px;
         padding-top:5px;
         color:black;
     }
 
-    a{
+    a {
         color:$linkColor;
         font-size: 16px;
         text-decoration: none;
@@ -43,18 +38,17 @@ height: 170px;
     }
 
     .centered {
-         position: absolute;
-         top:35%;
-         left: 50%;
-         transform: translate(-50%, -35%);
+        position: absolute;
+        top:35%;
+        left: 50%;
+        transform: translate(-50%, -35%);
 
-         h2{
-             font-weight: 600;
-             font-size: 27px;
-             text-align: center;
-         }
-     }
-
+        h2 {
+            font-weight: 600;
+            font-size: 27px;
+            text-align: center;
+        }
+    }
 }
 
 
@@ -63,66 +57,64 @@ height: 170px;
     padding-bottom:$spacingBottomJumbo;
     background-color: #ffeae4;
 
-    img{
+    img {
         width: 353px;
         margin-right:5px;
     }
 
 
-    h1{
+    h1 {
         font-weight: bold;
         font-size: $fontTitleJumbo;
         padding: 22px 0px;
     }
 
-    h2{
+    h2 {
         font-size: 22px;
         font-weight: bold;
         padding-top:20px;
-
     }
 
-    p{
+    p {
         font-size: 16px;
         padding-bottom:20px;
     }
 }
 
-.cerca-tipo{
-
-    h1{
+.cerca-tipo {
+    h1 {
         font-weight: bold;
         font-size: $fontTitleJumbo;
         padding-bottom: 30px;
         padding-top: 40px;
     }
 
-    span{
+    span {
         font-size: 30px;
         font-weight: bold;
         padding-right:30px;
     }
 }
 
-.novita{
-        margin-bottom: 60px;
-    h1{
+.novita {
+    margin-bottom: 60px;
+
+    h1 {
         font-size: $fontTitleJumbo;
         padding-bottom: 30px;
         padding-top: 40px;
         font-weight: bold;
     }
-        h2{
-            font-weight: bold;
-            padding-bottom: 10px;
-            padding-top: 25px;
 
-        }
+    h2 {
+        font-weight: bold;
+        padding-bottom: 10px;
+        padding-top: 25px;
+    }
 
-        p{
-            font-size:16px;
-
-        }
+    p {
+        font-size:16px;
+    }
 }
 .business, .deliveroo_icon {
     img{
@@ -132,8 +124,8 @@ height: 170px;
     }
 }
 
-.aziende{
-    button{
+.aziende {
+    button {
         color:$colorCurrent;
         padding: 12px 24px;
         margin-top: 15px;
@@ -144,19 +136,17 @@ height: 170px;
         font-size: 15px;
 
         &:hover{
-                background-color:#00bbad;
-            }
-
+            background-color:#00bbad;
+        }
     }
 }
 
-.app_google{
+.app_google {
         padding-left: 20px;
         padding-top: 20px;
 
-    img{
+    img {
         width: 46%;
-
     }
 }
 
@@ -168,6 +158,7 @@ height: 170px;
     text-align: center;
     line-height: 40px;
 }
+
 .business:after {
     content: "";
     width: 20px;
@@ -199,30 +190,31 @@ height: 170px;
     background: white;
 }
 
-.banner_verticale{
+.banner_verticale {
     color:$colorCurrent;
     height: 600px;
     width: 350px;
     margin-bottom:50px;
     margin-right: 5px;
 
-
-
-    img{
+    img {
         width: 100%;
         clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
 
     }
-    h2{
+
+    h2 {
         font-size:40px;
         font-weight: bold;
         padding:5px 25px;
     }
-    p{
+
+    p {
         font-size:15px;
         padding:0 25px;
     }
-    button{
+
+    button {
         color:$colorCurrent;
         padding: 12px 24px;
         margin-top: 15px;
@@ -233,31 +225,31 @@ height: 170px;
         font-size: 15px;
         margin: 20px 20px;
 
-
         &:hover{
-                background-color:#00bbad;
-            }
-}
+            background-color:#00bbad;
+        }
+    }
 }
 
-.red{
+.red {
     background-color: #ff483b;
-        // padding-bottom:70px;
+    // padding-bottom:70px;
 }
-.orange{
+
+.orange {
     background-color: #ff8100;
-        // padding-bottom:25px;
+    // padding-bottom:25px;
 }
-.violet{
+
+.violet {
     background-color: #bac3c3;
 }
 
-.lavora_con_noi{
-    h1{
+.lavora_con_noi {
+    h1 {
         font-size: $fontTitleJumbo;
         padding-bottom: 30px;
         padding-top: 40px;
         font-weight: bold;
     }
-
 }
