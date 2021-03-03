@@ -6,7 +6,7 @@
 }
 
 .navbar-restaurants{
-    height: 70px;
+    max-height: 86px;
     margin: auto;
 }
 
@@ -20,7 +20,6 @@
     &:hover{
         background-color: $colorPrimary;
         color:white;
-        padding:5px;
     }
 }
 
@@ -37,7 +36,7 @@
         min-width: 200px;
         background-color: #00ccbc33;
         position: sticky;
-        top: 70px;
+        top: 86px;
 
         h4{
             padding: 22px 0;
@@ -213,4 +212,9 @@ h4.divisor {
 
 div.select-under-600 {
     display: none;
+}
+
+div.hidden-show-cart-restaurant {
+    display: none;
+    max-width: 100px;
 }
