@@ -57,11 +57,12 @@
                                         <span>{{ $dish['name'] }}</span>
                                         <div id="info-dish">
                                             <div class="image-container">
-                                                <img src="{{ asset('storage/'.$dish['cover']) }}" alt="immagine {{ $dish['name'] }}">
+                                                <img class="img-fluid" src="{{ asset('storage/'.$dish['cover']) }}" alt="immagine {{ $dish['name'] }}">
                                             </div>
                                             <div id="price">
                                                 <p class="price single">Prezzo unitario: <span>€ {{ $dish['price'] }}</span></p>
                                                 <p class="price">Totale:<span> € {{ $dish['quantity'] * $dish['price'] }}</span></p>
+
                                             </div>
                                         </div>
                                     </div>
