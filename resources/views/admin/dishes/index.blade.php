@@ -6,7 +6,7 @@
         <div class="col-xs-12 col-md-12">
             <div class="add-dish d-flex flex-column justify-content-center align-items-center">
             <a href="{{ url('/') }}">
-                <img class="logo-admin-dish" src="{{asset('../img/logo.png')}}" alt="">
+                <img class="logo-admin-dish" src="{{asset('../img/logo.png')}}" alt="logo">
             </a>
                 <h1>Componi il menù del tuo ristorante</h1>
                 <a href="{{ route('admin.dishes.create') }}">

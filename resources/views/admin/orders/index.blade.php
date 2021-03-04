@@ -10,9 +10,12 @@
             @if (count($orders) == 0)
                 <h2 class="back-dish-title">Non ci sono ordini</h2>
             @else
-                <h1>Ordini del tuo ristorante</h1>
+                <div class="header-card-restaurants d-flex flex-column justify-content-center align-items-center">
+                    <img class="logo-admin-dish" src="{{asset('../img/logo.png')}}" alt="logo">
+                    <h1 class="title-order">Ordini del tuo ristorante</h1>
+                </div>
                 <div class="container">
-                    <div class="row row-border-bottom">
+                    <div class="row row-border-bottom color-p">
                         <div class="col-3">
                             <p class="order-p d-inline font-weight-bold">
                                 ID
@@ -54,8 +57,8 @@
                                 </p>
                             </div>
                             <div class="col-3">
-                                <button onclick="show('{{ $order->id }}')" class="btn show-btn-deliveroo">Mostra Dettagli</button>
-                                <button onclick="show('{{ $order->id }}')" class="btn show show-btn-deliveroo"><i class="fas fa-eye"></i></button>
+                                <button onclick="show('{{ $order->id }}')" class="btn show-btn-deliveroo button9">Mostra Dettagli</button>
+                                <button onclick="show('{{ $order->id }}')" class="btn show show-btn-deliveroo color-blue"><i class="fas fa-eye"></i></button>
                             </div>
                         </div>
                         <div style="display:none" id="{{ $order->id }}" class="hide-order-div">

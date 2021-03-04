@@ -14475,9 +14475,23 @@ img {
   text-decoration: none;
 }
 
+.logo-admin-dish {
+  vertical-align: middle;
+  border-style: none;
+  width: 350px;
+  padding-bottom: 28px;
+}
+
+.title-order {
+  color: #440063;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
 .row-border-bottom {
-  border-bottom: 2px solid #dddde0;
-  border-top: 2px solid #dddde0;
+  border-bottom: 1px solid #00ccbc;
+  border-top: 1px solid #00ccbc;
   height: 80px;
   display: flex;
   align-items: center;
@@ -14487,8 +14501,16 @@ img {
   border-top: none;
 }
 
+.color-p {
+  background-color: #0089ff36;
+}
+
+.color-blue {
+  background-color: blue;
+}
+
 p.order-p {
-  font-size: 23px;
+  font-size: 20px;
   color: #440063;
 }
 
@@ -14499,6 +14521,8 @@ p.p-order-row {
 
 .hide-order-div {
   padding: 20px 0;
+  text-align: center;
+  border: 1px solid #0089ff36;
 }
 
 .hide-order-div p.hide-order-p {
