@@ -23,9 +23,15 @@
             <div class="col-md-6">
                 <div class="card-container">
                     <div class="card-d card-resta w-100">
-                        <div class="card-b">
-                             <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="{{ $restaurant->name }}"/>
-                        </div>
+                        @if ($restaurant->cover)
+                            <div class="card-b">
+                                <img src="{{ asset('storage/' . $restaurant->cover) }}" alt="{{ $restaurant->name }}"/>
+                            </div>
+                        @else
+                            <div class="card-b">
+                                <img src="{{ asset('storage/restaurantsCover/non-disponibile.png') }}" alt="{{ $restaurant->name }}"/>
+                            </div>
+                        @endif
                         <ul class="list-group list-group-flush">
                             <h5 class="card-title restaurant-info">Nome: {{$restaurant->name}}</h5>
                             <li class="list-group-item restaurant-info">Citta: {{$restaurant->city}}</li>

@@ -13077,6 +13077,7 @@ li.only-icon a.only-icon {
   color: #440063;
   border: 3px solid #00ccbc;
   text-align: center;
+  max-width: 530px;
 }
 
 .card-d .card-b {
