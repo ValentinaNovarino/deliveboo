@@ -12711,6 +12711,12 @@ body p {
   align-items: center;
 }
 
+#marquee-cart {
+  font-size: 22px;
+  padding: 5px 20px;
+  width: 80%;
+}
+
 .wrap {
   background: #00ccbc;
   background-image: linear-gradient(177deg, #00ccbc 49%, #d0eb99 49%);
@@ -13816,6 +13822,12 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     max-width: 90%;
     min-width: 75px !important;
   }
+
+  #marquee-cart {
+    font-size: 14px;
+    padding: 0;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -14048,6 +14060,13 @@ li.list-group-item.restaurant-info:nth-child(2n) {
 
   .td-dish-9 img {
     height: 50% !important;
+  }
+
+  #marquee-cart {
+    font-size: 12px;
+    padding: 0;
+    width: 100%;
+    behavior: scroll;
   }
 }
 

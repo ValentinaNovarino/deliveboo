@@ -471,6 +471,12 @@
         max-width: 90%;
         min-width: 75px!important;
     }
+
+    #marquee-cart{
+        font-size: 14px;
+        padding: 0;
+        width: 100%
+    }
 }
 
 
@@ -718,6 +724,13 @@
             height: 50%!important;
 
            }
+    }
+
+    #marquee-cart{
+        font-size: 12px;
+        padding: 0;
+        width: 100%;
+        behavior: scroll;
     }
 }
 

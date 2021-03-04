@@ -55,6 +55,9 @@
         <span id="status"></span>
 
         <h1 class="text-center mb-4"> Il tuo carrello</h1>
+        <div class="d-flex justify-content-center align-item-center mb-3">
+            <marquee id="marquee-cart" class="p-2" style="background-color: #00ccbc; color: #fff;" loop="-1" direction="left"> Con un ordine superiore ai 30€, la consegna è gratuita ! </marquee>
+        </div>
 
         <table id="cart" class="table table-hover table-condensed">
             <thead>
