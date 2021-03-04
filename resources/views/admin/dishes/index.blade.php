@@ -32,8 +32,15 @@
                     <tbody>
                         @foreach ($dishes as $dish)
                             <tr>
-                                {{-- <td>{{ $dish->id }}</td> --}}
-                                <td class="td-dish-9"><img src="{{ asset('storage/' . $dish->cover) }}" alt="Cover piatto" ></td>
+                                @if ((file_exists('storage/' . $dish->cover)))
+                                    <td class="td-dish-9">
+                                        <img src="{{ asset('storage/' . $dish->cover) }}" alt="Cover piatto" >
+                                    </td>
+                                @else
+                                    <td class="td-dish-9">
+                                        <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="Cover piatto">
+                                    </td>
+                                @endif
                                 <td class="capitalize">{{ $dish->name }}</td>
                                 <td>{{ $dish->price }} €</td>
                                 <td>
