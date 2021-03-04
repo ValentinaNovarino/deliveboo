@@ -9,7 +9,11 @@
                   <div class="row-wrapper">
                     <h2 class="recipe-title capitalize"> {{ $dish->name }}</h2>
                     <div class="ft-recipe__thumb"></i></span>
-                      <img src="{{ asset('storage/' . $dish->cover) }}" alt="{{ $dish->name }}"/>
+                        @if ((file_exists('storage/' . $dish->cover)))
+                            <img src="{{ asset('storage/' . $dish->cover) }}" alt="{{ $dish->name }}"/>
+                        @else
+                            <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="{{ $dish->name }}"/>
+                        @endif
                     </div>
                   </div>
                   <ul class="recipe-details">
