@@ -274,7 +274,7 @@
                     $("#header-bar").html(response.data);
                     setTimeout( function() {
                         $("p#status").html('<div class="alert alert-success ">'+response.msg+'</div>').hide();
-                    }, 5000);
+                    }, 3000);
 
                 } else if (response.error){
                     Swal.fire({
