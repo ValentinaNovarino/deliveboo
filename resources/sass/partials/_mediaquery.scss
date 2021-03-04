@@ -455,6 +455,22 @@
 
            }
     }
+
+    // checkout
+    .checkout .items-checkout {
+        padding: 16px!important;
+        width: 90%!important;
+        float: none!important;
+    }
+    .checkout .guest-data {
+        padding: 16px!important;
+        width: 90%!important;
+        float: none!important;
+    }
+    .img-fluid.checkout-fluid {
+        max-width: 90%;
+        min-width: 75px!important;
+    }
 }
 
 

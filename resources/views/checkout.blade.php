@@ -59,9 +59,9 @@
                                             <div class="image-container">
                                                 {{-- <img class="img-fluid" src="{{ asset('storage/'.$dish['cover']) }}" alt="immagine {{ $dish['name'] }}"> --}}
                                                 @if ((file_exists('storage/' . $dish['cover'])))
-                                                    <img src="{{ asset('storage/' . $dish['cover'])}}" alt="Cover piatto" class="img-fluid">
+                                                    <img src="{{ asset('storage/' . $dish['cover'])}}" alt="Cover piatto" class="img-fluid checkout-fluid">
                                                 @else
-                                                    <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="Cover piatto" class="img-fluid">
+                                                    <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="Cover piatto" class="img-fluid checkout-fluid">
                                                 @endif
                                             </div>
                                             <div id="price">

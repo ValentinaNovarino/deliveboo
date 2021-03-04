@@ -118,3 +118,8 @@ span.checkout-mobile {
     outline: none;
     border: 1px solid #00ccbc;
 }
+
+.img-fluid.checkout-fluid {
+    max-width: 90%;
+    min-width: 48px;
+}
