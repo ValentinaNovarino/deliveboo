@@ -278,9 +278,9 @@
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
-                    <div class="deliveroo_icon">
-                        <img src="{{'../img/bunny.png'}}" alt="">
-                    </div>
+                <div class="deliveroo_icon">
+                    <img src="{{'../img/bunny.png'}}" alt="">
+                </div>
             </div>
         </div>
     </div>

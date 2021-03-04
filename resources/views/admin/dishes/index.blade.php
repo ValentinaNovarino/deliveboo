@@ -57,10 +57,6 @@
                         @endforeach
                     </tbody>
                 </table>
-            @else
-                <div class="container no-dishes d-flex flex-column justify-content-center align-items-center">
-                    <h1 class="info-alert text-center">Non hai piatti registrati nel tuo ristorante</h1>
-                </div>
             @endif
         </div>
     </div>

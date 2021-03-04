@@ -13593,6 +13593,10 @@ li.list-group-item.restaurant-info:nth-child(2n) {
 }
 
 @media screen and (max-width: 920px) {
+  .sidebar-nav .link a.nav-link {
+    display: none;
+  }
+
   li.only-icon {
     display: block;
   }
@@ -13909,6 +13913,11 @@ li.list-group-item.restaurant-info:nth-child(2n) {
 
   .td-dish-9 img {
     height: 50% !important;
+  }
+
+  .business,
+  .deliveroo_icon {
+    width: 300px;
   }
 }
 
