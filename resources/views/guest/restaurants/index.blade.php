@@ -134,7 +134,7 @@
                         <div class="col-12 col-md-9 box-restaurant-container print-restaurants">
                             <div class="flex-column">
                                 <h4>Ristoranti che consegnano nella tua città</h4>
-                                <p style="background-color: #66339930;">Consegna gratuita per ordini superiori a 30 €</p>
+                                <marquee style="background-color: #66339930;" loop="-1" direction="left">Consegna gratuita per ordini superiori a 30 €</marquee>
                             </div>
                             <div class="restaurant-strip">
                                 <input type="checkbox" id="checkboxItaliano" class="d-none" @change="onChangeCategory(this.value)" v-model="checked" value="italiano"/>
