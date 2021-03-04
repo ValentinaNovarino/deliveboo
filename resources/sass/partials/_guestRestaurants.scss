@@ -5,7 +5,7 @@
     border-bottom: 1px solid $colorTitleHaeder;
 }
 
-.navbar-restaurants{
+.navbar-restaurants {
     max-height: 86px;
     margin: auto;
 }
@@ -17,7 +17,7 @@
     font-size: 18px;
 
 
-    &:hover{
+    &:hover {
         background-color: $colorPrimary;
         color:white;
     }
@@ -38,37 +38,38 @@
         position: sticky;
         top: 86px;
 
-        h4{
+        h4 {
             padding: 22px 0;
             font-weight: bold;
             color: #2e3333;
         }
     }
 }
-    .form-check-label {
-        margin-bottom: 10px;
-        font-size: 14px;
+
+.form-check-label {
+    margin-bottom: 10px;
+    font-size: 14px;
 }
-.form-check-input{
+
+.form-check-input {
     border-radius: 5px;
-        width: 18px;
-        height: 18px;
-        margin: 0 8px 0 0;
-        box-shadow: inset 0 0 0 2px #bac3c3;
-        cursor: pointer;
-        position: relative;
-
+    width: 18px;
+    height: 18px;
+    margin: 0 8px 0 0;
+    box-shadow: inset 0 0 0 2px #bac3c3;
+    cursor: pointer;
+    position: relative;
 }
 
-.restaurant-strip{
-    	@extend .flex;
+.restaurant-strip {
+	@extend .flex;
 
-    .strip{
+    .strip {
         position: relative;
         overflow: hidden;
         cursor: pointer;
 
-        img{
+        img {
             width: 183px;
             height: 92px;
             margin:10px 5px;
@@ -76,7 +77,8 @@
             background: #fff;
             border: none;
         }
-        span{
+
+        span {
             width: 100%;
             color: white;
             font-weight: bold;
@@ -92,14 +94,15 @@
     @extend .flex;
     margin-top:20px;
 
-        img{
-            width: 344px;
-            height: 172px;
-            margin:10px 8px;
-        }
+    img {
+        width: 344px;
+        height: 172px;
+        margin:10px 8px;
+    }
 }
-.print-restaurants{
-    p{
+
+.print-restaurants {
+    p {
         color: #828585;
         font-size: 16px;
     }
@@ -147,6 +150,7 @@
         margin-bottom:28px;
 
         h4{
+            padding-left: 10px !important;
             font-size: 20px;
             font-weight: bold;
             padding: 20px 0;
@@ -179,12 +183,12 @@
 
     img {
         width: 100%;
+        height: 147px;
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         -ms-transition: all 0.5s ease;
         transition: all 0.5s ease;
-
     }
 
 }
