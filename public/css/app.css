@@ -13798,6 +13798,23 @@ li.list-group-item.restaurant-info:nth-child(2n) {
   .td-dish-9 img {
     height: 50% !important;
   }
+
+  .checkout .items-checkout {
+    padding: 16px !important;
+    width: 90% !important;
+    float: none !important;
+  }
+
+  .checkout .guest-data {
+    padding: 16px !important;
+    width: 90% !important;
+    float: none !important;
+  }
+
+  .img-fluid.checkout-fluid {
+    max-width: 90%;
+    min-width: 75px !important;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -16610,6 +16627,11 @@ span.checkout-mobile {
   padding: 5px 10px;
   outline: none;
   border: 1px solid #00ccbc;
+}
+
+.img-fluid.checkout-fluid {
+  max-width: 90%;
+  min-width: 48px;
 }
 
 main {
