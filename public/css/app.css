@@ -16815,6 +16815,7 @@ main {
   float: left;
   width: 50%;
   height: 100%;
+  margin-left: 20px;
 }
 
 .info-restaurant .details p {
