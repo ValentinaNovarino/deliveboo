@@ -11,8 +11,9 @@
                 <h2 class="back-dish-title">Non ci sono ordini</h2>
             @else
                 <div class="header-card-restaurants d-flex flex-column justify-content-center align-items-center">
-                    <img class="logo-admin-dish" src="{{asset('../img/logo.png')}}" alt="logo">
-                    <h1 class="title-order">Ordini del tuo ristorante</h1>
+                    <a href="{{ url('/') }}">
+                        <img class="logo-admin-dish" src="{{asset('../img/logo.png')}}" alt="logo">
+                    </a>                    <h1 class="title-order">Ordini del tuo ristorante</h1>
                 </div>
                 <div class="container">
                     <div class="row row-border-bottom color-p">

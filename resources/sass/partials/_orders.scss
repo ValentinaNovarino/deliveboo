@@ -29,6 +29,10 @@
 }
 .color-blue{
     background-color: blue;
+
+    &:hover{
+        color:#0089ff36!important;
+    }
 }
 
 p.order-p {

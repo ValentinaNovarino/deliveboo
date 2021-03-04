@@ -14173,6 +14173,14 @@ li.list-group-item.restaurant-info:nth-child(2n) {
     padding: 5px 29px;
     font-size: 10px !important;
   }
+
+  p.order-p {
+    font-size: 12px !important;
+  }
+
+  p.d-inline {
+    font-size: 12px !important;
+  }
 }
 
 .add-dish {
@@ -14527,6 +14535,10 @@ img {
 
 .color-blue {
   background-color: blue;
+}
+
+.color-blue:hover {
+  color: #0089ff36 !important;
 }
 
 p.order-p {
