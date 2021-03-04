@@ -11,6 +11,8 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="//db.onlinewebfonts.com/c/dd97c93d1184d223b93c9042b7e57980?family=Stratos+Web" rel="stylesheet" type="text/css"/>
@@ -290,6 +292,35 @@
 
                     });
                 }
+            });
+
+            $(".remove-from-cart").click(function (e) {
+                e.preventDefault();
+
+                var ele = $(this);
+
+                var parent_row = ele.parents("tr");
+
+                var cart_total = $(".cart-total");
+
+
+                $.ajax({
+                    url: '{{ url('remove-from-cart') }}',
+                    method: "DELETE",
+                    data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                    dataType: "json",
+                    success: function (response) {
+                        location.reload();
+                        $('.hideItem').css({'display':'none'});
+
+                        parent_row.remove();
+                        $("span#status").html('<div class="alert alert-danger">'+response.msg+'</div>');
+                        $("#header-bar").html(response.data);
+                        cart_total.text(response.total);
+                    }
+                });
+
+
             });
 
         </script>
