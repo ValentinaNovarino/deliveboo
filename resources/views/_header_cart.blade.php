@@ -44,7 +44,7 @@
                 @if(session('cart'))
                     @foreach((array) session('cart') as $id => $details)
                         <div class="row cart-detail">
-                            <button class="btn btn-danger btn-sm remove-from-cart p-2" data-id="{{ $id }}"><i class="fas fa-trash-alt"></i></button>
+                            <button style="color:red" class="btn remove-from-cart p-1" data-id="{{ $id }}"><i class="far fa-trash-alt"></i></button>
                             <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
                                 @if ((file_exists('storage/' . $details['cover'])))
                                     <img src="{{ asset('storage/' . $details['cover'])}}" alt="Cover piatto" class="img-fluid">
@@ -52,7 +52,7 @@
                                     <img src="{{ asset('storage/dishesCover/non-disponibile.png') }}" alt="Cover piatto" class="img-fluid">
                                 @endif
                             </div>
-                            <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                            <div class="col-lg-6 col-sm-6 col-6 cart-detail-product">
                                 <p>{{ $details['name'] }}</p>
                                 <span class="price text-info"> €{{ $details['price'] }}</span> <span class="count"> Quantità:{{ $details['quantity'] }}</span>
                             </div>
@@ -94,7 +94,7 @@
         var parent_row = ele.parents("tr");
 
         var cart_total = $(".cart-total");
-        
+
 
         $.ajax({
             url: '{{ url('remove-from-cart') }}',
