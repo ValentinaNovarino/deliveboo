@@ -13283,6 +13283,7 @@ li.list-group-item.restaurant-info:nth-child(2n) {
 .app_google {
   padding-left: 20px;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .app_google img {
