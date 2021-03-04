@@ -13123,6 +13123,20 @@ li.list-group-item.restaurant-info:nth-child(2n) {
   display: block;
 }
 
+.white-n {
+  color: white !important;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.white-n:hover {
+  background-color: white !important;
+  color: #00ccbc !important;
+  border-radius: 2px;
+  transition: 1s;
+}
+
 .jumbo-first {
   padding-top: 30px;
   padding-bottom: 40px;
