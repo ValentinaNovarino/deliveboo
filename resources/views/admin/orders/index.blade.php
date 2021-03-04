@@ -4,7 +4,7 @@
 @section('admin.content')
     {{-- {{dd($orders)}} --}}
     @if(!$restaurant)
-        <h1>Non hai ristoranti</h1>
+        <h1 class="back-dish-title" style="color: #440063">Non hai ristoranti</h1>
     @else
         <div id="root">
             @if (count($orders) == 0)
