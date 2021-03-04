@@ -14543,6 +14543,12 @@ div.nav-cart-border-bottom {
   border-bottom: 2px solid #dee2e6;
 }
 
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  min-width: 80px;
+}
+
 .btn {
   border: 0px;
   margin: 10px 0px;
