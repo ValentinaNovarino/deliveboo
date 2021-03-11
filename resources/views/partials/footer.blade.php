@@ -45,19 +45,22 @@
             </div>
 
             <div class="box-footer">
-                <h5>Aiuto</h5>
+                <h5>Web Developer</h5>
                 <ul>
                     <li>
-                        <a href="#">Contatti</a>
+                        <a href="https://www.linkedin.com/in/valentina-novarino-718089206/">Valentina Novarino</a>
                     </li>
                     <li>
-                        <a href="#">FAQ</a>
+                        <a href="https://www.linkedin.com/in/ivan-mincione-612b261a3/">Ivan Mincione</a>
                     </li>
                     <li>
-                        <a href="#">Tipi di cucina</a>
+                        <a href="https://www.linkedin.com/in/alessandro-dicorato-b734251a5/">Alessandro Dicorato</a>
                     </li>
                     <li>
-                        <a href="#">Mappa del sito</a>
+                        <a href="https://www.linkedin.com/in/alba-de-biase-834755104/">Alba De Biase</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/rocco-chiarella-90086a206/">Rocco Chiarella</a>
                     </li>
                 </ul>
             </div>
